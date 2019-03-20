@@ -1,13 +1,14 @@
-package bsep.kt1.dto;
+package bsep.kt1.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-
-import bsep.kt1.model.Certificate;
-
-public class CertificateDTO {
-
+@Entity
+public class Certificate {
+	
+	@Id
 	private long serialNumber;
 	private String country;
 	private String city;
@@ -15,14 +16,17 @@ public class CertificateDTO {
 	private Date fromDate;
 	private Date toDate;
 	private boolean ca;
+	private long caSerialNumber;
 	
-	public CertificateDTO(Certificate certificate) {
-		this.country = certificate.getCountry();
-		this.city = certificate.getCity();
-		this.softwareModule = certificate.getSoftwareModule();
-		this.fromDate = certificate.getFromDate();
-		this.toDate = certificate.getFromDate();
-		this.ca = certificate.isCa();
+	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, long caSerialNumber) {
+		super();
+		this.country = country;
+		this.city = city;
+		this.softwareModule = softwareModule;
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+		this.ca = ca;
+		this.caSerialNumber = caSerialNumber;
 	}
 
 	public long getSerialNumber() {
@@ -80,4 +84,13 @@ public class CertificateDTO {
 	public void setCa(boolean ca) {
 		this.ca = ca;
 	}
+
+	public long getCaSerialNumber() {
+		return caSerialNumber;
+	}
+
+	public void setCaSerialNumber(long caSerialNumber) {
+		this.caSerialNumber = caSerialNumber;
+	}
+	
 }
