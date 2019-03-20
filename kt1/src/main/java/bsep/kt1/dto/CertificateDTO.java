@@ -16,6 +16,10 @@ public class CertificateDTO {
 	private Date toDate;
 	private boolean ca;
 	
+	public CertificateDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public CertificateDTO(Certificate certificate) {
 		this.country = certificate.getCountry();
 		this.city = certificate.getCity();

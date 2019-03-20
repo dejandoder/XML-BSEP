@@ -3,12 +3,15 @@ package bsep.kt1.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Certificate {
 	
+	
 	@Id
+	@GeneratedValue
 	private long serialNumber;
 	private String country;
 	private String city;
@@ -18,6 +21,9 @@ public class Certificate {
 	private boolean ca;
 	private long caSerialNumber;
 	
+	public Certificate() {
+		// TODO Auto-generated constructor stub
+	}
 	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, long caSerialNumber) {
 		super();
 		this.country = country;
