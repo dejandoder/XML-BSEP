@@ -25,6 +25,7 @@ public class Certificate {
 	public Certificate() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, long caSerialNumber) {
 		super();
 		this.country = country;
