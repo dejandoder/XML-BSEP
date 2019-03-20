@@ -29,6 +29,7 @@ public class CertificateDTO {
 		this.toDate = certificate.getFromDate();
 		this.ca = certificate.isCa();
 		this.revoked = certificate.isRevoked();
+		this.serialNumber =certificate.getSerialNumber();
 	}
 
 	public long getSerialNumber() {
