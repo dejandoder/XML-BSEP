@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,5 +44,11 @@ public class CertificateController {
 		List<CertificateDTO> certificates = service.getAllNonCA();
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
+	
+	@RequestMapping(method=RequestMethod.POST, value = "/revokeCertificat")
+	public void revokeCertificates(@PathVariable long serialNumber){
+		service.revokeCertificate(serialNumber);
+	}
+	
 	
 }

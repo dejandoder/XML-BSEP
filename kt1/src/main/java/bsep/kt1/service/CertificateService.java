@@ -53,4 +53,8 @@ public class CertificateService {
 		return certificatesDTO;
 	}
 	
+	public void revokeCertificate(long serialNumber) {
+		certificateRepository.revokeCertificat(serialNumber);
+	}
+	
 }

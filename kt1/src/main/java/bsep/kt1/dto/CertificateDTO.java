@@ -15,6 +15,7 @@ public class CertificateDTO {
 	private Date fromDate;
 	private Date toDate;
 	private boolean ca;
+	private boolean revoked;
 	
 	public CertificateDTO(Certificate certificate) {
 		this.country = certificate.getCountry();
@@ -23,6 +24,7 @@ public class CertificateDTO {
 		this.fromDate = certificate.getFromDate();
 		this.toDate = certificate.getFromDate();
 		this.ca = certificate.isCa();
+		this.revoked = certificate.isRevoked();
 	}
 
 	public long getSerialNumber() {
@@ -80,4 +82,13 @@ public class CertificateDTO {
 	public void setCa(boolean ca) {
 		this.ca = ca;
 	}
+
+	public boolean isRevoked() {
+		return revoked;
+	}
+
+	public void setRevoked(boolean revoked) {
+		this.revoked = revoked;
+	}
+	
 }

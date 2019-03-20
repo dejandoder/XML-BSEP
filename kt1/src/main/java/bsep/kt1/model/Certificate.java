@@ -17,6 +17,7 @@ public class Certificate {
 	private Date toDate;
 	private boolean ca;
 	private long caSerialNumber;
+	private boolean revoked;
 	
 	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, long caSerialNumber) {
 		super();
@@ -27,6 +28,7 @@ public class Certificate {
 		this.toDate = toDate;
 		this.ca = ca;
 		this.caSerialNumber = caSerialNumber;
+		this.revoked = false;
 	}
 
 	public long getSerialNumber() {
@@ -92,5 +94,15 @@ public class Certificate {
 	public void setCaSerialNumber(long caSerialNumber) {
 		this.caSerialNumber = caSerialNumber;
 	}
+
+	public boolean isRevoked() {
+		return revoked;
+	}
+
+	public void setRevoked(boolean revoked) {
+		this.revoked = revoked;
+	}
+	
+	
 	
 }
