@@ -11,6 +11,34 @@ $(document).ready(function($) {
                     }
                 },
             });
+   pokupiSertifikate();
+   pokupiNonCASertifikate();
+
+   function pokupiNonCASertifikate(){
+      $.ajax({
+        method:'GET',
+        url:'../certificate/getAllNonCA',
+        contentType: 'application/json',
+        success: function(data) {
+            if(data){
+                dodajNonCASertifikate(data);
+                    }
+                },
+            });
+   };
+
+   function pokupiSertifikate(){
+   $.ajax({
+        method:'GET',
+        url:'../certificate/getAllCA',
+        contentType: 'application/json',
+        success: function(data) {
+            if(data){
+                dodajCASertifikate(data);
+                    }
+                },
+            });
+ };
 	//OTVARANJE TABOVA
 	$(".content-link").click(function(event) {
 		/* Act on the event */
@@ -98,7 +126,8 @@ $(document).ready(function($) {
       });
 
      function isprazniLabele(){
-
+      pokupiNonCASertifikate();
+      pokupiSertifikate();
      	$("#certificateCountryInput").val("");
      	$("#certificateCityInput").val("");
      	$("#certificateSoftwareModuleInput").val("");
@@ -106,6 +135,27 @@ $(document).ready(function($) {
       	$("#toDatePicker").val("");
       	$("#caCertificateCheck").val("");
       	
+     };
+     function dodajNonCASertifikate(data){
+       $('.comunicationLink').html("");
+       
+       for(var i=0; i<data.length; i++){
+            $('.comunicationLink').append(
+                '<option id="'+data[i].serialNumber+'">'+
+                    data[i].country+', '+data[i].city+', '+data[i].softwareModule+
+                '</option>'
+              );
+        }
+     }
+     function dodajCASertifikate(data){
+        $('#signWithButton').html('<option id="root">root</option>')
+        for(var i=0; i<data.length; i++){
+            $('#signWithButton').append(
+                '<option id="'+data[i].serialNumber+'">'+
+                    data[i].country+', '+data[i].city+', '+data[i].softwareModule+
+                '</option>'
+              );
+        }
      };
 
      function upisSertifikata(sertifikati){
