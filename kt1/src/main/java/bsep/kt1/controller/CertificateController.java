@@ -30,6 +30,7 @@ public class CertificateController {
 	@RequestMapping(method=RequestMethod.GET, value = "/getAll")
 	public ResponseEntity<List<CertificateDTO>>getAllCertificates(){
 		List<CertificateDTO> certificates = service.getAll();
+		//aaaaaaaaaaaaaaaaa
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 	
