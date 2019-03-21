@@ -115,7 +115,7 @@ $(document).ready(function($) {
  
               $.ajax({
               	  method:'POST',
-                  url:'../certificate',
+                  url:'../certificate/'+g,
                   data: JSON.stringify(sertifikat),
                   contentType: 'application/json',
                   success: function(data) {
