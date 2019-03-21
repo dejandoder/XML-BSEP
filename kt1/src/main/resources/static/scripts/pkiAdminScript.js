@@ -109,6 +109,8 @@ $(document).ready(function($) {
      };
 
      function upisSertifikata(sertifikati){
+
+     		$('#tabelaSertifikata').html("");
 	        for(var i=0; i<sertifikati.length; i++){
 	        	
 	          if(sertifikati[i].revoked==false){
@@ -119,7 +121,7 @@ $(document).ready(function($) {
 	            '<td>'+ sertifikati[i].city+'</td>'+
 	            '<td>'+ sertifikati[i].softwareModule+'</td>'+
 	            '<td>'+ sertifikati[i].ca+'</td>'+
-	            '<td><button  class="btn btn-outline-success my-2 my-sm-0" id="'+sertifikati[i].revoked+'" style="background: transparent;">Revoke</td>'+
+	            '<td><button  class="btn btn-outline-success my-2 my-sm-0" id="'+sertifikati[i].serialNumber+'" style="background: transparent;">Revoke</td>'+
 	            '</tr>'
 	            );
 	       }else{
@@ -143,20 +145,18 @@ $(document).ready(function($) {
 
 		  $("#tabelaSertifikata").on('click','button',function(event){
 			  var value= $(this).text();
-			  if(value=="Revoke"){
+			  var aaa=$(this).attr('id');
+			  
 			  	$(this).prop("disabled",true);
-			  	$(this).text("Revoked");
 			  	
 			  	 $.ajax({
-                 	  method:'GET',
-                     url:'../certificate/getAll',
-                     contentType: 'application/json',
-                     success: function(data) {
-                     if(data){
+              	  method:'POST',
+                  url:'../certificate/revokeCertificat/'+$(this).attr('id'),
+                  contentType: 'application/json',
+                  success: function(data) {
                          upisSertifikata(data);
-                     }
                   },
               });
-		  }
+			  	
 	 });
 });

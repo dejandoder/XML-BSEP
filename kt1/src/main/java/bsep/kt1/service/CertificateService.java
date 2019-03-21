@@ -53,8 +53,17 @@ public class CertificateService {
 		return certificatesDTO;
 	}
 	
-	public void revokeCertificate(long serialNumber) {
+	public List<CertificateDTO> revokeCertificate(long serialNumber) {
 		certificateRepository.revokeCertificat(serialNumber);
+		
+		List<Certificate> certificates = certificateRepository.findAll();
+		List<CertificateDTO> certificatesDTO = new ArrayList<CertificateDTO>();
+		
+		for(Certificate certificate : certificates) {
+			certificatesDTO.add(new CertificateDTO(certificate));
+		}
+		
+		return certificatesDTO;
 	}
 	
 }

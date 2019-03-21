@@ -45,9 +45,10 @@ public class CertificateController {
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value = "/revokeCertificat")
-	public void revokeCertificates(@PathVariable long serialNumber){
-		service.revokeCertificate(serialNumber);
+	@RequestMapping(method=RequestMethod.POST, value = "/revokeCertificat/{serialNumber}")
+	public ResponseEntity<List<CertificateDTO>> revokeCertificates(@PathVariable long serialNumber){
+		List<CertificateDTO> certificates = service.revokeCertificate(serialNumber);
+		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 	
 	
