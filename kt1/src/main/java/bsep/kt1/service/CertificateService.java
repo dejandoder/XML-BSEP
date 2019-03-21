@@ -19,6 +19,10 @@ public class CertificateService {
 	public void addCertificate(Certificate certificate) {
 		certificateRepository.save(certificate);
 	}
+	public Certificate getById(long id) {
+		return certificateRepository.findOneBySerialNumber(id);
+		
+	}
 	
 	public List<CertificateDTO> getAll(){
 		List<Certificate> certificates = certificateRepository.findAll();

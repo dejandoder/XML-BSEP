@@ -11,7 +11,21 @@ $(document).ready(function($) {
                     }
                 },
             });
-   pokupiSertifikate();
+
+ 	  $.ajax({
+        method:'GET',
+        url:'../cl/getAllCl',
+        contentType: 'application/json',
+        success: function(data) {
+            if(data){
+                iscrtajPovezaneSert(data);
+                    }
+                },
+            });
+
+   pokupiCASertifikate();
+
+
    pokupiNonCASertifikate();
 
    function pokupiNonCASertifikate(){
@@ -27,7 +41,7 @@ $(document).ready(function($) {
             });
    };
 
-   function pokupiSertifikate(){
+   function pokupiCASertifikate(){
    $.ajax({
         method:'GET',
         url:'../certificate/getAllCA',
@@ -157,6 +171,40 @@ $(document).ready(function($) {
               );
         }
      };
+      $("#addLinkBtn").click(function(event) {
+      	event.preventDefault();
+        var prva=$("#linkPrva option:selected").attr("id");
+        var druga=$("#linkDruga option:selected").attr("id");
+
+        $.ajax({
+        method:'GET',
+        url:'../cl/createLink/'+prva+'/'+druga,
+        contentType: 'application/json',
+        success: function(data) {
+            if(data){
+                iscrtajPovezaneSert(data);
+                    }
+                },
+            });
+
+     });
+
+     function iscrtajPovezaneSert(data){
+     	$('#tabelaPovezanihSertifikata').html("");
+     	for(var i=0; i<data.length; i++){
+     	$('#tabelaPovezanihSertifikata').append(
+	            '<tr>'+
+	            '<td>'+ data[i].memberOne.country +'</td>'+
+	            '<td>'+ data[i].memberOne.city+'</td>'+
+	            '<td>'+ data[i].memberOne.softwareModule+'</td>'+
+	            '<td></td>'+
+	            '<td>'+ data[i].memberTwo.country +'</td>'+
+	            '<td>'+ data[i].memberTwo.city +'</td>'+
+	            '<td>'+ data[i].memberTwo.softwareModule +'</td>'+
+	            '</tr>'
+	            );
+     	}
+     }
 
      function upisSertifikata(sertifikati){
 

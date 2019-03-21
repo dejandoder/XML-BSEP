@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import bsep.kt1.dto.CertificateDTO;
 import bsep.kt1.dto.CommunicatonLinkDTO;
+import bsep.kt1.model.Certificate;
+import bsep.kt1.model.CommunicationLink;
+import bsep.kt1.service.CertificateService;
 import bsep.kt1.service.CommunicationLinkService;
 
 @RestController
@@ -20,6 +23,8 @@ public class CommunicationLinkController {
 
 	@Autowired
 	CommunicationLinkService service;
+	@Autowired
+	CertificateService certificateService;
 	
 	@RequestMapping(method=RequestMethod.GET, value = "/getAllCl")
 	public ResponseEntity<List<CommunicatonLinkDTO>>getAllCl(){
@@ -27,4 +32,15 @@ public class CommunicationLinkController {
 		return new ResponseEntity<>(cls, HttpStatus.OK);
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value = "/createLink/{id}/{id2}")
+	public ResponseEntity<List<CommunicatonLinkDTO>> createLink(@PathVariable long id, @PathVariable long id2){
+		Certificate sertifikat1= certificateService.getById(id);
+		Certificate sertifikat2= certificateService.getById(id2);
+		
+		CommunicationLink link= new CommunicationLink(sertifikat1,sertifikat2);
+		service.save(link);
+		
+		List<CommunicatonLinkDTO> cls = service.getAll();
+		return new ResponseEntity<>(cls, HttpStatus.OK);
+	}
 }
