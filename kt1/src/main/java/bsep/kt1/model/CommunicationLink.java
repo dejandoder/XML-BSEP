@@ -3,6 +3,7 @@ package bsep.kt1.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class CommunicationLink {
@@ -11,8 +12,10 @@ public class CommunicationLink {
 	@GeneratedValue
 	private long id;
 	
+	@ManyToOne
 	private Certificate memberOne;
 	
+	@ManyToOne
 	private Certificate memberTwo;
 	
 	public CommunicationLink() {

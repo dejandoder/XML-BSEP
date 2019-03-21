@@ -22,9 +22,9 @@ public class CertificateController {
 	@Autowired
 	CertificateService service;
 	
-	@RequestMapping(method=RequestMethod.POST, consumes="application/json")
-	public void addCertificate(@RequestBody Certificate certificate){
-		service.addCertificate(certificate);
+	@RequestMapping(method=RequestMethod.POST, consumes="application/json", value="/{caSerialNumeber}")
+	public void addCertificate(@RequestBody Certificate certificate, @PathVariable String caSerialNumber){
+		service.addCertificate(certificate, caSerialNumber);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value = "/getAll")

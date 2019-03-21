@@ -2,6 +2,7 @@ package bsep.kt1.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,21 +13,22 @@ public class Certificate {
 	
 	@Id
 	@GeneratedValue
-	private long serialNumber;
+	@Column(length = 100)
+	private String serialNumber;
 	private String country;
 	private String city;
 	private String softwareModule;
 	private Date fromDate;
 	private Date toDate;
 	private boolean ca;
-	private long caSerialNumber;
+	private String caSerialNumber;
 	private boolean revoked;
 	
 	public Certificate() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, long caSerialNumber) {
+	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, String caSerialNumber) {
 		super();
 		this.country = country;
 		this.city = city;
@@ -38,11 +40,11 @@ public class Certificate {
 		this.revoked = false;
 	}
 
-	public long getSerialNumber() {
+	public String getSerialNumber() {
 		return serialNumber;
 	}
 
-	public void setSerialNumber(long serialNumber) {
+	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
@@ -94,11 +96,11 @@ public class Certificate {
 		this.ca = ca;
 	}
 
-	public long getCaSerialNumber() {
+	public String getCaSerialNumber() {
 		return caSerialNumber;
 	}
 
-	public void setCaSerialNumber(long caSerialNumber) {
+	public void setCaSerialNumber(String caSerialNumber) {
 		this.caSerialNumber = caSerialNumber;
 	}
 

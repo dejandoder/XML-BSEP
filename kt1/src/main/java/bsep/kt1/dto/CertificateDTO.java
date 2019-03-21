@@ -8,7 +8,7 @@ import bsep.kt1.model.Certificate;
 
 public class CertificateDTO {
 
-	private long serialNumber;
+	private String serialNumber;
 	private String country;
 	private String city;
 	private String softwareModule;
@@ -32,11 +32,11 @@ public class CertificateDTO {
 		this.serialNumber =certificate.getSerialNumber();
 	}
 
-	public long getSerialNumber() {
+	public String getSerialNumber() {
 		return serialNumber;
 	}
 
-	public void setSerialNumber(long serialNumber) {
+	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
