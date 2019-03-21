@@ -1,0 +1,1 @@
+insert into certificate (serialNumber, softwareModule, fromDate, toDate, ca, revoked) values ("1", "root", "2018-12-31", "2022-12-31", true, false)

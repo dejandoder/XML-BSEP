@@ -6,7 +6,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import bsep.kt1.data.IssuerData;
 import bsep.kt1.dto.CertificateDTO;
+import bsep.kt1.keystores.KeyStoreReader;
+import bsep.kt1.keystores.KeyStoreWriter;
 import bsep.kt1.model.Certificate;
 import bsep.kt1.repository.CertificateRepository;
 
@@ -16,8 +19,17 @@ public class CertificateService {
 	@Autowired
 	CertificateRepository certificateRepository;
 	
-	public void addCertificate(Certificate certificate) {
+	@Autowired
+	KeyStoreWriter writer;
+	
+	@Autowired
+	KeyStoreReader reader;
+	
+	
+	
+	public void addCertificate(Certificate certificate, String caSerialNumber) {
 		certificateRepository.save(certificate);
+		
 	}
 	public Certificate getById(long id) {
 		return certificateRepository.findOneBySerialNumber(id);
