@@ -92,7 +92,6 @@ $(document).ready(function($) {
 
      	event.preventDefault();
 
-     	var a =$("#certificateCountryInput").val();
      	var b =$("#certificateCityInput").val();
      	var c =$("#certificateSoftwareModuleInput").val();
      	var d =$("#fromDatePicker").val();
@@ -104,7 +103,6 @@ $(document).ready(function($) {
        
       	var sertifikat = new Object();
 
-      	sertifikat.country=a;
       	sertifikat.city=b;
       	sertifikat.softwareModule=c;
       	sertifikat.fromDate=d;
@@ -141,8 +139,10 @@ $(document).ready(function($) {
 
      function isprazniLabele(){
       pokupiNonCASertifikate();
+
       pokupiCASertifikate();
      	$("#certificateCountryInput").val("");
+
      	$("#certificateCityInput").val("");
      	$("#certificateSoftwareModuleInput").val("");
      	$("#fromDatePicker").val("");
@@ -156,7 +156,7 @@ $(document).ready(function($) {
        for(var i=0; i<data.length; i++){
             $('.comunicationLink').append(
                 '<option id="'+data[i].serialNumber+'">'+
-                    data[i].country+', '+data[i].city+', '+data[i].softwareModule+
+                    data[i].city+', '+data[i].softwareModule+
                 '</option>'
               );
         }
@@ -166,7 +166,7 @@ $(document).ready(function($) {
         for(var i=0; i<data.length; i++){
             $('#signWithButton').append(
                 '<option id="'+data[i].serialNumber+'">'+
-                    data[i].country+', '+data[i].city+', '+data[i].softwareModule+
+                    data[i].city+', '+data[i].softwareModule+
                 '</option>'
               );
         }
@@ -193,12 +193,10 @@ $(document).ready(function($) {
      	$('#tabelaPovezanihSertifikata').html("");
      	for(var i=0; i<data.length; i++){
      	$('#tabelaPovezanihSertifikata').append(
-	            '<tr>'+
-	            '<td>'+ data[i].memberOne.country +'</td>'+
+	            '<tr>'+	            
 	            '<td>'+ data[i].memberOne.city+'</td>'+
 	            '<td>'+ data[i].memberOne.softwareModule+'</td>'+
-	            '<td></td>'+
-	            '<td>'+ data[i].memberTwo.country +'</td>'+
+	            '<td></td>'+	        
 	            '<td>'+ data[i].memberTwo.city +'</td>'+
 	            '<td>'+ data[i].memberTwo.softwareModule +'</td>'+
 	            '</tr>'
@@ -214,8 +212,7 @@ $(document).ready(function($) {
 	          if(sertifikati[i].revoked==false){
 	           $('#tabelaSertifikata').append(
 	            '<tr>'+
-	            '<td>'+ sertifikati[i].serialNumber +'</td>'+
-	            '<td>'+ sertifikati[i].country +'</td>'+
+	            '<td>'+ sertifikati[i].serialNumber +'</td>'+	            
 	            '<td>'+ sertifikati[i].city+'</td>'+
 	            '<td>'+ sertifikati[i].softwareModule+'</td>'+
 	            '<td>'+ sertifikati[i].ca+'</td>'+
@@ -226,8 +223,7 @@ $(document).ready(function($) {
 
 	       	$('#tabelaSertifikata').append(
 	            '<tr>'+
-	            '<td>'+ sertifikati[i].serialNumber +'</td>'+
-	            '<td>'+ sertifikati[i].country +'</td>'+
+	            '<td>'+ sertifikati[i].serialNumber +'</td>'+	            
 	            '<td>'+ sertifikati[i].city+'</td>'+
 	            '<td>'+ sertifikati[i].softwareModule+'</td>'+
 	            '<td>'+ sertifikati[i].ca+'</td>'+

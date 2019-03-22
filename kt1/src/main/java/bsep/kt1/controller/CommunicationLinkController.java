@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import bsep.kt1.dto.CertificateDTO;
 import bsep.kt1.dto.CommunicatonLinkDTO;
 import bsep.kt1.model.Certificate;
 import bsep.kt1.model.CommunicationLink;
