@@ -190,7 +190,7 @@ $(document).ready(function($) {
         }
      }
      function dodajCASertifikate(data){
-        $('#signWithButton').html('<option id="0">root</option>')
+    	 $('#signWithButton').html("");
         for(var i=0; i<data.length; i++){
             $('#signWithButton').append(
                 '<option id="'+data[i].serialNumber+'">'+

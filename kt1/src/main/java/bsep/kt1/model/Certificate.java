@@ -14,7 +14,8 @@ public class Certificate {
 	
 	
 	@Id
-    @GeneratedValue
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
 	private long serialNumber;
 	private String city;
 	private String softwareModule;

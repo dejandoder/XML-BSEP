@@ -78,7 +78,7 @@ public class CertificateService {
 		ksw.saveKeyStore(keyStoreFile, "admin123".toCharArray());
 		
 		
-		initilizeKS();
+		//initilizeKS();
 		
 		
 	}
