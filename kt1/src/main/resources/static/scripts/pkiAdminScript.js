@@ -120,7 +120,7 @@ $(document).ready(function($) {
      	}
      	
      	
-     	var b =$("#certificateCityInput").val();
+     	var b =$("#certificateCityInput option:selected").text();
      	var c =$("#certificateSoftwareModuleInput").val();
      	var d =$("#fromDatePicker").val();
       	var e =$("#toDatePicker").val();
@@ -200,9 +200,15 @@ $(document).ready(function($) {
         }
      };
       $("#addLinkBtn").click(function(event) {
+    	  
+    	if ($("#linkPrva option:selected").attr("id")==$("#linkDruga option:selected").attr("id")) {
+    		return;
+    	}  
       	event.preventDefault();
         var prva=$("#linkPrva option:selected").attr("id");
         var druga=$("#linkDruga option:selected").attr("id");
+        
+        
 
         $.ajax({
         method:'GET',
