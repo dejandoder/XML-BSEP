@@ -120,7 +120,7 @@ $(document).ready(function($) {
      	}
      	
      	
-     	var b =$("#certificateCityInput option:selected").val();
+     	var b =$("#certificateCityInput").val();
      	var c =$("#certificateSoftwareModuleInput").val();
      	var d =$("#fromDatePicker").val();
       	var e =$("#toDatePicker").val();
