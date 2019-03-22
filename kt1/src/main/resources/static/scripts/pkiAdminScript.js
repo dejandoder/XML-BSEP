@@ -87,11 +87,39 @@ $(document).ready(function($) {
         pickerPosition: "bottom-right",
         minView:2,
     });
-
+    function isEmpty(str){
+        return !str.replace(/\s+/, '').length;
+    }
+    
+    $(".provjeraPrazno").each(function(index) {
+    	$(this).on('change keyup paste', function () {
+    
+    	if(isEmpty($(this).val()))
+     	{
+     		$(this).addClass("border border-danger");
+     	}
+    	else $(this).removeClass("border border-danger");
+    })
+    });
+    
      $("#accountBtn").click(function(event){
 
      	event.preventDefault();
+     	var ok=true;
 
+     	$(".provjeraPrazno").each(function(index) {
+     		if(isEmpty($(this).val()))
+         	{
+         		$(this).addClass("border border-danger");
+         		ok=false;
+         	}
+     		
+     	});
+     	if(!ok){
+     		return;
+     	}
+     	
+     	
      	var b =$("#certificateCityInput").val();
      	var c =$("#certificateSoftwareModuleInput").val();
      	var d =$("#fromDatePicker").val();
