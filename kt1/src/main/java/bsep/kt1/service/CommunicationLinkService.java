@@ -2,13 +2,9 @@ package bsep.kt1.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import bsep.kt1.dto.CertificateDTO;
 import bsep.kt1.dto.CommunicatonLinkDTO;
-import bsep.kt1.model.Certificate;
 import bsep.kt1.model.CommunicationLink;
 import bsep.kt1.repository.CommunicationLinkRepository;
 

@@ -9,7 +9,6 @@ import bsep.kt1.model.Certificate;
 public class CertificateDTO {
 
 	private String serialNumber;
-	private String country;
 	private String city;
 	private String softwareModule;
 	private Date fromDate;
@@ -22,7 +21,6 @@ public class CertificateDTO {
 	}
 	
 	public CertificateDTO(Certificate certificate) {
-		this.country = certificate.getCountry();
 		this.city = certificate.getCity();
 		this.softwareModule = certificate.getSoftwareModule();
 		this.fromDate = certificate.getFromDate();
@@ -38,14 +36,6 @@ public class CertificateDTO {
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 	public String getCity() {

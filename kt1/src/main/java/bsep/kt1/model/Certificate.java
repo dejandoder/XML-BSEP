@@ -15,7 +15,6 @@ public class Certificate {
 	@GeneratedValue
 	@Column(length = 100)
 	private String serialNumber;
-	private String country;
 	private String city;
 	private String softwareModule;
 	private Date fromDate;
@@ -25,12 +24,10 @@ public class Certificate {
 	private boolean revoked;
 	
 	public Certificate() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, String caSerialNumber) {
 		super();
-		this.country = country;
 		this.city = city;
 		this.softwareModule = softwareModule;
 		this.fromDate = fromDate;
@@ -46,14 +43,6 @@ public class Certificate {
 
 	public void setSerialNumber(String serialNumber) {
 		this.serialNumber = serialNumber;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 	public String getCity() {
