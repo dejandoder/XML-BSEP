@@ -29,5 +29,11 @@ public class CommunicationLinkService {
 		return clsDTO;
 	}
 	
+	public String checkCommunication(long s1, long s2) {
+		List<CommunicationLink> cls = clRepository.checkCommunication(s1, s2);
+		if(cls.isEmpty()) return "error";
+		else return "ok";
+	}
+	
 }
 

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import bsep.kt1.dto.CertificateDTO;
 import bsep.kt1.dto.CommunicatonLinkDTO;
 import bsep.kt1.model.Certificate;
 import bsep.kt1.model.CommunicationLink;
@@ -40,5 +42,11 @@ public class CommunicationLinkController {
 		
 		List<CommunicatonLinkDTO> cls = service.getAll();
 		return new ResponseEntity<>(cls, HttpStatus.OK);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value = "/checkCommunication/{serialNumberOne}/{serialNumberTwo}")
+	public ResponseEntity<String> checkCommunication(@PathVariable long serialNumberOne, @PathVariable long serialNumberTwo){
+		String retVal = service.checkCommunication(serialNumberOne, serialNumberTwo);
+		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 }

@@ -120,7 +120,7 @@ public class CertificateService {
 		return certificatesDTO;
 	}
 	
-	public List<CertificateDTO> revokeCertificate(String serialNumber) {
+	public List<CertificateDTO> revokeCertificate(long serialNumber) {
 		certificateRepository.revokeCertificat(serialNumber);
 		
 		List<Certificate> certificates = certificateRepository.findAll();
