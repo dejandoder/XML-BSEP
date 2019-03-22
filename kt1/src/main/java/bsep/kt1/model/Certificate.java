@@ -14,22 +14,21 @@ public class Certificate {
 	
 	
 	@Id
-	@Column(length = 100)
-    @GeneratedValue(generator="system-uuid")
-	@GenericGenerator(name="system-uuid", strategy = "uuid")
-	private String serialNumber;
+    @GeneratedValue
+	private long serialNumber;
 	private String city;
 	private String softwareModule;
 	private Date fromDate;
 	private Date toDate;
 	private boolean ca;
-	private String caSerialNumber;
+	@Column(nullable = true)
+	private long caSerialNumber;
 	private boolean revoked;
 	
 	public Certificate() {
 	}
 	
-	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, String caSerialNumber) {
+	public Certificate(String country, String city, String softwareModule, Date fromDate, Date toDate, boolean ca, long caSerialNumber) {
 		super();
 		this.city = city;
 		this.softwareModule = softwareModule;
@@ -40,11 +39,11 @@ public class Certificate {
 		this.revoked = false;
 	}
 
-	public String getSerialNumber() {
+	public long getSerialNumber() {
 		return serialNumber;
 	}
 
-	public void setSerialNumber(String serialNumber) {
+	public void setSerialNumber(long serialNumber) {
 		this.serialNumber = serialNumber;
 	}
 
@@ -88,11 +87,11 @@ public class Certificate {
 		this.ca = ca;
 	}
 
-	public String getCaSerialNumber() {
+	public long getCaSerialNumber() {
 		return caSerialNumber;
 	}
 
-	public void setCaSerialNumber(String caSerialNumber) {
+	public void setCaSerialNumber(long caSerialNumber) {
 		this.caSerialNumber = caSerialNumber;
 	}
 

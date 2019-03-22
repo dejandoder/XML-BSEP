@@ -52,18 +52,13 @@ public class KeyStoreReader {
 	 */
 	public IssuerData readIssuerFromStore(String keyStoreFile, String alias, char[] password, char[] keyPass) {
 		try {
-			File f = ResourceUtils.getFile("classpath:"+keyStoreFile);
 			//Datoteka se ucitava
-			BufferedInputStream in = new BufferedInputStream(new FileInputStream("C:\\Users\\miljan\\Desktop\\XML-BSEP\\kt1\\src\\main\\resources\\ks\\adminKS.jks"));
+			BufferedInputStream in = new BufferedInputStream(new FileInputStream( ResourceUtils.getFile("classpath:"+keyStoreFile)));
 			keyStore.load(in, password);
 			
-			System.out.println(keyStore.size());
+			System.out.println(ResourceUtils.getFile("classpath:"+keyStoreFile));
 			
-			
-			
-			System.out.println(keyStore.containsAlias("1"));
 			//Iscitava se sertifikat koji ima dati alias
-
 			Certificate cert = keyStore.getCertificate(alias);
 			//Iscitava se privatni kljuc vezan za javni kljuc koji se nalazi na sertifikatu sa datim aliasom
 			PrivateKey privKey = (PrivateKey) keyStore.getKey(alias, keyPass);
@@ -94,7 +89,7 @@ public class KeyStoreReader {
 			//kreiramo instancu KeyStore
 			KeyStore ks = KeyStore.getInstance("JKS", "SUN");
 			//ucitavamo podatke
-			BufferedInputStream in = new BufferedInputStream(new FileInputStream(keyStoreFile));
+			BufferedInputStream in = new BufferedInputStream(new FileInputStream(ResourceUtils.getFile("classpath:"+keyStoreFile)));
 			ks.load(in, keyStorePass.toCharArray());
 			
 			if(ks.isKeyEntry(alias)) {
@@ -125,7 +120,7 @@ public class KeyStoreReader {
 			//kreiramo instancu KeyStore
 			KeyStore ks = KeyStore.getInstance("JKS", "SUN");
 			//ucitavamo podatke
-			BufferedInputStream in = new BufferedInputStream(new FileInputStream(keyStoreFile));
+			BufferedInputStream in = new BufferedInputStream(new FileInputStream(ResourceUtils.getFile("classpath:"+keyStoreFile)));
 			ks.load(in, keyStorePass.toCharArray());
 			
 			if(ks.isKeyEntry(alias)) {

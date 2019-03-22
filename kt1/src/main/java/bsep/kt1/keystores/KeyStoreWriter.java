@@ -13,6 +13,7 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 
 @Component
@@ -37,7 +38,7 @@ public class KeyStoreWriter {
 	public void loadKeyStore(String fileName, char[] password) {
 		try {
 			if(fileName != null) {
-				keyStore.load(new FileInputStream(fileName), password);
+				keyStore.load(new FileInputStream(ResourceUtils.getFile("classpath:"+fileName)), password);
 			} else {
 				//Ako je cilj kreirati novi KeyStore poziva se i dalje load, pri cemu je prvi parametar null
 				keyStore.load(null, password);
@@ -55,7 +56,7 @@ public class KeyStoreWriter {
 	
 	public void saveKeyStore(String fileName, char[] password) {
 		try {
-			keyStore.store(new FileOutputStream(fileName), password);
+			keyStore.store(new FileOutputStream(ResourceUtils.getFile("classpath:"+fileName)), password);
 		} catch (KeyStoreException e) {
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {

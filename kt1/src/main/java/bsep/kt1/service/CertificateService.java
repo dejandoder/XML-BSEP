@@ -49,10 +49,37 @@ public class CertificateService {
 	
 	
 	
-	public void addCertificate(Certificate certificate, String caSerialNumber) {
-		certificateRepository.save(certificate);
-		IssuerData issuer = getIssuer(caSerialNumber, "ks/adminKS.jks");
-		//testIt();
+	public void addCertificate(Certificate certificate, long caSerialNumber) {
+		
+		Certificate savedCertificate = certificateRepository.save(certificate);
+		
+		certificate.setCaSerialNumber(caSerialNumber);
+		
+		IssuerData issuerData = getIssuer(Long.toString(caSerialNumber), "ks/caKS.jks");
+		
+		KeyPair subjectKey = generateKeyPair();
+		
+		SubjectData subjectData = generateSubjectData(savedCertificate,subjectKey.getPublic());
+		
+		CertificateGenerator cg = new CertificateGenerator();
+		
+		X509Certificate cert = cg.generateCertificate(subjectData, issuerData);
+		
+		String keyStoreFile = "";
+		
+		if(certificate.isCa()) keyStoreFile = "ks/caKS.jks";
+		else if(certificate.getCity().toLowerCase().equals("boston")) keyStoreFile = "ks/bostonKS.jks";
+		else if(certificate.getCity().toLowerCase().equals("hongkong")) keyStoreFile = "ks/hongkongKS.jks";
+		else if(certificate.getCity().toLowerCase().equals("london")) keyStoreFile = "ks/londonKS.jks";
+		
+		KeyStoreWriter ksw = new KeyStoreWriter();
+		ksw.loadKeyStore(keyStoreFile, "admin123".toCharArray());
+		ksw.write(subjectData.getSerialNumber(), subjectKey.getPrivate(), "admin123".toCharArray(), cert);
+		ksw.saveKeyStore(keyStoreFile, "admin123".toCharArray());
+		
+		
+		initilizeKS();
+		
 		
 	}
 	public Certificate getById(long id) {
@@ -107,8 +134,6 @@ public class CertificateService {
 	}
 	
 	private IssuerData getIssuer(String serialNumber, String fileName) {
-		reader.readCertificate("C:\\Users\\miljan\\Desktop\\XML-BSEP\\kt1\\src\\main\\resources\\ks\\adminKS.jks", "admin123", "1");
-		//return null;
 		return reader.readIssuerFromStore(fileName, serialNumber, "admin123".toCharArray(), "admin123".toCharArray());
 	}
 
@@ -127,78 +152,22 @@ public class CertificateService {
         return null;
 	}
 	
-
-	private static PublicKey pk;
-	
-	public void testIt() {
-		try {
-			KeyPair keyPairIssuer = generateKeyPair();
-			IssuerData issuerData = generateIssuerData(keyPairIssuer.getPrivate());
-			
-			//*****
-			pk = keyPairIssuer.getPublic();
-		    
-			SubjectData subjectData = generateSubjectData();
-			
-			//Generise se sertifikat za subjekta, potpisan od strane issuer-a
-			CertificateGenerator cg = new CertificateGenerator();
-			
-			X509Certificate cert = cg.generateCertificate(subjectData, issuerData);
-			
-		
-			/************* MOJA GOVNA *****/
-			KeyStoreWriter ksw = new KeyStoreWriter();
-			ksw.loadKeyStore(null, "admin123".toCharArray());
-			
-			ksw.saveKeyStore("C:\\Users\\miljan\\Desktop\\XML-BSEP\\kt1\\src\\main\\resources\\ks\\adminKS.jks", "admin123".toCharArray());
-			ksw.write(subjectData.getSerialNumber(), keyPairIssuer.getPrivate(), "admin123".toCharArray(), cert);
-			ksw.saveKeyStore("C:\\Users\\miljan\\Desktop\\XML-BSEP\\kt1\\src\\main\\resources\\ks\\adminKS.jks", "admin123".toCharArray());
-			
-			//Moguce je proveriti da li je digitalan potpis sertifikata ispravan, upotrebom javnog kljuca izdavaoca
-			cert.verify(keyPairIssuer.getPublic());
-			//System.out.println("\nValidacija uspesna :)");
-			
-			//Ovde se desava exception, jer se validacija vrsi putem drugog kljuca
-			KeyPair anotherPair = generateKeyPair();
-			cert.verify(anotherPair.getPublic());
-		}catch(NoSuchProviderException | InvalidKeyException | CertificateException | NoSuchAlgorithmException | SignatureException e) {
-			/*/kurciaaaaa*/
-		}
-	}
-	
-	private IssuerData generateIssuerData(PrivateKey issuerKey) {
-		X500NameBuilder builder = new X500NameBuilder(BCStyle.INSTANCE);
-		 builder.addRDN(BCStyle.CN, "Admin Admin");
-		 builder.addRDN(BCStyle.SURNAME, "Admin");
-		 builder.addRDN(BCStyle.GIVENNAME, "Admin");
-		 builder.addRDN(BCStyle.C, "RS");
-		 builder.addRDN(BCStyle.E, "admin@uns.ac.rs");
-	     //UID (USER ID) je ID korisnika
-		 builder.addRDN(BCStyle.UID, "123456");
-
-		//Kreiraju se podaci za issuer-a, sto u ovom slucaju ukljucuje:
-	    // - privatni kljuc koji ce se koristiti da potpise sertifikat koji se izdaje
-	    // - podatke o vlasniku sertifikata koji izdaje nov sertifikat
-		return new IssuerData(issuerKey, builder.build());
-	}
-
-	private bsep.kt1.data.SubjectData generateSubjectData() {
-		try {
+	private bsep.kt1.data.SubjectData generateSubjectData(Certificate certificate, PublicKey pk) {
 			KeyPair keyPairSubject = generateKeyPair();
 			
 			//Datumi od kad do kad vazi sertifikat
-			SimpleDateFormat iso8601Formater = new SimpleDateFormat("yyyy-MM-dd");
-			Date startDate = iso8601Formater.parse("2018-12-31");
-			Date endDate = iso8601Formater.parse("2022-12-31");
+			Date startDate = certificate.getFromDate();
+			Date endDate = certificate.getFromDate();
 			
 			//Serijski broj sertifikata
-			String sn="1";
+			String sn = Long.toString(certificate.getSerialNumber());
 			//klasa X500NameBuilder pravi X500Name objekat koji predstavlja podatke o vlasniku
 			X500NameBuilder builder = new X500NameBuilder(BCStyle.INSTANCE);
 		    builder.addRDN(BCStyle.CN, "Admin Admin");
 		    builder.addRDN(BCStyle.SURNAME, "Admin");
 		    builder.addRDN(BCStyle.GIVENNAME, "Admin");
-		    builder.addRDN(BCStyle.C, "RS");
+		    builder.addRDN(BCStyle.L , certificate.getCity());
+		    builder.addRDN(BCStyle.OU , certificate.getSoftwareModule());
 		    builder.addRDN(BCStyle.E, "admin@uns.ac.rs");
 		    //UID (USER ID) je ID korisnika
 		    builder.addRDN(BCStyle.UID, "123456");
@@ -209,13 +178,27 @@ public class CertificateService {
 		    // - serijski broj sertifikata
 		    // - od kada do kada vazi sertifikat
 		    return new bsep.kt1.data.SubjectData(pk, builder.build(), sn, startDate, endDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 
-	
+
+	private void initilizeKS() {
+		
+		KeyStoreWriter ksw = new KeyStoreWriter();
+		ksw.loadKeyStore(null, "admin123".toCharArray());
+		
+		ksw.saveKeyStore("ks/bostonKS.jks", "admin123".toCharArray());
+		
+	    ksw = new KeyStoreWriter();
+		ksw.loadKeyStore(null, "admin123".toCharArray());
+		
+		ksw.saveKeyStore("ks/londonKS.jks", "admin123".toCharArray());
+		
+		ksw = new KeyStoreWriter();
+		ksw.loadKeyStore(null, "admin123".toCharArray());
+		
+		ksw.saveKeyStore("ks/hongkongKS.jks", "admin123".toCharArray());
+		
+	}
 
 }
 

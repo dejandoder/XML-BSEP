@@ -23,7 +23,7 @@ public class CertificateController {
 	CertificateService service;
 	
 	@RequestMapping(method=RequestMethod.POST, consumes="application/json", value="/{caSerialNumber}")
-	public void addCertificate(@RequestBody Certificate certificate, @PathVariable String caSerialNumber){
+	public void addCertificate(@RequestBody Certificate certificate, @PathVariable long caSerialNumber){
 		service.addCertificate(certificate, caSerialNumber);
 	}
 	
