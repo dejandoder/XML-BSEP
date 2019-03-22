@@ -22,7 +22,7 @@ public class CertificateController {
 	@Autowired
 	CertificateService service;
 	
-	@RequestMapping(method=RequestMethod.POST, consumes="application/json", value="/{caSerialNumeber}")
+	@RequestMapping(method=RequestMethod.POST, consumes="application/json", value="/{caSerialNumber}")
 	public void addCertificate(@RequestBody Certificate certificate, @PathVariable String caSerialNumber){
 		service.addCertificate(certificate, caSerialNumber);
 	}
@@ -47,7 +47,7 @@ public class CertificateController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value = "/revokeCertificat/{serialNumber}")
-	public ResponseEntity<List<CertificateDTO>> revokeCertificates(@PathVariable long serialNumber){
+	public ResponseEntity<List<CertificateDTO>> revokeCertificates(@PathVariable String serialNumber){
 		List<CertificateDTO> certificates = service.revokeCertificate(serialNumber);
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}

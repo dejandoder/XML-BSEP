@@ -1,6 +1,7 @@
 package bsep.kt1.keystores;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.security.cert.X509Certificate;
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 import bsep.kt1.data.IssuerData;
 
@@ -50,10 +52,18 @@ public class KeyStoreReader {
 	 */
 	public IssuerData readIssuerFromStore(String keyStoreFile, String alias, char[] password, char[] keyPass) {
 		try {
+			File f = ResourceUtils.getFile("classpath:"+keyStoreFile);
 			//Datoteka se ucitava
-			BufferedInputStream in = new BufferedInputStream(new FileInputStream(keyStoreFile));
+			BufferedInputStream in = new BufferedInputStream(new FileInputStream("C:\\Users\\miljan\\Desktop\\XML-BSEP\\kt1\\src\\main\\resources\\ks\\adminKS.jks"));
 			keyStore.load(in, password);
+			
+			System.out.println(keyStore.size());
+			
+			
+			
+			System.out.println(keyStore.containsAlias("1"));
 			//Iscitava se sertifikat koji ima dati alias
+
 			Certificate cert = keyStore.getCertificate(alias);
 			//Iscitava se privatni kljuc vezan za javni kljuc koji se nalazi na sertifikatu sa datim aliasom
 			PrivateKey privKey = (PrivateKey) keyStore.getKey(alias, keyPass);

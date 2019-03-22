@@ -141,7 +141,7 @@ $(document).ready(function($) {
 
      function isprazniLabele(){
       pokupiNonCASertifikate();
-      pokupiSertifikate();
+      pokupiCASertifikate();
      	$("#certificateCountryInput").val("");
      	$("#certificateCityInput").val("");
      	$("#certificateSoftwareModuleInput").val("");
@@ -162,7 +162,7 @@ $(document).ready(function($) {
         }
      }
      function dodajCASertifikate(data){
-        $('#signWithButton').html('<option id="root">root</option>')
+        $('#signWithButton').html('<option id="1">root</option>')
         for(var i=0; i<data.length; i++){
             $('#signWithButton').append(
                 '<option id="'+data[i].serialNumber+'">'+

@@ -28,6 +28,6 @@ public interface CertificateRepository extends JpaRepository<Certificate, Long> 
 	@Transactional
 	@Modifying
 	@Query("update Certificate certificate set certificate.revoked = true where certificate.serialNumber = :serialNumber")
-	public void revokeCertificat(@Param("serialNumber") long serialNumber);
+	public void revokeCertificat(@Param("serialNumber") String serialNumber);
 }
 
