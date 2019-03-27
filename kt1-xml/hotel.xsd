@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.uns.ac.rs/hotel-team1"
+    xmlns="http://www.ftn.uns.ac.rs/hotel-team1">
+
+    <xs:complexType name="smjestajna_jedinica">
+        <xs:sequence>
+            <xs:element name="tip_smjestaja">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="hotel"/>
+                        <xs:enumeration value="bed&amp;breakfast"/>
+                        <xs:enumeration value="apartman"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="kategorija">
+                <xs:simpleType>
+                    <xs:restriction base="xs:int">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="lokacija_smjestaja" type="lokacija_tip"/>
+            <xs:element maxOccurs="unbounded" name="dodatna_usluge" type="usluga_tip"/>
+            <xs:element name="opis" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" name="slika_smjestaja" type="xs:anyURI"/>
+            <xs:element maxOccurs="unbounded" name="plan_cijene" type="plan_cijene_tip"/>
+            <xs:element name="kapacitet_smjestajne_jedinice" type="xs:positiveInteger"/>
+            <xs:element name="skilja_mainjak"/>
+            <xs:element name="recenzija" type="rezenzija_tip"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="lokacija_tip">
+        <xs:sequence>
+            <xs:element name="geografska_sirina">
+                <xs:simpleType>
+                    <xs:restriction base="xs:float">
+                        <xs:minInclusive value="-90"/>
+                        <xs:maxInclusive value="90"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="geografska_duzina">
+                <xs:simpleType>
+                    <xs:restriction base="xs:float">
+                        <xs:minInclusive value="-180"/>
+                        <xs:maxInclusive value="180"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="usluga_tip">
+        <xs:sequence>
+            <xs:element name="tip_usluge">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="PARKING"/>
+                        <xs:enumeration value="WIFI"/>
+                        <xs:enumeration value="DORUCAK"/>
+                        <xs:enumeration value="POLU_PANSION"/>
+                        <xs:whiteSpace value="preserve"/>
+                        <xs:enumeration value="PANSION"/>
+                        <xs:enumeration value="ALL_INCLUSIVE"/>
+                        <xs:enumeration value="KUCNI_LJUBIMCI"/>
+                        <xs:enumeration value="TV"/>
+                        <xs:enumeration value="KUHINJA"/>
+                        <xs:enumeration value="PRIVATNO_KUPATILO"/>
+                        <xs:enumeration value="BESPLATNO_OTKAZIVANJE"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="status_usluge" type="xs:boolean"/>
+            <xs:element form="qualified" minOccurs="0" name="rok_za_otkazivanje"
+                type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="plan_cijene_tip">
+        <xs:sequence>
+            <xs:element name="od" type="xs:date"/>
+            <xs:element name="do" type="xs:date"/>
+            <xs:element name="cijena">
+                <xs:simpleType>
+                    <xs:restriction base="xs:float">
+                        <xs:minExclusive value="0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="rezenzija_tip">
+        <xs:sequence>
+            <xs:element name="komentar" type="xs:string"/>
+            <xs:element name="ocijena">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
