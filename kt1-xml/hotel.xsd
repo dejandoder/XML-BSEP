@@ -22,17 +22,18 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="lokacija_smjestaja" type="lokacija_tip"/>
-            <xs:element maxOccurs="unbounded" name="dodatna_usluge" type="usluga_tip"/>
+            <xs:element name="lokacija_smjestaja" type="lokacija"/>
+            <xs:element maxOccurs="unbounded" name="dodatna_usluga" type="usluga"/>
             <xs:element name="opis" type="xs:string"/>
             <xs:element maxOccurs="unbounded" name="slika_smjestaja" type="xs:anyURI"/>
-            <xs:element maxOccurs="unbounded" name="plan_cijene" type="plan_cijene_tip"/>
+            <xs:element maxOccurs="unbounded" name="ponuda" type="ponuda"/>
             <xs:element name="kapacitet_smjestajne_jedinice" type="xs:positiveInteger"/>
-            <xs:element name="skilja_mainjak"/>
-            <xs:element name="recenzija" type="rezenzija_tip"/>
+            <xs:element name="recenzija" type="rezenzija" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element minOccurs="0" name="rok_za_otkazivanje" type="xs:int"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="lokacija_tip">
+    <xs:complexType name="lokacija">
         <xs:sequence>
             <xs:element name="geografska_sirina">
                 <xs:simpleType>
@@ -52,9 +53,9 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="usluga_tip">
+    <xs:complexType name="usluga">
         <xs:sequence>
-            <xs:element name="tip_usluge">
+            <xs:element name="naziv_usluge">
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:enumeration value="PARKING"/>
@@ -72,12 +73,10 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
-            <xs:element name="status_usluge" type="xs:boolean"/>
-            <xs:element form="qualified" minOccurs="0" name="rok_za_otkazivanje"
-                type="xs:positiveInteger"/>
+            <xs:element name="id" type="xs:long"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="plan_cijene_tip">
+    <xs:complexType name="ponuda">
         <xs:sequence>
             <xs:element name="od" type="xs:date"/>
             <xs:element name="do" type="xs:date"/>
@@ -88,9 +87,10 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
+            <xs:element name="id" type="xs:long"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="rezenzija_tip">
+    <xs:complexType name="rezenzija">
         <xs:sequence>
             <xs:element name="komentar" type="xs:string"/>
             <xs:element name="ocijena">
@@ -100,6 +100,53 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
+            <xs:element name="registrovani_korisnik" type="registrovani_korisnik"/>
+            <xs:element name="id" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="korisnik">
+        <xs:sequence>
+            <xs:element name="ime" type="xs:string"/>
+            <xs:element name="prezime" type="xs:string"/>
+            <xs:element name="pmbr">
+                <xs:simpleType>
+                    <xs:restriction base="xs:long">
+                        <xs:pattern value="[0-9]{13}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="administrator">
+        <xs:complexContent>
+            <xs:extension base="korisnik"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="registrovani_korisnik">
+        <xs:complexContent>
+            <xs:extension base="korisnik"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="agent">
+        <xs:complexContent>
+            <xs:extension base="korisnik"/>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="rezervacija">
+        <xs:sequence>
+            <xs:element name="registrovani_korisnik" type="registrovani_korisnik"/>
+            <xs:element name="ponuda" type="ponuda"/>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="potvrdjena" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="poruka">
+        <xs:sequence>
+            <xs:element name="od" type="korisnik"/>
+            <xs:element name="za" type="korisnik"/>
+            <xs:element name="sadrzaj" type="xs:string"/>
+            <xs:element name="datum" type="xs:date"/>
+            <xs:element name="id" type="xs:long"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
