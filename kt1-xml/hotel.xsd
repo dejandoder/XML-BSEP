@@ -13,6 +13,13 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
+            <xs:element name="mejl">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
     <xs:element name="smjestajna_jedinica">
@@ -35,7 +42,6 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element ref="lokacija"/>
                 <xs:element maxOccurs="unbounded" ref="usluga"/>
                 <xs:element name="opis" type="xs:string"/>
                 <xs:element maxOccurs="unbounded" name="slika_smjestaja" type="xs:anyURI"/>
@@ -44,6 +50,32 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="recenzija"/>
                 <xs:element name="id" type="xs:long"/>
                 <xs:element minOccurs="0" name="rok_za_otkazivanje" type="xs:int"/>
+                <xs:element name="lokacija">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="geografska_sirina">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:float">
+                                        <xs:minInclusive value="-90"/>
+                                        <xs:maxInclusive value="90"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="geografska_duzina">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:float">
+                                        <xs:minInclusive value="-180"/>
+                                        <xs:maxInclusive value="180"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="drzava" type="xs:string"/>
+                            <xs:element name="mjesto" type="xs:string"/>
+                            <xs:element name="uliica" type="xs:string"/>
+                            <xs:element name="broj" type="xs:positiveInteger"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -125,29 +157,23 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="agent" type="korisnik"/>
-    <xs:element name="registrovani_korisnik" type="korisnik"/>
-    <xs:element name="administrator" type="korisnik"/>
-    <xs:element name="lokacija">
+    <xs:element name="agent">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="geografska_sirina">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:float">
-                            <xs:minInclusive value="-90"/>
-                            <xs:maxInclusive value="90"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-                <xs:element name="geografska_duzina">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:float">
-                            <xs:minInclusive value="-180"/>
-                            <xs:maxInclusive value="180"/>
-                        </xs:restriction>
-                    </xs:simpleType>
-                </xs:element>
-            </xs:sequence>
+            <xs:complexContent>
+                <xs:extension base="korisnik">
+                    <xs:sequence>
+                        <xs:element name="PIB">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="[0-9]{8}"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
         </xs:complexType>
     </xs:element>
+    <xs:element name="registrovani_korisnik" type="korisnik"/>
+    <xs:element name="administrator" type="korisnik"/>
 </xs:schema>
