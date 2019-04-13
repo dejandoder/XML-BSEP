@@ -1,5 +1,6 @@
 package bsep.kt1.keystores;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -35,6 +36,13 @@ public class KeyStoreWriter {
 		}
 	}
 	
+	
+	public KeyStoreWriter(KeyStore keyStore) {
+		super();
+		this.keyStore = keyStore;
+	}
+
+
 	public void loadKeyStore(String fileName, char[] password) {
 		try {
 			if(fileName != null) {
@@ -69,7 +77,21 @@ public class KeyStoreWriter {
 			e.printStackTrace();
 		}
 	}
-	
+	public void saveNewKeyStore(String fileName, char[] password) {
+		try {
+			keyStore.store(new FileOutputStream(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources"+fileName), password);
+		} catch (KeyStoreException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (CertificateException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public void write(String alias, PrivateKey privateKey, char[] password, Certificate certificate) {
 		try {
 			keyStore.setKeyEntry(alias, privateKey, password, new Certificate[] {certificate});

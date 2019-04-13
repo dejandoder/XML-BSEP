@@ -8,3 +8,4 @@ INSERT INTO certificate ( serial_number, ca, ca_serial_number, city, from_date, 
 INSERT INTO certificate ( serial_number, ca, ca_serial_number, city, from_date, revoked, software_module, to_date) VALUES (6, false, 0,'London','2019-03-06 01:00:00', false,'Data server','2021-01-02 01:00:00');
 INSERT INTO certificate ( serial_number, ca ,ca_serial_number, city, from_date, revoked, software_module, to_date) VALUES (7, false, 0,'Boston','2019-03-13 01:00:00', false,'Data server','2019-12-27 01:00:00');
 
+

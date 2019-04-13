@@ -65,18 +65,24 @@ public class CertificateService {
 		
 		X509Certificate cert = cg.generateCertificate(subjectData, issuerData);
 		
-		String keyStoreFile = "";
-		
-		if(certificate.isCa()) keyStoreFile = "ks/caKS.jks";
-		else if(certificate.getCity().toLowerCase().equals("boston")) keyStoreFile = "ks/bostonKS.jks";
-		else if(certificate.getCity().toLowerCase().equals("hongkong")) keyStoreFile = "ks/hongkongKS.jks";
-		else if(certificate.getCity().toLowerCase().equals("london")) keyStoreFile = "ks/londonKS.jks";
+		String keyStoreFile = "ks/"+certificate.getCity()+"_"+certificate.getSoftwareModule()+".jks";
 		
 		KeyStoreWriter ksw = new KeyStoreWriter();
-		ksw.loadKeyStore(keyStoreFile, "admin123".toCharArray());
-		ksw.write(subjectData.getSerialNumber(), subjectKey.getPrivate(), "admin123".toCharArray(), cert);
-		ksw.saveKeyStore(keyStoreFile, "admin123".toCharArray());
 		
+		ksw.loadKeyStore(null, "admin123".toCharArray());
+		ksw.write(subjectData.getSerialNumber(), subjectKey.getPrivate(), "admin123".toCharArray(), cert);
+		ksw.saveNewKeyStore(keyStoreFile, "admin123".toCharArray());
+		
+		
+		
+	/*	if(certificate.isCa()) keyStoreFile = "ks/caKS.jks";
+		else keyStoreFile = "ks/nonCA_KS.jks";
+		
+		KeyStoreWriter ksw1 = new KeyStoreWriter();
+		ksw1.loadKeyStore(keyStoreFile, "admin123".toCharArray());
+		ksw1.write(subjectData.getSerialNumber(), subjectKey.getPrivate(), "admin123".toCharArray(), cert);
+		ksw1.saveKeyStore(keyStoreFile, "admin123".toCharArray());
+		*/
 		
 		//initilizeKS();
 		
