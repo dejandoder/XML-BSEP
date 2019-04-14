@@ -4,7 +4,9 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -14,6 +16,7 @@ import java.security.UnrecoverableKeyException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.Enumeration;
 
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
@@ -89,7 +92,7 @@ public class KeyStoreReader {
 			//kreiramo instancu KeyStore
 			KeyStore ks = KeyStore.getInstance("JKS", "SUN");
 			//ucitavamo podatke
-			BufferedInputStream in = new BufferedInputStream(new FileInputStream(ResourceUtils.getFile("classpath:"+keyStoreFile)));
+			BufferedInputStream in = new BufferedInputStream(new FileInputStream(Paths.get(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources").toRealPath().toString()+"\\"+keyStoreFile));
 			ks.load(in, keyStorePass.toCharArray());
 			
 			if(ks.isKeyEntry(alias)) {
@@ -111,6 +114,15 @@ public class KeyStoreReader {
 		}
 		return null;
 	}
+    public Enumeration<String> aliases(){
+    	try {
+			keyStore.aliases();
+		} catch (KeyStoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	return null;
+    }
 	
 	/**
 	 * Ucitava privatni kljuc is KS fajla
