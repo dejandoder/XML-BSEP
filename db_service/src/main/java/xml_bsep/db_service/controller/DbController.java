@@ -13,4 +13,9 @@ public class DbController {
 		return "radi";
 	}
 	
+	@GetMapping("/admin")
+	public String test3(){
+		return "radi";
+	}
+	
 }

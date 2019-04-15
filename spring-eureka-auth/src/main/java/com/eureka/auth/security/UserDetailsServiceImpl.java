@@ -41,6 +41,7 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
 				// And used by auth manager to verify and check user authentication.
 				return new User(appUser.getUsername(), appUser.getPassword(), grantedAuthorities);
 			}
+			
 		}
 		
 		// If user not found. Throw this exception.
