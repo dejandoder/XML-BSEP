@@ -1,0 +1,5 @@
+package xml_bsep.db_service.controller;
+
+public class DbController {
+
+}
