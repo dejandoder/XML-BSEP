@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -12,6 +13,7 @@ import java.security.NoSuchProviderException;
 import java.security.PrivateKey;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.util.Enumeration;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
@@ -46,7 +48,7 @@ public class KeyStoreWriter {
 	public void loadKeyStore(String fileName, char[] password) {
 		try {
 			if(fileName != null) {
-				keyStore.load(new FileInputStream(ResourceUtils.getFile("classpath:"+fileName)), password);
+				keyStore.load(new FileInputStream(Paths.get(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources").toRealPath().toString()+"\\"+fileName), password);
 			} else {
 				//Ako je cilj kreirati novi KeyStore poziva se i dalje load, pri cemu je prvi parametar null
 				keyStore.load(null, password);
@@ -64,7 +66,7 @@ public class KeyStoreWriter {
 	
 	public void saveKeyStore(String fileName, char[] password) {
 		try {
-			keyStore.store(new FileOutputStream(ResourceUtils.getFile("classpath:"+fileName)), password);
+			keyStore.store(new FileOutputStream(Paths.get(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources").toRealPath().toString()+"\\"+fileName), password);
 		} catch (KeyStoreException e) {
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
@@ -79,7 +81,7 @@ public class KeyStoreWriter {
 	}
 	public void saveNewKeyStore(String fileName, char[] password) {
 		try {
-			keyStore.store(new FileOutputStream(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources"+fileName), password);
+			keyStore.store(new FileOutputStream(Paths.get(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources").toRealPath().toString()+"\\"+fileName), password);
 		} catch (KeyStoreException e) {
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
@@ -92,8 +94,37 @@ public class KeyStoreWriter {
 			e.printStackTrace();
 		}
 	}
+	
+	public String aliases(){
+    	/*try {
+		 return	keyStore.aliases().toString();
+		} catch (KeyStoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+    	return null;
+    }
+	
+	public KeyStore getKeyStore() {
+		return keyStore;
+	}
+
+
+	public void setKeyStore(KeyStore keyStore) {
+		this.keyStore = keyStore;
+	}
+
+
+	public void writeCertificate(String alias, Certificate certificate) {
+		try {		
+			keyStore.setCertificateEntry(alias, certificate);
+		} catch (KeyStoreException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void write(String alias, PrivateKey privateKey, char[] password, Certificate certificate) {
-		try {
+		try {		
 			keyStore.setKeyEntry(alias, privateKey, password, new Certificate[] {certificate});
 		} catch (KeyStoreException e) {
 			e.printStackTrace();
