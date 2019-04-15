@@ -14,7 +14,7 @@ public class AccController {
 	
 	@RequestMapping("/")
 	public String test(){
-		//String s = restTemplate.getForObject("http://db-service/", String.class);
-		return "kurcevina";
+		String s = restTemplate.getForObject("http://db-service/", String.class);
+		return s;
 	}
 }
