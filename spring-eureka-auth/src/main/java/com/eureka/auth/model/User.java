@@ -5,17 +5,20 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import com.eureka.common.security.UserRole;
 
 @Entity
 public class User {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
 	private long id;
 	private String name;
 	private String surname;
-	@Column(unique = true)
+	//@Column(unique = true)
 	private String username;
 	private String email;
 	private String password;

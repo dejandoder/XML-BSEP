@@ -17,8 +17,8 @@ public class AuthController {
 	@Autowired
 	UserRepository userRepository;
 
-	@Autowired
-	private BCryptPasswordEncoder encoder;
+	
+	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
 	@PostMapping(value = "addUsers")
 	public void addUsers() {
