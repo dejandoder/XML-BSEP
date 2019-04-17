@@ -2,6 +2,7 @@ package com.eureka.auth.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import com.eureka.auth.model.User;
 import com.eureka.auth.repository.UserRepository;
 import com.eureka.common.security.UserRole;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/")
 public class AuthController {
