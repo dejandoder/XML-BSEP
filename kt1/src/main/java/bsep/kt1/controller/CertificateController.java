@@ -2,6 +2,9 @@ package bsep.kt1.controller;
 
 import java.util.List;
 
+import org.apache.commons.text.StringEscapeUtils;
+import org.owasp.validator.html.AntiSamy;
+import org.owasp.validator.html.CleanResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +27,10 @@ public class CertificateController {
 	
 	@RequestMapping(method=RequestMethod.POST, consumes="application/json", value="/{caSerialNumber}")
 	public void addCertificate(@RequestBody Certificate certificate, @PathVariable long caSerialNumber){
+		/*String cleanSoftwareModul = filterString(certificate.getSoftwareModule());
+		String cleanCity = filterString(certificate.getCity());
+		certificate.setSoftwareModule(cleanSoftwareModul);
+		certificate.setCity(cleanCity);*/
 		service.addCertificate(certificate, caSerialNumber);
 	}
 	
@@ -52,6 +59,25 @@ public class CertificateController {
 	}
 	
 	
-	
+	private String filterString(String potentiallyDirtyParameter) {
+	    if (potentiallyDirtyParameter == null) {
+	        return null;
+	    }
+
+	    try {
+	    	
+	        Object antiSamy = new AntiSamy();
+	        
+			CleanResults cr = ((AntiSamy) antiSamy).scan(potentiallyDirtyParameter, AntiSamy.DOM);
+	        if (cr.getNumberOfErrors() > 0) {
+	            //log.warn("antisamy encountered problem with input: " + cr.getErrorMessages());
+	        }
+	        String str = StringEscapeUtils.unescapeHtml4(cr.getCleanHTML());
+	        str = str.replaceAll((((AntiSamy) antiSamy).scan("&nbsp;",AntiSamy.DOM)).getCleanHTML(),"");
+	        return str;
+	    } catch (Exception e) {
+	        throw new IllegalStateException(e.getMessage(), e);
+	    }
+	}
 	
 }

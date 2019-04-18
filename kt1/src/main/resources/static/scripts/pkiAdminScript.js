@@ -1,7 +1,10 @@
+var token = localStorage.getItem('jwt');
+if(token == null || token == undefined) window.location.href  = "../html/login.html"
+
 $(document).ready(function($) {
 
 
- 	 $.ajax({
+ 	 customAjax({
         method:'GET',
         url:'../certificate/getAll',
         contentType: 'application/json',
@@ -12,7 +15,7 @@ $(document).ready(function($) {
                 },
             });
 
- 	  $.ajax({
+ 	  customAjax({
         method:'GET',
         url:'../cl/getAllCl',
         contentType: 'application/json',
@@ -29,7 +32,7 @@ $(document).ready(function($) {
    pokupiNonCASertifikate();
 
    function pokupiNonCASertifikate(){
-      $.ajax({
+      customAjax({
         method:'GET',
         url:'../certificate/getAllNonCA',
         contentType: 'application/json',
@@ -42,7 +45,7 @@ $(document).ready(function($) {
    };
 
    function pokupiCASertifikate(){
-   $.ajax({
+   customAjax({
         method:'GET',
         url:'../certificate/getAllCA',
         contentType: 'application/json',
@@ -119,6 +122,8 @@ $(document).ready(function($) {
      		return;
      	}
      	
+
+      
      	
      	var b =$("#certificateCityInput").val();
      	var c =$("#certificateSoftwareModuleInput").val();
@@ -131,15 +136,13 @@ $(document).ready(function($) {
        
       	var sertifikat = new Object();
 
-      	sertifikat.city=b;
-      	sertifikat.softwareModule=c;
-      	sertifikat.fromDate=d;
-      	sertifikat.toDate=e;
-      	sertifikat.ca=f;
+      	sertifikat.city=sanatize(b);
+      	sertifikat.softwareModule=sanatize(c);
+      	sertifikat.fromDate=sanatize(d);
+      	sertifikat.toDate=sanatize(e);
       	
-
  
-              $.ajax({
+              customAjax({
               	  method:'POST',
                   url:'../certificate/'+g,
                   data: JSON.stringify(sertifikat),
@@ -147,7 +150,7 @@ $(document).ready(function($) {
                   success: function(data) {
                   	isprazniLabele();
 
-                  	 $.ajax({
+                  	 customAjax({
                   	  method:'GET',
                       url:'../certificate/getAll',
                       contentType: 'application/json',
@@ -210,7 +213,7 @@ $(document).ready(function($) {
         
         
 
-        $.ajax({
+        customAjax({
         method:'GET',
         url:'../cl/createLink/'+prva+'/'+druga,
         contentType: 'application/json',
@@ -277,7 +280,7 @@ $(document).ready(function($) {
 			  
 			  	$(this).prop("disabled",true);
 			  	
-			  	 $.ajax({
+			  	 customAjax({
               	  method:'POST',
                   url:'../certificate/revokeCertificat/'+$(this).attr('id'),
                   contentType: 'application/json',
@@ -287,4 +290,20 @@ $(document).ready(function($) {
               });
 			  	
 	 });
+
+      $("#logOut").click(function(event) {
+        /* Act on the event */
+        event.preventDefault();
+        localStorage.removeItem('jwt');
+        window.location.href = "/html/login.html";
+      });
+
+       function sanatize(input) {
+        var output = input.replace(/<script[^>]*?>.*?<\/script>/gi, '');
+               output.replace(/<[\/\!]*?[^<>]*?>/gi, '');
+               output.replace(/<style[^>]*?>.*?<\/style>/gi, '');
+               output.replace(/<![\s\S]*?--[ \t\n\r]*>/gi, '');
+          return output;
+      };
+
 });

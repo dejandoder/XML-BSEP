@@ -3,19 +3,25 @@
 <head>
   <title>PKI</title>
 
-	<!--za bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
   <!--za jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  	<!--za bootstrap-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <script src="../scripts/pkiAdminScript.js"></script>
-  <script src="../scripts/bootstrap-datetimepicker.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+  
+   <script src="../scripts/customAjax.js"></script>
+    <script src="../scripts/pkiAdminScript.js"></script> 
+   <script src="../scripts/bootstrap-datetimepicker.js"></script>
+
   <link rel="stylesheet" href="../css/datetimepicker.css" type="text/css">
 
   <!--za ikonice-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  
+ 
+
  
   <style type="text/css">
   	.tableFixHead {
@@ -54,7 +60,7 @@
           <li class="nav-item"> <a class="nav-link content-link" id="communicationNavLink" href="#">Communication</a> </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link" href="/html/login.html">Log out</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="/html/login.html" id="logOut">Log out</a> </li>
         </ul>
       </div>
     </div>
