@@ -20,6 +20,8 @@ import java.util.List;
 
 import org.bouncycastle.asn1.x500.X500NameBuilder;
 import org.bouncycastle.asn1.x500.style.BCStyle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,7 @@ import bsep.kt1.keystores.KeyStoreReader;
 import bsep.kt1.keystores.KeyStoreWriter;
 import bsep.kt1.model.Certificate;
 import bsep.kt1.repository.CertificateRepository;
+import bsep.kt1.utils.LoggingUtils;
 import bsep.kt1.certificates.*;
 
 
@@ -47,7 +50,10 @@ public class CertificateService {
 	@Autowired
 	KeyStoreReader reader;
 	
+	//Logger logger = LoggerFactory.getLogger(this.getClass());
 	
+	@Autowired
+	private UserService userService;
 	
 	public void addCertificate(Certificate certificate, long caSerialNumber) {
 		
@@ -85,6 +91,7 @@ public class CertificateService {
 		ksw1.write(subjectData.getSerialNumber(), subjectKey.getPrivate(), "admin123".toCharArray(), cert);
 		ksw1.saveKeyStore(keyStoreFile, "admin123".toCharArray());
 		
+		//logger.info(LoggingUtils.getNpMarker(), "{} created certificate {} signed by certificate ",userService.getCurrentUser().getEmail(),savedCertificate.getSerialNumber(),caSerialNumber);
 		
 		//initilizeKS();
 		

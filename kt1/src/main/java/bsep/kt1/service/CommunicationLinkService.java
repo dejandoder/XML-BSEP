@@ -4,6 +4,8 @@ import java.security.cert.Certificate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,12 @@ public class CommunicationLinkService {
 	
 	@Autowired
 	KeyStoreReader reader;
+	
+	//Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	@Autowired
+	private UserService userService;
+	
 	
 	public void save(CommunicationLink cl) {
 		clRepository.save(cl);
@@ -51,6 +59,8 @@ public class CommunicationLinkService {
 		ksw2.loadKeyStore(keyStoreFile2, "admin123".toCharArray());
 		ksw2.writeCertificate(serial1, certificate1);
 		ksw2.saveKeyStore(keyStoreFile2, "admin123".toCharArray());
+		
+		
 	}
 	
 	public List<CommunicatonLinkDTO> getAll(){
