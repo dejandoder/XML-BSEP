@@ -30,7 +30,7 @@ public class CertificateController {
 	@Autowired
 	CertificateService service;
 	
-	//Logger logger = LoggerFactory.getLogger(this.getClass());
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private UserService userService;
@@ -49,7 +49,7 @@ public class CertificateController {
 	@RequestMapping(method=RequestMethod.GET, value = "/getAll")
 	public ResponseEntity<List<CertificateDTO>>getAllCertificates(){
 		List<CertificateDTO> certificates = service.getAll();
-		//logger.info(LoggingUtils.getNpMarker(), "{} requested all certificates ",userService.getCurrentUser().getEmail());
+		logger.info("NP_EVENT PS {}",userService.getCurrentUser().getEmail());
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 	
@@ -57,7 +57,7 @@ public class CertificateController {
 	@RequestMapping(method=RequestMethod.GET, value = "/getAllCA")
 	public ResponseEntity<List<CertificateDTO>>getAllCACertificates(){
 		List<CertificateDTO> certificates = service.getAllCA();
-		//logger.info(LoggingUtils.getNpMarker(), "{} requested all CA certificates ",userService.getCurrentUser().getEmail());
+		logger.info("NP_EVENT PSCA {}",userService.getCurrentUser().getEmail());
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 
@@ -65,7 +65,7 @@ public class CertificateController {
 	@RequestMapping(method=RequestMethod.GET, value = "/getAllNonCA")
 	public ResponseEntity<List<CertificateDTO>>getAllNonCACertificates(){
 		List<CertificateDTO> certificates = service.getAllNonCA();
-		//logger.info(LoggingUtils.getNpMarker(), "{} requested all non CA certificates ",userService.getCurrentUser().getEmail());
+		logger.info("NP_EVENT PSNCA {}",userService.getCurrentUser().getEmail());
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 	
@@ -73,7 +73,7 @@ public class CertificateController {
 	@RequestMapping(method=RequestMethod.POST, value = "/revokeCertificat/{serialNumber}")
 	public ResponseEntity<List<CertificateDTO>> revokeCertificates(@PathVariable long serialNumber){
 		List<CertificateDTO> certificates = service.revokeCertificate(serialNumber);
-		//logger.info(LoggingUtils.getNpMarker(), "{} revokde {} certificate",userService.getCurrentUser().getEmail(),serialNumber);
+		logger.info("NP_EVENT RS {} {}",userService.getCurrentUser().getEmail(),serialNumber);
 		return new ResponseEntity<>(certificates, HttpStatus.OK);
 	}
 	
@@ -86,10 +86,9 @@ public class CertificateController {
 	    try {
 	    	
 	        Object antiSamy = new AntiSamy();
-	        
 			CleanResults cr = ((AntiSamy) antiSamy).scan(potentiallyDirtyParameter, AntiSamy.DOM);
 	        if (cr.getNumberOfErrors() > 0) {
-	            //log.warn("antisamy encountered problem with input: " + cr.getErrorMessages());
+	            logger.warn("SE_EVENT AS {} {} ", potentiallyDirtyParameter, cr.getErrorMessages());
 	        }
 	        String str = StringEscapeUtils.unescapeHtml4(cr.getCleanHTML());
 	        str = str.replaceAll((((AntiSamy) antiSamy).scan("&nbsp;",AntiSamy.DOM)).getCleanHTML(),"");

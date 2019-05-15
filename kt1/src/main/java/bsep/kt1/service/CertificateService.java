@@ -50,7 +50,7 @@ public class CertificateService {
 	@Autowired
 	KeyStoreReader reader;
 	
-	//Logger logger = LoggerFactory.getLogger(this.getClass());
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private UserService userService;
@@ -91,7 +91,7 @@ public class CertificateService {
 		ksw1.write(subjectData.getSerialNumber(), subjectKey.getPrivate(), "admin123".toCharArray(), cert);
 		ksw1.saveKeyStore(keyStoreFile, "admin123".toCharArray());
 		
-		//logger.info(LoggingUtils.getNpMarker(), "{} created certificate {} signed by certificate ",userService.getCurrentUser().getEmail(),savedCertificate.getSerialNumber(),caSerialNumber);
+		logger.info("NP_EVENT KS {} {} {} ",userService.getCurrentUser().getEmail(),savedCertificate.getSerialNumber(),caSerialNumber);
 		
 		//initilizeKS();
 		

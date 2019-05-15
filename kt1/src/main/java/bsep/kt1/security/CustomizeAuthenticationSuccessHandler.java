@@ -27,7 +27,7 @@ public class CustomizeAuthenticationSuccessHandler implements AuthenticationSucc
         
         boolean admin = false;
         
-        logger.info("AT onAuthenticationSuccess(...) function!");
+        //logger.info("AT onAuthenticationSuccess(...) function!");
         
         for (GrantedAuthority auth : authentication.getAuthorities()) {
             if ("ROLE_ADMIN".equals(auth.getAuthority())){

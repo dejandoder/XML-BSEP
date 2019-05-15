@@ -14,13 +14,19 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.operator.ContentSigner;
 import org.bouncycastle.operator.OperatorCreationException;
 import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bsep.kt1.data.IssuerData;
 import bsep.kt1.data.SubjectData;
 
 
 
+
 public class CertificateGenerator {
+	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+		
 	public CertificateGenerator() {}
 	
 	public X509Certificate generateCertificate(SubjectData subjectData, IssuerData issuerData) {
@@ -55,14 +61,19 @@ public class CertificateGenerator {
 			//Konvertuje objekat u sertifikat
 			return certConverter.getCertificate(certHolder);
 		} catch (CertificateEncodingException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IllegalStateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (OperatorCreationException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 		return null;

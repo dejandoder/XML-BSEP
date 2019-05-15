@@ -15,6 +15,8 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.util.Enumeration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
@@ -28,12 +30,16 @@ public class KeyStoreWriter {
 	// - Tajni kljucevi, koji se koriste u simetricnima siframa
 	private KeyStore keyStore;
 	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	public KeyStoreWriter() {
 		try {
 			keyStore = KeyStore.getInstance("JKS", "SUN");
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchProviderException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}
@@ -54,12 +60,16 @@ public class KeyStoreWriter {
 				keyStore.load(null, password);
 			}
 		} catch (NoSuchAlgorithmException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}
@@ -68,14 +78,19 @@ public class KeyStoreWriter {
 		try {
 			keyStore.store(new FileOutputStream(Paths.get(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources").toRealPath().toString()+"\\"+fileName), password);
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}
@@ -83,14 +98,19 @@ public class KeyStoreWriter {
 		try {
 			keyStore.store(new FileOutputStream(Paths.get(ResourceUtils.getFile("classpath:")+"\\..\\..\\src\\main\\resources").toRealPath().toString()+"\\"+fileName), password);
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}
@@ -119,6 +139,7 @@ public class KeyStoreWriter {
 		try {		
 			keyStore.setCertificateEntry(alias, certificate);
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}
@@ -127,6 +148,7 @@ public class KeyStoreWriter {
 		try {		
 			keyStore.setKeyEntry(alias, privateKey, password, new Certificate[] {certificate});
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}

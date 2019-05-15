@@ -31,7 +31,7 @@ public class CommunicationLinkController {
 	@Autowired
 	CertificateService certificateService;
 	
-	//Logger logger = LoggerFactory.getLogger(this.getClass());
+	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private UserService userService;
@@ -40,7 +40,7 @@ public class CommunicationLinkController {
 	@RequestMapping(method=RequestMethod.GET, value = "/getAllCl")
 	public ResponseEntity<List<CommunicatonLinkDTO>>getAllCl(){
 		List<CommunicatonLinkDTO> cls = service.getAll();
-		
+		logger.info("NP_EVENT PKV {}",userService.getCurrentUser().getEmail());
 		return new ResponseEntity<>(cls, HttpStatus.OK);
 	}
 	
@@ -53,7 +53,7 @@ public class CommunicationLinkController {
 		CommunicationLink link= new CommunicationLink(sertifikat1,sertifikat2);
 		service.save(link);
 	
-		//logger.info(LoggingUtils.getNpMarker(), "{} created communication link between {} and {} certificates ",userService.getCurrentUser().getEmail(), id, id2);
+		logger.info("NP_EVENT KKV {} {} {} ",userService.getCurrentUser().getEmail(), id, id2);
 		
 		
 		List<CommunicatonLinkDTO> cls = service.getAll();

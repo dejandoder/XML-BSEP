@@ -36,7 +36,7 @@ import bsep.kt1.utils.LoggingUtils;
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
 public class AuthenticationController {
 
-    //Logger logger = LoggerFactory.getLogger(this.getClass());
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 	
     @Autowired
 	TokenHelper tokenHelper;
@@ -59,7 +59,7 @@ public class AuthenticationController {
 			authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
 			//logger.info("User " + email + " successfully logged in");
 		} catch (AuthenticationException e) {
-			//logger.warn(LoggingUtils.getSeMarker(), "SE_EVENT {} failed login from ip {}", email, request.getRemoteAddr());
+			logger.warn("SE_EVENT NPK {} {}", email, request.getRemoteAddr());
 			return new ResponseEntity<String>("Wrong email/password.", HttpStatus.FORBIDDEN);
 		}
 
@@ -71,7 +71,7 @@ public class AuthenticationController {
 		String jws = tokenHelper.generateToken(user.getEmail());
 
 		//logger.info("aaaaaaaaaaaaaaddddddddddddddddddddddddddddddd0");
-		//logger.info(LoggingUtils.getSeMarker(), "SE_EVENT {} successfull login from ip {}", userService.getCurrentUser().getEmail(), request.getRemoteAddr());
+		logger.info("SE_EVENT PRK {} {}", userService.getCurrentUser().getEmail(), request.getRemoteAddr());
 		//logger.info(LoggingUtils.getSeMarker(), "NP_EVENT {} successfull login from ip {}", userService.getCurrentUser().getEmail(), request.getRemoteAddr());
 		
 		// Vrati token kao odgovor na uspesno autentifikaciju
@@ -97,6 +97,7 @@ public class AuthenticationController {
 		userDetailsService.changePassword(passwordChanger.oldPassword, passwordChanger.newPassword);
 		Map<String, String> result = new HashMap<>();
 		result.put("result", "success");
+		logger.info("SE_EVENT PL {}", userService.getCurrentUser().getEmail());
 		return ResponseEntity.accepted().body(result);
 	}
 

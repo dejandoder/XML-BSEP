@@ -20,6 +20,8 @@ import java.util.Enumeration;
 
 import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
 
@@ -34,12 +36,16 @@ public class KeyStoreReader {
 	// - Tajni kljucevi, koji se koriste u simetricnima siframa
 	private KeyStore keyStore;
 	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	public KeyStoreReader() {
 		try {
 			keyStore = KeyStore.getInstance("JKS", "SUN");
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchProviderException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 	}
@@ -59,7 +65,7 @@ public class KeyStoreReader {
 			BufferedInputStream in = new BufferedInputStream(new FileInputStream( ResourceUtils.getFile("classpath:"+keyStoreFile)));
 			keyStore.load(in, password);
 			
-			System.out.println(ResourceUtils.getFile("classpath:"+keyStoreFile));
+			//System.out.println(ResourceUtils.getFile("classpath:"+keyStoreFile));
 			
 			//Iscitava se sertifikat koji ima dati alias
 			Certificate cert = keyStore.getCertificate(alias);
@@ -69,16 +75,22 @@ public class KeyStoreReader {
 			X500Name issuerName = new JcaX509CertificateHolder((X509Certificate) cert).getSubject();
 			return new IssuerData(privKey, issuerName);
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (UnrecoverableKeyException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 		return null;
@@ -100,16 +112,22 @@ public class KeyStoreReader {
 				return cert;
 			}
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchProviderException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 		return null;
@@ -119,6 +137,7 @@ public class KeyStoreReader {
 			keyStore.aliases();
 		} catch (KeyStoreException e) {
 			// TODO Auto-generated catch block
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
     	return null;
@@ -140,18 +159,25 @@ public class KeyStoreReader {
 				return pk;
 			}
 		} catch (KeyStoreException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchProviderException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (NoSuchAlgorithmException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (CertificateException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (IOException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		} catch (UnrecoverableKeyException e) {
+			logger.warn("I {}", e);
 			e.printStackTrace();
 		}
 		return null;
