@@ -1,5 +1,0 @@
-package xml_bsep.zuul.security;
-
-public class SecurityTokenConfiguration {
-
-}

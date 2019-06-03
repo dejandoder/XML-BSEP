@@ -1,5 +1,0 @@
-package xml_bsep.auth_service.security;
-
-public class JwtUsernameAndPasswordAuthenticationFilter {
-
-}

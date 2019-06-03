@@ -1,8 +1,0 @@
-2019-05-14 12:25:16,293 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-3] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 12:25:16,820 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-6] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 12:25:21,925 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-7] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 12:25:39,792 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-2] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 12:25:43,976 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-9] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 22:41:08,715 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-9] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 22:41:11,110 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-1] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
-2019-05-14 22:41:18,772 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-9] SE_EVENT NPK admin@gmail.com 0:0:0:0:0:0:0:1

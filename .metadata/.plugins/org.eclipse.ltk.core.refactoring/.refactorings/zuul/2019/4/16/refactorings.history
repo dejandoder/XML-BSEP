@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;JwtConfig.java&apos; to &apos;auth_service/src/main/java/xml_bsep.auth_service.security&apos;&#x0D;&#x0A;- Original project: &apos;zuul&apos;&#x0D;&#x0A;- Destination element: &apos;auth_service/src/main/java/xml_bsep.auth_service.security&apos;&#x0D;&#x0A;- Original element: &apos;xml_bsep.zuul.security.JwtConfig.java&apos;" description="Copy compilation unit" destination="=auth_service/src\/main\/java&lt;xml_bsep.auth_service.security" element1="/src\/main\/java&lt;xml_bsep.zuul.security{JwtConfig.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1555244648595" units="1" version="1.0"/>
-</session>
