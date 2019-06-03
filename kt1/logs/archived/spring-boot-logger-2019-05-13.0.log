@@ -1,0 +1,38 @@
+2019-05-13 16:40:43,146 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 3436 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-13 16:40:43,152 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-05-13 16:40:43,154 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-13 16:42:03,501 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 81.421 seconds (JVM running for 82.916)
+2019-05-13 16:42:14,314 INFO bsep.kt1.controller.CertificateController [http-nio-11000-exec-9] admin@gmail.com requested all non CA certificates 
+2019-05-13 16:42:14,317 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-10] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
+2019-05-13 16:42:14,320 INFO bsep.kt1.controller.CertificateController [http-nio-11000-exec-8] admin@gmail.com requested all CA certificates 
+2019-05-13 16:42:14,423 INFO bsep.kt1.controller.CertificateController [http-nio-11000-exec-6] admin@gmail.com requested all certificates 
+2019-05-13 16:42:16,481 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-2] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
+2019-05-13 16:42:23,778 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-5] SE_EVENT admin@gmail.com failed login from ip 0:0:0:0:0:0:0:1
+2019-05-13 16:42:30,854 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-10] SE_EVENT admin@gmail.com failed login from ip 0:0:0:0:0:0:0:1
+2019-05-13 16:42:50,820 INFO bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-1] aaaaaaaaaaaaaaddddddddddddddddddddddddddddddd0
+2019-05-13 16:42:50,824 INFO bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-1] SE_EVENT admin@gmail.com successfull login from ip 0:0:0:0:0:0:0:1
+2019-05-13 16:42:50,829 INFO bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-1] NP_EVENT admin@gmail.com successfull login from ip 0:0:0:0:0:0:0:1
+2019-05-13 16:42:51,056 INFO bsep.kt1.controller.CertificateController [http-nio-11000-exec-9] admin@gmail.com requested all certificates 
+2019-05-13 16:42:51,067 INFO bsep.kt1.controller.CertificateController [http-nio-11000-exec-8] admin@gmail.com requested all CA certificates 
+2019-05-13 16:42:51,094 INFO bsep.kt1.controller.CertificateController [http-nio-11000-exec-6] admin@gmail.com requested all non CA certificates 
+2019-05-13 16:42:51,273 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-3] SE_EVENT Unauthorised access attempt to http://localhost:11000/favicon.ico from ip adress0:0:0:0:0:0:0:1
+2019-05-13 21:00:06,065 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 3572 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-13 21:00:06,071 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-05-13 21:00:06,072 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-13 21:00:22,290 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 17.291 seconds (JVM running for 18.906)
+2019-05-13 21:01:43,834 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 1116 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-13 21:01:43,840 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-05-13 21:01:43,841 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-13 21:01:59,745 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 16.956 seconds (JVM running for 18.542)
+2019-05-13 21:03:30,562 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 4736 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-13 21:03:30,567 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-05-13 21:03:30,569 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-13 21:05:04,367 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 94.992 seconds (JVM running for 96.813)
+2019-05-13 21:57:25,634 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 5764 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-13 21:57:25,639 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-05-13 21:57:25,640 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-13 21:57:36,184 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 11.542 seconds (JVM running for 13.0)
+2019-05-13 23:25:57,796 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 3892 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-13 23:25:57,803 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.3.RELEASE, Spring v5.1.5.RELEASE
+2019-05-13 23:25:57,804 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-13 23:26:06,579 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 9.917 seconds (JVM running for 11.633)

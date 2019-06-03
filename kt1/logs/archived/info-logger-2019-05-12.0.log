@@ -1,0 +1,3 @@
+2019-05-12 21:28:44,345 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on miljan-PC with PID 1400 (C:\Users\miljan\Desktop\XML-BSEP\kt1\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\kt1)
+2019-05-12 21:28:44,353 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-05-12 21:28:55,942 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 12.479 seconds (JVM running for 14.162)
