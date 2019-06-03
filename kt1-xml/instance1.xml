@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accomodation_unit xmlns="http://www.ftn.uns.ac.rs/hotel-team1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/hotel-team1 file:/C:/Users/miljan/Desktop/XML-BSEP/kt1-xml/hotel.xsd">
+    <accomodation_type>
+        <id>-1073741773</id>
+        <name>name0</name>
+    </accomodation_type>
+    <kategorija>3</kategorija>
+    <service>
+        <name>PARKING</name>
+        <id>-1073741773</id>
+        <price>50</price>
+    </service>
+    <service>
+        <name>PARKING</name>
+        <id>-1073741773</id>
+        <price>50</price>
+    </service>
+    <description>description0</description>
+    <image>http://www.oxygenxml.com/</image>
+    <image>http://www.oxygenxml.com/</image>
+    <offer>
+        <from>2006-05-04</from>
+        <to>2006-05-04</to>
+        <price>50.5</price>
+        <id>-1073741773</id>
+    </offer>
+    <offer>
+        <from>2006-05-04</from>
+        <to>2006-05-04</to>
+        <price>50.5</price>
+        <id>-1073741773</id>
+    </offer>
+    <kapacitet_smjestajne_jedinice>50</kapacitet_smjestajne_jedinice>
+    <id>-1073741773</id>
+    <location>
+        <longitude>0</longitude>
+        <lattitude>0</lattitude>
+        <contry>contry0</contry>
+        <city>city0</city>
+        <street>street0</street>
+        <number>50</number>
+    </location>
+</accomodation_unit>
