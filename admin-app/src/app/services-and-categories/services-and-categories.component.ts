@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccService } from '../model/AccService';
+import { AccServicesService } from '../service/AccServicesService';
 
 @Component({
   selector: 'app-services-and-categories',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesAndCategoriesComponent implements OnInit {
 
-  constructor() { }
+  services : AccService[];
+
+  constructor(private accServicesService : AccServicesService) {
+    accServicesService.getAllAccServices().subscribe(
+      data => {
+        this.services = data;
+      }
+    
+    )
+  }
 
   ngOnInit() {
   }

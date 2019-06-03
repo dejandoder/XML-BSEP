@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   navLinks = [
     {path: "users", label: "Users"},
     {path: "comments", label: "Comments"},
-    {paths: "services&categories", label: "Services and categories"}
+    {path: "services&categories", label: "Services and categories"}
   ]
 
   constructor() { }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { RequestOptions } from '@angular/http';
 
@@ -12,12 +12,13 @@ import { AuthService } from './service/AuthService';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guards/AuthGuard';
 import { RandomGuard } from './guards/RandomGuard';
-import { AuthRequestOptions } from './requestOptions/AuthRequestOptions';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { UsersComponent } from './users/users.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ServicesAndCategoriesComponent } from './services-and-categories/services-and-categories.component';
+import { AccServicesService } from './service/AccServicesService';
+import { AuthInterceptor } from './http-interceptor/AuthInterceptor';
 
 @NgModule({
   declarations: [
@@ -39,11 +40,9 @@ import { ServicesAndCategoriesComponent } from './services-and-categories/servic
   providers: [
     AuthService,
     AuthGuard,
+    AccServicesService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     RandomGuard,
-    {
-      provide: RequestOptions, 
-      useClass: AuthRequestOptions
-    }
   ],
   bootstrap: [AppComponent]
 })
