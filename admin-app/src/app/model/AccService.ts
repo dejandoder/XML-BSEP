@@ -1,4 +1,4 @@
 export class AccService{
-    name : string;
+    name : string = "";
     id : number;
 }

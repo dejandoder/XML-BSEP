@@ -1,5 +1,12 @@
 export class User{
-    username: string = "";
-    password: string = "";
-    loggedIn : boolean = false;
+    name : string = "";
+    surname : string = "";
+    id : number;
+    email : string = "";
+    password : string = "";
+    username : string = "";
+    pib : number;
+    status : string = "ACTIVATED";
 }
+
+

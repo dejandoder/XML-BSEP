@@ -19,6 +19,9 @@ import { CommentsComponent } from './comments/comments.component';
 import { ServicesAndCategoriesComponent } from './services-and-categories/services-and-categories.component';
 import { AccServicesService } from './service/AccServicesService';
 import { AuthInterceptor } from './http-interceptor/AuthInterceptor';
+import { AccTypeService } from './service/AccTypeService';
+import {MatIconModule} from '@angular/material/icon';
+import { UserService } from './service/UserService';
 
 @NgModule({
   declarations: [
@@ -35,12 +38,16 @@ import { AuthInterceptor } from './http-interceptor/AuthInterceptor';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule,
+    FormsModule
   ],
   providers: [
     AuthService,
     AuthGuard,
     AccServicesService,
+    AccTypeService,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     RandomGuard,
   ],

@@ -1,3 +1,67 @@
-<p>
-  {{services[0].name}}  
-</p>
+<div class="container">
+  <div class="row">
+
+    <!--Kolona za prikaz servisa smjestaja-->
+    <div class="col-5 py-4">
+      <div class="row"><h5 class="label text-left text-capitalize">Services:</h5></div>
+      <div class="row pr-4">
+        <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
+            <div *ngFor = "let service of services" class="list-group-item" style="display: block">
+              <div class="row">
+                <div class="col-7 pt-2">
+                  <p class="font-italic">{{service.name}}</p>
+                </div>
+                <div class="col-5">
+                  <button class="btn btn-link" (click)="deleteAccService(service)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-danger" *ngIf="servicesError">There are accomodations with selected service!</p>
+          <p class="text-danger" *ngIf="addServiceError">Service with given name already exists!</p>
+        </div>
+        <div class="row pt-4"><h5 class="label text-left text-capitalize">New service:</h5></div>
+        <div class="row pt-1">
+          <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control mr-5" id="newAccServiceInput" [(ngModel)]="newService.name"/>
+                <button class="btn btn-primary ml-5" (click)="addNewAccService()">Add</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-1"></div>
+
+    <!--Kolona za prikaz tipova smjestaja-->
+    <div class="col-5 py-4"> 
+        <div class="row"><h5 class="label text-left text-capitalize">Accomodation types:</h5></div>
+        <div class="row pr-4">
+          <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
+              <div *ngFor = "let type of accTypes" class="list-group-item" style="display: block">
+                <div class="row">
+                  <div class="col-7 pt-2">
+                    <p class="font-italic">{{type.name}}</p>
+                  </div>
+                  <div class="col-5">
+                    <button class="btn btn-link"(click)="deleteAccType(type)">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-danger" *ngIf="typesError">There are accomodations with selected type!</p>
+            <p class="text-danger" *ngIf="addTypeError">Type with given name already exists!</p>
+          </div>
+          <div class="row pt-4"><h5 class="label text-left text-capitalize">New accomodation type:</h5></div>
+          <div class="row pt-1">
+            <div class="form-inline">
+              <div class="form-group">
+                  <input type="text" class="form-control mr-5" [(ngModel)]="newAccType.name" id="newAccTypeInput"/>
+                  <button class="btn btn-primary ml-5" (click)="addNewAccType()">Add</button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+</div>

@@ -1,3 +1,89 @@
-<p>
-  users works!
-</p>
+<div class="container">
+  <div class="row">
+
+    <!--KOLONA ZA OBICNE KORISNIKE-->
+    <div class="col-6 py-4">
+        <div class="row"><h5 class="label text-left text-capitalize">Users:</h5></div>
+        <div class="row pr-4">
+          <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
+              <div *ngFor = "let user of regularUsers" class="list-group-item" style="display: block">
+                <div class="row">
+                  <div class="col-1 pt-2">
+                      <mat-icon aria-hidden="false" aria-label="Example home icon" >person</mat-icon>
+                  </div>
+                  <div class="col-5" >
+                    <p class="font-italic ml-2" style="display: inline">{{user.name}}</p>
+                    <p class="font-italic ml-3" style="display: inline">{{user.surname}}</p><br>
+                    <p class="font-italic ml-2" style="display: inline">{{user.email}}</p>
+                  </div>
+                  <div class="col-2">
+                    <button class="btn btn-link" *ngIf = "user.status == 'NOT_ACTIVATED'" >Activate</button>
+                  </div>
+                  <div class="col-2">
+                      <button class="btn btn-link" *ngIf = "user.status == 'ACTIVATED'" >Block</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div> 
+    </div>
+      
+  
+    
+    <!--KOLONA ZA AGENTE-->
+    <div class="col-6 py-4">
+        <div class="row">
+          <h5 class="label text-left text-capitalize">Agents:</h5>
+        </div>
+        <div class="row pr-4">
+          <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
+              <div  *ngFor="let agent of agents" class="list-group-item" style="display: block">
+                <div class="row">
+                  <div class="col-1 pt-2">
+                      <mat-icon aria-hidden="false" aria-label="Example home icon" >person</mat-icon>
+                  </div>
+                  <div class="col-11 pt-2" >
+                    <p class="font-italic ml-2" style="display: inline">{{agent.name}}</p>
+                    <p class="font-italic ml-3" style="display: inline">{{agent.surname}}</p>
+                    <p class="font-italic ml-4" style="display: inline">PIB: {{agent.pib}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row pt-3 mt-2"><h5 class="label text-left text-capitalize">Add new agent:</h5></div>
+        <div class="row">
+            <form class="form w-100 pr-4">
+                <div class="row">
+                  <div class="col form-group">
+                    <input type="text" class="form-control my-input" placeholder="First name" [(ngModel)]="newAgent.name" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="col form-group">
+                    <input type="text" class="form-control my-input" placeholder="Last name" [(ngModel)]="newAgent.surname" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                      <input type="text" class="form-control my-input" placeholder="Username" [(ngModel)]="newAgent.username" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="col form-group">
+                      <input type="password" class="form-control my-input" placeholder="Password" [(ngModel)]="newAgent.password" [ngModelOptions]="{standalone: true}">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                      <input type="number" class="form-control my-input" placeholder="PIB 8 digits" (change)="onPIBChange()" id="pib" [(ngModel)]="newAgent.pib" [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="col form-group">
+                      <button class="btn btn-primary form float-right" (click)="addNewAgent()">Add</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="text-danger pl-3" *ngIf="addAgentError">Agent with given name or PIB already exist!</p>
+                </div>
+              </form>
+        </div>
+    </div>
+    
+  </div>
+</div>
