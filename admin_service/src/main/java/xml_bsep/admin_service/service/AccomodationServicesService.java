@@ -20,4 +20,14 @@ public class AccomodationServicesService {
 	public List<com.eureka.common.model.AccomodationService> findAll(){
 		return repository.findAll();
 	}
+	
+	public List<com.eureka.common.model.AccomodationService> delete(long id){
+		repository.delete(id);
+		return repository.findAll();
+	}
+	
+	public boolean checkIfServicesExsist(String name) {
+		if(repository.findAccomodationServiceByName(name).isEmpty()) return false;
+		else return true;
+	}
 }

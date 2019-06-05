@@ -25,5 +25,7 @@ public interface AccomodationTypeRepository extends JpaRepository<AccomodationTy
 	@Modifying
 	@Query("delete from AccomodationType where id = :id")
 	public void delete(@Param("id") long id);
-
+	
+	public List<AccomodationType> findAccomodationTypeByName(@Param("name") String name);
+	
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,11 @@ public class UserController {
 	
 	@PostMapping(value = "/addNewAgent", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> addNewAgent(@RequestBody User user){
+		//provjera jedinstvenosti piba i username
+		if(!service.checkAgentsByPibAndName(user.getUsername(), user.getPib()).isEmpty()) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		
 		user.setRole(UserRole.AGENT);
+		user.setStatus(UserStatus.ACTIVATED);
 		service.save(user);
 		List<UserDTO> usersDTO = service.getAgents();
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
@@ -53,5 +58,17 @@ public class UserController {
 			service.blockUser(user.getId());
 			return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
 		}
+	}
+	
+	@GetMapping(value = "/getAgents")
+	public ResponseEntity<List<UserDTO>> getAgents(){
+		List<UserDTO> usersDTO = service.getAgents();
+		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/getRegularUsers")
+	public ResponseEntity<List<UserDTO>> getRegularUsers(){
+		List<UserDTO> usersDTO = service.getUsers();
+		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 }

@@ -22,15 +22,6 @@ public class UserService {
 		return repository.save(user);
 	}
 	
-	public List<UserDTO> getAgents(){
-		List<User> users = repository.findAll();
-		List<UserDTO> usersDTO= new ArrayList<>();
-		for (User user : users) {
-			if(user.getRole() == UserRole.AGENT)usersDTO.add(new UserDTO(user));
-		}
-		return usersDTO;
- 	}
-	
 	public List<UserDTO> getAll(){
 		List<User> users = repository.findAll();
 		List<UserDTO> usersDTO= new ArrayList<>();
@@ -52,5 +43,27 @@ public class UserService {
 	
 	public User findUserById(long id) {
 		return repository.findUserById(id);
+	}
+	
+	public List<UserDTO> getAgents(){
+		List<User> users = repository.findUserByRole(UserRole.AGENT);
+		List<UserDTO> usersDTO= new ArrayList<>();
+		for (User user : users) {
+			usersDTO.add(new UserDTO(user));
+		}
+		return usersDTO;
+	}
+	
+	public List<UserDTO> getUsers(){
+		List<User> users = repository.findUserByRole(UserRole.USER);
+		List<UserDTO> usersDTO= new ArrayList<>();
+		for (User user : users) {
+			usersDTO.add(new UserDTO(user));
+		}
+		return usersDTO;
+	}
+	
+	public List<User> checkAgentsByPibAndName(String username, String pib){
+		return repository.checkAgentsByPibAndName(username, pib);
 	}
 }

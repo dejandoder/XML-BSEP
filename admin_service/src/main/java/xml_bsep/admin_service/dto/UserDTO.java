@@ -1,10 +1,5 @@
 package xml_bsep.admin_service.dto;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlElement;
-
 import com.eureka.common.model.User;
 import com.eureka.common.model.UserStatus;
 import com.eureka.common.security.UserRole;
@@ -19,7 +14,7 @@ public class UserDTO {
     protected String pib;
     protected UserRole role;
     protected UserStatus status;
-    
+  
     public UserDTO(User user) {
     	this.name = user.getName();
     	this.surname = user.getSurname();
@@ -29,6 +24,7 @@ public class UserDTO {
     	this.pib = user.getPib();
     	this.role = user.getRole();
     	this.status = user.getStatus();
+    	
     }
 	    
     public UserDTO() {
@@ -98,5 +94,5 @@ public class UserDTO {
 	public void setStatus(UserStatus status) {
 		this.status = status;
 	}
-   
+
 }

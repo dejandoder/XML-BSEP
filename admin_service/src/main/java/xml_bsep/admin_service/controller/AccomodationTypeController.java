@@ -2,11 +2,10 @@ package xml_bsep.admin_service.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +23,7 @@ public class AccomodationTypeController {
 	
 	@PostMapping(value = "/addNewAccType", consumes = "application/json")
 	public ResponseEntity<List<AccomodationType>> addNewAccType(@RequestBody AccomodationType accType){
-		
+		if(service.checkIfTypeExsists(accType.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		//odje bi sada trebale neke sql parsiarnje provjere i te pizdarije
 		service.save(accType);
 		List<AccomodationType> accTypes = service.findAll();
@@ -32,8 +31,16 @@ public class AccomodationTypeController {
 	}
 	
 	@PostMapping(value = "/removeAccType")
-	public ResponseEntity<List<AccomodationType>> removeAccType(@PathParam("id") long id){
-		List<AccomodationType> accTypes = service.delete(id);
+	public ResponseEntity<List<AccomodationType>> removeAccType(@RequestBody AccomodationType accType){
+		//treba uraditi provjeru da li ima smjestaja sa zadatim tipom
+		//return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		List<AccomodationType> accTypes = service.delete(accType.getId());
+		return new ResponseEntity<>(accTypes, HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/getAllAccTypes")
+	public ResponseEntity<List<AccomodationType>> getAllAccTypes(){
+		List<AccomodationType> accTypes = service.findAll();
 		return new ResponseEntity<>(accTypes, HttpStatus.OK);
 	}
 	

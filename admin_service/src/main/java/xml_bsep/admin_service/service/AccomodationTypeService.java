@@ -27,6 +27,11 @@ public class AccomodationTypeService {
 		repository.delete(id);
 		return repository.findAll();
 	}
+	
+	public boolean checkIfTypeExsists(String name) {
+		if(repository.findAccomodationTypeByName(name).isEmpty()) return false;
+		else return true;
+	}
 }
 
 

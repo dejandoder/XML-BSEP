@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.eureka.common.model.User;
+import com.eureka.common.security.UserRole;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
@@ -22,5 +23,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	public void blockUser(@Param("id") long id);
 	
 	public User findUserById(long id);
+	
+	public List<User> findUserByRole(UserRole role);
+	
+	@Query("select user from User user where user.role = com.eureka.common.security.UserRole.AGENT and ( user.username = :username or user.pib = :pib )")
+	public List<User> checkAgentsByPibAndName(@Param("username") String username, @Param("pib") String pib);
 	
 }
