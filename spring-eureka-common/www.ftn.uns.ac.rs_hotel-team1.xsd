@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.ftn.uns.ac.rs/hotel-team1" xmlns:tns="http://www.ftn.uns.ac.rs/hotel-team1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="accomodation_service">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="id" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="accomodation_type">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:long"/>
+        <xs:element name="name" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="accomodation_unit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tns:accomodation_type"/>
+        <xs:element name="category" type="xs:int"/>
+        <xs:element name="service" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="description" type="xs:string"/>
+        <xs:element name="image" type="xs:anyURI" maxOccurs="unbounded"/>
+        <xs:element ref="tns:pricePlan" maxOccurs="unbounded"/>
+        <xs:element name="capacity" type="xs:positiveInteger"/>
+        <xs:element name="recension" nillable="true" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="comment" type="xs:string"/>
+              <xs:element name="rating" type="xs:int"/>
+              <xs:element name="id" type="xs:long"/>
+              <xs:element name="approved" type="xs:boolean" default="false"/>
+              <xs:element name="user" type="tns:user"/>
+              <xs:element ref="tns:accomodation_unit"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="id" type="xs:long"/>
+        <xs:element name="canceling_period" type="xs:int" minOccurs="0"/>
+        <xs:element name="location">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="longitude" type="xs:float"/>
+              <xs:element name="lattitude" type="xs:float"/>
+              <xs:element name="contry" type="xs:string"/>
+              <xs:element name="city" type="xs:string"/>
+              <xs:element name="street" type="xs:string"/>
+              <xs:element name="number" type="xs:positiveInteger"/>
+              <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="add_new_accomodation_unit_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="agentId" type="xs:long"/>
+        <xs:element name="accUnit">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="tns:accomodation_type"/>
+              <xs:element name="category" type="xs:int"/>
+              <xs:element name="service" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="id" type="xs:long"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="description" type="xs:string"/>
+              <xs:element name="image" type="xs:anyURI" maxOccurs="unbounded"/>
+              <xs:element ref="tns:pricePlan" maxOccurs="unbounded"/>
+              <xs:element name="capacity" type="xs:positiveInteger"/>
+              <xs:element name="recension" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="comment" type="xs:string"/>
+                    <xs:element name="rating" type="xs:int"/>
+                    <xs:element name="id" type="xs:long"/>
+                    <xs:element name="approved" type="xs:boolean" default="false"/>
+                    <xs:element name="user" type="tns:user"/>
+                    <xs:element ref="tns:accomodation_unit"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="id" type="xs:long"/>
+              <xs:element name="canceling_period" type="xs:int" minOccurs="0"/>
+              <xs:element name="location">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="longitude" type="xs:float"/>
+                    <xs:element name="lattitude" type="xs:float"/>
+                    <xs:element name="contry" type="xs:string"/>
+                    <xs:element name="city" type="xs:string"/>
+                    <xs:element name="street" type="xs:string"/>
+                    <xs:element name="number" type="xs:positiveInteger"/>
+                    <xs:element name="id" type="xs:long"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="add_new_accomodation_unit_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+        <xs:element name="accUnitId" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="agent_reservation_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="agentId" type="xs:long"/>
+        <xs:element ref="tns:reservation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="agent_reservation_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+        <xs:element name="reservationId" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="approve_reservation_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reservationId" type="xs:long"/>
+        <xs:element name="approved" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="approve_reservation_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="confirm_reservation_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reservationId" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="confirm_reservation_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="messsage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fromUser" type="tns:user"/>
+        <xs:element name="toUser" type="tns:user"/>
+        <xs:element name="content" type="xs:string"/>
+        <xs:element name="date" type="xs:date"/>
+        <xs:element name="id" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pricePlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fromDate" type="xs:date"/>
+        <xs:element name="toDate" type="xs:date"/>
+        <xs:element name="pricePerNight" type="xs:float"/>
+        <xs:element name="id" type="xs:long"/>
+        <xs:element ref="tns:accomodation_unit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="recension">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="comment" type="xs:string"/>
+        <xs:element name="rating" type="xs:int"/>
+        <xs:element name="id" type="xs:long"/>
+        <xs:element name="approved" type="xs:boolean" default="false"/>
+        <xs:element name="user" type="tns:user"/>
+        <xs:element ref="tns:accomodation_unit"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="reservation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="user" type="tns:user"/>
+        <xs:element name="id" type="xs:long"/>
+        <xs:element name="status" type="tns:ReservationStatus"/>
+        <xs:element name="fromDate" type="xs:date"/>
+        <xs:element name="toDate" type="xs:date"/>
+        <xs:element name="agentReserved" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="send_message_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="message">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fromUser" type="tns:user"/>
+              <xs:element name="toUser" type="tns:user"/>
+              <xs:element name="content" type="xs:string"/>
+              <xs:element name="date" type="xs:date"/>
+              <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="send_message_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="messageId" type="xs:long"/>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sync_messages_request">
+    <xs:complexType>
+      <xs:all/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sync_messages_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="messages" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fromUser" type="tns:user"/>
+              <xs:element name="toUser" type="tns:user"/>
+              <xs:element name="content" type="xs:string"/>
+              <xs:element name="date" type="xs:date"/>
+              <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sync_recensions_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="recensions" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="comment" type="xs:string"/>
+              <xs:element name="rating" type="xs:int"/>
+              <xs:element name="id" type="xs:long"/>
+              <xs:element name="approved" type="xs:boolean" default="false"/>
+              <xs:element name="user" type="tns:user"/>
+              <xs:element ref="tns:accomodation_unit"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sync_reservations_request">
+    <xs:complexType>
+      <xs:all/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sync_reservations_response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reservations" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user" type="tns:user"/>
+              <xs:element name="id" type="xs:long"/>
+              <xs:element name="status" type="tns:ReservationStatus"/>
+              <xs:element name="fromDate" type="xs:date"/>
+              <xs:element name="toDate" type="xs:date"/>
+              <xs:element name="agentReserved" type="xs:boolean"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="status" type="tns:SOAPResponseStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="surname" type="xs:string"/>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+      <xs:element name="username" type="xs:string"/>
+      <xs:element name="PIB" type="xs:string"/>
+      <xs:element name="role" type="tns:UserRole"/>
+      <xs:element name="status" type="tns:UserStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="syncRecensionsRequest">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:simpleType name="UserRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="USER"/>
+      <xs:enumeration value="ADMIN"/>
+      <xs:enumeration value="AGENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="UserStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOT_ACTIVATED"/>
+      <xs:enumeration value="ACTIVATED"/>
+      <xs:enumeration value="BLOCKED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ReservationStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="CONFIRMED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SOAPResponseStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS"/>
+      <xs:enumeration value="ERROR"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

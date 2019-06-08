@@ -107,5 +107,13 @@ public class ObjectFactory {
     public Message createMesssage() {
         return new Message();
     }
+    
+    public AddNewAccomodationUnitRequest createAddNewAccomodationUnitRequst() {
+    	return new AddNewAccomodationUnitRequest();
+    }
+    
+    public AddNewAccomodationUnitResponse createAddNewAccomodationResponse() {
+    	return new AddNewAccomodationUnitResponse();
+    }
 
 }

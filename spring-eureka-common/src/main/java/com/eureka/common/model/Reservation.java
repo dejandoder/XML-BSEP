@@ -55,7 +55,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "", propOrder = {
     "user",
     "id",
-    "confirmed",
+    "status",
     "fromDate",
     "toDate",
     "agentReserved"
@@ -72,7 +72,8 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
     
-    protected boolean confirmed;
+    @XmlElement(required = true)
+    protected ReservationStatus status;
     
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
@@ -82,6 +83,7 @@ public class Reservation {
     @XmlSchemaType(name = "date")
     protected Date toDate;
     
+    @XmlElement(required = true)
     protected boolean agentReserved;
 
     public Reservation() {
@@ -127,23 +129,7 @@ public class Reservation {
     public void setId(long value) {
         this.id = value;
     }
-
-    /**
-     * Gets the value of the confirmed property.
-     * 
-     */
-    public boolean isConfirmed() {
-        return confirmed;
-    }
-
-    /**
-     * Sets the value of the confirmed property.
-     * 
-     */
-    public void setConfirmed(boolean value) {
-        this.confirmed = value;
-    }
-
+    
     /**
      * Gets the value of the fromDate property.
      * 
@@ -156,7 +142,15 @@ public class Reservation {
         return fromDate;
     }
 
-    /**
+    public ReservationStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(ReservationStatus status) {
+		this.status = status;
+	}
+
+	/**
      * Sets the value of the fromDate property.
      * 
      * @param value

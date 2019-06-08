@@ -81,6 +81,7 @@ public class Message {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(required = true)
     protected long id;
 
     public Message() {

@@ -58,7 +58,8 @@ import javax.xml.bind.annotation.XmlType;
     "contry",
     "city",
     "street",
-    "number"
+    "number",
+    "id"
 })
 public class Location {
 
@@ -81,6 +82,7 @@ public class Location {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(required = true)
     protected long id;
 
     public Location() {

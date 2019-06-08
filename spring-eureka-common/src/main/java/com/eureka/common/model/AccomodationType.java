@@ -50,7 +50,8 @@ public class AccomodationType {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected long id;
+	@XmlElement(required = true)
+	protected long id;
    
     @XmlElement(required = true)
     protected String name;

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sync_reservations_request xmlns="http://www.ftn.uns.ac.rs/hotel-team1"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/hotel-team1 file:/C:/Users/miljan/Desktop/XML-BSEP/spring-eureka-common/www.ftn.uns.ac.rs_hotel-team1.xsd"/>

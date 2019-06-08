@@ -17,8 +17,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-import com.eureka.common.security.UserRole;
-
 
 /**
  * <p>Java class for user complex type.
@@ -103,8 +101,10 @@ public class User {
     @XmlElement(name = "PIB", required = true)
     protected String pib;
 
+    @XmlElement(required = true)
     protected UserRole role;
     
+    @XmlElement(required = true)
     protected UserStatus status;
     
     public User() {
@@ -278,5 +278,5 @@ public class User {
 	public void setStatus(UserStatus status) {
 		this.status = status;
 	}
-  
+	
 }

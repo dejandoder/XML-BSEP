@@ -62,7 +62,7 @@ import javax.xml.bind.annotation.XmlType;
     "name",
     "id"
 })
-@XmlRootElement(name = "service")
+@XmlRootElement(name = "accomodation_service")
 public class AccomodationService {
 
     @XmlElement(required = true)
@@ -70,6 +70,7 @@ public class AccomodationService {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(required = true)
     protected long id;
     
     public AccomodationService() {

@@ -43,8 +43,10 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
 		.authorizeRequests()
 		    // allow all POST requests 
 		    .antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
+		    .anyRequest().permitAll();
 		    // any other requests must be authenticated
-		    .anyRequest().authenticated();
+		    //.antMatchers("/admin/**").hasRole("ADMIN")
+		    //.anyRequest().authenticated();
 	}
 	
 	// Spring has UserDetailsService interface, which can be overriden to provide our implementation for fetching user from database (or any other source).

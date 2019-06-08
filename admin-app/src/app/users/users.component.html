@@ -17,10 +17,10 @@
                     <p class="font-italic ml-2" style="display: inline">{{user.email}}</p>
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-link" *ngIf = "user.status == 'NOT_ACTIVATED'" >Activate</button>
+                    <button class="btn btn-link" *ngIf = "user.status == 'NOT_ACTIVATED'" (click)="activateUser(user)" >Activate</button>
                   </div>
                   <div class="col-2">
-                      <button class="btn btn-link" *ngIf = "user.status == 'ACTIVATED'" >Block</button>
+                      <button class="btn btn-link" *ngIf = "user.status == 'ACTIVATED'" (click)="blockUser(user)" >Block</button>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="row">
                     <div class="col form-group">
-                      <input type="number" class="form-control my-input" placeholder="PIB 8 digits" (change)="onPIBChange()" id="pib" [(ngModel)]="newAgent.pib" [ngModelOptions]="{standalone: true}">
+                      <input type="number" class="form-control my-input" placeholder="PIB 8 digits" id="pib" [(ngModel)]="newAgent.pib" [ngModelOptions]="{standalone: true}">
                     </div>
                     <div class="col form-group">
                       <button class="btn btn-primary form float-right" (click)="addNewAgent()">Add</button>

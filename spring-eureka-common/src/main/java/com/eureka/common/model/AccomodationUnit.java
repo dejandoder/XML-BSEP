@@ -100,7 +100,7 @@ import javax.xml.bind.annotation.XmlType;
     "category",
     "service",
     "description",
-    "image",
+   // "image",
     "pricePlan",
     "capacity",
     "recension",
@@ -142,6 +142,7 @@ public class AccomodationUnit {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(required = true)
     protected long id;
     
     @XmlElement(name = "canceling_period")

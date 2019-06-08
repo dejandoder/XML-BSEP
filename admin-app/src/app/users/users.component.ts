@@ -69,4 +69,26 @@ export class UsersComponent implements OnInit {
       )
     }
   }
+
+  blockUser(user : User){
+    this.userService.blockUser(user).subscribe(
+      data => {
+        this.userService.getRegularUsers().subscribe(
+          data => {
+            this.regularUsers = data;
+          })
+      }
+    )
+  }
+
+  activateUser(user : User){
+    this.userService.activateUser(user).subscribe(
+      data => {
+        this.userService.getRegularUsers().subscribe(
+          data => {
+            this.regularUsers = data;
+          })
+      }
+    )
+  }
 }

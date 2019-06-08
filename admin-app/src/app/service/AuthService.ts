@@ -17,7 +17,7 @@ export class AuthService{
     }
 
     login(user : User) : Observable<boolean>{
-        return this.http.post<any>("api/auth", {username: user.username, password: user.password})
+        return this.http.post<any>("api/auth/login", {username: user.username, password: user.password})
         .pipe(
           tap(response => this.doLoginUser(response)),
           mapTo(true),

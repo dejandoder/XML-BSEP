@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.eureka.common.security.UserRole;
+import com.eureka.common.model.UserRole;
 
 @Entity
 public class User {

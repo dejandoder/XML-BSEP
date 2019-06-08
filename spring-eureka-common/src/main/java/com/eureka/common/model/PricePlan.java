@@ -60,8 +60,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "from",
-    "to",
+    "fromDate",
+    "toDate",
     "pricePerNight",
     "id",
     "accomodationUnit"
@@ -81,6 +81,7 @@ public class PricePlan {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @XmlElement(required = true)
     protected long id;
     
     @ManyToOne

@@ -12,14 +12,22 @@ export class UserService{
     }
 
     getAgents(){
-        return this.http.get<User[]>("api/admin-service/getAgents");
+        return this.http.get<User[]>("api/auth/admin/getAgents");
     }
 
     getRegularUsers(){
-        return this.http.get<User[]>("api/admin-service/getRegularUsers");
+        return this.http.get<User[]>("api/auth/admin/getRegularUsers");
     }
 
     addAgent(newAgent : User){
-        return this.http.post<User[]>("api/admin-service/addNewAgent",newAgent);
+        return this.http.post<User[]>("api/auth/admin/addNewAgent",newAgent);
+    }
+
+    activateUser(user : User){
+        return this.http.post<User[]>("api/auth/admin/activateUser", user)
+    }
+
+    blockUser(user : User){
+        return this.http.post<User[]>("api/auth/admin/blockUser", user)
     }
 }

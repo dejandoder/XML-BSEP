@@ -11,14 +11,14 @@ export class AccTypeService{
     }
 
     getAllAccTypes(){
-        return this.http.get<AccomodationType[]>("api/admin-service/getAllAccTypes");
+        return this.http.get<AccomodationType[]>("api/acc/getAllAccTypes");
     }
 
     addNewAccType(newAccType : AccomodationType){
-        return this.http.post<AccomodationType[]>("api/admin-service/addNewAccType",newAccType);
+        return this.http.post<AccomodationType[]>("api/acc/admin/addNewAccType",newAccType);
     }
 
     removeAccType(accType : AccomodationType){
-        return this.http.post<AccomodationType[]>("api/admin-service/removeAccType",accType);
+        return this.http.post<AccomodationType[]>("api/acc/admin/removeAccType",accType);
     }
 }
