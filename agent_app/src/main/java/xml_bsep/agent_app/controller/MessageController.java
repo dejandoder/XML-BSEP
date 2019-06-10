@@ -29,4 +29,5 @@ public class MessageController {
 	public ResponseEntity<SendMessageResponse> sendMessage(){
 		return new ResponseEntity<>(client.sendMessage(new SendMessageRequest()), HttpStatus.OK);
 	}
+	
 }

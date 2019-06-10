@@ -55,5 +55,4 @@ public class JwtConfig {
 	public String getSecret() {
 		return secret;
 	}
-    
 }

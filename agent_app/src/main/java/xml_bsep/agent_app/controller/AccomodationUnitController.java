@@ -13,7 +13,7 @@ import xml_bsep.agent_app.soap_clients.AccomodationServiceSoapClient;
 
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/")
 public class AccomodationUnitController {
 
 	@Autowired
