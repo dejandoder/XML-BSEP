@@ -125,9 +125,8 @@ public class AccomodationUnit {
     @XmlElement(required = true)
     protected String description;
     
-   /* @XmlElement(required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected List<String> image;*/
+    @XmlElement(required = true)
+    protected List<Image> images;
     
     @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
     @XmlElement(required = true)
