@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  links =  [
-  { path: 'login'/*, component: LoginComponent */},
-  { path: 'user',/* component: UserComponent */},
-  { path: 'admin',/* component: AdminComponent */},
+  
+  navLinks = [
+    {path: "accomodations", label: "My accomodations"},
+    {path: "messages", label: "Messages"}
   ]
   constructor(private router : Router) { 
     

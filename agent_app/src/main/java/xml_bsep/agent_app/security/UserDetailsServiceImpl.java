@@ -24,9 +24,7 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
 		
 		xml_bsep.agent_app.model.User user = repository.findByUsername(username);
 		
-
 		if(user != null) {
-				
 				// Remember that Spring needs roles to be in this format: "ROLE_" + userRole (i.e. "ROLE_ADMIN")
 				// So, we need to set it to that format, so we can verify and compare roles (i.e. hasRole("ADMIN")).
 				List<GrantedAuthority> grantedAuthorities = AuthorityUtils

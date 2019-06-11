@@ -13,19 +13,30 @@ import { RandomGuard } from './guards/RandomGuard';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AccomodationsComponent } from './components/accomodations/accomodations.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AddAccomodationComponent } from './components/add-accomodation/add-accomodation.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    AccomodationsComponent,
+    MessagesComponent,
+    AddAccomodationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [
     AuthService,
