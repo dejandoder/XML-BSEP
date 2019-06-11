@@ -98,12 +98,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "accomodationType",
     "category",
-    "service",
+    "services",
     "description",
-   // "image",
-    "pricePlan",
+   // "images",
+    "pricePlans",
     "capacity",
-    "recension",
+    "recensions",
     "id",
     "cancelingPeriod",
     "location"
@@ -120,7 +120,7 @@ public class AccomodationUnit {
     
     @ManyToMany
     @XmlElement(required = true)
-    protected List<AccomodationService> service;
+    protected List<AccomodationService> services;
     
     @XmlElement(required = true)
     protected String description;
@@ -131,14 +131,14 @@ public class AccomodationUnit {
     
     @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
     @XmlElement(required = true)
-    protected List<PricePlan> pricePlan;
+    protected List<PricePlan> pricePlans;
     
     @XmlElement(required = true)
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger capacity;
     
     @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL)
-    protected List<Recension> recension;
+    protected List<Recension> recensions;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -215,11 +215,11 @@ public class AccomodationUnit {
      * 
      * 
      */
-    public List<AccomodationService> getService() {
-        if (service == null) {
-            service = new ArrayList<AccomodationService>();
+    public List<AccomodationService> getServices() {
+        if (services == null) {
+            services = new ArrayList<AccomodationService>();
         }
-        return this.service;
+        return this.services;
     }
 
     /**
@@ -297,11 +297,11 @@ public class AccomodationUnit {
      * 
      * 
      */
-    public List<PricePlan> getPricePlan() {
-        if (pricePlan == null) {
-            pricePlan = new ArrayList<PricePlan>();
+    public List<PricePlan> getPricePlans() {
+        if (pricePlans == null) {
+            pricePlans = new ArrayList<PricePlan>();
         }
-        return this.pricePlan;
+        return this.pricePlans;
     }
 
     /**
@@ -351,10 +351,10 @@ public class AccomodationUnit {
      * 
      */
     public List<Recension> getRecension() {
-        if (recension == null) {
-            recension = new ArrayList<Recension>();
+        if (recensions == null) {
+            recensions = new ArrayList<Recension>();
         }
-        return this.recension;
+        return this.recensions;
     }
 
     /**
