@@ -1,0 +1,19 @@
+.btn{min-width:250px;}
+
+.btn-sml {
+    padding: 10px 10px;
+    font-size: 22px;
+    border-radius: 8px;
+}
+
+.lb-sm {
+    font-size: 12px;
+  }
+
+  .active-cyan-2 input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #4dd0e1;
+    box-shadow: 0 1px 0 0 #4dd0e1;
+    }
+.moje{
+    margin-right: 20px
+}
