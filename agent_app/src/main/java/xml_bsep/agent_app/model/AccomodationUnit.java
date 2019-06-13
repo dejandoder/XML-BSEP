@@ -19,6 +19,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -100,13 +101,15 @@ import javax.xml.bind.annotation.XmlType;
     "category",
     "services",
     "description",
-   // "images",
+    "images",
     "pricePlans",
     "capacity",
     "recensions",
-    "id",
+     "id",
     "cancelingPeriod",
-    "location"
+     "location",
+     "agent",
+     "name"
 })
 @XmlRootElement(name = "accomodation_unit")
 public class AccomodationUnit {
@@ -125,6 +128,7 @@ public class AccomodationUnit {
     @XmlElement(required = true)
     protected String description;
     
+    @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
     @XmlElement(required = true)
     protected List<Image> images;
     
@@ -147,10 +151,18 @@ public class AccomodationUnit {
     @XmlElement(name = "canceling_period")
     protected Integer cancelingPeriod;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "location_id")
     @XmlElement(required = true)
     protected Location location;
+    
+    @ManyToOne
+    @JoinColumn(name = "agent_id")
+    @XmlElement(required = true)
+    protected User agent;
+    
+    @XmlElement(required = true)
+    protected String name;
 
     /**
      * Gets the value of the accomodationType property.
@@ -420,4 +432,43 @@ public class AccomodationUnit {
         this.location = value;
     }
 
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+
+	public List<Recension> getRecensions() {
+		return recensions;
+	}
+
+	public void setRecensions(List<Recension> recensions) {
+		this.recensions = recensions;
+	}
+
+	public User getAgent() {
+		return agent;
+	}
+
+	public void setAgent(User agent) {
+		this.agent = agent;
+	}
+
+	public void setServices(List<AccomodationService> services) {
+		this.services = services;
+	}
+
+	public void setPricePlans(List<PricePlan> pricePlans) {
+		this.pricePlans = pricePlans;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}  
 }

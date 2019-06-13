@@ -101,7 +101,7 @@ public class PricePlan {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public Date getFrom() {
+    public Date getFromDate() {
         return fromDate;
     }
 
@@ -113,7 +113,7 @@ public class PricePlan {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setFrom(Date value) {
+    public void setFromDate(Date value) {
         this.fromDate = value;
     }
 
@@ -125,7 +125,7 @@ public class PricePlan {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public Date getTo() {
+    public Date getToDate() {
         return toDate;
     }
 
@@ -137,7 +137,7 @@ public class PricePlan {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setTo(Date value) {
+    public void setToDate(Date value) {
         this.toDate = value;
     }
 
