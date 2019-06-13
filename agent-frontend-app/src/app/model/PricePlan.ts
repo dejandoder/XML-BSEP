@@ -1,6 +1,7 @@
 export class PricePlan{
-    fromDate : string;
-    toDate : string;
-    pricePerNight : number;
+    fromDate : Date;
+    toDate : Date;
+    pricePerNight : number = 0;
     id : number;
+    accID : number;
 }

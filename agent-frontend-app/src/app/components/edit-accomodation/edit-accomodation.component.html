@@ -1,0 +1,69 @@
+<div class="container-fluid"> 
+
+  <div class="row mb-5">
+
+    <div class="col-6"> 
+      <h4>{{accUnit.name}}</h4>
+    </div>
+
+    <div class="col-6 " style="max-height: 320px; max-width: 500px"> 
+        <carousel >
+            <slide *ngFor="let image of images">
+              <img [src]="image" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
+    </div>
+    
+  </div>
+  <div>
+      <tabset [justified]="true">
+          <tab heading="Price plans">
+            <div class="row pt-4">
+               <div class="col-6">
+                    <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
+                    <div  *ngFor="let plan of pricePlans" class="list-group-item" style="display: block">
+                      <div class="row">
+                        <div class="col-10 pt-2" >
+                          <p class="font-italic ml-2" style="display: inline">From <b>{{plan.fromDate}}</b></p>
+                          <p class="font-italic ml-3" style="display: inline">to</p>
+                          <p class="font-italic ml-2" style="display: inline"><b>{{plan.toDate}}</b></p>
+                          <p class="font-italic ml-3" style="display: inline">price per night </p>
+                          <p class="font-italic ml-2" style="display: inline">{{plan.pricePerNight}}$</p><br>
+                        </div>
+                        <div class="col-2 pb-2">
+                            <button class="btn btn-link" (click)="deletePricePlan(plan)">Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="row pl-2"><h6>Add new plan:</h6></div> 
+                    <div class="row">
+                          <div class="col-5">
+                            <input type="text" readonly=true placeholder="Select date range"class="form-control" bsDaterangepicker [(ngModel)]="dates" [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
+                          </div>
+                          <div class="col-3">
+                            <input type="number" id="pricePerNightInput" class="form-control mx-1" placeholder="Price" [(ngModel)]="newPricePlan.pricePerNight">
+                          </div>
+                          <div class="col-2">
+                            <button class="btn btn-primary" (click)="addPricePlanClick()">Add</button>
+                          </div> 
+                    </div>
+                    <div class="row">
+                      <p class="text-danger">{{ppErrorMessage}}</p>
+                    </div>
+                </div>
+            </div>
+          </tab>
+          <tab heading="Reservations">
+
+          </tab>
+          <tab heading="Recensions">
+            
+          </tab>
+        </tabset>
+  </div>
+
+</div>
