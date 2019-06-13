@@ -4,21 +4,28 @@
       <!--KOLONA ZA PRIKAZ AGENTOVIH SMJESTAJA-->
       <div class="col-3">
           <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
-              <div class="list-group-item" style="display: block">
+              <div *ngFor="let unit of accUnits" class="list-group-item" style="display: block">
                 <div class="row">
-                  <div class="col-7 pt-2">
-                    <p class="font-italic">Smjestaj</p>
+                  <div class="col-6 pt-2">
+                    <p class="font-italic">{{unit.name}}</p>
                   </div>
-                  <div class="col-5">
-                    <button class="btn btn-link">Show</button>
+                  <div class="col-3">
+                    <button class="btn btn-link" (click)="editUnitClick(unit)">Edit</button>
                   </div>
+                  <div class="col-3">
+                      <button class="btn btn-link" (click)="deleteUnitClick(unit)">Delete</button>
+                    </div>
                 </div>
               </div>
+          </div>
+          <div class="d-flex flex-row-reverse">
+          <button class="btn btn-primary mt-3" (click)="addNewAccClick()">Add new accomodation</button>
           </div>
       </div>
 
       <div class="col-9">
-        <app-add-accomodation></app-add-accomodation>
+      <app-add-accomodation *ngIf="showAddAcc"></app-add-accomodation>
+      <app-edit-accomodation *ngIf="!showAddAcc"></app-edit-accomodation>
       </div>
 
     </div>

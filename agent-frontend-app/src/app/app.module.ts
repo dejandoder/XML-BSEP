@@ -19,6 +19,14 @@ import { AccomodationsComponent } from './components/accomodations/accomodations
 import { MessagesComponent } from './messages/messages.component';
 import { AddAccomodationComponent } from './components/add-accomodation/add-accomodation.component';
 
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'
+import { AccomodationUnitService } from './service/AccomodationUnitService';
+import {MatIconModule} from '@angular/material/icon';
+import { ImageService } from './service/ImageService';
+import { EditAccomodationComponent } from './components/edit-accomodation/edit-accomodation.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { PricePlanService } from './service/PricePlanService';
 
 
 @NgModule({
@@ -28,7 +36,8 @@ import { AddAccomodationComponent } from './components/add-accomodation/add-acco
     HomeComponent,
     AccomodationsComponent,
     MessagesComponent,
-    AddAccomodationComponent
+    AddAccomodationComponent,
+    EditAccomodationComponent
   ],
   imports: [
     BrowserModule,
@@ -36,11 +45,19 @@ import { AddAccomodationComponent } from './components/add-accomodation/add-acco
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    FormsModule,
+    MatIconModule,
+    MatTabsModule,
+    BsDatepickerModule.forRoot(),
+    CarouselModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [
     AuthService,
     AuthGuard,
+    AccomodationUnitService,
+    ImageService,
+    PricePlanService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     RandomGuard,
   ],

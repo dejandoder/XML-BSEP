@@ -2,15 +2,20 @@ package xml_bsep.agent_app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+
 
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -18,7 +23,8 @@ import javax.xml.bind.annotation.XmlType;
     "id",
     "name",
     "type",
-    "pic"
+    "pic",
+    "accomodationUnit"
 })
 @XmlRootElement(name = "image")
 public class Image {
@@ -39,6 +45,11 @@ public class Image {
 	    @Column(name="pic")
 	    @XmlElement(required = true)
 	    protected byte[] pic;
+		
+		@ManyToOne
+		@JoinColumn(name = "accomodation_unit_id", foreignKey = @ForeignKey(name = "IMAGE_ACCOMODATION_UNIT_ID_FK"))
+		@XmlElement(required = true)
+		protected AccomodationUnit accomodationUnit;
 		
 		public Image() {
 			// TODO Auto-generated constructor stub
@@ -83,5 +94,12 @@ public class Image {
 		public void setPic(byte[] pic) {
 			this.pic = pic;
 		}
-		
+
+		public AccomodationUnit getAccomodationUnit() {
+			return accomodationUnit;
+		}
+
+		public void setAccomodationUnit(AccomodationUnit accomodationUnit) {
+			this.accomodationUnit = accomodationUnit;
+		}				
 }
