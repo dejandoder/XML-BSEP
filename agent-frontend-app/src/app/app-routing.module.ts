@@ -6,6 +6,8 @@ import { RandomGuard } from './guards/RandomGuard';
 import { HomeComponent } from './components/home/home.component';
 import { AccomodationsComponent } from './components/accomodations/accomodations.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AddAccomodationComponent } from './components/add-accomodation/add-accomodation.component';
+import { EditAccomodationComponent } from './components/edit-accomodation/edit-accomodation.component';
 
 
 const routes: Route []= [
@@ -17,7 +19,15 @@ const routes: Route []= [
     canActivate: [RandomGuard],
     children : [
       {path: '', redirectTo: 'accomodations', pathMatch: 'full'},
-      {path: "accomodations", component: AccomodationsComponent},
+      {path: "accomodations",
+       component: AccomodationsComponent,
+       children : [
+        {path: '', redirectTo: 'addAccomodations', pathMatch: 'full'},
+        {path: "addAccomodations",component: AddAccomodationComponent},
+        {path: "editAccomodation", component: EditAccomodationComponent},
+        {path: '**', redirectTo: 'addAccomodations', pathMatch: 'full'},
+      ]
+      },
       {path: "messages", component: MessagesComponent},
       {path: '**', redirectTo: 'accomodations', pathMatch: 'full'},
     ]

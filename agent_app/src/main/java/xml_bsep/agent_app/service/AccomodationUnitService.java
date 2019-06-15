@@ -41,5 +41,18 @@ public class AccomodationUnitService {
 		return repository.getOne(id);
 	}
 	
+	public List<AccomodationUnitDTO> getAll(){
+		List<AccomodationUnit> accUnits = repository.findAll();
+		
+		if(accUnits == null) return null;
+		
+		List<AccomodationUnitDTO> accUnitsDTO = new ArrayList<>();
+		
+		for (AccomodationUnit accUnit : accUnits) {
+			accUnitsDTO.add(new AccomodationUnitDTO(accUnit));
+		}
+		
+		return accUnitsDTO;
+	}
 }
 

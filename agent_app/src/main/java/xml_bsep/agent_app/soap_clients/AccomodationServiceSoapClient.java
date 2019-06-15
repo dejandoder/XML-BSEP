@@ -23,5 +23,4 @@ public class AccomodationServiceSoapClient extends WebServiceGatewaySupport {
 		
 		return response;
 	}
-	
 }

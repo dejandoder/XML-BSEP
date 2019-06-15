@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccomodationUnit } from 'src/app/model/AccomodationUnit';
 import { AccomodationUnitService } from 'src/app/service/AccomodationUnitService';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-accomodations',
   templateUrl: './accomodations.component.html',
@@ -12,7 +12,7 @@ export class AccomodationsComponent implements OnInit {
   accUnits : AccomodationUnit[] = [];
   showAddAcc : boolean = true;
 
-  constructor(private accService : AccomodationUnitService, private router : Router) {
+  constructor(private accService : AccomodationUnitService, private router : Router, private route: ActivatedRoute) {
     accService.getAllAccUnits().subscribe(
       data => {
         this.accUnits = data;
@@ -34,11 +34,11 @@ export class AccomodationsComponent implements OnInit {
  
   editUnitClick(accUnit : AccomodationUnit){
     this.accService.setEditingAccUnit(accUnit);
-    this.showAddAcc = false;
+    this.router.navigate(['editAccomodation'], {relativeTo: this.route});
   }
  
   addNewAccClick(){
-    this.showAddAcc = true;
+    this.router.navigate(['addAccomodation'], {relativeTo: this.route})
   }
 
 }

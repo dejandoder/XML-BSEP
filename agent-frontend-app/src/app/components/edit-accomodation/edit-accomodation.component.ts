@@ -22,26 +22,14 @@ export class EditAccomodationComponent implements OnInit {
 
   constructor(private accService : AccomodationUnitService, private imageService : ImageService, private ppService : PricePlanService ) {
     this.accUnit = accService.getEditingAccUnit();
-    imageService.getImagesIdsByAccomodationUnit(this.accUnit).subscribe(
-      data => {
-        for(let id of data){
-          imageService.getImage(id).subscribe(
-            data =>{
-              let reader = new FileReader();
-              reader.addEventListener("load", () => {
-              this.images.push(reader.result as string);
-              }, false);
-              reader.readAsDataURL(data);
+    this.loadAccUnit();
+    setInterval(
+        () => {
+          if(this.accUnit.id != accService.getEditingAccUnit().id){
+             this.loadAccUnit();
             }
-          )
-        }
-      });
-      ppService.getPricePlansByAccomodationUnit(this.accUnit.id).subscribe(
-        data =>{
-          this.pricePlans = data;
-        }
-      )
-
+          },
+          1000);
    }
 
   ngOnInit() {
@@ -79,4 +67,30 @@ export class EditAccomodationComponent implements OnInit {
 
   }
 
+  loadAccUnit(){
+    this.images = [];
+    this.newPricePlan = new PricePlan();
+    this.ppErrorMessage = "";
+    this.dates = [];
+    this.accUnit = this.accService.getEditingAccUnit();
+      this.imageService.getImagesIdsByAccomodationUnit(this.accUnit).subscribe(
+        data => {
+          for(let id of data){
+            this.imageService.getImage(id).subscribe(
+              data =>{
+                let reader = new FileReader();
+                reader.addEventListener("load", () => {
+                this.images.push(reader.result as string);
+              }, false);
+              reader.readAsDataURL(data);
+            }
+          )
+        }
+      });
+      this.ppService.getPricePlansByAccomodationUnit(this.accUnit.id).subscribe(
+        data =>{
+          this.pricePlans = data;
+        }
+      )
+  }
 }

@@ -1,6 +1,7 @@
 package xml_bsep.agent_app.dto;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 import xml_bsep.agent_app.model.AccomodationType;
 import xml_bsep.agent_app.model.AccomodationUnit;
@@ -18,6 +19,10 @@ public class AccomodationUnitDTO {
     protected Integer cancelingPeriod;
     protected Location location;
     protected String name;
+    protected ArrayList<String> images;
+    protected long distance;
+    protected float rating;
+    protected float price;
     
     public AccomodationUnitDTO(AccomodationUnit accUnit){
     	this.id = accUnit.getId();
@@ -28,6 +33,7 @@ public class AccomodationUnitDTO {
     	this.capacity = accUnit.getCapacity();
     	this.location = accUnit.getLocation();
     	this.name = accUnit.getName();
+    	this.images = new ArrayList<>();
     }
   
     public AccomodationUnitDTO() {
@@ -97,5 +103,40 @@ public class AccomodationUnitDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
- 
+
+	public ArrayList<String> getImages() {
+		return images;
+	}
+
+	public void setImages(ArrayList<String> images) {
+		this.images = images;
+	}
+	
+	public void addImage(String image) {
+		images.add(image);
+	}
+
+	public long getDistance() {
+		return distance;
+	}
+
+	public void setDistance(long distance) {
+		this.distance = distance;
+	}
+
+	public float getRating() {
+		return rating;
+	}
+
+	public void setRating(float rating) {
+		this.rating = rating;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}	
 }
