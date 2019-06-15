@@ -1,0 +1,132 @@
+<div class="container-fluid">
+
+
+  <div class="row mt-3">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+        <div class="row px-2">
+          <div class="col-4 pr-0">
+            <input type="text" readonly=true placeholder="Check-in  -  Check-out"class="form-control" [(ngModel)]="searchDTO.dates" bsDaterangepicker [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
+          </div>
+          <div class="col-3 px-1">
+              <input type="number"  placeholder="Persons" [(ngModel)]="searchDTO.persons"  class="form-control ml-2">
+            </div>
+          <div class="col-3 px-1">
+              <input ngx-google-places-autocomplete [(ngModel)]="address" id="autocomplete" [options]='options' class="form-control ml-2"/>
+          </div>
+           <div class="col-2 px-1">
+              <button class="btn btn-secondary ml-2" (click)="searchClick()">Search</button>
+           </div>  
+        </div>
+        <div class="row">
+          <div class="col-2">
+              <button class="btn btn-link" (click)="openModal(template)" >Advanced</button>
+          </div>
+          <div class="col-8 pt-2">
+              <p class="text-danger">{{searchError}}</p>
+          </div> 
+        </div>
+    </div>
+    <div class="col-3">
+
+    </div>
+    
+  </div>
+  <div class="row">
+    <!--ZA filtrrianje dio-->
+    <div class="col-2">
+      <div class="border rounded pl-2 pt-1">
+      <h5>Sort results:</h5>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio" (click)="sortByPrice(-1)">Price(lowest to highest)
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio" (click)="sortByPrice(1)">Price(highest to lowest)
+        </label>
+      </div>
+      <div class="form-check disabled">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optradio" (click)="sortByDistance()">Distance
+        </label>
+      </div>
+      <div class="form-check disabled">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio" (click)="sortByRating()">Rating
+          </label>
+        </div>
+      <div class="form-group pt-1 mr-4">
+        <select class="form-control form-control-sm" (change)="sortByCategory()" [(ngModel)]="categorySorting">
+          <option value= -1 selected disabled>Select category</option>
+          <option value= 0 >Any category</option>
+          <option value= 1 >1</option>
+          <option value= 2 >2</option>
+          <option value= 3 >3</option>
+          <option value= 4 >4</option>
+          <option value= 5 >5</option>
+        </select>
+      </div>
+      </div>
+    </div>
+
+    <!--ZA PRIKAZ REZULTAT PRETRAGE-->
+    <div class="col-8">
+        <div class="list-group border rounded w-100" style="max-height: 700px; overflow-y:  scroll;">
+            <div *ngFor = "let unit of searchResults" class="list-group-item" style="display: block; max-height: 220">
+                <app-accomodation-preview [unit]="unit"></app-accomodation-preview>
+              </div>
+          </div>
+    </div>
+
+    <div class="col-2">
+
+    </div>
+
+  </div>
+
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Advanced search options</h4>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+
+      <div class="col-6">
+        <select class="form-control" [(ngModel)]="searchDTO.category">
+          <option value="-1" disabled >Select Category</option>
+          <option value="0">Any Category</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <select class="form-control my-3" id="type" placeholder="Type" [(ngModel)]="searchDTO.type" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let type of accTypes" [ngValue]="type" [disabled] = "type.disabled">{{type.name}}</option>
+        </select>
+        <input class="form-control my-3" type="number" id="maxDistance" placeholder="Max distance(km)" [(ngModel)] = "searchDTO.maxDistance">
+        <input class="form-control" type="number" id="cancelationPeriod" placeholder="Free cancelation(days)" [(ngModel)] = "searchDTO.cancelationPeriod">
+      </div>
+
+      <div class="col-6">
+          <div class="list-group border rounded w-100" style="max-height: 150px; overflow-y:  scroll;">
+              <div *ngFor = "let service of accServices" class="list-group-item" style="display: block">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)] = "service.isChecked" [ngModelOptions]="{standalone: true}">
+                    <label class="form-check-label">{{service.name}}</label>
+                  </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row-reverse">
+              <button class="btn btn-secondary pull-right mt-3" (click)="okClick()">Ok</button>
+            </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

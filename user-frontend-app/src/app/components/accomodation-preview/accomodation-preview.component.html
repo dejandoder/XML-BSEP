@@ -1,0 +1,28 @@
+
+
+<div class="row w-100">
+  <!--Kolona za prikaz slika-->
+  <div class="col-6">
+      <carousel >
+          <slide *ngFor="let image of accUnit.images">
+            <img [src]="'data:image/jpg;base64,'+image" style="display: block; width: 100%;max-height: 215px;">
+          </slide>
+      </carousel>
+  </div>
+
+<!--Kolona za prikaz infomacija-->
+  <div class="col-6">
+    <div class="row">
+      <div class="col-10">
+        <h4>{{accUnit.name}}</h4><br>
+        <p>{{accUnit.description}}</p><br>
+        <p>Average rating: {{accUnit.rating}}/5</p>
+      </div>
+      <div class="col-2">
+        <p>{{accUnit.category}}</p><br>
+        <p>{{accUnit.price}}</p><p>$</p>
+        <button class="btn btn-secondary">Reserve</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "/api/*" : {
+        "target" :
+        "http://localhost:8762",
+        "secure" : false,
+        "pathRewrite" : {"^/api" : ""},
+        "changeOrigin" : true,
+        "logLevel": "debug"
+    },
+    "/google/*" : {
+        "target" :
+        "https://maps.googleapis.com/maps/api/geocode",
+        "secure" : false,
+        "pathRewrite" : {"^/google" : ""},
+        "changeOrigin" : true,
+        "logLevel": "debug"
+    },
+    "/testApi/*" : {
+        "target" :
+        "http://localhost:11500",
+        "secure" : false,
+        "pathRewrite" : {"^/testApi" : ""},
+        "changeOrigin" : true,
+        "logLevel": "debug"
+    }
+}
