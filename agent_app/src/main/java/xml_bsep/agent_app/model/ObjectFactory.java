@@ -163,4 +163,28 @@ public class ObjectFactory {
     public SendMessageResponse createSendMessageResponse() {
     	return new SendMessageResponse();
     }
+    
+    public SyncUsersResponse createSyncUsersResponse() {
+    	return new SyncUsersResponse();
+    }
+    
+    public SyncUsersRequest createSyncUsersRequest() {
+    	return new SyncUsersRequest();
+    }
+    
+    public SyncAccServicesRequest createSyncAccServicesRequest() {
+    	return new SyncAccServicesRequest();
+    }
+    
+    public SyncAccServicesResponse createSyncAccServicesResponse() {
+    	return new SyncAccServicesResponse();
+    }
+    
+    public SyncAccomodationTypesRequest createSyncAccomodationTypesRequest() {
+    	return new SyncAccomodationTypesRequest();
+    }
+    
+    public SyncAccomodationTypeResponse createSyncAccomodationTypesResponse() {
+    	return new SyncAccomodationTypeResponse();
+    }
 }

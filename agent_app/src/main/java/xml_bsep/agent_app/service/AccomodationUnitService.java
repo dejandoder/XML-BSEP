@@ -10,6 +10,7 @@ import xml_bsep.agent_app.dto.AccomodationUnitDTO;
 import xml_bsep.agent_app.model.AccomodationUnit;
 import xml_bsep.agent_app.model.User;
 import xml_bsep.agent_app.repository.AccomodationUnitRepository;
+import xml_bsep.agent_app.soap_clients.AccomodationServiceSoapClient;
 
 @Service
 public class AccomodationUnitService {
@@ -17,9 +18,14 @@ public class AccomodationUnitService {
 	@Autowired
 	AccomodationUnitRepository repository;
 	
+	@Autowired
+	AccomodationServiceSoapClient accSoap;
+	
 	
 	public AccomodationUnit save(AccomodationUnit accUnit) {
-		return repository.save(accUnit);
+		repository.save(accUnit);
+		accSoap.addNewAccomodationUnit(accUnit);
+		return accUnit;
 	}
 
 	public List<AccomodationUnitDTO> getAccUnitsByAgent(User agent){

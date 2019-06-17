@@ -44,6 +44,8 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
 		
+		String header = request.getHeader(jwtConfig.getHeader());
+		
 		try {
 			
 			// 1. Get credentials from request
@@ -66,6 +68,8 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication auth) throws IOException, ServletException {
+		
+		String header = request.getHeader(jwtConfig.getHeader());
 		
 		Long now = System.currentTimeMillis();
 		String token = Jwts.builder()

@@ -9,13 +9,10 @@
 package xml_bsep.agent_app.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -58,18 +55,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "accomodation_service", propOrder = {
     "name",
     "id"
 })
-@XmlRootElement(name = "accomodation_service")
 public class AccomodationService {
 
     @XmlElement(required = true)
     protected String name;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
     

@@ -1,4 +1,4 @@
-package xml_bsep.agent_app.model;
+package com.eureka.common.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

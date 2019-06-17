@@ -37,11 +37,15 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		   // allow all who are accessing "auth" service
 		   //.antMatchers("/admin/test").permitAll()  
 		   .antMatchers(HttpMethod.POST, "/auth/login").permitAll()  
+		   .antMatchers("/auth/soap/**").permitAll()
 		   .antMatchers("/auth/admin/**").hasRole("ADMIN")
 		   // must be an admin if trying to access admin area (authentication is also required here)
 		   .antMatchers("/mess/**").permitAll()
+		   .antMatchers("/acc/soap/**").hasRole("AGENT")
 		   .antMatchers("/acc/admin/**").hasRole("ADMIN")
 		   .antMatchers("/res/**").permitAll()
+		   //.antMatchers("/acc/**").permitAll()
+		   //.antMatchers("/auth/**").permitAll()
 		   // Any other request must be authenticated
 		   .anyRequest().authenticated(); 
 	}

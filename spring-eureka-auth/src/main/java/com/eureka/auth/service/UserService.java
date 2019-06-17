@@ -66,4 +66,8 @@ public class UserService {
 	public List<User> checkAgentsByPibAndName(String username, String pib){
 		return repository.checkAgentsByPibAndName(username, pib);
 	}
+	
+	public List<User> getAllUsers(){
+		return repository.findAll();
+	}
 }

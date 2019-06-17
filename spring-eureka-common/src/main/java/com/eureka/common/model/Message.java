@@ -20,7 +20,6 @@ import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -51,14 +50,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "messsage", propOrder = {
     "fromUser",
     "toUser",
     "content",
     "date",
     "id"
 })
-@XmlRootElement(name = "messsage")
 public class Message {
 
 	@ManyToOne

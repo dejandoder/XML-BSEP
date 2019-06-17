@@ -49,7 +49,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "location", propOrder = {
     "longitude",
     "lattitude",
     "displayName",

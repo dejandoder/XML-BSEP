@@ -19,12 +19,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
@@ -95,20 +95,21 @@ import javax.xml.bind.annotation.XmlType;
  */
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "accomodation_unit", propOrder = {
     "accomodationType",
     "category",
-    "service",
+    "services",
     "description",
-   // "image",
-    "pricePlan",
+    "images",
+    "pricePlans",
     "capacity",
-    "recension",
-    "id",
+    "recensions",
+     "id",
     "cancelingPeriod",
-    "location"
+     "location",
+     "agent",
+     "name"
 })
-@XmlRootElement(name = "accomodation_unit")
 public class AccomodationUnit {
 
 	@OneToOne
@@ -120,25 +121,25 @@ public class AccomodationUnit {
     
     @ManyToMany
     @XmlElement(required = true)
-    protected List<AccomodationService> service;
+    protected List<AccomodationService> services;
     
     @XmlElement(required = true)
     protected String description;
     
-   /* @XmlElement(required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected List<String> image;*/
+    @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
+    @XmlElement(required = true)
+    protected List<Image> images;
     
     @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
     @XmlElement(required = true)
-    protected List<PricePlan> pricePlan;
+    protected List<PricePlan> pricePlans;
     
     @XmlElement(required = true)
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger capacity;
     
     @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL)
-    protected List<Recension> recension;
+    protected List<Recension> recensions;
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -148,10 +149,18 @@ public class AccomodationUnit {
     @XmlElement(name = "canceling_period")
     protected Integer cancelingPeriod;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "location_id")
     @XmlElement(required = true)
     protected Location location;
+    
+    @ManyToOne
+    @JoinColumn(name = "agent_id")
+    @XmlElement(required = true)
+    protected User agent;
+    
+    @XmlElement(required = true)
+    protected String name;
 
     /**
      * Gets the value of the accomodationType property.
@@ -215,11 +224,11 @@ public class AccomodationUnit {
      * 
      * 
      */
-    public List<AccomodationService> getService() {
-        if (service == null) {
-            service = new ArrayList<AccomodationService>();
+    public List<AccomodationService> getServices() {
+        if (services == null) {
+            services = new ArrayList<AccomodationService>();
         }
-        return this.service;
+        return this.services;
     }
 
     /**
@@ -297,11 +306,11 @@ public class AccomodationUnit {
      * 
      * 
      */
-    public List<PricePlan> getPricePlan() {
-        if (pricePlan == null) {
-            pricePlan = new ArrayList<PricePlan>();
+    public List<PricePlan> getPricePlans() {
+        if (pricePlans == null) {
+            pricePlans = new ArrayList<PricePlan>();
         }
-        return this.pricePlan;
+        return this.pricePlans;
     }
 
     /**
@@ -351,10 +360,10 @@ public class AccomodationUnit {
      * 
      */
     public List<Recension> getRecension() {
-        if (recension == null) {
-            recension = new ArrayList<Recension>();
+        if (recensions == null) {
+            recensions = new ArrayList<Recension>();
         }
-        return this.recension;
+        return this.recensions;
     }
 
     /**
@@ -421,4 +430,43 @@ public class AccomodationUnit {
         this.location = value;
     }
 
+	public List<Image> getImages() {
+		return images;
+	}
+
+	public void setImages(List<Image> images) {
+		this.images = images;
+	}
+
+	public List<Recension> getRecensions() {
+		return recensions;
+	}
+
+	public void setRecensions(List<Recension> recensions) {
+		this.recensions = recensions;
+	}
+
+	public User getAgent() {
+		return agent;
+	}
+
+	public void setAgent(User agent) {
+		this.agent = agent;
+	}
+
+	public void setServices(List<AccomodationService> services) {
+		this.services = services;
+	}
+
+	public void setPricePlans(List<PricePlan> pricePlans) {
+		this.pricePlans = pricePlans;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}  
 }

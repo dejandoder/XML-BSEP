@@ -116,4 +116,75 @@ public class ObjectFactory {
     	return new AddNewAccomodationUnitResponse();
     }
 
+    public SyncReservationsRequest createSyncReservationsRequest() {
+    	return new SyncReservationsRequest();
+    }
+    
+    public SyncReservationsResponse createSyncReservationsResponse() {
+    	return new SyncReservationsResponse();
+    }
+    
+    public ApproveReservationRequest createApproveReservationRequest() {
+    	return new ApproveReservationRequest();
+    }
+    
+    public ApproveReservationResponse createApproveReservationResponse() {
+    	return new ApproveReservationResponse();
+    }
+    
+    public ConfirmReservationRequest createConfirmReservationRequest() {
+    	return new ConfirmReservationRequest();
+    }
+    
+    public ConfirmReservationResponse createConfirmReservationResponse() {
+    	return new ConfirmReservationResponse();
+    }
+    
+    public AgentReservationRequest createAgentReservationRequest() {
+    	return new AgentReservationRequest();
+    }
+    
+    public AgentReservationResponse createAgentReservationResponse() {
+    	return new AgentReservationResponse();
+    }
+    
+    public SyncMessagesRequest createSyncMessagesRequest() {
+    	return new SyncMessagesRequest();
+    }
+    
+    public SyncMessagesResponse createSyncMessagesResponse() {
+    	return new SyncMessagesResponse();
+    }
+    
+    public SendMessageRequest createSendMessageRequest() {
+    	return new SendMessageRequest();
+    }
+    
+    public SendMessageResponse createSendMessageResponse() {
+    	return new SendMessageResponse();
+    }
+    
+    public SyncUsersResponse createSyncUsersResponse() {
+    	return new SyncUsersResponse();
+    }
+    
+    public SyncUsersRequest createSyncUsersRequest() {
+    	return new SyncUsersRequest();
+    }
+    
+    public SyncAccServicesRequest createSyncAccServicesRequest() {
+    	return new SyncAccServicesRequest();
+    }
+    
+    public SyncAccServicesResponse createSyncAccServicesResponse() {
+    	return new SyncAccServicesResponse();
+    }
+    
+    public SyncAccomodationTypesRequest createSyncAccomodationTypesRequest() {
+    	return new SyncAccomodationTypesRequest();
+    }
+    
+    public SyncAccomodationTypeResponse createSyncAccomodationTypesResponse() {
+    	return new SyncAccomodationTypeResponse();
+    }
 }

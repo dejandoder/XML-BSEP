@@ -36,4 +36,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	@Query("select user from User user where user.role = com.eureka.common.model.UserRole.AGENT and ( user.username = :username or user.pib = :pib )")
 	public List<User> checkAgentsByPibAndName(@Param("username") String username, @Param("pib") String pib);
 	
+	public User findUserByUsername(String username);
 }

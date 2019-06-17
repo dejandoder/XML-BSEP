@@ -59,14 +59,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "pricePlan", propOrder = {
     "fromDate",
     "toDate",
     "pricePerNight",
     "id",
     "accomodationUnit"
 })
-@XmlRootElement(name = "pricePlan")
 public class PricePlan {
 
     @XmlElement(required = true)

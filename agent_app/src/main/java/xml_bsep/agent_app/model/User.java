@@ -85,7 +85,6 @@ public class User {
     protected String surname;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
     

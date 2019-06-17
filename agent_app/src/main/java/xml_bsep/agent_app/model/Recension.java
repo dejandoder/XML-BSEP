@@ -18,7 +18,6 @@ import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -54,7 +53,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "recension", propOrder = {
     "comment",
     "rating",
     "id",
@@ -62,7 +61,6 @@ import javax.xml.bind.annotation.XmlType;
     "user",
     "accomodationUnit"
 })
-@XmlRootElement(name = "recension")
 public class Recension {
 
     @XmlElement(required = true)
