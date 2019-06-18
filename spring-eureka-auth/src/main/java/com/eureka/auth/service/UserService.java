@@ -70,4 +70,8 @@ public class UserService {
 	public List<User> getAllUsers(){
 		return repository.findAll();
 	}
+	
+	public User getUserByUsername(String username) {
+		return repository.findUserByUsername(username);
+	}
 }

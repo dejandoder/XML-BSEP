@@ -100,10 +100,7 @@ import javax.xml.bind.annotation.XmlType;
     "category",
     "services",
     "description",
-    "images",
-    "pricePlans",
     "capacity",
-    "recensions",
      "id",
     "cancelingPeriod",
      "location",
@@ -126,21 +123,11 @@ public class AccomodationUnit {
     @XmlElement(required = true)
     protected String description;
     
-    @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
-    @XmlElement(required = true)
-    protected List<Image> images;
-    
-    @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL )
-    @XmlElement(required = true)
-    protected List<PricePlan> pricePlans;
-    
     @XmlElement(required = true)
     @XmlSchemaType(name = "positiveInteger")
     protected BigInteger capacity;
     
-    @OneToMany(mappedBy = "accomodationUnit", orphanRemoval = true, cascade = CascadeType.ALL)
-    protected List<Recension> recensions;
-    
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
@@ -306,21 +293,7 @@ public class AccomodationUnit {
      * 
      * 
      */
-    public List<PricePlan> getPricePlans() {
-        if (pricePlans == null) {
-            pricePlans = new ArrayList<PricePlan>();
-        }
-        return this.pricePlans;
-    }
-
-    /**
-     * Gets the value of the capacity property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
+ 
     public BigInteger getCapacity() {
         return capacity;
     }
@@ -353,19 +326,7 @@ public class AccomodationUnit {
      * </pre>
      * 
      * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Recension }
-     * 
-     * 
-     */
-    public List<Recension> getRecension() {
-        if (recensions == null) {
-            recensions = new ArrayList<Recension>();
-        }
-        return this.recensions;
-    }
-
+   
     /**
      * Gets the value of the id property.
      * 
@@ -429,23 +390,7 @@ public class AccomodationUnit {
     public void setLocation(Location value) {
         this.location = value;
     }
-
-	public List<Image> getImages() {
-		return images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
-	public List<Recension> getRecensions() {
-		return recensions;
-	}
-
-	public void setRecensions(List<Recension> recensions) {
-		this.recensions = recensions;
-	}
-
+	
 	public User getAgent() {
 		return agent;
 	}
@@ -456,10 +401,6 @@ public class AccomodationUnit {
 
 	public void setServices(List<AccomodationService> services) {
 		this.services = services;
-	}
-
-	public void setPricePlans(List<PricePlan> pricePlans) {
-		this.pricePlans = pricePlans;
 	}
 
 	public String getName() {

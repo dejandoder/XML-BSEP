@@ -57,7 +57,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "status",
     "fromDate",
     "toDate",
-    "agentReserved"
+    "agentReserved",
+    "accUnit"
 })
 public class Reservation {
 
@@ -84,6 +85,11 @@ public class Reservation {
     @XmlElement(required = true)
     protected boolean agentReserved;
 
+    @ManyToOne
+	@JoinColumn(name = "acc_unit_id", foreignKey = @ForeignKey(name = "RESERVATION_ACC_UNIT_ID_FK"))
+    @XmlElement(required = true)
+    protected AccomodationUnit accUnit;
+    
     public Reservation() {
     	
     }
@@ -200,4 +206,11 @@ public class Reservation {
         this.agentReserved = value;
     }
 
+	public AccomodationUnit getAccUnit() {
+		return accUnit;
+	}
+
+	public void setAccUnit(AccomodationUnit accUnit) {
+		this.accUnit = accUnit;
+	}   
 }

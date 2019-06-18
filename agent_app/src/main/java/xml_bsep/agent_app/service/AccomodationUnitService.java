@@ -44,7 +44,7 @@ public class AccomodationUnitService {
 	}
 	
 	public AccomodationUnit getOne(long id) {
-		return repository.getOne(id);
+		return repository.findOneById(id);
 	}
 	
 	public List<AccomodationUnitDTO> getAll(){

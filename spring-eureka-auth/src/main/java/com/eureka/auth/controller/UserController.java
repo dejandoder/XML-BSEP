@@ -76,4 +76,10 @@ public class UserController {
 		List<UserDTO> usersDTO = service.getUsers();
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
+	
+	@GetMapping(value = "/getUser")
+	public ResponseEntity<User> getUser(@RequestBody String username){
+		User user = service.getUserByUsername(username);
+		return new ResponseEntity<>(user, HttpStatus.OK);
+	}
 }

@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.ftn.uns.ac.rs/hotel-team1" xmlns:tns="http://www.ftn.uns.ac.rs/hotel-team1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <xs:element name="add_images_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="images" type="tns:image" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="add_images_response">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="add_new_accomodation_unit_request">
     <xs:complexType>
       <xs:sequence>
@@ -16,6 +30,20 @@
         <xs:element name="status" type="tns:SOAPResponseStatus"/>
         <xs:element name="accUnitId" type="xs:long"/>
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="add_price_plan_request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pricePlan" type="tns:pricePlan"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="add_price_plan_response">
+    <xs:complexType>
+      <xs:sequence/>
     </xs:complexType>
   </xs:element>
 
@@ -184,10 +212,7 @@
       <xs:element name="category" type="xs:int"/>
       <xs:element name="services" type="tns:accomodation_service" maxOccurs="unbounded"/>
       <xs:element name="description" type="xs:string"/>
-      <xs:element name="images" type="tns:image" maxOccurs="unbounded"/>
-      <xs:element name="pricePlans" type="tns:pricePlan" maxOccurs="unbounded"/>
       <xs:element name="capacity" type="xs:positiveInteger"/>
-      <xs:element name="recensions" type="tns:recension" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
       <xs:element name="id" type="xs:long"/>
       <xs:element name="canceling_period" type="xs:int" minOccurs="0"/>
       <xs:element name="location" type="tns:location"/>
@@ -210,24 +235,12 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="pricePlan">
+  <xs:complexType name="location">
     <xs:sequence>
-      <xs:element name="fromDate" type="xs:date"/>
-      <xs:element name="toDate" type="xs:date"/>
-      <xs:element name="pricePerNight" type="xs:float"/>
+      <xs:element name="longitude" type="xs:float"/>
+      <xs:element name="lattitude" type="xs:float"/>
+      <xs:element name="displayName" type="xs:string"/>
       <xs:element name="id" type="xs:long"/>
-      <xs:element name="accomodation_unit" type="tns:accomodation_unit"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="recension">
-    <xs:sequence>
-      <xs:element name="comment" type="xs:string"/>
-      <xs:element name="rating" type="xs:int"/>
-      <xs:element name="id" type="xs:long"/>
-      <xs:element name="approved" type="xs:boolean" default="false"/>
-      <xs:element name="user" type="tns:user"/>
-      <xs:element name="accomodation_unit" type="tns:accomodation_unit"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -245,12 +258,24 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="location">
+  <xs:complexType name="recension">
     <xs:sequence>
-      <xs:element name="longitude" type="xs:float"/>
-      <xs:element name="lattitude" type="xs:float"/>
-      <xs:element name="displayName" type="xs:string"/>
+      <xs:element name="comment" type="xs:string"/>
+      <xs:element name="rating" type="xs:int"/>
       <xs:element name="id" type="xs:long"/>
+      <xs:element name="approved" type="xs:boolean" default="false"/>
+      <xs:element name="user" type="tns:user"/>
+      <xs:element name="accomodation_unit" type="tns:accomodation_unit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pricePlan">
+    <xs:sequence>
+      <xs:element name="fromDate" type="xs:date"/>
+      <xs:element name="toDate" type="xs:date"/>
+      <xs:element name="pricePerNight" type="xs:float"/>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="accomodation_unit" type="tns:accomodation_unit"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -272,6 +297,7 @@
       <xs:element name="fromDate" type="xs:date"/>
       <xs:element name="toDate" type="xs:date"/>
       <xs:element name="agentReserved" type="xs:boolean"/>
+      <xs:element name="accUnit" type="tns:accomodation_unit"/>
     </xs:sequence>
   </xs:complexType>
 

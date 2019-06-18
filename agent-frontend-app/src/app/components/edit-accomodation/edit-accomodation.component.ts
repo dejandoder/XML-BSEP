@@ -57,6 +57,12 @@ export class EditAccomodationComponent implements OnInit {
         )
         this.dates =[];
         this.newPricePlan = new PricePlan();
+      },
+      error => {
+        this.ppErrorMessage = "Price plan overlaps with current plans!"
+        setTimeout(() => {
+         this.ppErrorMessage = "" 
+        }, 2000);
       }
     
     )

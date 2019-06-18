@@ -12,6 +12,7 @@ import xml_bsep.agent_app.model.AccomodationUnit;
 import xml_bsep.agent_app.model.Image;
 import xml_bsep.agent_app.repository.AccomodationUnitRepository;
 import xml_bsep.agent_app.repository.ImageRepository;
+import xml_bsep.agent_app.soap_clients.AccomodationServiceSoapClient;
 
 @Service
 public class ImageService {
@@ -21,6 +22,9 @@ public class ImageService {
 	
 	@Autowired
 	AccomodationUnitRepository accomodationUnitRepository;
+	
+	@Autowired
+	AccomodationServiceSoapClient soapClient;
 	
 	public Image save(Image image) {
 		return repository.save(image);
@@ -38,6 +42,8 @@ public class ImageService {
 			imagesModel.add(imageModel);
 		}
 		repository.saveAll(imagesModel);	
+		
+		soapClient.addImages(imagesModel);
 	}
 
 	public ArrayList<byte[]> getImagesByAccomodationUnit(long accId){

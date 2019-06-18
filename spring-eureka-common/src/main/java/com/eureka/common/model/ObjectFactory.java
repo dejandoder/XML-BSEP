@@ -187,4 +187,20 @@ public class ObjectFactory {
     public SyncAccomodationTypeResponse createSyncAccomodationTypesResponse() {
     	return new SyncAccomodationTypeResponse();
     }
+    
+    public AddImagesRequest createAddImagesRequest() {
+    	return new AddImagesRequest();
+    }
+    
+    public AddImagesResponse createAddImagesResponse() {
+    	return new AddImagesResponse();
+    }
+    
+    public AddPricePlanRequest createAddPricePlanRequest() {
+    	return new AddPricePlanRequest();
+    }
+    
+    public AddPricePlanResponse createAddPricePlanResponse() {
+    	return new AddPricePlanResponse();
+    }
 }

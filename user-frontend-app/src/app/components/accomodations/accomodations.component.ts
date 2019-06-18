@@ -95,6 +95,12 @@ export class AccomodationsComponent implements OnInit {
         this.searchDTO.services.push(service);
       }
     }
+
+    this.accService.searchAccServices(this.searchDTO).subscribe(
+      data =>{
+        this.searchResults = data;
+      }
+    )
   }
 
   okClick(){

@@ -1,6 +1,7 @@
 package xml_bsep.acc_service.endpoint;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -11,8 +12,13 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import com.eureka.common.model.AccomodationService;
 import com.eureka.common.model.AccomodationType;
 import com.eureka.common.model.AccomodationUnit;
+import com.eureka.common.model.AddImagesRequest;
+import com.eureka.common.model.AddImagesResponse;
 import com.eureka.common.model.AddNewAccomodationUnitRequest;
 import com.eureka.common.model.AddNewAccomodationUnitResponse;
+import com.eureka.common.model.AddPricePlanRequest;
+import com.eureka.common.model.AddPricePlanResponse;
+import com.eureka.common.model.Image;
 import com.eureka.common.model.SyncAccServicesRequest;
 import com.eureka.common.model.SyncAccServicesResponse;
 import com.eureka.common.model.SyncAccomodationTypeResponse;
@@ -21,6 +27,9 @@ import com.eureka.common.model.SyncAccomodationTypesRequest;
 import xml_bsep.acc_service.service.AccomodationServicesService;
 import xml_bsep.acc_service.service.AccomodationTypeService;
 import xml_bsep.acc_service.service.AccomodationUnitService;
+import xml_bsep.acc_service.service.ImageService;
+import xml_bsep.acc_service.service.PricePlaneService;
+
 
 @Endpoint
 public class AccomodationUnitEndpoint {
@@ -33,6 +42,12 @@ public class AccomodationUnitEndpoint {
 	
 	@Autowired
 	AccomodationServicesService servicesService;
+	
+	@Autowired
+	ImageService imageService;
+	
+	@Autowired
+	PricePlaneService ppService;
 	
 	@ResponsePayload
 	@PayloadRoot(namespace = "http://www.ftn.uns.ac.rs/hotel-team1", localPart = "add_new_accomodation_unit_request")
@@ -63,7 +78,20 @@ public class AccomodationUnitEndpoint {
 		return response;
 	}
 	
+	@ResponsePayload
+	@PayloadRoot(namespace = "http://www.ftn.uns.ac.rs/hotel-team1", localPart = "add_images_request")
+	public AddImagesResponse addImages(@RequestPayload AddImagesRequest request) {
+		List<Image> images = request.getImages();
+		imageService.saveAll(images);
+		return new AddImagesResponse();
+	}
 	
+	@ResponsePayload
+	@PayloadRoot(namespace = "http://www.ftn.uns.ac.rs/hotel-team1", localPart = "add_price_plan_request")
+	public AddPricePlanResponse addPricePlan(@RequestPayload AddPricePlanRequest request) {
+		ppService.save(request.getPricePlan());
+		return new AddPricePlanResponse();
+	}
 	
 	
 }

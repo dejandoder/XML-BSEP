@@ -112,4 +112,10 @@ public class AccomodationService {
         this.id = value;
     }
 
+    @Override
+	public boolean equals(Object obj) {
+		if(this.id == ((AccomodationService)obj).getId()) return true;
+		return false;
+	}
+
 }

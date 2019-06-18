@@ -1,22 +1,28 @@
 package xml_bsep.reservation_service.controller;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import xml_bsep.reservation_service.dto.CheckReaservationDTO;
+import xml_bsep.reservation_service.service.ReservationService;
 
 @RestController
 @RequestMapping("/")
 public class ReservationController {
 
-	@GetMapping("/agent")
-	public String test(){
-		return "radi agent";
-	}
+	@Autowired
+	ReservationService resService;
 	
-	@GetMapping("/admin")
-	public String test3(){
-		return "radi admin";
+	@PostMapping(value = "/checkIfAccUnitIsAvalible")
+	public ResponseEntity<Boolean> checkIfAccUnitIsAvalible(@RequestBody CheckReaservationDTO checkReservation){
+		boolean availabile = resService.checkIfAccUnitIsAvalible(checkReservation);
+		return new ResponseEntity<>(availabile, HttpStatus.OK);
 	}
 	
 }
