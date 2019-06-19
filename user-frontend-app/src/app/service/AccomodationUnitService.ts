@@ -21,7 +21,7 @@ export class AccomodationUnitService{
     }
 
     searchAccServices(searchDTO : SearchDTO){
-        return this.http.post<AccomodationUnit[]>('api/search',searchDTO);
+        return this.http.post<AccomodationUnit[]>('api/acc/search',searchDTO);
     }
 
 }

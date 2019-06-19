@@ -35,14 +35,6 @@ export class LoginComponent implements OnInit {
         if(!success) {
           this.errorMessage = "Wrong username or password";
         }else{
-          this.http.get('api/syncAll').subscribe(
-            data =>{
-              console.log(data);
-            },
-            error =>{
-              console.log(error);
-            }
-          )
           this.router.navigate(["/home"]);
         }
       }

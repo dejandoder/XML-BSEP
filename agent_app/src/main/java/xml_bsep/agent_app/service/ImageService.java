@@ -32,7 +32,7 @@ public class ImageService {
 	
 	public void uploadImages(MultipartFile[] images, long accId) throws IOException {
 	
-		AccomodationUnit accUnit = accomodationUnitRepository.getOne(accId);
+		AccomodationUnit accUnit = accomodationUnitRepository.findOneById(accId);
 		
 		ArrayList<Image> imagesModel = new ArrayList<>();
 		for (MultipartFile image  : images) {

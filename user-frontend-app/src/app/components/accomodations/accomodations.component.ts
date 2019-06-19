@@ -42,12 +42,6 @@ export class AccomodationsComponent implements OnInit {
       data => {
         this.accServices = data;
       })
-
-    http.get<any>('testApi/test').subscribe(
-      data => {
-        this.searchResults = data;
-      }
-    )
    }
 
   openModal(template: TemplateRef<any>) {
@@ -96,11 +90,14 @@ export class AccomodationsComponent implements OnInit {
       }
     }
 
-    this.accService.searchAccServices(this.searchDTO).subscribe(
-      data =>{
-        this.searchResults = data;
-      }
-    )
+    setTimeout(() => {
+      this.accService.searchAccServices(this.searchDTO).subscribe(
+        data =>{
+          this.searchResults = data;
+          this.searchDTO.services = [];
+        }
+      )
+    }, 500);
   }
 
   okClick(){

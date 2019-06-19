@@ -125,7 +125,7 @@ public class AccomodationUnit {
     
     @XmlElement(required = true)
     @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger capacity;
+    protected int capacity;
     
  
     @Id
@@ -294,7 +294,7 @@ public class AccomodationUnit {
      * 
      */
  
-    public BigInteger getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
@@ -306,7 +306,7 @@ public class AccomodationUnit {
      *     {@link BigInteger }
      *     
      */
-    public void setCapacity(BigInteger value) {
+    public void setCapacity(int value) {
         this.capacity = value;
     }
 

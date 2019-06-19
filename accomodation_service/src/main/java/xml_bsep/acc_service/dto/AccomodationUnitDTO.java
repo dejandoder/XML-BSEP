@@ -1,6 +1,7 @@
 package xml_bsep.acc_service.dto;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.eureka.common.model.AccomodationType;
@@ -14,8 +15,8 @@ public class AccomodationUnitDTO {
     protected AccomodationType accomodationType;
     protected int category;
     protected String description;
-    protected List<String> images;
-    protected BigInteger capacity;
+    protected List<String> images = new ArrayList<>();
+    protected int capacity;
     protected long id;
     protected Integer cancelingPeriod;
     protected Location location;
@@ -68,11 +69,11 @@ public class AccomodationUnitDTO {
 		this.images = images;
 	}
 
-	public BigInteger getCapacity() {
+	public int getCapacity() {
 		return capacity;
 	}
 
-	public void setCapacity(BigInteger capacity) {
+	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
 

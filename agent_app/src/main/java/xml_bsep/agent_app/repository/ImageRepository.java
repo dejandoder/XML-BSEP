@@ -16,4 +16,6 @@ public interface ImageRepository extends JpaRepository<Image, Long> {
 
 	@Query("select image.id from Image image where image.accomodationUnit.id = :accId ")
 	public List<Long> getImagesId(@Param("accId") long accId);
+	
+	public Image findOneById(long id);
 }

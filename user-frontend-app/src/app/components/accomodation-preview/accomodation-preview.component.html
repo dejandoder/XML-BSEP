@@ -11,17 +11,19 @@
   </div>
 
 <!--Kolona za prikaz infomacija-->
-  <div class="col-6">
-    <div class="row">
-      <div class="col-10">
-        <h4>{{accUnit.name}}</h4><br>
-        <p>{{accUnit.description}}</p><br>
-        <p>Average rating: {{accUnit.rating}}/5</p>
+  <div class="col-6 h-100 pb-1">
+    <h5>{{accUnit.name}}</h5><br>
+    <div class="row h-100">
+      <div class="col-8 h-100 pt-1">
+        <p><i>Description: </i>{{accUnit.description}}</p><br>
+        <p><i>Average rating: </i>{{accUnit.rating}}/5</p>
       </div>
-      <div class="col-2">
-        <p>{{accUnit.category}}</p><br>
-        <p>{{accUnit.price}}</p><p>$</p>
-        <button class="btn btn-secondary">Reserve</button>
+      <div class="col-4 pt-6 h-100">
+        <p><i>Category: </i>{{accUnit.category}}</p><br>
+        <p><i>Price: </i>{{accUnit.price}}$</p>
+        <div class="d-flex flex-row-reverse">
+          <button class="btn btn-secondary">Reserve</button>
+        </div>
       </div>
     </div>
   </div>

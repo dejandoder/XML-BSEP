@@ -94,5 +94,12 @@ public class AccomodationType {
     public void setName(String value) {
         this.name = value;
     }
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(((AccomodationType)obj).getId()==id) return true;
+		return false;
+	}
+    
 
 }

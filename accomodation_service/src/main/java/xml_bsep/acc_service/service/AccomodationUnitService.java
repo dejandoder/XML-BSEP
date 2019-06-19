@@ -20,6 +20,7 @@ import xml_bsep.acc_service.dto.AccomodationUnitDTO;
 import xml_bsep.acc_service.dto.CheckReaservationDTO;
 import xml_bsep.acc_service.dto.SearchDTO;
 import xml_bsep.acc_service.repository.AccomodationUnitRepository;
+import xml_bsep.acc_service.repository.ImageRepository;
 import xml_bsep.acc_service.repository.PricePlanRepository;
 
 @Service
@@ -34,18 +35,43 @@ public class AccomodationUnitService {
 	@Autowired
 	PricePlanRepository ppRepository;
 	
+	@Autowired
+	ImageRepository imageRepository;
+	
 	public AccomodationUnit save(AccomodationUnit accUnit) {
 		return repository.save(accUnit);
 	}
 	
 	public ArrayList<AccomodationUnitDTO> search(SearchDTO searchDTO){
 		
-		List<AccomodationUnit> searchResults = repository.searchAccUnits(searchDTO.getPersons(), searchDTO.getType(), searchDTO.getCategory(), searchDTO.getCancelationPeriod());
+		List<AccomodationUnit> searchResults = repository.searchAccUnits(searchDTO.getPersons());
+		
+		List<AccomodationUnit> searchResults1 = new ArrayList<>();
+		
+		for (AccomodationUnit accomodationUnit : searchResults) {
+			int pom = 0;
+			
+			if(searchDTO.getCategory() != -1 && searchDTO.getCategory() != -0) {
+				if(accomodationUnit.getCategory() != searchDTO.getCategory()) pom++;
+			}
+			
+			if(searchDTO.getCancelationPeriod() > 0) {
+				if(accomodationUnit.getCancelingPeriod() < searchDTO.getCancelationPeriod()) pom++;
+			}
+			
+			if(searchDTO.getType().getId() != -1) {
+				if(accomodationUnit.getAccomodationType().getId() != searchDTO.getType().getId()) pom++;
+			}
+			
+			if(pom == 0) searchResults1.add(accomodationUnit);
+		}
 		
 		List<AccomodationUnit> searchResults2 = new ArrayList<>();
-		for(AccomodationUnit accUnit : searchResults) {
+		for(AccomodationUnit accUnit : searchResults1) {
 			if(accUnit.getServices().containsAll(searchDTO.getServices())) searchResults2.add(accUnit);
 		}
+		
+		if(searchDTO.getMaxDistance() == 0) searchDTO.setMaxDistance(100);
 		
 		List<AccomodationUnit> searchResults3 = new ArrayList<>();
 		for(AccomodationUnit accUnit : searchResults2) {
@@ -65,7 +91,7 @@ public class AccomodationUnitService {
 			checkDTO.setDates(searchDTO.getDates());
 			
 			HttpEntity<CheckReaservationDTO> request = new HttpEntity<CheckReaservationDTO>(checkDTO);
-			ResponseEntity<Boolean> response = restTemplate.exchange("http://localhost:8762/res/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
+			ResponseEntity<Boolean> response = restTemplate.exchange("http://reservation-service/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
 			
 			if(response.getBody() == true) searchResults4.add(accUnit);
 		}
@@ -88,9 +114,9 @@ public class AccomodationUnitService {
 			
 			accUnitDTO.setPrice(price);
 			
-			/*for (Image img : accUnit.getImages()) {
+			for (Image img : imageRepository.getImagesByAccUnit(accUnit.getId())) {
 				accUnitDTO.addImage(Base64Utils.encodeToString(img.getPic()));
-			}*/
+			}
 			
 			finalResults.add(accUnitDTO);
 		}

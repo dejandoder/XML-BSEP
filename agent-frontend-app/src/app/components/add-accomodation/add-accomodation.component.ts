@@ -53,7 +53,7 @@ export class AddAccomodationComponent implements OnInit {
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([73.8567, 18.5204]),
+        center: ol.proj.fromLonLat([18, 43]),
         zoom: 8
       })
     });

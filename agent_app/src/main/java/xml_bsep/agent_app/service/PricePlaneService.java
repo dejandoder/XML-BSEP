@@ -34,7 +34,7 @@ public class PricePlaneService {
 	@Transactional
 	public PricePlan save(PricePlan plan){
 		
-		int errorCount = repository.checkIfPlanIsValid(plan.getFromDate(), plan.getToDate());	
+		int errorCount = repository.checkIfPlanIsValid(plan.getFromDate(), plan.getToDate(), plan.getAccomodationUnit().getId());	
 		if(errorCount != 0) return null;
 	
 		PricePlan plan2 = repository.save(plan);		

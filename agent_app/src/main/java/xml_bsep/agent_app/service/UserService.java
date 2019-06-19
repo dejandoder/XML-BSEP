@@ -32,6 +32,7 @@ public class UserService {
 
 	public void syncUsers(){
 		SyncUsersResponse response = soapClient.syncUsersRequest();
+		if (response.getUsers()==null) return;
 		repository.saveAll(response.getUsers());
 	}
 }
