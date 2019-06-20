@@ -1,9 +1,12 @@
 package xml_bsep.reservation_service.endpoint;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+import xml_bsep.reservation_service.service.ReservationService;
 
 import com.eureka.common.model.AgentReservationRequest;
 import com.eureka.common.model.AgentReservationResponse;
@@ -19,10 +22,14 @@ public class ReservationEndpoint {
 
 	private static final String NAMESPACE_URI = "http://www.ftn.uns.ac.rs/hotel-team1";
 	
+	@Autowired
+	ReservationService service;
+	
 	@ResponsePayload
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "sync_reservations_request")
 	public SyncReservationsResponse syncReservations(@RequestPayload SyncReservationsRequest request) {
 		SyncReservationsResponse response = new SyncReservationsResponse();
+		response.setReservations(service.findAll());
 		return response;
 	}
 	

@@ -37,4 +37,8 @@ public class ReservationService {
 		return true;
 	}
 	
+	public List<Reservation> findAll(){
+		return repository.findAll();
+	}
+	
 }
