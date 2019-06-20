@@ -37,11 +37,6 @@ export class EditAccomodationComponent implements OnInit {
             }
           },
           1000);
-    resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
-      data =>{
-        this.reservations = data;
-      }
-    )
    }
 
   ngOnInit() {
@@ -110,6 +105,11 @@ export class EditAccomodationComponent implements OnInit {
           this.pricePlans = data;
         }
       )
+      this.resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
+        data =>{
+          this.reservations = data;
+        }
+      )
   }
 
   disableReservations(){
@@ -125,7 +125,12 @@ export class EditAccomodationComponent implements OnInit {
       res.accId = this.accUnit.id;
       this.resService.agentReservation(res).subscribe(
         data =>{
-          
+          this.resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
+            data =>{
+              this.reservations = data;
+            }
+          );
+          this.disableDates = [];
         }
       )
     }
@@ -134,6 +139,11 @@ export class EditAccomodationComponent implements OnInit {
   approveReservation(res : ReservationDTO){
     this.resService.approveReservation(res.id).subscribe(
       data =>{
+        this.resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
+          data =>{
+            this.reservations = data;
+          }
+        )
       },
       error =>{
         this.resErrorMessage = "Reservation has been canceled!";
@@ -147,7 +157,11 @@ export class EditAccomodationComponent implements OnInit {
   declineReservation(res : ReservationDTO){
     this.resService.declineReservation(res.id).subscribe(
       data =>{
-
+        this.resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
+          data =>{
+            this.reservations = data;
+          }
+        )
       },
       error=>{
         this.resErrorMessage = "Reservation has been canceled!";
@@ -161,7 +175,11 @@ export class EditAccomodationComponent implements OnInit {
   confirmReservation(res : ReservationDTO){
     this.resService.confirmReservation(res.id).subscribe(
       data =>{
-
+        this.resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
+          data =>{
+            this.reservations = data;
+          }
+        )
       },
       error =>{
         this.resErrorMessage = "Reservation has been canceled!";
