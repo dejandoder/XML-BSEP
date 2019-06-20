@@ -25,9 +25,13 @@ import { AuthInterceptor } from './http-interceptor/AuthInterceptor';
 import { AccomodationPreviewComponent } from './components/accomodation-preview/accomodation-preview.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
-import { FontAwesomeModule } from 'ngx-icons';
-import { ReservationPreviewComponent } from './components/reservation-preview/reservation-preview.component';
 
+import { ReservationPreviewComponent } from './components/reservation-preview/reservation-preview.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { ReservationService } from './service/ReservationService';
+library.add(fas);
 
 
 @NgModule({
@@ -60,6 +64,7 @@ import { ReservationPreviewComponent } from './components/reservation-preview/re
     AuthService,
     AuthGuard,
     RandomGuard,
+    ReservationService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     
   ],

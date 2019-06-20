@@ -27,7 +27,11 @@ import { EditAccomodationComponent } from './components/edit-accomodation/edit-a
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { PricePlanService } from './service/PricePlanService';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core'; 
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { ReservationService } from './service/ReservationService';
+library.add(fas);
 
 @NgModule({
   declarations: [
@@ -50,7 +54,8 @@ import { PricePlanService } from './service/PricePlanService';
     MatTabsModule,
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [
     AuthService,
@@ -58,6 +63,7 @@ import { PricePlanService } from './service/PricePlanService';
     AccomodationUnitService,
     ImageService,
     PricePlanService,
+    ReservationService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     RandomGuard,
   ],

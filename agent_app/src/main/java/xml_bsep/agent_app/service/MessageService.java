@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import xml_bsep.agent_app.dto.UserDTO;
 import xml_bsep.agent_app.model.Message;
-import xml_bsep.agent_app.model.SyncMessagesRequest;
 import xml_bsep.agent_app.model.SyncMessagesResponse;
 import xml_bsep.agent_app.model.User;
 import xml_bsep.agent_app.repository.MessageRepository;

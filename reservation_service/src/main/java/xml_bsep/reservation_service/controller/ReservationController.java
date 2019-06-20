@@ -2,12 +2,14 @@ package xml_bsep.reservation_service.controller;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -81,6 +83,25 @@ public class ReservationController {
 		resService.saveReservation(reservation);
 		
 		return new ResponseEntity<>(HttpStatus.OK);		
+	}
+	
+	@GetMapping(value = "/getReservationsByUser")
+	public ResponseEntity<List<ReservationDTO>> getReservationsByUser(){
+		String username = userService.getCurrentUsername();
+		List<Reservation> reservations = resService.getReservationsByUser(username);
+		List<ReservationDTO> reservationsDTO = new ArrayList<>();
+		
+		for (Reservation reservation : reservations) {
+			reservationsDTO.add(new ReservationDTO(reservation));
+		}
+		return new ResponseEntity<List<ReservationDTO>>(reservationsDTO, HttpStatus.OK);
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@PostMapping(value = "/deleteReservation")
+	public ResponseEntity deleteResrvation(@RequestBody long id){
+		resService.deleteReservation(id);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 }

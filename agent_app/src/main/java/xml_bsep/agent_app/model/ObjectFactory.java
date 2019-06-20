@@ -203,4 +203,9 @@ public class ObjectFactory {
     public AddPricePlanResponse createAddPricePlanResponse() {
     	return new AddPricePlanResponse();
     }
+    
+    public DeclineReservationRequest createDeclineReservationRequest() {
+    	return new DeclineReservationRequest();
+    }
+
 }

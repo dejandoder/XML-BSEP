@@ -58,7 +58,48 @@
             </div>
           </tab>
           <tab heading="Reservations">
+            <div class="row pt-4">
+              <div class="col-8">
+                   <div class="list-group border rounded w-100" style="max-height: 320px; overflow-y:  scroll;">
+                   <div  class="list-group-item" *ngFor="let res of reservations" style="display: block">
+                     <div class="row">
+                       <div class="col-7 pt-2" >
+                         <p class="font-italic" style="display: inline"><fa-icon  class="mx-1" icon="calendar"></fa-icon>{{res.fromDate.slice(0,10)}}</p>
+                         <p class="font-italic mx-2" style="display: inline">to</p>
+                         <p class="font-italic " style="display: inline"><fa-icon class="mx-1" icon="calendar"></fa-icon>{{res.toDate.slice(0,10)}}</p>
+                         <p class="font-italic mx-1" style="display: inline"> by </p>
+                         <p class="font-italic  " style="display: inline"><b>{{res.username}}</b></p><br>
+                       </div>
+                       <div class="col-1 pb-2 mr-2">
+                          <button class="btn btn-link" *ngIf="res.status == 'PENDING' && !res.agentReserved" (click)="declineReservation(res)" >Decline</button>
+                       </div>
+                       <div class="col-1 pb-2 mx-2">
+                          <button class="btn btn-link mx-2" *ngIf="res.status == 'PENDING' && !res.agentReserved" (click)="approveReservation(res)" >Approve</button>
+                       </div>
+                       <div class="col-1 pb-2 ml-2" >
+                          <button class="btn btn-link" *ngIf="res.status == 'APPROVED' && !res.agentReserved" (click)="confirmReservation(res)" >Confirm</button>
+                       </div>
+                       
+                     </div>
+                   </div>
+                 </div>
+               </div>
 
+               <div class="col-4">
+                   <div class="row pl-2"><h6>Disable new reservations:</h6></div> 
+                   <div class="row">
+                         <div class="col-6">
+                           <input type="text" readonly=true placeholder="Select date range"class="form-control" bsDaterangepicker [(ngModel)]="disableDates" [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
+                         </div>
+                         <div class="col-2">
+                           <button class="btn btn-primary" (click)="disableReservations()">Disable</button>
+                         </div> 
+                   </div>
+                   <div class="row">
+                     <p class="text-danger">{{resErrorMessage}}</p>
+                   </div>
+               </div>
+           </div>
           </tab>
           <tab heading="Recensions">
             

@@ -5,6 +5,8 @@ import { ImageService } from 'src/app/service/ImageService';
 import { PricePlanService } from 'src/app/service/PricePlanService';
 import { PricePlan } from 'src/app/model/PricePlan';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ReservationDTO } from 'src/app/model/ReservationDTO';
+import { ReservationService } from 'src/app/service/ReservationService';
 
 @Component({
   selector: 'app-edit-accomodation',
@@ -19,8 +21,13 @@ export class EditAccomodationComponent implements OnInit {
   newPricePlan : PricePlan = new PricePlan();
   ppErrorMessage : string = "";
   dates : Date[] = [];
+  disableDates : Date[] = [];
 
-  constructor(private accService : AccomodationUnitService, private imageService : ImageService, private ppService : PricePlanService ) {
+  reservations : ReservationDTO[] = [];
+
+  resErrorMessage = "";
+
+  constructor(private accService : AccomodationUnitService, private imageService : ImageService, private ppService : PricePlanService, private resService : ReservationService ) {
     this.accUnit = accService.getEditingAccUnit();
     this.loadAccUnit();
     setInterval(
@@ -30,6 +37,11 @@ export class EditAccomodationComponent implements OnInit {
             }
           },
           1000);
+    resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
+      data =>{
+        this.reservations = data;
+      }
+    )
    }
 
   ngOnInit() {
@@ -99,4 +111,65 @@ export class EditAccomodationComponent implements OnInit {
         }
       )
   }
+
+  disableReservations(){
+    if(this.disableDates.length != 2){
+      this.resErrorMessage = "Select dates!";
+      setTimeout(() => {
+        this.resErrorMessage = "";
+      }, 2000);
+    }else{
+      let res = new ReservationDTO();
+      res.fromDate = this.disableDates[0];
+      res.toDate = this.disableDates[1];
+      res.accId = this.accUnit.id;
+      this.resService.agentReservation(res).subscribe(
+        data =>{
+          
+        }
+      )
+    }
+  }
+
+  approveReservation(res : ReservationDTO){
+    this.resService.approveReservation(res.id).subscribe(
+      data =>{
+      },
+      error =>{
+        this.resErrorMessage = "Reservation has been canceled!";
+        setTimeout(() => {
+          this.resErrorMessage = "";
+        }, 2000);
+      }
+    )
+  }
+
+  declineReservation(res : ReservationDTO){
+    this.resService.declineReservation(res.id).subscribe(
+      data =>{
+
+      },
+      error=>{
+        this.resErrorMessage = "Reservation has been canceled!";
+        setTimeout(() => {
+          this.resErrorMessage = "";
+        }, 2000);
+      }
+    )
+  } 
+
+  confirmReservation(res : ReservationDTO){
+    this.resService.confirmReservation(res.id).subscribe(
+      data =>{
+
+      },
+      error =>{
+        this.resErrorMessage = "Reservation has been canceled!";
+        setTimeout(() => {
+          this.resErrorMessage = "";
+        }, 2000);
+      }
+    )
+  }
+
 }

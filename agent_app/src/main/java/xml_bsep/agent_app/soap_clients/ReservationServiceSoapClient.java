@@ -9,6 +9,7 @@ import xml_bsep.agent_app.model.ApproveReservationRequest;
 import xml_bsep.agent_app.model.ApproveReservationResponse;
 import xml_bsep.agent_app.model.ConfirmReservationRequest;
 import xml_bsep.agent_app.model.ConfirmReservationResponse;
+import xml_bsep.agent_app.model.DeclineReservationRequest;
 import xml_bsep.agent_app.model.SyncReservationsRequest;
 import xml_bsep.agent_app.model.SyncReservationsResponse;
 
@@ -50,4 +51,7 @@ public class ReservationServiceSoapClient extends WebServiceGatewaySupport {
 		return response;
 	}
 	
+	public void declineReservation(DeclineReservationRequest request) {	
+		getWebServiceTemplate().marshalSendAndReceive(SERVICE_URI, request, new SoapActionCallback(""));
+	}
 }

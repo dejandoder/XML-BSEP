@@ -1,11 +1,10 @@
-package xml_bsep.reservation_service.dto;
+package xml_bsep.agent_app.dto;
 
 import java.util.Date;
 
-import org.apache.commons.lang.time.DateUtils;
-
-import com.eureka.common.model.Reservation;
-import com.eureka.common.model.ReservationStatus;
+import xml_bsep.agent_app.model.Reservation;
+import xml_bsep.agent_app.model.ReservationStatus;
+import org.apache.commons.lang3.time.DateUtils;
 
 public class ReservationDTO {
 	
@@ -18,6 +17,8 @@ public class ReservationDTO {
 	private int comment;
 	private ReservationStatus status;
 	private boolean cancelable;
+	private String username;
+	private boolean agentReserved;
 	
 	public ReservationDTO(Reservation reservation) {
 		this.id = reservation.getId();
@@ -31,8 +32,10 @@ public class ReservationDTO {
 		
 		if(fromDate.after(DateUtils.addDays(currentDate, reservation.getAccUnit().getCancelingPeriod()))) cancelable = true;
 		else cancelable = false;
-		
+		this.username = reservation.getUser().getUsername();
+		this.agentReserved = reservation.isAgentReserved();
 	}
+	
 	
 	public ReservationDTO() {
 		// TODO Auto-generated constructor stub
@@ -109,6 +112,22 @@ public class ReservationDTO {
 	public void setCancelable(boolean isCancelable) {
 		this.cancelable = isCancelable;
 	}
-	
-	
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public boolean isAgentReserved() {
+		return agentReserved;
+	}
+
+	public void setAgentReserved(boolean agentReserved) {
+		this.agentReserved = agentReserved;
+	}
+
 }

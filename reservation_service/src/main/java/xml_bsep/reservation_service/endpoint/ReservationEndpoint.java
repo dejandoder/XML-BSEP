@@ -14,6 +14,9 @@ import com.eureka.common.model.ApproveReservationRequest;
 import com.eureka.common.model.ApproveReservationResponse;
 import com.eureka.common.model.ConfirmReservationRequest;
 import com.eureka.common.model.ConfirmReservationResponse;
+import com.eureka.common.model.DeclineReservationRequest;
+import com.eureka.common.model.Reservation;
+import com.eureka.common.model.SOAPResponseStatus;
 import com.eureka.common.model.SyncReservationsRequest;
 import com.eureka.common.model.SyncReservationsResponse;
 
@@ -37,20 +40,47 @@ public class ReservationEndpoint {
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "approve_reservation_request")
 	public ApproveReservationResponse approveReservation(@RequestPayload ApproveReservationRequest request) {
 		ApproveReservationResponse response = new ApproveReservationResponse();
-		return response;
+		
+		if(service.checkIfReservationExists(request.getReservationId())) {
+			service.approveReservation(request.getReservationId());
+			response.setStauts(SOAPResponseStatus.SUCCESS);
+			return response;
+		}else {
+			response.setStauts(SOAPResponseStatus.ERROR);
+			return response;
+		}
 	}
 	
 	@ResponsePayload
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "confirm_reservation_request")
 	public ConfirmReservationResponse confirmReservation(@RequestPayload ConfirmReservationRequest request) {
 		ConfirmReservationResponse response = new ConfirmReservationResponse();
-		return response;
+		
+		if(service.checkIfReservationExists(request.getReservationId())) {
+			service.confirmReservaiton(request.getReservationId());
+			response.setStatus(SOAPResponseStatus.SUCCESS);
+			return response;
+		}else {
+			response.setStatus(SOAPResponseStatus.ERROR);
+			return response;
+		}
+	}
+	
+	
+	
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "decline_reservation_request")
+	public void declineReservation(@RequestPayload DeclineReservationRequest request) {
+		if(service.checkIfReservationExists(request.getResId())){
+			service.declineReservation(request.getResId());
+		}
 	}
 	
 	@ResponsePayload
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "agent_reservation_request")
 	public AgentReservationResponse agentReservation(@RequestPayload AgentReservationRequest request) {
 		AgentReservationResponse response = new AgentReservationResponse();
+		Reservation res = service.saveReservation(request.getReservation());
+		response.setReservationId(res.getId());
 		return response;
 	}
 	

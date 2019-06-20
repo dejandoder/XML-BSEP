@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.eureka.common.model.Reservation;
+import com.eureka.common.model.ReservationStatus;
+import com.netflix.discovery.shared.resolver.aws.ApplicationsResolver;
 
 import xml_bsep.reservation_service.dto.CheckReaservationDTO;
 import xml_bsep.reservation_service.repository.ReservationRepository;
@@ -46,5 +48,34 @@ public class ReservationService {
 		return repository.findAll();
 	}
 	
+	public List<Reservation> getReservationsByUser(String username){
+		return repository.getReservationsByUserId(username);
+	}
 
+	public void deleteReservation(long id) {
+		repository.deleteById(id);
+	}
+	
+	public boolean checkIfReservationExists(long resId) {
+		Reservation res = repository.findOneById(resId);
+		if(res == null) return false;
+		else return true;
+	}
+	
+	public void approveReservation(long resId) {
+		Reservation res = repository.findOneById(resId);
+		res.setStatus(ReservationStatus.APPROVED);
+		repository.save(res);
+	}
+	
+	public void confirmReservaiton(long resId) {
+		Reservation res = repository.findOneById(resId);
+		res.setStatus(ReservationStatus.CONFIRMED);
+		repository.save(res);
+	}
+	
+	public void declineReservation(long resId) {
+		Reservation res = repository.findOneById(resId);
+		repository.delete(res);
+	}
 }

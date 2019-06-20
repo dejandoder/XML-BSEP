@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ReservationDTO } from 'src/app/model/ReservationDTO';
+import { ReservationService } from 'src/app/service/ReservationService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation-preview',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationPreviewComponent implements OnInit {
 
-  constructor() { }
+  @Input('res') resInput : ReservationDTO;
+  res : ReservationDTO;
+  constructor(private resService : ReservationService, private router : Router) {
+
+   }
 
   ngOnInit() {
+    this.res = this.resInput;
   }
 
+  cancelClick(){
+    this.resService.deleteReservation(this.res.id).subscribe(
+      data =>{
+        this.res.status = "DELETED";
+        this.res.cancelable = false;
+      }
+    )
+  }
 }
