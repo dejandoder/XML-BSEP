@@ -50,7 +50,7 @@ public class RandomController {
 	public ResponseEntity syncAfterLogin() {
 		accServicesService.syncServices();
 		typesService.syncTypes();
-		messageService.syncMessages();
+		//messageService.syncMessages();
 		reservationService.syncReservations();
 		return new ResponseEntity(HttpStatus.OK);
 	}
