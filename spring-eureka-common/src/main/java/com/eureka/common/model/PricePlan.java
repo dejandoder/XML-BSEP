@@ -12,8 +12,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -78,7 +76,6 @@ public class PricePlan {
     protected float pricePerNight;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
     
