@@ -14,7 +14,9 @@ public class MessagesServiceSoapClient extends WebServiceGatewaySupport{
 
 	private static final String SERVICE_URI = "http://localhost:8762/mess/soap";
 	
-	public SyncMessagesResponse syncMessages(SyncMessagesRequest request) {
+	public SyncMessagesResponse syncMessages() {
+		
+		SyncMessagesRequest request = new SyncMessagesRequest();
 		
 		SyncMessagesResponse response = (SyncMessagesResponse) getWebServiceTemplate()
 				.marshalSendAndReceive(SERVICE_URI, request, new SoapActionCallback(""));

@@ -26,7 +26,7 @@ public class ReservationController {
 	
 	@PostMapping(value = "/syncReservations")
 	public ResponseEntity<SyncReservationsResponse> syncResvations(){
-		return new ResponseEntity<>(client.syncReservation(new SyncReservationsRequest()), HttpStatus.OK);
+		return new ResponseEntity<>(client.syncReservation(), HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/approveReservation")

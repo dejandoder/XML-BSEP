@@ -37,7 +37,14 @@ public class ReservationService {
 		return true;
 	}
 	
+
 	public Reservation saveReservation(Reservation reservation) {
 		return repository.save(reservation);
 	}
+
+	public List<Reservation> findAll(){
+		return repository.findAll();
+	}
+	
+
 }

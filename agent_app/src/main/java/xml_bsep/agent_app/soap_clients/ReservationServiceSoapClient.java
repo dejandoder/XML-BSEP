@@ -16,8 +16,10 @@ public class ReservationServiceSoapClient extends WebServiceGatewaySupport {
 
 	private static final String SERVICE_URI = "http://localhost:8762/res/soap";
 	
-	public SyncReservationsResponse syncReservation(SyncReservationsRequest request) {
+	public SyncReservationsResponse syncReservation() {
 	
+		SyncReservationsRequest request= new SyncReservationsRequest();
+		
 		SyncReservationsResponse response = (SyncReservationsResponse) getWebServiceTemplate()
 				.marshalSendAndReceive(SERVICE_URI, request, new SoapActionCallback(""));
 		

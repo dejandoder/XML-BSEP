@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import xml_bsep.agent_app.service.AccomodationServicesService;
 import xml_bsep.agent_app.service.AccomodationTypeService;
+import xml_bsep.agent_app.service.MessageService;
+import xml_bsep.agent_app.service.ReservationService;
 import xml_bsep.agent_app.service.UserService;
 
 @RestController
@@ -23,6 +25,12 @@ public class RandomController {
 	
 	@Autowired
 	AccomodationTypeService typesService;
+	
+	@Autowired
+	MessageService messageService;
+	
+	@Autowired
+	ReservationService reservationService;
 	
 	
 	@GetMapping(value = "/logOut")
@@ -42,6 +50,8 @@ public class RandomController {
 	public ResponseEntity syncAfterLogin() {
 		accServicesService.syncServices();
 		typesService.syncTypes();
+		messageService.syncMessages();
+		reservationService.syncReservations();
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
