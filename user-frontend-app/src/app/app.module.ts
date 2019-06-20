@@ -26,6 +26,7 @@ import { AccomodationPreviewComponent } from './components/accomodation-preview/
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { FontAwesomeModule } from 'ngx-icons';
+import { ReservationPreviewComponent } from './components/reservation-preview/reservation-preview.component';
 
 
 
@@ -38,6 +39,7 @@ import { FontAwesomeModule } from 'ngx-icons';
     ReservationsComponent,
     MessagesComponent,
     AccomodationPreviewComponent,
+    ReservationPreviewComponent,
   
   ],
   imports: [

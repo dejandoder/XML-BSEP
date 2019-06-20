@@ -153,4 +153,8 @@ public class AccomodationUnitService {
 
 	    return Math.sqrt(distance);
 	}
+	
+	public AccomodationUnit findOne(long accId) {
+		return repository.findOneById(accId);
+	}
 }

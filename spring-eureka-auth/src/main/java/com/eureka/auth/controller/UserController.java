@@ -77,9 +77,11 @@ public class UserController {
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/getUser")
+	@PostMapping(value = "/getUser")
 	public ResponseEntity<User> getUser(@RequestBody String username){
 		User user = service.getUserByUsername(username);
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
+	
+	
 }

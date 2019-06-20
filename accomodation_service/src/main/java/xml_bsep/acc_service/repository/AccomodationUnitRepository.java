@@ -12,4 +12,6 @@ public interface AccomodationUnitRepository extends JpaRepository<AccomodationUn
 
 	@Query("select accUnit from AccomodationUnit accUnit where accUnit.capacity = :persons")
 	public List<AccomodationUnit> searchAccUnits(@Param("persons") int persons);
+	
+	public AccomodationUnit findOneById(long id);
 }

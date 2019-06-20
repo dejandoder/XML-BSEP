@@ -22,9 +22,25 @@
         <p><i>Category: </i>{{accUnit.category}}</p><br>
         <p><i>Price: </i>{{accUnit.price}}$</p>
         <div class="d-flex flex-row-reverse">
-          <button class="btn btn-secondary">Reserve</button>
+          <button class="btn btn-secondary" (click)="reserveClick(template)" *ngIf="!hideReservationButton">Reserve</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #template>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Reservation info</h4>
+    </div>
+    <div class="modal-body">
+          <div class="row">
+              <div class="col-10">
+                <p>{{reservationMessage}}</p>
+              </div>
+              <div class="col-2 d-flex flex-row-reverse">
+                  <button class="btn btn-secondary pull-right mt-3" (click)="okClick()">Ok</button>
+                </div>
+          </div>   
+        </div>
+  </ng-template>

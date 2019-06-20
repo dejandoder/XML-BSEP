@@ -4,6 +4,7 @@ import { AccomodationType } from '../model/AccomodationType';
 import { AccomodationService } from '../model/AccomodationService';
 import { SearchDTO } from '../model/SearchDTO';
 import { AccomodationUnit } from '../model/AccomodationUnit';
+import { ReservationDTO } from '../model/ReservationDTO';
 
 @Injectable({
     providedIn: 'root',
@@ -24,4 +25,7 @@ export class AccomodationUnitService{
         return this.http.post<AccomodationUnit[]>('api/acc/search',searchDTO);
     }
 
+    reserveAccomodation(reservationDTO : ReservationDTO){
+        return this.http.post('api/res/newReservation',reservationDTO);
+    }
 }
