@@ -271,7 +271,7 @@
       <xs:element name="comment" type="xs:string"/>
       <xs:element name="rating" type="xs:int"/>
       <xs:element name="id" type="xs:long"/>
-      <xs:element name="approved" type="xs:boolean" default="false"/>
+      <xs:element name="status" type="tns:RecensionStatus" default="false" minOccurs="0"/>
       <xs:element name="user" type="tns:user"/>
       <xs:element name="accomodation_unit" type="tns:accomodation_unit"/>
     </xs:sequence>
@@ -333,6 +333,14 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="SUCCESS"/>
       <xs:enumeration value="ERROR"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="RecensionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="DECLINED"/>
     </xs:restriction>
   </xs:simpleType>
 

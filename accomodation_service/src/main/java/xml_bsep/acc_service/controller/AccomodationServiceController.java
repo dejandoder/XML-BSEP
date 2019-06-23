@@ -32,7 +32,7 @@ public class AccomodationServiceController {
 		return new ResponseEntity<>(accServices, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/getAllAccServices")
+	@GetMapping(value = "/all/getAllAccServices")
 	public ResponseEntity<List<AccomodationService>> getAllAccService(){
 		List<AccomodationService> accServices = service.findAll();
 		return new ResponseEntity<>(accServices, HttpStatus.OK);

@@ -11,7 +11,7 @@ export class AccTypeService{
     }
 
     getAllAccTypes(){
-        return this.http.get<AccomodationType[]>("api/acc/getAllAccTypes");
+        return this.http.get<AccomodationType[]>("api/acc/all/getAllAccTypes");
     }
 
     addNewAccType(newAccType : AccomodationType){

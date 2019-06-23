@@ -14,11 +14,11 @@ export class AccomodationUnitService{
     constructor(private http : HttpClient){}
 
     getAccTypes(){
-        return this.http.get<AccomodationType[]>('api/acc/getAllAccTypes');
+        return this.http.get<AccomodationType[]>('api/acc/all/getAllAccTypes');
     }
 
     getAccServices(){
-        return this.http.get<AccomodationService[]>('api/acc/getAllAccServices');
+        return this.http.get<AccomodationService[]>('api/acc/all/getAllAccServices');
     }
 
     searchAccServices(searchDTO : SearchDTO){

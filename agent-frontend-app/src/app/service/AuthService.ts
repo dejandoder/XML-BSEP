@@ -28,7 +28,7 @@ export class AuthService{
     }
 
     doLoginUser(response){
-        localStorage.setItem("JWT_TOKEN", response.jwt);
+        localStorage.setItem("AGENT_JWT_TOKEN", response.jwt);
         this.http.get('api/syncAll').subscribe(
             data =>{
               console.log(data);
@@ -43,19 +43,19 @@ export class AuthService{
         this.http.get('api/logOut').subscribe(
             data => {}
         )
-        localStorage.removeItem("JWT_TOKEN");
+        localStorage.removeItem("AGENT_JWT_TOKEN");
         this.router.navigateByUrl('/login')
       
     }
 
     isUserLogged() : boolean{
-        let jwt = localStorage.getItem("JWT_TOKEN");
+        let jwt = localStorage.getItem("AGENT_JWT_TOKEN");
         if(jwt == null) return false;
         else if(!this.isTokenExpired()) return true;
     }
 
     getJwt() : string{
-        return localStorage.getItem("JWT_TOKEN");
+        return localStorage.getItem("AGENT_JWT_TOKEN");
     }
 
     getTokenExpirationDate(token: string): Date {

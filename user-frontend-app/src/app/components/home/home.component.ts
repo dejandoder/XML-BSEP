@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
+import { AuthService } from 'src/app/service/AuthService';
+import { User } from 'src/app/model/User';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +11,16 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router : Router, private route: ActivatedRoute) {
+  userLogged : boolean;
+  user : User = new User();
+  errorMessage : string;
+
+  constructor(private router : Router, private route: ActivatedRoute, private authService : AuthService) {
     this.router.navigate(["accomodations"], {relativeTo: this.route});
+    this.userLogged = authService.isUserLogged();
+    setInterval(() => {
+      this.userLogged = authService.isUserLogged();
+    }, 500);
    }
 
   ngOnInit() {
@@ -22,5 +32,21 @@ export class HomeComponent implements OnInit {
     this.router.navigate([selector], {relativeTo: this.route});
   }
 
+  loginClick(){
+    this.authService.login(this.user).subscribe(
+      success => {
+        if(!success) {
+          this.errorMessage = "Wrong username or password";
+        }else{
+          this.errorMessage = "";
+        }
+      }
+    );
+  }
+  
+  logoutClick(){
+    this.authService.logOutUser();
+    this.router.navigate(["/home"]);
+  }
   
 }

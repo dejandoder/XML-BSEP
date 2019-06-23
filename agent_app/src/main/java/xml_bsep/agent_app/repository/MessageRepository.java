@@ -6,9 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import xml_bsep.agent_app.model.AccomodationUnit;
 import xml_bsep.agent_app.model.Message;
-import xml_bsep.agent_app.model.Reservation;
 
 public interface MessageRepository extends JpaRepository<Message, Long> {
 

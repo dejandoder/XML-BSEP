@@ -11,7 +11,7 @@ export class AccServicesService{
     }
     
     getAllAccServices() {
-       return this.http.get<AccService[]>("api/acc/getAllAccServices");
+       return this.http.get<AccService[]>("api/acc/all/getAllAccServices");
     }
 
     addNewAccServide(accService : AccService){

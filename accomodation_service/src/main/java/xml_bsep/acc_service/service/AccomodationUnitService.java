@@ -109,7 +109,10 @@ public class AccomodationUnitService {
 			float price = 0;
 			
 			for (Date dateIter = searchDTO.getDates().get(0); !dateIter.after(searchDTO.getDates().get(1)); dateIter = DateUtils.addDays(dateIter, 1)) {
-		        price += ppRepository.getPricePlanForDay(dateIter, accUnit.getId());
+		        Object o = ppRepository.getPricePlanForDay(dateIter, accUnit.getId());
+		        if(o != null) {
+		        	price+= (Float)o;
+		        }
 		    }
 			
 			accUnitDTO.setPrice(price);

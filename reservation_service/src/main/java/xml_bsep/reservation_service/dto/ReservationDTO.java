@@ -18,6 +18,7 @@ public class ReservationDTO {
 	private int comment;
 	private ReservationStatus status;
 	private boolean cancelable;
+	private boolean review;
 	
 	public ReservationDTO(Reservation reservation) {
 		this.id = reservation.getId();
@@ -109,6 +110,13 @@ public class ReservationDTO {
 	public void setCancelable(boolean isCancelable) {
 		this.cancelable = isCancelable;
 	}
-	
-	
+
+	public boolean isReview() {
+		return review;
+	}
+
+	public void setReview(boolean review) {
+		this.review = review;
+	}
+		
 }

@@ -9,18 +9,20 @@
         <a class="nav-link active" (click)="onNavClick('accomodations')" id="accomodations">Accomodations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="onNavClick('reservations')" id="reservations">Reservations</a>
+        <a class="nav-link" (click)="onNavClick('reservations')" id="reservations" *ngIf="userLogged">Reservations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="onNavClick('messages')" id="messages">Messages</a>
+        <a class="nav-link" (click)="onNavClick('messages')" id="messages" *ngIf="userLogged">Messages</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Username" aria-label="Search">
-      <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0">Login</button>
-      <button class="btn btn-outline-success my-2 my-sm-0">Log out</button>
+    <form name="form" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" *ngIf="!userLogged" type="text" placeholder="Username" aria-label="Search" [(ngModel)]="user.username" [ngModelOptions]="{standalone: true}">
+      <input class="form-control mr-sm-2" *ngIf="!userLogged" type="password" placeholder="Password" aria-label="Search" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-outline-success my-2 my-sm-0" *ngIf="!userLogged" (click) = "loginClick()">Login</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" *ngIf="userLogged" (click) = "logoutClick()">Log out</button>
     </form>
   </div>
 </nav>
+<p class="text-danger small text-right px-3">{{errorMessage}}</p>
 <router-outlet></router-outlet>
+  

@@ -8,4 +8,5 @@ export class ReservationDTO{
     comment : number;
     cancelable : boolean;
     status : string;
+    review : boolean;
 }

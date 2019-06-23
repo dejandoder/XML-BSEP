@@ -33,8 +33,9 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		   .addFilterAfter(new JwtTokenAuthenticationFilter(jwtConfig), UsernamePasswordAuthenticationFilter.class)
 		// authorization requests config
 		.authorizeRequests()
+		.antMatchers("/all/**").permitAll()
 		   // allow all who are accessing "auth" service
-		   .anyRequest().authenticated(); 
+		.anyRequest().authenticated(); 
 	}
 	
 	@Bean

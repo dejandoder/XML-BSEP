@@ -39,7 +39,7 @@ public class AccomodationTypeController {
 		return new ResponseEntity<>(accTypes, HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/getAllAccTypes")
+	@GetMapping(value = "/all/getAllAccTypes")
 	public ResponseEntity<List<AccomodationType>> getAllAccTypes(){
 		List<AccomodationType> accTypes = service.findAll();
 		return new ResponseEntity<>(accTypes, HttpStatus.OK);

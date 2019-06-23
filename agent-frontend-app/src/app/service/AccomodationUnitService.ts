@@ -13,7 +13,7 @@ export class AccomodationUnitService{
     currentEditingAccUnit : AccomodationUnit;
 
     constructor(private http : HttpClient){
-
+        
     }
 
     getAllAccomodationTypes(){

@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { tap, mapTo, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import * as jwt_decode from 'jwt-decode';
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root',
@@ -13,7 +14,7 @@ export class AuthService{
     
    
 
-    constructor(private http : HttpClient){
+    constructor(private http : HttpClient, private router : Router){
     }
 
     login(user : User) : Observable<boolean>{
@@ -32,6 +33,7 @@ export class AuthService{
 
     logOutUser(){
         localStorage.removeItem("JWT_TOKEN");
+        this.router.navigate(["/login"]);
     }
 
     isUserLogged() : boolean{

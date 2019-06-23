@@ -1,0 +1,1 @@
+INSERT INTO `user` VALUES (1,'','James','$2a$10$fdm5I8pjSe3wc6tEJldnsuL9XQN0ZJUCppYRM2U7dFmPouBAUMccW','12345678',2,1,'Bond','agent007'),(2,'','User','$2a$10$fdm5I8pjSe3wc6tEJldnsuL9XQN0ZJUCppYRM2U7dFmPouBAUMccW','',0,1,'User','user1'),(3,'','Admin','$2a$10$fdm5I8pjSe3wc6tEJldnsuL9XQN0ZJUCppYRM2U7dFmPouBAUMccW','',1,1,'Admin','admin1');

@@ -1,5 +1,7 @@
 package xml_bsep.agent_app.dto;
 
+import xml_bsep.agent_app.model.User;
+
 public class UserDTO {
 
 	private long id;
@@ -11,6 +13,13 @@ public class UserDTO {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public UserDTO(User user) {
+		super();
+		this.id = user.getId();
+		this.name = user.getUsername();
+		this.surname = user.getSurname();
+		this.username = user.getUsername();
+	}
 	
 	
 	public UserDTO(long id, String name, String surname, String username) {

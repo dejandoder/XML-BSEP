@@ -22,6 +22,7 @@ import { AuthInterceptor } from './http-interceptor/AuthInterceptor';
 import { AccTypeService } from './service/AccTypeService';
 import {MatIconModule} from '@angular/material/icon';
 import { UserService } from './service/UserService';
+import { RecensionService } from './service/RecensionService';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { UserService } from './service/UserService';
     AccServicesService,
     AccTypeService,
     UserService,
+    RecensionService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     RandomGuard,
   ],

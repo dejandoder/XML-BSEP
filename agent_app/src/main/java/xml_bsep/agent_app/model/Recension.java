@@ -10,8 +10,6 @@ package xml_bsep.agent_app.model;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -57,7 +55,7 @@ import javax.xml.bind.annotation.XmlType;
     "comment",
     "rating",
     "id",
-    "approved",
+    "status",
     "user",
     "accomodationUnit"
 })
@@ -69,12 +67,11 @@ public class Recension {
     protected int rating;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
     
     @XmlElement(defaultValue = "false")
-    protected boolean approved;
+    protected RecensionStatus status;
     
     @ManyToOne
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "RECENSION_USER_ID_FK"))
@@ -146,21 +143,6 @@ public class Recension {
         this.id = value;
     }
 
-    /**
-     * Gets the value of the approved property.
-     * 
-     */
-    public boolean isApproved() {
-        return approved;
-    }
-
-    /**
-     * Sets the value of the approved property.
-     * 
-     */
-    public void setApproved(boolean value) {
-        this.approved = value;
-    }
 
     /**
      * Gets the value of the user property.
@@ -210,4 +192,14 @@ public class Recension {
         this.accomodationUnit = value;
     }
 
+	public RecensionStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(RecensionStatus status) {
+		this.status = status;
+	}
+
+    
+    
 }

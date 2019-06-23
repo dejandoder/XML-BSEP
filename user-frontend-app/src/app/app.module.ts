@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 
@@ -31,13 +30,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { ReservationService } from './service/ReservationService';
+import { MessageService } from './service/MessageService';
+import { RecenesionService } from './service/RecensionService';
 library.add(fas);
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     AccomodationsComponent,
     ReservationsComponent,
@@ -65,6 +65,8 @@ library.add(fas);
     AuthGuard,
     RandomGuard,
     ReservationService,
+    MessageService,
+    RecenesionService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     
   ],

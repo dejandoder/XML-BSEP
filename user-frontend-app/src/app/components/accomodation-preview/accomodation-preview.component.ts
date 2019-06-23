@@ -4,6 +4,9 @@ import { ReservationDTO } from 'src/app/model/ReservationDTO';
 import { AccomodationUnitService } from 'src/app/service/AccomodationUnitService';
 import { Router } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { AuthService } from 'src/app/service/AuthService';
+import { RecensionDTO } from 'src/app/model/RecensionDTO';
+import { RecenesionService } from 'src/app/service/RecensionService';
 
 @Component({
   selector: 'app-accomodation-preview',
@@ -21,10 +24,21 @@ export class AccomodationPreviewComponent implements OnInit {
     backdrop: true,
     ignoreBackdropClick: true
   };
+  config2 = {
+    backdrop: true
+  };
   hideReservationButton : boolean = false;
   reservationMessage : string;
+  userLogged : boolean;
+  recensions : RecensionDTO[];
 
-  constructor(private accService : AccomodationUnitService, private modalService: BsModalService) { }
+  constructor(private accService : AccomodationUnitService, private modalService: BsModalService,
+     private authService : AuthService, private recService : RecenesionService) {
+    this.userLogged = authService.isUserLogged();
+    setInterval(() => {
+      this.userLogged = authService.isUserLogged();
+    }, 500);
+   }
 
   ngOnInit() {
     this.accUnit = this.accUnitInput;
@@ -47,12 +61,23 @@ export class AccomodationPreviewComponent implements OnInit {
       data =>{
         this.modalRef = this.modalService.show(template,this.config);
 
-        this.reservationMessage = "Your reservation has been recorded. You will be able to see it after agent approves it!";
+        this.reservationMessage = "Your reservation has been recorded. You can see it in reservation tab!";
       },
       error =>{
         this.modalRef = this.modalService.show(template,this.config);
 
         this.reservationMessage = "Someone reserved this accomodation in the mean time, reserve another accomodation!";
+      }
+    )
+  }
+
+  showRecensions(template: TemplateRef<any>){
+
+    this.modalRef = this.modalService.show(template,this.config2);
+
+    this.recService.getRecensions(this.accUnit.id).subscribe(
+      data =>{
+          this.recensions = data;
       }
     )
   }

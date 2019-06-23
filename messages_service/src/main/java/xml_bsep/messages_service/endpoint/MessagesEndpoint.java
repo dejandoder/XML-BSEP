@@ -1,5 +1,7 @@
 package xml_bsep.messages_service.endpoint;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -8,6 +10,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import xml_bsep.messages_service.service.MessageService;
 
+import com.eureka.common.model.Message;
 import com.eureka.common.model.SendMessageRequest;
 import com.eureka.common.model.SendMessageResponse;
 import com.eureka.common.model.SyncMessagesRequest;
@@ -34,7 +37,10 @@ public class MessagesEndpoint {
 	@ResponsePayload
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "send_message_request")
 	public SendMessageResponse sendMessage(@RequestPayload SendMessageRequest request) {
+		Message message = service.save(request.getMessage());
+		message.setDate(new Date());
 		SendMessageResponse response = new SendMessageResponse();
+		response.setMessageId(message.getId());
 		return response;
 	}
 	

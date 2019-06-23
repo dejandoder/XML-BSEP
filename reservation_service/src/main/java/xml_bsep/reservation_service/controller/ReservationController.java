@@ -1,14 +1,19 @@
 package xml_bsep.reservation_service.controller;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpRequestExecution;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +26,9 @@ import com.eureka.common.model.Reservation;
 import com.eureka.common.model.ReservationStatus;
 import com.eureka.common.model.User;
 
+import xml_bsep.reservation_service.UrlUtils;
 import xml_bsep.reservation_service.dto.CheckReaservationDTO;
+import xml_bsep.reservation_service.dto.CheckReviewDTO;
 import xml_bsep.reservation_service.dto.ReservationDTO;
 import xml_bsep.reservation_service.service.ReservationService;
 import xml_bsep.reservation_service.service.UserService;
@@ -92,7 +99,16 @@ public class ReservationController {
 		List<ReservationDTO> reservationsDTO = new ArrayList<>();
 		
 		for (Reservation reservation : reservations) {
-			reservationsDTO.add(new ReservationDTO(reservation));
+			CheckReviewDTO crDTO = new CheckReviewDTO(reservation.getUser().getId(),reservation.getAccUnit().getId());
+			
+			HttpEntity<CheckReviewDTO> request = new HttpEntity<CheckReviewDTO>(crDTO);
+			HttpEntity<Boolean> response = getRT().exchange(UrlUtils.getRatingSystemUrl() + "/checkRecension", HttpMethod.POST, request, Boolean.class);
+			
+			ReservationDTO rDTO = new ReservationDTO(reservation);
+			
+			rDTO.setReview(response.getBody());
+			
+			reservationsDTO.add(rDTO);
 		}
 		return new ResponseEntity<List<ReservationDTO>>(reservationsDTO, HttpStatus.OK);
 	}
@@ -104,4 +120,15 @@ public class ReservationController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
+	private RestTemplate getRT() {
+		RestTemplate restTemplate = new RestTemplate();
+	    restTemplate.getInterceptors().add(new ClientHttpRequestInterceptor(){
+	        @Override
+	        public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
+	            request.getHeaders().set("Authorization", "Bearer " + userService.getJwtToken());//Set the header for each request
+	            return execution.execute(request, body);
+	        }
+	    });
+	    return restTemplate;
+	}
 }
