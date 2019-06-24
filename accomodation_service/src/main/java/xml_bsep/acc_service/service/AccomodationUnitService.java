@@ -91,7 +91,7 @@ public class AccomodationUnitService {
 			checkDTO.setDates(searchDTO.getDates());
 			
 			HttpEntity<CheckReaservationDTO> request = new HttpEntity<CheckReaservationDTO>(checkDTO);
-			ResponseEntity<Boolean> response = restTemplate.exchange("http://reservation-service/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
+			ResponseEntity<Boolean> response = restTemplate.exchange("http://reservation-service/all/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
 			
 			if(response.getBody() == true) searchResults4.add(accUnit);
 		}

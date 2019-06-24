@@ -12,11 +12,11 @@ export class RecenesionService{
     }
 
     getRecensions(accId : number){
-        return this.http.post<RecensionDTO[]>('api/acc/getRecensionsByAccUnitForUser',accId);
+        return this.http.post<RecensionDTO[]>('api/acc/all/getRecensionsByAccUnitForUser',accId);
     }    
 
     addRecension(recDTO : RecensionDTO){
-        return this.http.post('api/acc/addRecension', recDTO);
+        return this.http.post('api/acc/user/addRecension', recDTO);
     }
 
 }

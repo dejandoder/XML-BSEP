@@ -22,18 +22,18 @@ public class MessagesController {
 	@Autowired
 	MessageService messService;
 	
-	@GetMapping(value = "/getContacts")
+	@GetMapping(value = "/user/getContacts")
 	public ResponseEntity<List<UserDTO>> getContacts(){
 		return new ResponseEntity<List<UserDTO>>(messService.getContacts(), HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/getMessages")
+	@PostMapping(value = "/user/getMessages")
 	public ResponseEntity<List<MessageDTO>> getMessages(@RequestBody String username){
 		return new ResponseEntity<>(messService.getMessages(username), HttpStatus.OK);
 	}
 	
 	@SuppressWarnings("rawtypes")
-	@PostMapping(value = "/sendMessage")
+	@PostMapping(value = "/user/sendMessage")
 	public ResponseEntity sendMessage(@RequestBody MessageDTO messageDTO) {
 		messService.sendMessage(messageDTO);
 		return new ResponseEntity(HttpStatus.OK);

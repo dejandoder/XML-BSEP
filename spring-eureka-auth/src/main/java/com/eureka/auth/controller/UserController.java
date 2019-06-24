@@ -77,7 +77,7 @@ public class UserController {
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/getUser")
+	@PostMapping(value = "/user/getUser")
 	public ResponseEntity<User> getUser(@RequestBody String username){
 		User user = service.getUserByUsername(username);
 		return new ResponseEntity<>(user, HttpStatus.OK);

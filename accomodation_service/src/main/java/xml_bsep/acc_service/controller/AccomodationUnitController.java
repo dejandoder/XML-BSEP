@@ -23,13 +23,13 @@ public class AccomodationUnitController {
 	@Autowired
 	private AccomodationUnitService accService;
 	
-	@PostMapping(value = "/search")
+	@PostMapping(value = "/all/search")
 	public ResponseEntity<List<AccomodationUnitDTO>> search(@RequestBody SearchDTO searchDTO){
 		List<AccomodationUnitDTO> retVal = accService.search(searchDTO);
 		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/getAccUnit")
+	@PostMapping(value = "/user/getAccUnit")
 	public ResponseEntity<AccomodationUnit> getAccUnit(@RequestBody long accId){
 		AccomodationUnit accUnit = accService.findOne(accId);
 		return new ResponseEntity<>(accUnit, HttpStatus.OK);

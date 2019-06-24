@@ -6,7 +6,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.http.HttpRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +28,6 @@ import bsep.kt1.model.User;
 import bsep.kt1.security.CustomUserDetailsService;
 import bsep.kt1.security.TokenHelper;
 import bsep.kt1.service.UserService;
-import bsep.kt1.utils.LoggingUtils;
-
 
 @RestController
 @RequestMapping(value = "/auth", produces = MediaType.APPLICATION_JSON_VALUE)
