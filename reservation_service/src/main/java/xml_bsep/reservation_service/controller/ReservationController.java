@@ -51,7 +51,7 @@ public class ReservationController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping(value = "/checkIfAccUnitIsAvalible")
+	@PostMapping(value = "/all/checkIfAccUnitIsAvalible")
 	public ResponseEntity<Boolean> checkIfAccUnitIsAvalible(@RequestBody @Valid CheckReaservationDTO checkReservation){
 		boolean availabile = resService.checkIfAccUnitIsAvalible(checkReservation);
 		return new ResponseEntity<>(availabile, HttpStatus.OK);
@@ -64,12 +64,12 @@ public class ReservationController {
 		Reservation reservation = new Reservation();
 		
 		HttpEntity<Long> request = new HttpEntity<>(reservationDTO.getAccId());
-		ResponseEntity<AccomodationUnit> response = restTemplate.exchange("http://acc-service/getAccUnit", HttpMethod.POST, request, AccomodationUnit.class);
+		ResponseEntity<AccomodationUnit> response = restTemplate.exchange("http://acc-service/user/getAccUnit", HttpMethod.POST, request, AccomodationUnit.class);
 	
 		AccomodationUnit accUnit = response.getBody();
 		
 		HttpEntity<String> requestUser = new HttpEntity<>(userService.getCurrentUsername());
-		ResponseEntity<User> responseUser = restTemplate.exchange("http://auth-service/getUser", HttpMethod.POST, requestUser, User.class);
+		ResponseEntity<User> responseUser = restTemplate.exchange("http://auth-service/user/getUser", HttpMethod.POST, requestUser, User.class);
 	
 		User user = responseUser.getBody();
 		
@@ -97,7 +97,7 @@ public class ReservationController {
 		return new ResponseEntity<>(HttpStatus.OK);		
 	}
 	
-	@GetMapping(value = "/getReservationsByUser")
+	@GetMapping(value = "/user/getReservationsByUser")
 	public ResponseEntity<List<ReservationDTO>> getReservationsByUser(){
 		String username = userService.getCurrentUsername();
 		List<Reservation> reservations = resService.getReservationsByUser(username);
@@ -107,7 +107,7 @@ public class ReservationController {
 			CheckReviewDTO crDTO = new CheckReviewDTO(reservation.getUser().getId(),reservation.getAccUnit().getId());
 			
 			HttpEntity<CheckReviewDTO> request = new HttpEntity<CheckReviewDTO>(crDTO);
-			HttpEntity<Boolean> response = getRT().exchange(UrlUtils.getRatingSystemUrl() + "/checkRecension", HttpMethod.POST, request, Boolean.class);
+			HttpEntity<Boolean> response = getRT().exchange(UrlUtils.getRatingSystemUrl() + "/all/checkRecension", HttpMethod.POST, request, Boolean.class);
 			
 			ReservationDTO rDTO = new ReservationDTO(reservation);
 			
@@ -119,7 +119,7 @@ public class ReservationController {
 	}
 	
 	@SuppressWarnings("rawtypes")
-	@PostMapping(value = "/deleteReservation")
+	@PostMapping(value = "/user/deleteReservation")
 	public ResponseEntity deleteResrvation(@RequestBody @Min(1) long id){
 		resService.deleteReservation(id);
 		return new ResponseEntity<>(HttpStatus.OK);

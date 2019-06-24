@@ -44,7 +44,7 @@ public class RecensionController {
 	UserService userService;
 	
 	@SuppressWarnings("rawtypes")
-	@PostMapping(value = "/addRecension")
+	@PostMapping(value = "/user/addRecension")
 	public ResponseEntity addRecension(@RequestBody RecensionDTO recensionDTO) {
 		
 		Recension recension = new Recension();
@@ -59,12 +59,13 @@ public class RecensionController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/getRecensionsByAccUnitForUser")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody @Min(1)long accId){
+
+	@PostMapping(value = "/all/getRecensionsByAccUnitForUser")
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody @Min(1) long accId){
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = getRT().
-				exchange(UrlUtils.getRatingSystemUrl() + "/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+				exchange(UrlUtils.getRatingSystemUrl() + "/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
 		
 		if(response.getBody() == null) return new ResponseEntity<List<RecensionDTO>>(HttpStatus.OK);
 		
@@ -82,7 +83,7 @@ public class RecensionController {
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = getRT().
-				exchange(UrlUtils.getRatingSystemUrl() + "/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+				exchange(UrlUtils.getRatingSystemUrl() + "/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
 		
 		return new ResponseEntity<List<RecensionDTO>>(response.getBody(),HttpStatus.OK);
 	}

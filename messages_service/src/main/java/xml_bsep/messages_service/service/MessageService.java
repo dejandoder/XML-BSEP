@@ -66,10 +66,10 @@ public class MessageService {
 		Message message = new Message();
 		
 		HttpEntity<String> fromUserRequest = new HttpEntity<>(userService.getCurrentUsername());
-		ResponseEntity<User> fromUserResponse = restTemplate.exchange("http://auth-service/getUser", HttpMethod.POST, fromUserRequest, User.class);
+		ResponseEntity<User> fromUserResponse = restTemplate.exchange("http://auth-service/user/getUser", HttpMethod.POST, fromUserRequest, User.class);
 	
 		HttpEntity<String> toUserRequest = new HttpEntity<>(messDTO.getUsername2());
-		ResponseEntity<User> toUserResponse = restTemplate.exchange("http://auth-service/getUser", HttpMethod.POST, toUserRequest, User.class);
+		ResponseEntity<User> toUserResponse = restTemplate.exchange("http://auth-service/user/getUser", HttpMethod.POST, toUserRequest, User.class);
 		
 		message.setContent(messDTO.getContent());
 		message.setFromUser(fromUserResponse.getBody());

@@ -33,7 +33,11 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		// authorization requests config
 		.authorizeRequests()
 		   // allow all who are accessing "auth" service
-		   .anyRequest().authenticated(); 
+		.antMatchers("/user/**").hasRole("USER")
+		.antMatchers("/admin/**").hasRole("ADMIN")
+		.antMatchers("/agent/**").hasRole("AGENT")
+		.antMatchers("/all/**").permitAll()
+		.anyRequest().authenticated(); 
 	}
 	
 	@Bean

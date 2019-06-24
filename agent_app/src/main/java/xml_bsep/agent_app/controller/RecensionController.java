@@ -34,7 +34,7 @@ public class RecensionController {
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = restTemplate.
-				exchange(UrlUtils.getRatingSystemUrl() + "/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+				exchange(UrlUtils.getRatingSystemUrl() + "/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
 		
 		return new ResponseEntity<List<RecensionDTO>>(response.getBody(),HttpStatus.OK);
 	}
