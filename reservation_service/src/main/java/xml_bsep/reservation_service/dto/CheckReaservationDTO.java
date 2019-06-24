@@ -3,9 +3,14 @@ package xml_bsep.reservation_service.dto;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 public class CheckReaservationDTO {
 	
 	private ArrayList<Date> dates;
+	@NotBlank(message="id must not be empty")
+	@Min(1)
 	private long accID;
 	
 	public CheckReaservationDTO() {

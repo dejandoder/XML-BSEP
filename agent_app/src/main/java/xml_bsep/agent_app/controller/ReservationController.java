@@ -2,9 +2,13 @@ package xml_bsep.agent_app.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +21,7 @@ import xml_bsep.agent_app.soap_clients.ReservationServiceSoapClient;
 
 @RestController
 @RequestMapping("")
+@Validated
 public class ReservationController {
 	
 	@Autowired
@@ -32,34 +37,34 @@ public class ReservationController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/approveReservation")
-	public ResponseEntity approveReservation(@RequestBody long resId){
+	public ResponseEntity approveReservation(@RequestBody @Min(1) long resId){
 		if(resService.approveReservation(resId)) return new ResponseEntity(HttpStatus.OK);
 		else return new ResponseEntity(HttpStatus.BAD_REQUEST);
 	}
 
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/confirmReservation")
-	public ResponseEntity confirmReservation(@RequestBody long resId){
+	public ResponseEntity confirmReservation(@RequestBody @Min(1) long resId){
 		if(resService.confirmReservation(resId)) return new ResponseEntity(HttpStatus.OK);
 		else return new ResponseEntity(HttpStatus.BAD_REQUEST);
 	}
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/declineReservation")
-	public ResponseEntity declineReservation(@RequestBody long resId){
+	public ResponseEntity declineReservation(@RequestBody @Min(1) long resId){
 		if(resService.declineReservation(resId)) return new ResponseEntity(HttpStatus.OK);
 		else return new ResponseEntity(HttpStatus.BAD_REQUEST);
 	}
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/agentReservation")
-	public ResponseEntity agentReservation(@RequestBody ReservationDTO resDTO){
+	public ResponseEntity agentReservation(@RequestBody @Valid ReservationDTO resDTO){
 		resService.doAgentReservation(resDTO);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}	
 	
 	@PostMapping(value = "/getReservationsByAccUnit")
-	public ResponseEntity<List<ReservationDTO>> getReservationsByAccUnit(@RequestBody long accId){
+	public ResponseEntity<List<ReservationDTO>> getReservationsByAccUnit(@RequestBody @Min(1) long accId){
 		List<ReservationDTO> retVal = resService.getReservationsByAccUnit(accId);
 		return new ResponseEntity<List<ReservationDTO>>(retVal,HttpStatus.OK);
 	}

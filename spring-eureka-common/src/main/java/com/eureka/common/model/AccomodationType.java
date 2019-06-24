@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,6 +54,7 @@ public class AccomodationType {
 	protected long id;
    
     @XmlElement(required = true)
+	@NotBlank(message="name must not be empty")
     protected String name;
 
     public AccomodationType() {

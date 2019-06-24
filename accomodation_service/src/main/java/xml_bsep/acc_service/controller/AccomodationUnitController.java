@@ -2,9 +2,13 @@ package xml_bsep.acc_service.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,19 +22,20 @@ import xml_bsep.acc_service.service.AccomodationUnitService;
 
 @RestController
 @RequestMapping("/")
+@Validated
 public class AccomodationUnitController {
 
 	@Autowired
 	private AccomodationUnitService accService;
 	
 	@PostMapping(value = "/search")
-	public ResponseEntity<List<AccomodationUnitDTO>> search(@RequestBody SearchDTO searchDTO){
+	public ResponseEntity<List<AccomodationUnitDTO>> search(@Valid @RequestBody SearchDTO searchDTO){
 		List<AccomodationUnitDTO> retVal = accService.search(searchDTO);
 		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/getAccUnit")
-	public ResponseEntity<AccomodationUnit> getAccUnit(@RequestBody long accId){
+	public ResponseEntity<AccomodationUnit> getAccUnit(@RequestBody @Min(1) long accId){
 		AccomodationUnit accUnit = accService.findOne(accId);
 		return new ResponseEntity<>(accUnit, HttpStatus.OK);
 	}

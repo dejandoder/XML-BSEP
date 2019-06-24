@@ -3,6 +3,8 @@ package xml_bsep.acc_service.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.validation.constraints.Min;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -58,7 +60,7 @@ public class RecensionController {
 	}
 	
 	@PostMapping(value = "/getRecensionsByAccUnitForUser")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody long accId){
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody @Min(1)long accId){
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = getRT().
@@ -76,7 +78,7 @@ public class RecensionController {
 	}
 	
 	@PostMapping(value = "/getRecensionsByAccUnit")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody long accId){
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody @Min(1) long accId){
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = getRT().
@@ -96,7 +98,7 @@ public class RecensionController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/approveRecension")
-	public ResponseEntity approveRecension(@RequestBody long id) {
+	public ResponseEntity approveRecension(@RequestBody @Min(1) long id) {
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(id);
 		getRT().exchange(UrlUtils.getRatingSystemUrl() + "/admin/approveRecension", HttpMethod.POST, request, ResponseEntity.class);
@@ -106,7 +108,7 @@ public class RecensionController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/declineRecension")
-	public ResponseEntity declineRecension(@RequestBody long id) {
+	public ResponseEntity declineRecension(@RequestBody @Min(1) long id) {
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(id);
 		getRT().exchange(UrlUtils.getRatingSystemUrl() + "/admin/declineRecension", HttpMethod.POST, request, ResponseEntity.class);

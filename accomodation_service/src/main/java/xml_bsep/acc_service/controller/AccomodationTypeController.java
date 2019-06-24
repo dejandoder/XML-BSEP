@@ -2,6 +2,8 @@ package xml_bsep.acc_service.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +25,7 @@ public class AccomodationTypeController {
 	AccomodationTypeService service;
 	
 	@PostMapping(value = "/admin/addNewAccType", consumes = "application/json")
-	public ResponseEntity<List<AccomodationType>> addNewAccType(@RequestBody AccomodationType accType){
+	public ResponseEntity<List<AccomodationType>> addNewAccType(@Valid @RequestBody AccomodationType accType){
 		if(service.checkIfTypeExsists(accType.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		//odje bi sada trebale neke sql parsiarnje provjere i te pizdarije
 		service.save(accType);
@@ -32,7 +34,7 @@ public class AccomodationTypeController {
 	}
 	
 	@PostMapping(value = "/admin/removeAccType")
-	public ResponseEntity<List<AccomodationType>> removeAccType(@RequestBody AccomodationType accType){
+	public ResponseEntity<List<AccomodationType>> removeAccType(@Valid @RequestBody AccomodationType accType){
 		//treba uraditi provjeru da li ima smjestaja sa zadatim tipom
 		//return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		List<AccomodationType> accTypes = service.delete(accType.getId());

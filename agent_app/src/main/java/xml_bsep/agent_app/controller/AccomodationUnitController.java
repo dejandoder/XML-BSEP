@@ -3,6 +3,8 @@ package xml_bsep.agent_app.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +51,7 @@ public class AccomodationUnitController {
 	ImageService imageService;
 	
 	@PostMapping(value = "/addNewAccUnit")
-	public ResponseEntity<AccomodationUnitDTO> addAccomodationUnit(@RequestBody AccomodationUnit newAccUnit) {
+	public ResponseEntity<AccomodationUnitDTO> addAccomodationUnit(@Valid @RequestBody AccomodationUnit newAccUnit) {
 		User user = userService.getCurrentUser();
 		newAccUnit.setAgent(user);
 		AccomodationUnit savedAccUnit = accUnitService.save(newAccUnit);

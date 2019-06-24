@@ -22,6 +22,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -113,18 +115,19 @@ public class AccomodationUnit {
 	@JoinColumn(name = "accomodation_type_id")
 	@XmlElement(name = "accomodation_type", required = true)
     protected AccomodationType accomodationType;
-   
+    @Min(0)
     protected int category;
     
     @ManyToMany(fetch = FetchType.EAGER)
     @XmlElement(required = true)
     protected List<AccomodationService> services;
-    
+    @Size(min=1,max=200)
     @XmlElement(required = true)
     protected String description;
     
     @XmlElement(required = true)
     @XmlSchemaType(name = "positiveInteger")
+    @Min(0)
     protected BigInteger capacity;
     
  
@@ -132,7 +135,7 @@ public class AccomodationUnit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
-    
+    @Min(0)
     @XmlElement(name = "canceling_period")
     protected Integer cancelingPeriod;
     
@@ -145,7 +148,7 @@ public class AccomodationUnit {
     @JoinColumn(name = "agent_id")
     @XmlElement(required = true)
     protected User agent;
-    
+    @Size(min=1,max=200)
     @XmlElement(required = true)
     protected String name;
 

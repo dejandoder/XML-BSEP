@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -14,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +39,7 @@ import xml_bsep.reservation_service.service.UserService;
 
 @RestController
 @RequestMapping("/")
+@Validated
 public class ReservationController {
 
 	@Autowired
@@ -47,14 +52,14 @@ public class ReservationController {
 	UserService userService;
 	
 	@PostMapping(value = "/checkIfAccUnitIsAvalible")
-	public ResponseEntity<Boolean> checkIfAccUnitIsAvalible(@RequestBody CheckReaservationDTO checkReservation){
+	public ResponseEntity<Boolean> checkIfAccUnitIsAvalible(@RequestBody @Valid CheckReaservationDTO checkReservation){
 		boolean availabile = resService.checkIfAccUnitIsAvalible(checkReservation);
 		return new ResponseEntity<>(availabile, HttpStatus.OK);
 	}
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/newReservation")
-	public ResponseEntity newReservation(@RequestBody ReservationDTO reservationDTO){
+	public ResponseEntity newReservation(@RequestBody @Valid ReservationDTO reservationDTO){
 		
 		Reservation reservation = new Reservation();
 		
@@ -115,7 +120,7 @@ public class ReservationController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/deleteReservation")
-	public ResponseEntity deleteResrvation(@RequestBody long id){
+	public ResponseEntity deleteResrvation(@RequestBody @Min(1) long id){
 		resService.deleteReservation(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}

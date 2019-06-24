@@ -2,6 +2,8 @@ package xml_bsep.acc_service.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +26,7 @@ public class AccomodationServiceController {
 	AccomodationServicesService service;
 	
 	@PostMapping(value = "/admin/addAccService")
-	public ResponseEntity<List<AccomodationService>> addNewAccService(@RequestBody AccomodationService accService){
+	public ResponseEntity<List<AccomodationService>> addNewAccService(@Valid @RequestBody AccomodationService accService){
 		if(service.checkIfServicesExsist(accService.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		//sranje sa provjerama ako treba
 		service.save(accService);
@@ -39,7 +41,7 @@ public class AccomodationServiceController {
 	}
 	
 	@PostMapping(value = "/admin/removeAccService")
-	public ResponseEntity<List<AccomodationService>> removeAccService(@RequestBody AccomodationService accService){
+	public ResponseEntity<List<AccomodationService>> removeAccService(@Valid @RequestBody AccomodationService accService){
 		//prvojeriti da li se moze obrisati accService, jer da neki hotel ima mozda
 		List<AccomodationService> accServices = service.delete(accService.getId());
 		return new ResponseEntity<>(accServices, HttpStatus.OK);

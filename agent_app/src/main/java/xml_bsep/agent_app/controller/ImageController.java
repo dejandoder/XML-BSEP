@@ -3,13 +3,15 @@ package xml_bsep.agent_app.controller;
 
 
 import java.io.IOException;
-
 import java.util.List;
+
+import javax.validation.constraints.Min;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,7 @@ import xml_bsep.agent_app.service.ImageService;
 
 @RestController
 @RequestMapping("/")
+@Validated
 public class ImageController {
 
 	@Autowired
@@ -56,7 +59,7 @@ public class ImageController {
 	
 	@ResponseBody
 	@PostMapping(value = "/getImage", produces = MediaType.IMAGE_JPEG_VALUE)
-	public byte[] getImage(@RequestBody long id) {
+	public byte[] getImage(@RequestBody @Min(1) long id) {
 		byte[] binaryImage = service.getImageById(id);
 		return binaryImage;
 	}

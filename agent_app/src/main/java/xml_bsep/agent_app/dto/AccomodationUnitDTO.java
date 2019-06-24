@@ -3,25 +3,40 @@ package xml_bsep.agent_app.dto;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import xml_bsep.agent_app.model.AccomodationType;
 import xml_bsep.agent_app.model.AccomodationUnit;
 import xml_bsep.agent_app.model.Location;
 
 public class AccomodationUnitDTO {
 
-    protected AccomodationType accomodationType;   
+    protected AccomodationType accomodationType;  
+    @Min(0)
     protected int category;
     //protected List<AccomodationService> services;
+    @Size(min=0,max=200)
     protected String description;
     //protected List<PricePlan> pricePlans;
+    @Min(1)
     protected BigInteger capacity;
+    @NotBlank(message="id must not be blank")
     protected long id;
+    @Min(0)
     protected Integer cancelingPeriod;
     protected Location location;
+    @Size(min=1,max=40)
     protected String name;
     protected ArrayList<String> images;
+    @Min(0)
     protected long distance;
+    @Min(1)
+    @Max(5)
     protected float rating;
+    @Min(0)
     protected float price;
     
     public AccomodationUnitDTO(AccomodationUnit accUnit){
