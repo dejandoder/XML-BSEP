@@ -413,4 +413,16 @@ public class AccomodationUnit {
 	public void setName(String name) {
 		this.name = name;
 	}  
+	
+	public boolean hasService(AccomodationService service) {
+		for (AccomodationService accomodationService : services) {
+			if(service.getId() == accomodationService.getId()) return true;
+		}
+		return false;
+	}
+	
+	public boolean isType(AccomodationType type) {
+		if(accomodationType.getId() == type.getId()) return true;
+		return false;
+	}	
 }

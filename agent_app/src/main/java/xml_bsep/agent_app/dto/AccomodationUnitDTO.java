@@ -15,6 +15,7 @@ import xml_bsep.agent_app.model.Location;
 public class AccomodationUnitDTO {
 
     protected AccomodationType accomodationType;  
+    
     @Min(0)
     protected int category;
     //protected List<AccomodationService> services;

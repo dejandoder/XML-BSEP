@@ -34,7 +34,7 @@ public class ImageController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/uploadImages", produces =  MediaType.IMAGE_PNG_VALUE)
-	public ResponseEntity uploadImages(@RequestParam("file") MultipartFile[] images, @RequestParam("accId") long accId){
+	public ResponseEntity uploadImages(@RequestParam("file") MultipartFile[] images, @RequestParam("accId") @Min(1) long accId){
 		try {
 			service.uploadImages(images, accId);
 		} catch (IOException e) {

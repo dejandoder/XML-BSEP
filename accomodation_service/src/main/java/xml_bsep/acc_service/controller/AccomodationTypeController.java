@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eureka.common.model.AccomodationType;
+import com.eureka.common.model.AccomodationUnit;
 
 import xml_bsep.acc_service.service.AccomodationTypeService;
+import xml_bsep.acc_service.service.AccomodationUnitService;
 
 @RestController
 @RequestMapping("/")
@@ -23,6 +25,9 @@ public class AccomodationTypeController {
 
 	@Autowired
 	AccomodationTypeService service;
+	
+	@Autowired
+	AccomodationUnitService accUnitService;
 	
 	@PostMapping(value = "/admin/addNewAccType", consumes = "application/json")
 	public ResponseEntity<List<AccomodationType>> addNewAccType(@Valid @RequestBody AccomodationType accType){
@@ -36,7 +41,11 @@ public class AccomodationTypeController {
 	@PostMapping(value = "/admin/removeAccType")
 	public ResponseEntity<List<AccomodationType>> removeAccType(@Valid @RequestBody AccomodationType accType){
 		//treba uraditi provjeru da li ima smjestaja sa zadatim tipom
-		//return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		
+		for(AccomodationUnit accUnit : accUnitService.findAll()){
+			if(accUnit.isType(accType)) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
 		List<AccomodationType> accTypes = service.delete(accType.getId());
 		return new ResponseEntity<>(accTypes, HttpStatus.OK);
 	}

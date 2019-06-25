@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eureka.common.model.AccomodationService;
+import com.eureka.common.model.AccomodationUnit;
 
 import xml_bsep.acc_service.service.AccomodationServicesService;
+import xml_bsep.acc_service.service.AccomodationUnitService;
 
 
 @RestController
@@ -24,6 +26,10 @@ public class AccomodationServiceController {
 
 	@Autowired
 	AccomodationServicesService service;
+	
+	@Autowired
+	AccomodationUnitService accUnitService;
+	
 	
 	@PostMapping(value = "/admin/addAccService")
 	public ResponseEntity<List<AccomodationService>> addNewAccService(@Valid @RequestBody AccomodationService accService){
@@ -43,6 +49,10 @@ public class AccomodationServiceController {
 	@PostMapping(value = "/admin/removeAccService")
 	public ResponseEntity<List<AccomodationService>> removeAccService(@Valid @RequestBody AccomodationService accService){
 		//prvojeriti da li se moze obrisati accService, jer da neki hotel ima mozda
+		for(AccomodationUnit accUnit : accUnitService.findAll()) {
+			if(accUnit.hasService(accService)) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
 		List<AccomodationService> accServices = service.delete(accService.getId());
 		return new ResponseEntity<>(accServices, HttpStatus.OK);
 	}

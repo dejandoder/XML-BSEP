@@ -7,6 +7,8 @@ import { PricePlan } from 'src/app/model/PricePlan';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { ReservationDTO } from 'src/app/model/ReservationDTO';
 import { ReservationService } from 'src/app/service/ReservationService';
+import { RecensionDTO } from 'src/app/model/RecensionDTO';
+import { RecenesionService } from 'src/app/service/RecensionService';
 
 @Component({
   selector: 'app-edit-accomodation',
@@ -25,9 +27,12 @@ export class EditAccomodationComponent implements OnInit {
 
   reservations : ReservationDTO[] = [];
 
+  recensions : RecensionDTO[] = [];
+
   resErrorMessage = "";
 
-  constructor(private accService : AccomodationUnitService, private imageService : ImageService, private ppService : PricePlanService, private resService : ReservationService ) {
+  constructor(private accService : AccomodationUnitService, private imageService : ImageService,
+     private ppService : PricePlanService, private resService : ReservationService, private recService : RecenesionService ) {
     this.accUnit = accService.getEditingAccUnit();
     this.loadAccUnit();
     setInterval(
@@ -108,6 +113,11 @@ export class EditAccomodationComponent implements OnInit {
       this.resService.getReservationsByAccUnit(this.accUnit.id).subscribe(
         data =>{
           this.reservations = data;
+        }
+      )
+      this.recService.getRecensions(this.accUnit.id).subscribe(
+        data =>{
+          this.recensions = data;
         }
       )
   }

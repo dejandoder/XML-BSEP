@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 public class CheckReaservationDTO {
 	
 	private ArrayList<Date> dates;
-	@NotBlank(message="id must not be empty")
+	
 	@Min(1)
 	private long accID;
 	

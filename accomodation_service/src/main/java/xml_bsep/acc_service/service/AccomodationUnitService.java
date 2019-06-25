@@ -1,14 +1,20 @@
 package xml_bsep.acc_service.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpRequestExecution;
+import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.client.RestTemplate;
@@ -16,8 +22,10 @@ import org.springframework.web.client.RestTemplate;
 import com.eureka.common.model.AccomodationUnit;
 import com.eureka.common.model.Image;
 
+import xml_bsep.acc_service.UrlUtils;
 import xml_bsep.acc_service.dto.AccomodationUnitDTO;
 import xml_bsep.acc_service.dto.CheckReaservationDTO;
+import xml_bsep.acc_service.dto.RecensionDTO;
 import xml_bsep.acc_service.dto.SearchDTO;
 import xml_bsep.acc_service.repository.AccomodationUnitRepository;
 import xml_bsep.acc_service.repository.ImageRepository;
@@ -37,6 +45,9 @@ public class AccomodationUnitService {
 	
 	@Autowired
 	ImageRepository imageRepository;
+	
+	@Autowired
+	UserService userService;
 	
 	public AccomodationUnit save(AccomodationUnit accUnit) {
 		return repository.save(accUnit);
@@ -121,6 +132,8 @@ public class AccomodationUnitService {
 				accUnitDTO.addImage(Base64Utils.encodeToString(img.getPic()));
 			}
 			
+			accUnitDTO.setRating(getRating(accUnit.getId()));
+			
 			finalResults.add(accUnitDTO);
 		}
 		
@@ -159,5 +172,34 @@ public class AccomodationUnitService {
 	
 	public AccomodationUnit findOne(long accId) {
 		return repository.findOneById(accId);
+	}
+	
+	private float getRating(long accId) {
+
+		HttpEntity<Long> request = new HttpEntity<Long>(accId);
+		ResponseEntity<List<RecensionDTO>> response = getRT().
+				exchange(UrlUtils.getRatingSystemUrl() + "/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+		
+		float sum = 0;
+		for (RecensionDTO recensionDTO : response.getBody()) {
+			sum+= recensionDTO.getRating();
+		}
+		return sum/response.getBody().size();
+	}
+	
+	private RestTemplate getRT() {
+		RestTemplate restTemplate = new RestTemplate();
+	    restTemplate.getInterceptors().add(new ClientHttpRequestInterceptor(){
+	        @Override
+	        public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
+	            request.getHeaders().set("Authorization", "Bearer " + userService.getJwtToken());//Set the header for each request
+	            return execution.execute(request, body);
+	        }
+	    });
+	    return restTemplate;
+	}
+
+	public List<AccomodationUnit> findAll(){
+		return repository.findAll();
 	}
 }

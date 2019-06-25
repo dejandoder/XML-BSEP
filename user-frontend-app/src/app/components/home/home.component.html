@@ -20,6 +20,7 @@
       <input class="form-control mr-sm-2" *ngIf="!userLogged" type="password" placeholder="Password" aria-label="Search" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
       <button class="btn btn-outline-success my-2 my-sm-0" *ngIf="!userLogged" (click) = "loginClick()">Login</button>
       <button class="btn btn-outline-success my-2 my-sm-0" *ngIf="userLogged" (click) = "logoutClick()">Log out</button>
+      <button class="btn btn-outline-success my-2 my-sm-0 ml-2" *ngIf="!userLogged" (click) = "registration()">Sign up</button>
     </form>
   </div>
 </nav>

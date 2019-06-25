@@ -14,6 +14,7 @@ public class UserDTO {
     protected String pib;
     protected UserRole role;
     protected UserStatus status;
+    protected String password;
   
     public UserDTO(User user) {
     	this.name = user.getName();
@@ -95,4 +96,12 @@ public class UserDTO {
 		this.status = status;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 }

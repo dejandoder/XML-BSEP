@@ -102,7 +102,19 @@
            </div>
           </tab>
           <tab heading="Recensions">
-            
+            <div class="list-group">
+              <div class="list-group-item" *ngFor="let rec of recensions" style="max-height: 500px; overflow-y:  scroll;">
+                 <div class="row">
+                    <div class="col-8"><p class="small">By {{rec.username}}</p></div>
+                    <div class="col-4 d-flex flex-row-reverse"><fa-icon icon="star" class="px-2" style="color: gold" size="1x"></fa-icon>{{rec.rating}}</div>
+                 </div>
+                 <div class="row">
+                  <p class="px-3">
+                    {{rec.comment}}
+                  </p>
+                 </div>
+              </div>
+            </div>
           </tab>
         </tabset>
   </div>
