@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: agent_app
+---
+server:
+  port: 11500
+  ssl:
+    enabled: true
+    key-store: classpath:agent.jks
+    key-store-password: password
+    key-alias: agent
+    key-store-type: JKS
+    key-store-provider: SUN
+    trust-store: classpath:agent.jks
+    trust-store-password: password
+    trust-store-type: JKS
+   

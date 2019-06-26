@@ -2,7 +2,7 @@ package xml_bsep.acc_service;
 
 public class UrlUtils {
 
-	public static String ratingSystemUrl = "http://localhost:11600";
+	public static String ratingSystemUrl = "https://localhost:11600";
 
 	public static String getRatingSystemUrl() {
 		return ratingSystemUrl;

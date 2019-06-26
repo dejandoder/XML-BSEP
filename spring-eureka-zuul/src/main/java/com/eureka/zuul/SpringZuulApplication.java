@@ -22,13 +22,13 @@ public class SpringZuulApplication {
 		SpringApplication.run(SpringZuulApplication.class, args);
 	}
 	
-	/*@Bean
+	@Bean
 	public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws NoSuchAlgorithmException {
 	    DiscoveryClient.DiscoveryClientOptionalArgs args = new DiscoveryClient.DiscoveryClientOptionalArgs();
 	    System.setProperty("javax.net.ssl.keyStore", "src/main/resources/zuul.jks");
-	    System.setProperty("javax.net.ssl.keyStorePassword", "bsep123");
+	    System.setProperty("javax.net.ssl.keyStorePassword", "password");
 	    System.setProperty("javax.net.ssl.trustStore", "src/main/resources/zuul.jks");
-	    System.setProperty("javax.net.ssl.trustStorePassword", "bsep123");
+	    System.setProperty("javax.net.ssl.trustStorePassword", "password");
 	    EurekaJerseyClientBuilder builder = new EurekaJerseyClientBuilder();
 	    builder.withClientName("zuul-server");
 	    builder.withSystemSSLConfiguration();
@@ -36,5 +36,5 @@ public class SpringZuulApplication {
 	    builder.withMaxConnectionsPerHost(10);
 	    args.setEurekaJerseyClient(builder.build());
 	    return args;
-	}*/
+	}
 }

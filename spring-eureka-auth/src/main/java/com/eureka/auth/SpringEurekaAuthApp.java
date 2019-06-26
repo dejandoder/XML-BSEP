@@ -20,13 +20,13 @@ public class SpringEurekaAuthApp {
 		SpringApplication.run(SpringEurekaAuthApp.class, args);
 	}
 
-	/*@Bean
+	@Bean
 	public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws NoSuchAlgorithmException {
 	    DiscoveryClient.DiscoveryClientOptionalArgs args = new DiscoveryClient.DiscoveryClientOptionalArgs();
 	    System.setProperty("javax.net.ssl.keyStore", "src/main/resources/auth.jks");
-	    System.setProperty("javax.net.ssl.keyStorePassword", "bsep123");
+	    System.setProperty("javax.net.ssl.keyStorePassword", "password");
 	    System.setProperty("javax.net.ssl.trustStore", "src/main/resources/auth.jks");
-	    System.setProperty("javax.net.ssl.trustStorePassword", "bsep123");
+	    System.setProperty("javax.net.ssl.trustStorePassword", "password");
 	    EurekaJerseyClientBuilder builder = new EurekaJerseyClientBuilder();
 	    builder.withClientName("auth-service");
 	    builder.withSystemSSLConfiguration();
@@ -34,5 +34,5 @@ public class SpringEurekaAuthApp {
 	    builder.withMaxConnectionsPerHost(10);
 	    args.setEurekaJerseyClient(builder.build());
 	    return args;
-	}*/
+	}
 }

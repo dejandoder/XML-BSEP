@@ -1,13 +1,22 @@
 package xml_bsep.acc_service.service;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang.time.DateUtils;
+import org.apache.http.client.HttpClient;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.ssl.SSLContextBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpRequest;
@@ -15,6 +24,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.client.RestTemplate;
@@ -102,7 +112,7 @@ public class AccomodationUnitService {
 			checkDTO.setDates(searchDTO.getDates());
 			
 			HttpEntity<CheckReaservationDTO> request = new HttpEntity<CheckReaservationDTO>(checkDTO);
-			ResponseEntity<Boolean> response = restTemplate.exchange("http://reservation-service/all/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
+			ResponseEntity<Boolean> response = restTemplate.exchange("https://reservation-service/all/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
 			
 			if(response.getBody() == true) searchResults4.add(accUnit);
 		}
@@ -196,6 +206,34 @@ public class AccomodationUnitService {
 	            return execution.execute(request, body);
 	        }
 	    });
+	    KeyStore keyStore;
+		HttpComponentsClientHttpRequestFactory requestFactory = null;
+		
+		try {
+			keyStore = KeyStore.getInstance("jks");
+			ClassPathResource classPathResource = new ClassPathResource("acc.jks");
+			InputStream inputStream = classPathResource.getInputStream();
+			keyStore.load(inputStream, "password".toCharArray());
+
+			SSLConnectionSocketFactory socketFactory = new SSLConnectionSocketFactory(new SSLContextBuilder()
+					.loadTrustMaterial(null, new TrustSelfSignedStrategy())
+					.loadKeyMaterial(keyStore, "password".toCharArray()).build(),
+					NoopHostnameVerifier.INSTANCE);
+
+			HttpClient httpClient = HttpClients.custom().setSSLSocketFactory(socketFactory)
+					.setMaxConnTotal(Integer.valueOf(5))
+					.setMaxConnPerRoute(Integer.valueOf(5))
+					.build();
+
+			requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
+			requestFactory.setReadTimeout(Integer.valueOf(10000));
+			requestFactory.setConnectTimeout(Integer.valueOf(10000));
+			
+			restTemplate.setRequestFactory(requestFactory);
+		} catch (Exception exception) {
+			System.out.println("Exception Occured while creating restTemplate "+exception);
+			exception.printStackTrace();
+		}
 	    return restTemplate;
 	}
 

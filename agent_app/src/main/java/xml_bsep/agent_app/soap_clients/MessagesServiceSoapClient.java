@@ -12,7 +12,7 @@ import xml_bsep.agent_app.model.SyncMessagesResponse;
 
 public class MessagesServiceSoapClient extends WebServiceGatewaySupport{
 
-	private static final String SERVICE_URI = "http://localhost:8762/mess/soap";
+	private static final String SERVICE_URI = "https://localhost:8762/mess/soap";
 	
 	public SyncMessagesResponse syncMessages() {
 		

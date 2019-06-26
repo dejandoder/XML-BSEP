@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: rating_system
+---
+server:
+  port: 11600
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: classpath:rat.jks
+    key-store-password: password
+    key-alias: rat
+    key-store-type: JKS
+    key-store-provider: SUN
+    trust-store: classpath:rat.jks
+    trust-store-password: password
+    trust-store-type: JKS

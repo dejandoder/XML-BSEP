@@ -15,7 +15,7 @@ import xml_bsep.agent_app.model.SyncReservationsResponse;
 
 public class ReservationServiceSoapClient extends WebServiceGatewaySupport {
 
-	private static final String SERVICE_URI = "http://localhost:8762/res/soap";
+	private static final String SERVICE_URI = "https://localhost:8762/res/soap";
 	
 	public SyncReservationsResponse syncReservation() {
 	

@@ -12,6 +12,7 @@ import org.springframework.ws.context.MessageContext;
 import org.springframework.ws.transport.TransportOutputStream;
 import org.springframework.ws.transport.context.TransportContext;
 import org.springframework.ws.transport.context.TransportContextHolder;
+import org.springframework.ws.transport.http.HttpComponentsConnection;
 import org.springframework.ws.transport.http.HttpUrlConnection;
 
 import xml_bsep.agent_app.repository.UserRepository;
@@ -29,7 +30,7 @@ public class SecurityRequestInterceptor implements ClientInterceptor {
 	public boolean handleRequest(MessageContext messageContext) throws WebServiceClientException {
 
 		 	TransportContext context = TransportContextHolder.getTransportContext();
-	        HttpUrlConnection connection = (HttpUrlConnection) context.getConnection();
+		 	HttpComponentsConnection connection =(HttpComponentsConnection)  context.getConnection();
 
 	        try {
 	        	userService.getCurrentUser();
