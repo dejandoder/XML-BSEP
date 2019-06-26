@@ -31,6 +31,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'; 
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { ReservationService } from './service/ReservationService';
+import { RecenesionService } from './service/RecensionService';
 library.add(fas);
 
 @NgModule({
@@ -64,6 +65,7 @@ library.add(fas);
     ImageService,
     PricePlanService,
     ReservationService,
+    RecenesionService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     RandomGuard,
   ],

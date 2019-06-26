@@ -1,12 +1,14 @@
 package xml_bsep.agent_app.controller;
 
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ import xml_bsep.agent_app.service.UserService;
 
 @RestController
 @RequestMapping("")
+@Validated
 public class PricePlanController {
 	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -34,7 +37,7 @@ public class PricePlanController {
 	UserService userService;
 	
 	@PostMapping("/getPricePlans")
-	public ResponseEntity<List<PricePlanDTO>> getPricePlansByAccomodationUnit(@RequestBody long id){
+	public ResponseEntity<List<PricePlanDTO>> getPricePlansByAccomodationUnit(@RequestBody @Min(1) long id){
 		List<PricePlanDTO> plans = ppService.getPricePlansByAccomodationUnit(id);
 		logger.info("NP_EVENT PC {}", id);
 		return new ResponseEntity<>(plans, HttpStatus.OK);
@@ -42,7 +45,7 @@ public class PricePlanController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping("/savePricePlan")
-	public ResponseEntity savePricePlan(@RequestBody PricePlanDTO planDTO) {
+	public ResponseEntity savePricePlan(@RequestBody @Valid PricePlanDTO planDTO) {
 		
 		//provjera sa bekendom mikroservisa i sinhrnoizacija
 		

@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import xml_bsep.agent_app.model.UserRole;
 import xml_bsep.agent_app.repository.UserRepository;
 
 @Service   // It has to be annotated with @Service.
@@ -23,6 +24,9 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		xml_bsep.agent_app.model.User user = repository.findByUsername(username);
+		
+		if(user.getRole() != UserRole.AGENT) 
+			throw new UsernameNotFoundException("Username: " + username + " not found");
 		
 		if(user != null) {
 				// Remember that Spring needs roles to be in this format: "ROLE_" + userRole (i.e. "ROLE_ADMIN")

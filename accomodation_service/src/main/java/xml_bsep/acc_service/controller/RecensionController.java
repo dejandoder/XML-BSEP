@@ -2,11 +2,10 @@ package xml_bsep.acc_service.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -48,7 +47,7 @@ public class RecensionController {
 	UserService userService;
 	
 	@SuppressWarnings("rawtypes")
-	@PostMapping(value = "/addRecension")
+	@PostMapping(value = "/user/addRecension")
 	public ResponseEntity addRecension(@RequestBody RecensionDTO recensionDTO) {
 		
 		Recension recension = new Recension();
@@ -63,12 +62,13 @@ public class RecensionController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/getRecensionsByAccUnitForUser")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody long accId){
+
+	@PostMapping(value = "/all/getRecensionsByAccUnitForUser")
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody @Min(1) long accId){
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = getRT().
-				exchange(UrlUtils.getRatingSystemUrl() + "/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+				exchange(UrlUtils.getRatingSystemUrl() + "/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
 		
 		if(response.getBody() == null) {
 			logger.info("NP_EVENT POS {} {}", userService.getCurrentUsername(), accId);
@@ -85,11 +85,12 @@ public class RecensionController {
 	}
 	
 	@PostMapping(value = "/getRecensionsByAccUnit")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody long accId, HttpServletRequest requestAddr){
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody @Min(1) long accId, HttpServletRequest requestAddr){
 		String addr = requestAddr.getRemoteAddr().toString();
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response = getRT().
-				exchange(UrlUtils.getRatingSystemUrl() + "/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+				exchange(UrlUtils.getRatingSystemUrl() + "/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+
 		logger.info("NP_EVENT POSN {} {}", addr, accId);
 		return new ResponseEntity<List<RecensionDTO>>(response.getBody(),HttpStatus.OK);
 	}
@@ -105,7 +106,7 @@ public class RecensionController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/approveRecension")
-	public ResponseEntity approveRecension(@RequestBody long id) {
+	public ResponseEntity approveRecension(@RequestBody @Min(1) long id) {
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(id);
 		getRT().exchange(UrlUtils.getRatingSystemUrl() + "/admin/approveRecension", HttpMethod.POST, request, ResponseEntity.class);
@@ -115,7 +116,7 @@ public class RecensionController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/declineRecension")
-	public ResponseEntity declineRecension(@RequestBody long id) {
+	public ResponseEntity declineRecension(@RequestBody @Min(1) long id) {
 		
 		HttpEntity<Long> request = new HttpEntity<Long>(id);
 		getRT().exchange(UrlUtils.getRatingSystemUrl() + "/admin/declineRecension", HttpMethod.POST, request, ResponseEntity.class);

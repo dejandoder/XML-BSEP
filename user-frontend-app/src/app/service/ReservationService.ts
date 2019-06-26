@@ -11,10 +11,10 @@ export class ReservationService{
     }
 
     getReservationsByUser(){
-        return this.http.get<ReservationDTO[]>("api/res/getReservationsByUser");
+        return this.http.get<ReservationDTO[]>("api/res/user/getReservationsByUser");
     }
 
     deleteReservation(id : number){
-        return this.http.post('api/res/deleteReservation', id);
+        return this.http.post('api/res/user/deleteReservation', id);
     }
 }

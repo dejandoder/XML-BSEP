@@ -25,6 +25,10 @@ export class AuthService{
           }));
     }
 
+    register(user : User){
+        return this.http.post('api/auth/registration',user);
+    }
+
     doLoginUser(response){
         localStorage.setItem("USER_JWT_TOKEN", response.jwt);
     }

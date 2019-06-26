@@ -3,18 +3,37 @@ package xml_bsep.acc_service.dto;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
 import com.eureka.common.model.AccomodationService;
 import com.eureka.common.model.AccomodationType;
 import com.eureka.common.model.Location;
 
 public class SearchDTO {
+	
+	@NotEmpty
 	private ArrayList<Date> dates;
+	
+
 	private Location location;
+	
+	@Min(1)
+	@Max(20)
 	private int persons;
+	
 	private AccomodationType type;
+	@Min(-1)
 	private int category;
+	
+	@Min(0)
 	private int maxDistance;
+	
+	@Min(0)
 	private int cancelationPeriod;
+	
 	private ArrayList<AccomodationService> services;
 	
 	public SearchDTO() {

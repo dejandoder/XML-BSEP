@@ -52,7 +52,7 @@ public class RecensionController {
 		return new ResponseEntity<List<RecensionDTO>>(service.getRecensionsForApproval(), HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/getRecensionsByAccUnit")
+	@PostMapping(value = "/all/getRecensionsByAccUnit")
 	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody long id){
 		logger.info("NP_EVENT POS {} {}", userService.getCurrentUsername(), id);
 		return new ResponseEntity<>(service.getRecensionsByAccUnit(id),HttpStatus.OK);
@@ -82,7 +82,7 @@ public class RecensionController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/checkRecension")
+	@PostMapping(value = "/all/checkRecension")
 	public ResponseEntity<Boolean> checkRecension(@RequestBody CheckReviewDTO crDTO){
 		return new ResponseEntity<>(service.checkIfRecnsionExsists(crDTO), HttpStatus.OK);
 	}

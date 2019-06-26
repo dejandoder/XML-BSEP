@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,7 +63,7 @@ import javax.xml.bind.annotation.XmlType;
     "id"
 })
 public class AccomodationService {
-
+	@NotBlank(message="name must not be empty")
     @XmlElement(required = true)
     protected String name;
     

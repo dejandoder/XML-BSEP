@@ -1,6 +1,7 @@
 package xml_bsep.reservation_service;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,9 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.discovery.DiscoveryClient;
+import com.netflix.discovery.shared.transport.jersey.EurekaJerseyClientImpl.EurekaJerseyClientBuilder;
+
 import xml_bsep.reservation_service.service.UserService;
 
 @SpringBootApplication
@@ -29,6 +33,21 @@ public class ReservationServiceApplication {
 		SpringApplication.run(ReservationServiceApplication.class, args);
 	}
 
+	/*@Bean
+	public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws NoSuchAlgorithmException {
+	    DiscoveryClient.DiscoveryClientOptionalArgs args = new DiscoveryClient.DiscoveryClientOptionalArgs();
+	    System.setProperty("javax.net.ssl.keyStore", "src/main/resources/res.jks");
+	    System.setProperty("javax.net.ssl.keyStorePassword", "bsep123");
+	    System.setProperty("javax.net.ssl.trustStore", "src/main/resources/res.jks");
+	    System.setProperty("javax.net.ssl.trustStorePassword", "bsep123");
+	    EurekaJerseyClientBuilder builder = new EurekaJerseyClientBuilder();
+	    builder.withClientName("reservation-service");
+	    builder.withSystemSSLConfiguration();
+	    builder.withMaxTotalConnections(10);
+	    builder.withMaxConnectionsPerHost(10);
+	    args.setEurekaJerseyClient(builder.build());
+	    return args;
+	}*/
 }
 
 

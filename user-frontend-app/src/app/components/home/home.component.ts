@@ -49,4 +49,7 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["/home"]);
   }
   
+  registration(){
+    this.router.navigate(["registration"]);
+  }
 }

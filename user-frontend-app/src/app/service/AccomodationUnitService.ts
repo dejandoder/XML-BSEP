@@ -22,7 +22,7 @@ export class AccomodationUnitService{
     }
 
     searchAccServices(searchDTO : SearchDTO){
-        return this.http.post<AccomodationUnit[]>('api/acc/search',searchDTO);
+        return this.http.post<AccomodationUnit[]>('api/acc/all/search',searchDTO);
     }
 
     reserveAccomodation(reservationDTO : ReservationDTO){

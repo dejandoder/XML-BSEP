@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eureka.auth.dto.UserDTO;
+import com.eureka.auth.repository.UserRepository;
 import com.eureka.auth.service.UserService;
 import com.eureka.common.model.User;
 import com.eureka.common.model.UserRole;
@@ -29,6 +30,9 @@ public class UserController {
 	
 	@Autowired
 	UserService service;
+	
+	@Autowired 
+	UserRepository repository;
 	
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
@@ -90,12 +94,30 @@ public class UserController {
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/getUser")
+	@PostMapping(value = "/user/getUser")
 	public ResponseEntity<User> getUser(@RequestBody String username){
 		User user = service.getUserByUsername(username);
 		//logger.info("NP_EVENT PSK {}", service.getCurrentUserName());
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 	
+	@SuppressWarnings("rawtypes")
+	@PostMapping(value = "/registration")
+	public ResponseEntity registration(@RequestBody UserDTO userDTO){
+		User user = new User();
+		user.setName(userDTO.getName());
+		user.setSurname(userDTO.getSurname());
+		user.setUsername(userDTO.getUsername());
+		user.setPassword(encoder.encode(userDTO.getPassword()));
+		user.setRole(UserRole.USER);
+		user.setStatus(UserStatus.NOT_ACTIVATED);
+		
+		if(repository.findUserByUsername(userDTO.getUsername()) != null) {
+			return new ResponseEntity(HttpStatus.BAD_REQUEST);
+		}else {
+			service.save(user);
+			return new ResponseEntity(HttpStatus.OK);
+		}
+	}
 	
 }

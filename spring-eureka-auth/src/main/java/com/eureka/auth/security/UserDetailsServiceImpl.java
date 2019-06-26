@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.eureka.auth.repository.UserRepository;
+import com.eureka.common.model.UserRole;
+import com.eureka.common.model.UserStatus;
 
 
 @Service   // It has to be annotated with @Service.
@@ -24,6 +26,9 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		com.eureka.common.model.User user = repository.findUserByUsername(username);
+		
+		if(user.getRole() == UserRole.AGENT || user.getStatus() == UserStatus.NOT_ACTIVATED || user.getStatus() == UserStatus.BLOCKED)
+			throw new UsernameNotFoundException("Username: " + username + " not found");
 		
 		if(user != null) {
 				// Remember that Spring needs roles to be in this format: "ROLE_" + userRole (i.e. "ROLE_ADMIN")

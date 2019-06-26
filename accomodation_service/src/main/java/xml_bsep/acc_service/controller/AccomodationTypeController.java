@@ -4,6 +4,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eureka.common.model.AccomodationType;
 import xml_bsep.acc_service.service.AccomodationTypeService;
 import xml_bsep.acc_service.service.UserService;
+import com.eureka.common.model.AccomodationUnit;
+import xml_bsep.acc_service.service.AccomodationUnitService;
+
 
 @RestController
 @RequestMapping("/")
@@ -27,9 +31,11 @@ public class AccomodationTypeController {
 	
 	@Autowired
 	UserService userService;
+
+	AccomodationUnitService accUnitService;
 	
 	@PostMapping(value = "/admin/addNewAccType", consumes = "application/json")
-	public ResponseEntity<List<AccomodationType>> addNewAccType(@RequestBody AccomodationType accType){
+	public ResponseEntity<List<AccomodationType>> addNewAccType(@Valid @RequestBody AccomodationType accType){
 		if(service.checkIfTypeExsists(accType.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		//odje bi sada trebale neke sql parsiarnje provjere i te pizdarije
 		service.save(accType);
@@ -39,9 +45,12 @@ public class AccomodationTypeController {
 	}
 	
 	@PostMapping(value = "/admin/removeAccType")
-	public ResponseEntity<List<AccomodationType>> removeAccType(@RequestBody AccomodationType accType){
-		//treba uraditi provjeru da li ima smjestaja sa zadatim tipom
-		//return new ResponseEntity<>(HttpStatus.BAD_REQUEST);	
+	public ResponseEntity<List<AccomodationType>> removeAccType(@Valid @RequestBody AccomodationType accType){
+		//treba uraditi provjeru da li ima smjestaja sa zadatim tipom		
+		for(AccomodationUnit accUnit : accUnitService.findAll()){
+			if(accUnit.isType(accType)) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
+		
 		List<AccomodationType> accTypes = service.delete(accType.getId());
 		logger.info("NP_EVENT BTS {} {}", userService.getCurrentUsername(), accType.getId());
 		return new ResponseEntity<>(accTypes, HttpStatus.OK);

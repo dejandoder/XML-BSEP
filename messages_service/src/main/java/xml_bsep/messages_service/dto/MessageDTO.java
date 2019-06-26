@@ -2,15 +2,29 @@ package xml_bsep.messages_service.dto;
 
 import java.util.Date;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import com.eureka.common.model.Message;
 
 public class MessageDTO {
 	
+	@Size(min=1,max=40)
 	private String username1;
+	
+	@Min(1)
 	private long userId1;
+	
+	@Size(min=1,max=40)
 	private String username2;
+		
+	@Min(1)
 	private long userId2;
+	
+	@Size(min=0,max=200)
 	private String content;
+	
 	private Date date;
 	
 	public MessageDTO() {

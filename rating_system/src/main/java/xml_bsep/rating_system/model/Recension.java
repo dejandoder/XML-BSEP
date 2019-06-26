@@ -77,7 +77,7 @@ public class Recension {
     @XmlElement(defaultValue = "false")
     protected RecensionStatus status;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "RECENSION_USER_ID_FK"))
     @XmlElement(required = true)
     protected User user;

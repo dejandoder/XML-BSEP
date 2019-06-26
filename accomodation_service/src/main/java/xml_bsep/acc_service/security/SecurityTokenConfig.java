@@ -33,8 +33,11 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		   .addFilterAfter(new JwtTokenAuthenticationFilter(jwtConfig), UsernamePasswordAuthenticationFilter.class)
 		// authorization requests config
 		.authorizeRequests()
+		.antMatchers("/admin/**").hasRole("ADMIN")
+		.antMatchers("/agent/**").hasRole("AGENT")
+		.antMatchers("/soap/**").hasRole("AGENT")
+		.antMatchers("/user/**").hasRole("USER")
 		.antMatchers("/all/**").permitAll()
-		   // allow all who are accessing "auth" service
 		.anyRequest().authenticated(); 
 	}
 	

@@ -32,6 +32,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { ReservationService } from './service/ReservationService';
 import { MessageService } from './service/MessageService';
 import { RecenesionService } from './service/RecensionService';
+import { RegistrationComponent } from './components/registration/registration.component';
 library.add(fas);
 
 
@@ -44,6 +45,7 @@ library.add(fas);
     MessagesComponent,
     AccomodationPreviewComponent,
     ReservationPreviewComponent,
+    RegistrationComponent,
   
   ],
   imports: [

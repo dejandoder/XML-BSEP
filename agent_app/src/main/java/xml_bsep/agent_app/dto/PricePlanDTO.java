@@ -2,14 +2,22 @@ package xml_bsep.agent_app.dto;
 
 import java.util.Date;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+
 import xml_bsep.agent_app.model.PricePlan;
 
 public class PricePlanDTO {
 	
     protected Date fromDate;
     protected Date toDate;
+    @Min(0)
     protected float pricePerNight;
+    @NotBlank(message="id must not be empty")
+	@Min(1)
     protected long id;
+    @NotBlank(message="id must not be empty")
+	@Min(1)
     protected long accID;
     
     public PricePlanDTO(PricePlan pricePlan) {
