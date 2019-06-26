@@ -1,6 +1,5 @@
 package xml_bsep.acc_service.dto;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -2,7 +2,8 @@ package com.eureka.auth.controller;
 
 import java.util.List;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,8 @@ import com.eureka.common.model.UserStatus;
 @RequestMapping("")
 public class UserController {
 
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	UserService service;
 	
@@ -36,13 +39,18 @@ public class UserController {
 	@PostMapping(value = "/admin/addNewAgent", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> addNewAgent(@RequestBody User user){
 		//provjera jedinstvenosti piba i username
-		if(!service.checkAgentsByPibAndName(user.getUsername(), user.getPib()).isEmpty()) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		if(!service.checkAgentsByPibAndName(user.getUsername(), user.getPib()).isEmpty()) {
+			//ocdjee
+			//logger.info("NP_EVENT DA {} {}", service.getCurrentUserName(), user.getId());
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+		}
 		
 		user.setRole(UserRole.AGENT);
 		user.setStatus(UserStatus.ACTIVATED);
 		user.setPassword(encoder.encode(user.getPassword()));
 		service.save(user);
 		List<UserDTO> usersDTO = service.getAgents();
+		//logger.info("NP_EVENT DA {} {}", service.getCurrentUserName(), user.getId());
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
@@ -51,9 +59,11 @@ public class UserController {
 		User user = service.findUserById(userDTO.getId());
 		System.out.println(user.toString());
 		if(user.getRole() != UserRole.USER || user.getStatus() != UserStatus.NOT_ACTIVATED) {
+			
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}else {
 			service.activateUser(user.getId());
+			//logger.info("NP_EVENT DOK {} {}", service.getCurrentUserName(), user.getId());
 			return new ResponseEntity<>(service.getUsers(), HttpStatus.OK);
 		}
 	}
@@ -65,6 +75,7 @@ public class UserController {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}else {
 			service.blockUser(user.getId());
+			//logger.info("NP_EVENT BOK {} {}", service.getCurrentUserName(), user.getId());
 			return new ResponseEntity<>(service.getUsers(), HttpStatus.OK);
 		}
 	}
@@ -72,18 +83,21 @@ public class UserController {
 	@GetMapping(value = "/admin/getAgents")
 	public ResponseEntity<List<UserDTO>> getAgents(){
 		List<UserDTO> usersDTO = service.getAgents();
+		//logger.info("NP_EVENT PSA {}", service.getCurrentUserName());
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/admin/getRegularUsers")
 	public ResponseEntity<List<UserDTO>> getRegularUsers(){
 		List<UserDTO> usersDTO = service.getUsers();
+		//logger.info("NP_EVENT PSK {}", service.getCurrentUserName());
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/user/getUser")
 	public ResponseEntity<User> getUser(@RequestBody String username){
 		User user = service.getUserByUsername(username);
+		//logger.info("NP_EVENT PSK {}", service.getCurrentUserName());
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 	

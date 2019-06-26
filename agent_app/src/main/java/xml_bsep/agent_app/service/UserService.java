@@ -20,7 +20,10 @@ public class UserService {
 	@Autowired
 	AuthServiceSoapClient soapClient;
 	
-	
+	public String getCurrentUserName() {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return principal.toString();
+	}
 	public User getCurrentUser() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		return repository.findByUsername(principal.toString());
