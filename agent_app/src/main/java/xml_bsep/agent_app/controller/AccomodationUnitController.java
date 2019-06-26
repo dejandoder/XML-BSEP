@@ -3,6 +3,10 @@ package xml_bsep.agent_app.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +34,8 @@ import org.springframework.util.Base64Utils;
 @RequestMapping("/")
 public class AccomodationUnitController {
 
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Autowired
 	UserService userService;
 	
@@ -53,18 +59,23 @@ public class AccomodationUnitController {
 		User user = userService.getCurrentUser();
 		newAccUnit.setAgent(user);
 		AccomodationUnit savedAccUnit = accUnitService.save(newAccUnit);
+		logger.info("NP_EVENT DSJ {} {}", userService.getCurrentUserName(), newAccUnit.getId());
 		return new ResponseEntity<>(new AccomodationUnitDTO(savedAccUnit), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/getAllAccTypes")
-	public ResponseEntity<List<AccomodationType>> getAllAccomodationTypes(){
+	public ResponseEntity<List<AccomodationType>> getAllAccomodationTypes(HttpServletRequest request){
 		List<AccomodationType> types = typeService.findAll();
+		String addr = request.getRemoteAddr().toString();
+		logger.info("NP_EVENT PTS {}", addr);
 		return new ResponseEntity<>(types, HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/getAllAccServices")
-	public ResponseEntity<List<AccomodationService>> getAllAccomodationServices(){
+	public ResponseEntity<List<AccomodationService>> getAllAccomodationServices(HttpServletRequest request){
 		List<AccomodationService> services = servicesService.findAll();
+		String addr = request.getRemoteAddr().toString();
+		logger.info("NP_EVENT PSJ {}",  addr);
 		return new ResponseEntity<>(services, HttpStatus.OK);
 	}
 	
@@ -72,6 +83,7 @@ public class AccomodationUnitController {
 	public ResponseEntity<List<AccomodationUnitDTO>> getAllAccUnitsByAgent(){
 		User agent = userService.getCurrentUser();
 		List<AccomodationUnitDTO> retVal = accUnitService.getAccUnitsByAgent(agent);
+		logger.info("NP_EVENT PSJA {}",  userService.getCurrentUser());
 		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 	
@@ -88,7 +100,7 @@ public class AccomodationUnitController {
 			for (byte[] bs : binaryImages) {
 				accomodationUnitDTO.addImage(Base64Utils.encodeToString(bs));
 			}
-		}
+		}logger.info("NP_EVENT PSJA {}",  userService.getCurrentUser());
 		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 	

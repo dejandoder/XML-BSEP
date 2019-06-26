@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.eureka.auth.dto.UserDTO;
@@ -16,6 +17,11 @@ public class UserService {
 	
 	@Autowired
 	UserRepository repository;
+	
+	/*public String getCurrentUserName() {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return principal.toString();
+	}*/
 	
 	public User save(User user) {
 		return repository.save(user);
