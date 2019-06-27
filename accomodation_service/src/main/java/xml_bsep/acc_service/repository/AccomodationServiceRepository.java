@@ -23,5 +23,7 @@ public interface AccomodationServiceRepository extends JpaRepository<Accomodatio
 	@Query("delete from AccomodationService where id = :id")
 	public void delete(@Param("id") long id);
 	
+	public AccomodationService findOneById(long id);
+	
 	public List<AccomodationService> findAccomodationServiceByName(String name);
 }

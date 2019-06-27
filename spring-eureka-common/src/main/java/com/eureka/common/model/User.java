@@ -8,15 +8,23 @@
 
 package com.eureka.common.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  * <p>Java class for user complex type.
@@ -72,15 +80,18 @@ import javax.xml.bind.annotation.XmlType;
     "username",
     "pib",
     "role",
-    "status"
+    "status",
+    "permissions"
 })
 
 @Entity
 public class User {
 
+	@NotBlank
     @XmlElement(required = true)
     protected String name;
-    
+
+	@NotBlank
     @XmlElement(required = true)
     protected String surname;
     
@@ -92,12 +103,16 @@ public class User {
     @XmlElement(required = true)
     protected String email;
     
+    @NotBlank
     @XmlElement(required = true)
     protected String password;
     
+    @NotBlank
+    @Pattern(regexp = "[a-zA-Z0-9.,?]*")
     @XmlElement(required = true)
     protected String username;
     
+
     @XmlElement(name = "PIB", required = true)
     protected String pib;
 
@@ -106,6 +121,11 @@ public class User {
     
     @XmlElement(required = true)
     protected UserStatus status;
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
+    @XmlElement(required = true)
+    private List<Permission> permissions;
     
     public User() {
     	
@@ -278,5 +298,14 @@ public class User {
 	public void setStatus(UserStatus status) {
 		this.status = status;
 	}
+
+	public List<Permission> getPermissions() {
+		return permissions;
+	}
+
+	public void setPermissions(List<Permission> permissions) {
+		this.permissions = permissions;
+	}
+	
 	
 }

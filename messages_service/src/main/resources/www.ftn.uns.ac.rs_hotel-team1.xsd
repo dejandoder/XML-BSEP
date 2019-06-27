@@ -263,6 +263,14 @@
       <xs:element name="PIB" type="xs:string"/>
       <xs:element name="role" type="tns:UserRole"/>
       <xs:element name="status" type="tns:UserStatus"/>
+      <xs:element name="permissions" type="tns:permission" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="permission">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 

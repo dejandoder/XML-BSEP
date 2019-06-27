@@ -2,30 +2,31 @@ package xml_bsep.acc_service.dto;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.eureka.common.model.Recension;
 import com.eureka.common.model.RecensionStatus;
 
 public class RecensionDTO {
-	@Size(min=1,max=150)
+	
+	@Size(min=0,max=200)
 	protected String comment;
+	
 	@Min(1)
 	@Max(5)
     protected int rating;
-    @NotBlank(message="Id must not be blank")
-    @Min(1)
+	
+    
     protected long id;
+    
     protected RecensionStatus status;
-	@Size(min=2,max=20)
+    
     protected String username;
-    @NotBlank(message="Id must not be blank")
-    @Min(1)
+
     protected long userId;
-	@Size(min=1,max=40)
-    protected String accUnitName;
-    @NotBlank(message="Id must not be blank")
+    
+    protected String accUnitName;	
+  
     @Min(1)
     protected long accUnitId;
 

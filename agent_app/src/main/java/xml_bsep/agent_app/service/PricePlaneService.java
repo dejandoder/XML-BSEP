@@ -42,4 +42,8 @@ public class PricePlaneService {
 		
 		return plan;
 	}
+	
+	public void deletePricePlane(long id) {
+		repository.deleteById(id);
+	}
 }

@@ -13,7 +13,6 @@ import org.springframework.ws.transport.TransportOutputStream;
 import org.springframework.ws.transport.context.TransportContext;
 import org.springframework.ws.transport.context.TransportContextHolder;
 import org.springframework.ws.transport.http.HttpComponentsConnection;
-import org.springframework.ws.transport.http.HttpUrlConnection;
 
 import xml_bsep.agent_app.repository.UserRepository;
 import xml_bsep.agent_app.service.UserService;

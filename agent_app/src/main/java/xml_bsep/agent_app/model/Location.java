@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,10 +59,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Location {
 
+	@NotNull
     protected float longitude;
     
+	@NotNull
     protected float lattitude;
     
+	@NotBlank
     @XmlElement(required = true)
     protected String displayName;
    

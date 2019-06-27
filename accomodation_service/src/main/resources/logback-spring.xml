@@ -143,7 +143,7 @@
         class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS}/se-logger.log</file>
 
-		<filter class="bsep.kt1.utils.SeFilter"/>
+		<filter class="xml_bsep.acc_service.utils.SeFilter"/>
 
         <encoder
             class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -168,7 +168,7 @@
         class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS}/np-logger.log</file>
 	
-		 <filter class="bsep.kt1.utils.NpFilter"/>
+		 <filter class="xml_bsep.acc_service.utils.NpFilter"/>
 
         <encoder
             class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -194,7 +194,7 @@
     </root>
      
     <!-- LOG "com.plantplaces.*" at TRACE level -->
-    <logger name="bsep.kt1" level="trace" additivity="false">
+    <logger name="xml_bsep.acc_service" level="trace" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
         <appender-ref ref="ErrorRollingFile" />

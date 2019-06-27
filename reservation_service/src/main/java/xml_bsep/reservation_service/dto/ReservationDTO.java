@@ -3,28 +3,31 @@ package xml_bsep.reservation_service.dto;
 import java.util.Date;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import org.apache.commons.lang.time.DateUtils;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import com.eureka.common.model.RecensionStatus;
 import com.eureka.common.model.Reservation;
 import com.eureka.common.model.ReservationStatus;
 
 public class ReservationDTO {
-	@NotBlank(message="id must not be empty")
-	@Min(1)
+	
 	private long id;
+	
+	@DateTimeFormat
 	private Date fromDate;
+	
+	@DateTimeFormat
 	private Date toDate;
-	@Size(min=1,max=60)
+	
 	private String accName;
-	@NotBlank(message="id must not be empty")
+	
 	@Min(1)
 	private long accId;
-	@Min(0)
+	
 	private int rating;
-	@Size(min=0,max=200)
+	
 	private int comment;
 	private ReservationStatus status;
 	private boolean cancelable;
@@ -42,6 +45,9 @@ public class ReservationDTO {
 		
 		if(fromDate.after(DateUtils.addDays(currentDate, reservation.getAccUnit().getCancelingPeriod()))) cancelable = true;
 		else cancelable = false;
+		
+		if(this.status == ReservationStatus.CONFIRMED) cancelable = false;
+		
 		
 	}
 	

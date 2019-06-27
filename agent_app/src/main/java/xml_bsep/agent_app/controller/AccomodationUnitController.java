@@ -82,7 +82,7 @@ public class AccomodationUnitController {
 	public ResponseEntity<List<AccomodationUnitDTO>> getAllAccUnitsByAgent(){
 		User agent = userService.getCurrentUser();
 		List<AccomodationUnitDTO> retVal = accUnitService.getAccUnitsByAgent(agent);
-		logger.info("NP_EVENT PSJA {}",  userService.getCurrentUser());
+		logger.info("NP_EVENT PSJA {}",  userService.getCurrentUser().getUsername());
 		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 	
@@ -99,7 +99,8 @@ public class AccomodationUnitController {
 			for (byte[] bs : binaryImages) {
 				accomodationUnitDTO.addImage(Base64Utils.encodeToString(bs));
 			}
-		}logger.info("NP_EVENT PSJA {}",  userService.getCurrentUser());
+		}
+		logger.info("NP_EVENT PSJA {}",  userService.getCurrentUser());
 		return new ResponseEntity<>(retVal, HttpStatus.OK);
 	}
 	

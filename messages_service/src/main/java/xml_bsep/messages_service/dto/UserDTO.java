@@ -1,9 +1,12 @@
 package xml_bsep.messages_service.dto;
 
+import javax.validation.constraints.Min;
+
 import com.eureka.common.model.User;
 
 public class UserDTO {
 
+	@Min(1)
 	private long id;
 	private String name;
 	private String surname;

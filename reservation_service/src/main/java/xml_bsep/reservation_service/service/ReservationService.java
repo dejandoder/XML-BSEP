@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.eureka.common.model.Reservation;
 import com.eureka.common.model.ReservationStatus;
-import com.netflix.discovery.shared.resolver.aws.ApplicationsResolver;
 
 import xml_bsep.reservation_service.dto.CheckReaservationDTO;
 import xml_bsep.reservation_service.repository.ReservationRepository;

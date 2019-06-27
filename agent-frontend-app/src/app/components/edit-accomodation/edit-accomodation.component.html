@@ -42,7 +42,7 @@
                     <div class="row pl-2"><h6>Add new plan:</h6></div> 
                     <div class="row">
                           <div class="col-6">
-                            <input type="text" readonly=true placeholder="Select date range"class="form-control" bsDaterangepicker [(ngModel)]="dates" [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
+                            <input type="text" readonly=true placeholder="Select date range" [minDate]="minDate" class="form-control" bsDaterangepicker [(ngModel)]="dates" [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
                           </div>
                           <div class="col-3">
                             <input type="number" id="pricePerNightInput" class="form-control mx-1" placeholder="Price" [(ngModel)]="newPricePlan.pricePerNight">
@@ -89,7 +89,7 @@
                    <div class="row pl-2"><h6>Disable new reservations:</h6></div> 
                    <div class="row">
                          <div class="col-6">
-                           <input type="text" readonly=true placeholder="Select date range"class="form-control" bsDaterangepicker [(ngModel)]="disableDates" [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
+                           <input type="text" readonly=true placeholder="Select date range"class="form-control" [minDate]="minDate" bsDaterangepicker [(ngModel)]="disableDates" [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
                          </div>
                          <div class="col-2">
                            <button class="btn btn-primary" (click)="disableReservations()">Disable</button>
