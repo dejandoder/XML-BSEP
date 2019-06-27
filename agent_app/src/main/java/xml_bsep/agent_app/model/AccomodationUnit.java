@@ -22,6 +22,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -30,71 +31,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element ref="{http://www.ftn.uns.ac.rs/hotel-team1}accomodation_type"/>
- *         &lt;element name="category">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int">
- *               &lt;minInclusive value="1"/>
- *               &lt;maxInclusive value="5"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element ref="{http://www.ftn.uns.ac.rs/hotel-team1}service" maxOccurs="unbounded"/>
- *         &lt;element name="description" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="image" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded"/>
- *         &lt;element ref="{http://www.ftn.uns.ac.rs/hotel-team1}pricePlan" maxOccurs="unbounded"/>
- *         &lt;element name="capacity" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/>
- *         &lt;element ref="{http://www.ftn.uns.ac.rs/hotel-team1}recension" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="canceling_period" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="location">
- *           &lt;complexType>
- *             &lt;complexContent>
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                 &lt;sequence>
- *                   &lt;element name="longitude">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}float">
- *                         &lt;minInclusive value="-90"/>
- *                         &lt;maxInclusive value="90"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="lattitude">
- *                     &lt;simpleType>
- *                       &lt;restriction base="{http://www.w3.org/2001/XMLSchema}float">
- *                         &lt;minInclusive value="-180"/>
- *                         &lt;maxInclusive value="180"/>
- *                       &lt;/restriction>
- *                     &lt;/simpleType>
- *                   &lt;/element>
- *                   &lt;element name="contry" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/>
- *                 &lt;/sequence>
- *               &lt;/restriction>
- *             &lt;/complexContent>
- *           &lt;/complexType>
- *         &lt;/element>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
+
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "accomodation_unit", propOrder = {
@@ -111,17 +48,20 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class AccomodationUnit {
 
+	@Valid
 	@OneToOne
 	@JoinColumn(name = "accomodation_type_id")
 	@XmlElement(name = "accomodation_type", required = true)
     protected AccomodationType accomodationType;
+	
     @Min(0)
     protected int category;
     
     @ManyToMany(fetch = FetchType.EAGER)
     @XmlElement(required = true)
     protected List<AccomodationService> services;
-    @Size(min=1,max=200)
+    
+    @Size(min=0,max=500)
     @XmlElement(required = true)
     protected String description;
     
@@ -135,9 +75,11 @@ public class AccomodationUnit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
+    
     @Min(0)
     @XmlElement(name = "canceling_period")
     protected Integer cancelingPeriod;
+    
     
     @OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "location_id")
@@ -148,6 +90,7 @@ public class AccomodationUnit {
     @JoinColumn(name = "agent_id")
     @XmlElement(required = true)
     protected User agent;
+    
     @Size(min=1,max=200)
     @XmlElement(required = true)
     protected String name;

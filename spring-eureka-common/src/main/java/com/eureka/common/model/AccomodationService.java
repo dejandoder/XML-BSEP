@@ -19,43 +19,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="name">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
- *               &lt;enumeration value="PARKING"/>
- *               &lt;enumeration value="WIFI"/>
- *               &lt;enumeration value="DORUCAK"/>
- *               &lt;enumeration value="POLU_PANSION"/>
- *               &lt;whiteSpace value="preserve"/>
- *               &lt;enumeration value="PANSION"/>
- *               &lt;enumeration value="ALL_INCLUSIVE"/>
- *               &lt;enumeration value="KUCNI_LJUBIMCI"/>
- *               &lt;enumeration value="TV"/>
- *               &lt;enumeration value="KUHINJA"/>
- *               &lt;enumeration value="PRIVATNO_KUPATILO"/>
- *               &lt;enumeration value="BESPLATNO_OTKAZIVANJE"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
+
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "accomodation_service", propOrder = {
@@ -63,10 +27,12 @@ import javax.xml.bind.annotation.XmlType;
     "id"
 })
 public class AccomodationService {
-	@NotBlank(message="name must not be empty")
+	
+	@NotBlank
     @XmlElement(required = true)
     protected String name;
     
+   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
@@ -76,7 +42,15 @@ public class AccomodationService {
     	
     }
     
-    /**
+    
+    public AccomodationService(@NotBlank String name, long id) {
+		super();
+		this.name = name;
+		this.id = id;
+	}
+
+
+	/**
      * Gets the value of the name property.
      * 
      * @return

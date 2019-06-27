@@ -16,42 +16,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import org.springframework.validation.annotation.Validated;
 
-/**
- * <p>Java class for anonymous complex type.
- * 
- * <p>The following schema fragment specifies the expected content contained within this class.
- * 
- * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="comment" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="rating">
- *           &lt;simpleType>
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}positiveInteger">
- *               &lt;maxInclusive value="5"/>
- *             &lt;/restriction>
- *           &lt;/simpleType>
- *         &lt;/element>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
- *         &lt;element name="approved" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="user" type="{http://www.ftn.uns.ac.rs/hotel-team1}user"/>
- *         &lt;element ref="{http://www.ftn.uns.ac.rs/hotel-team1}accomodation_unit"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
- * </pre>
- * 
- * 
- */
+
+@Validated
 @Entity
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "recension", propOrder = {
@@ -64,9 +40,12 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Recension {
 
+	@NotBlank
     @XmlElement(required = true)
     protected String comment;
 
+	@Min(1)
+	@Max(5)
     protected int rating;
     
     @Id
@@ -77,12 +56,12 @@ public class Recension {
     @XmlElement(defaultValue = "false")
     protected RecensionStatus status;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "RECENSION_USER_ID_FK"))
     @XmlElement(required = true)
     protected User user;
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "accomodation_unit_id", foreignKey = @ForeignKey(name = "RECENSION_ACC_UNIT_ID_FK"))
     @XmlElement(name = "accomodation_unit", required = true)
     protected AccomodationUnit accomodationUnit;

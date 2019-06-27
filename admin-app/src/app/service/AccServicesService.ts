@@ -15,10 +15,10 @@ export class AccServicesService{
     }
 
     addNewAccServide(accService : AccService){
-        return this.http.post<AccService[]>("api/acc/admin/addAccService", accService);
+        return this.http.post<AccService[]>("api/acc/admin/addAccService", accService.id);
     }
 
     removeAccService(accService : AccService){
-        return this.http.post<AccService[]>("api/acc/admin/removeAccService", accService);
+        return this.http.post<AccService[]>("api/acc/admin/removeAccService", accService.id);
     }
 }

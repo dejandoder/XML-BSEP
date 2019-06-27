@@ -3,32 +3,41 @@ package xml_bsep.agent_app.dto;
 import java.util.Date;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import xml_bsep.agent_app.model.Reservation;
 import xml_bsep.agent_app.model.ReservationStatus;
 
 import org.apache.commons.lang3.time.DateUtils;
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class ReservationDTO {
-	@NotBlank(message="id must not be empty")
-	@Min(1)
+
 	private long id;
+	
+	@DateTimeFormat
 	private Date fromDate;
+	
+	@DateTimeFormat
 	private Date toDate;
-	@Size(min=1,max=80)
+	
+
 	private String accName;
-	@NotBlank(message="id must not be empty")
+	
 	@Min(1)
 	private long accId;
-	@Min(0)
+		
 	private int rating;
+	
 	private int comment;
+	
 	private ReservationStatus status;
+	
 	private boolean cancelable;
+	
 	@Size(min=1,max=40)
 	private String username;
+	
 	private boolean agentReserved;
 	
 	public ReservationDTO(Reservation reservation) {

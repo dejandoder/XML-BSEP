@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+
 
 public class CheckReaservationDTO {
 	
+	@NotEmpty
 	private ArrayList<Date> dates;
 	
 	@Min(1)

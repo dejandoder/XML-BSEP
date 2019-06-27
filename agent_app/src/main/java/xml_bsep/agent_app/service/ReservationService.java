@@ -39,6 +39,7 @@ public class ReservationService {
 	UserService userService;
 	
 	public void syncReservations(){
+		repository.deleteAll();
 		SyncReservationsResponse response= reservationSoap.syncReservation();
 		if(response.getReservations()==null) return;
 		repository.saveAll(response.getReservations());

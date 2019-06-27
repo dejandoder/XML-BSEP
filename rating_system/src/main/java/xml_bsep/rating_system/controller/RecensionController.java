@@ -1,6 +1,10 @@
 package xml_bsep.rating_system.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import xml_bsep.rating_system.dto.CheckReviewDTO;
 import xml_bsep.rating_system.dto.RecensionDTO;
 import xml_bsep.rating_system.model.AccomodationUnit;
@@ -53,14 +58,14 @@ public class RecensionController {
 	}
 
 	@PostMapping(value = "/all/getRecensionsByAccUnit")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody long id){
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody @Min(1) long id){
 		logger.info("NP_EVENT POS {} {}", userService.getCurrentUsername(), id);
 		return new ResponseEntity<>(service.getRecensionsByAccUnit(id),HttpStatus.OK);
 	}
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping( value = "/user/saveRecension")
-	public ResponseEntity saveRecension(@RequestBody Recension rec) {
+	public ResponseEntity saveRecension( @Valid @RequestBody Recension rec) {
 		service.save(rec);
 		logger.info("NP_EVENT OK {} {}", userService.getCurrentUsername(), rec.getId());
 		return new ResponseEntity(HttpStatus.OK);
@@ -68,7 +73,7 @@ public class RecensionController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/approveRecension")
-	public ResponseEntity approveRecension(@RequestBody long recId){
+	public ResponseEntity approveRecension(@RequestBody @Min(1) long recId){
 		service.approveRecension(recId);
 		logger.info("NP_EVENT OK {} {}", userService.getCurrentUsername(), recId);
 		return new ResponseEntity(HttpStatus.OK);
@@ -76,14 +81,14 @@ public class RecensionController {
 	
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/declineRecension")
-	public ResponseEntity declineRecension(@RequestBody long recId){
+	public ResponseEntity declineRecension(@RequestBody @Min(1) long recId){
 		service.declineRecension(recId);
 		logger.info("NP_EVENT ZK {} {}", userService.getCurrentUsername(), recId);
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	@PostMapping(value = "/all/checkRecension")
-	public ResponseEntity<Boolean> checkRecension(@RequestBody CheckReviewDTO crDTO){
+	public ResponseEntity<Boolean> checkRecension( @Valid @RequestBody CheckReviewDTO crDTO){
 		return new ResponseEntity<>(service.checkIfRecnsionExsists(crDTO), HttpStatus.OK);
 	}
 	

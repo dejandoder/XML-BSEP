@@ -1,8 +1,13 @@
 package xml_bsep.rating_system.dto;
 
+import javax.validation.constraints.Min;
+
 public class CheckReviewDTO {
 	
+	@Min(1)
 	private long userId;
+	
+	@Min(1)
 	private long accUintId;
 	
 	public CheckReviewDTO() {

@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import xml_bsep.agent_app.dto.AccomodationUnitDTO;
 import xml_bsep.agent_app.service.ImageService;
 import xml_bsep.agent_app.service.UserService;
 
@@ -51,17 +50,17 @@ public class ImageController {
 	
 	@ResponseBody
 	@PostMapping(value = "/getImages", produces = MediaType.IMAGE_JPEG_VALUE)
-	public List<byte[]> getImges(@RequestBody AccomodationUnitDTO accUnitDTO) {
-		List<byte[]> binaryImage = service.getImagesByAccomodationUnit(accUnitDTO.getId());
-		logger.info("NP_EVENT PSS {} {}", userService.getCurrentUserName(), accUnitDTO.getId());
+	public List<byte[]> getImges(@RequestBody @Min(1) long id) {
+		List<byte[]> binaryImage = service.getImagesByAccomodationUnit(id);
+		logger.info("NP_EVENT PSS {} {}", userService.getCurrentUserName(), id);
 		return binaryImage;
 	}
 	
 	@ResponseBody
 	@PostMapping(value = "/getImageIds")
-	public List<Long> getImage(@RequestBody AccomodationUnitDTO accUnit) {
-		logger.info("NP_EVENT PSS {} {}", userService.getCurrentUserName(), accUnit.getId());
-		return service.getImagesIdByAccomodationUnit(accUnit.getId());
+	public List<Long> getImageIds(@RequestBody @Min(1) long id) {
+		logger.info("NP_EVENT PSS {} {}", userService.getCurrentUserName(), id);
+		return service.getImagesIdByAccomodationUnit(id);
 	}
 	
 	@ResponseBody

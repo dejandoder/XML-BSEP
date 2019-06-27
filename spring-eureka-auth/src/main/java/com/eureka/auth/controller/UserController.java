@@ -2,6 +2,9 @@ package com.eureka.auth.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +40,7 @@ public class UserController {
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
 	@PostMapping(value = "/admin/addNewAgent", consumes = "application/json")
-	public ResponseEntity<List<UserDTO>> addNewAgent(@RequestBody User user){
+	public ResponseEntity<List<UserDTO>> addNewAgent(@Valid @RequestBody User user){
 		//provjera jedinstvenosti piba i username
 		if(!service.checkAgentsByPibAndName(user.getUsername(), user.getPib()).isEmpty()) {
 			//ocdjee
@@ -55,7 +58,7 @@ public class UserController {
 	}
 	
 	@PostMapping(value = "/admin/activateUser", consumes = "application/json")
-	public ResponseEntity<List<UserDTO>> activateUser(@RequestBody UserDTO userDTO){
+	public ResponseEntity<List<UserDTO>> activateUser( @Valid @RequestBody UserDTO userDTO){
 		User user = service.findUserById(userDTO.getId());
 		System.out.println(user.toString());
 		if(user.getRole() != UserRole.USER || user.getStatus() != UserStatus.NOT_ACTIVATED) {
@@ -69,7 +72,7 @@ public class UserController {
 	}
 	
 	@PostMapping(value = "/admin/blockUser", consumes = "application/json")
-	public ResponseEntity<List<UserDTO>> blockUser(@RequestBody UserDTO userDTO){
+	public ResponseEntity<List<UserDTO>> blockUser(@Valid @RequestBody UserDTO userDTO){
 		User user = service.findUserById(userDTO.getId());
 		if(user.getRole() != UserRole.USER || user.getStatus() != UserStatus.ACTIVATED) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -95,7 +98,7 @@ public class UserController {
 	}
 	
 	@PostMapping(value = "/user/getUser")
-	public ResponseEntity<User> getUser(@RequestBody String username){
+	public ResponseEntity<User> getUser(@RequestBody @Pattern(regexp = "/[a-zA-Z0-9.,?]*/") String username){
 		User user = service.getUserByUsername(username);
 		//logger.info("NP_EVENT PSK {}", service.getCurrentUserName());
 		return new ResponseEntity<>(user, HttpStatus.OK);

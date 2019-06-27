@@ -222,6 +222,7 @@ export class AddAccomodationComponent implements OnInit {
           )
           //ciscenje forme
           this.selectedType  = {"id": -1, "name": "Accomodation type", "disabled" : true};
+          $("#category").val(-1);
           this.accService.getAllAccomodationServices().subscribe(
             data =>{
               this.accServices = data;

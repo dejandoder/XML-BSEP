@@ -18,3 +18,9 @@ INSERT INTO `location` VALUES (1,'Lutrija RS, 9, Solunskih Dobrovoljaca, Vrta, G
 INSERT INTO `price_plan` VALUES (1,'2019-06-01 00:00:00',10,'2019-12-31 00:00:00',1),(2,'2019-06-01 00:00:00',15,'2020-01-24 00:00:00',2);
 
 
+INSERT INTO `permission` (`id`,`name`) VALUES (1,'ADD_ACC_UNIT');
+INSERT INTO `permission` (`id`,`name`) VALUES (2,'ADD_PRICE_PLAN');
+
+INSERT INTO `user_permissions` (`user_id`,`permissions_id`) VALUES (1,1);
+INSERT INTO `user_permissions` (`user_id`,`permissions_id`) VALUES (1,2);
+

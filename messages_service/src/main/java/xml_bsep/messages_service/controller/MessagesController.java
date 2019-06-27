@@ -19,6 +19,7 @@ import xml_bsep.messages_service.service.UserService;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @RestController
@@ -39,8 +40,8 @@ public class MessagesController {
 		logger.info("NP_EVENT PKK {}", userService.getCurrentUsername());
 		return new ResponseEntity<List<UserDTO>>(messService.getContacts(), HttpStatus.OK);
 	}
-	@PostMapping(value = "/user/getMessages")
-	public ResponseEntity<List<MessageDTO>> getMessages(@RequestBody @Size(min=1,max=40) String username){
+	@PostMapping(value = "/user/getMessages")//validira username na samo brojeve i slova
+	public ResponseEntity<List<MessageDTO>> getMessages(@RequestBody @Pattern(regexp = "[a-zA-Z0-9.,?]*") @Size(min=1,max=40) String username){
 		logger.info("NP_EVENT PP {} {}", userService.getCurrentUsername(), username); 
 		return new ResponseEntity<>(messService.getMessages(username), HttpStatus.OK);
 	}

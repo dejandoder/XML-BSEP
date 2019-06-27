@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,6 +45,7 @@ public class PricePlanController {
 	};	
 	
 	@SuppressWarnings("rawtypes")
+	@PreAuthorize("hasAuthority('ADD_PRICE_PLAN')")
 	@PostMapping("/savePricePlan")
 	public ResponseEntity savePricePlan(@RequestBody @Valid PricePlanDTO planDTO) {
 		
@@ -57,10 +59,16 @@ public class PricePlanController {
 		plan.setPricePerNight(planDTO.getPricePerNight());
 		plan.setAccomodationUnit(accUnit);
 		
-		if(ppService.save(plan) == null) {
+		if(ppService.save(plan) != null) {
 			logger.info("NP_EVENT DC {} {}", planDTO.getAccID(), userService.getCurrentUserName() );
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-		}
+			return new ResponseEntity<>(HttpStatus.OK);		}
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	@SuppressWarnings("rawtypes")
+	@PostMapping("/deletePricePlan")
+	public ResponseEntity deletePricePlane(@RequestBody @Min(1) long id) {
+		ppService.deletePricePlane(id);
+		return new ResponseEntity(HttpStatus.OK);
 	}
  }

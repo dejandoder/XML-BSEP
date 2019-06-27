@@ -16,11 +16,11 @@ export class ImageService{
      }
 
      getImagesByAccomodationUnit(accUnit : AccomodationUnit){
-        return this.http.post("api/getImages", accUnit, { responseType: 'blob' });
+        return this.http.post("api/getImages", accUnit.id, { responseType: 'blob' });
      }
 
      getImagesIdsByAccomodationUnit(accUnit : AccomodationUnit){
-      return this.http.post<number[]>("api/getImageIds", accUnit);
+      return this.http.post<number[]>("api/getImageIds", accUnit.id);
    }
 
    getImage(id : number){

@@ -8,7 +8,7 @@
     <div class="col-6">
         <div class="row px-2">
           <div class="col-4 pr-0">
-            <input type="text" readonly=true placeholder="Check-in  -  Check-out"class="form-control" [(ngModel)]="searchDTO.dates" bsDaterangepicker [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
+            <input type="text" readonly=true placeholder="Check-in  -  Check-out"class="form-control" [minDate]="minDate" [(ngModel)]="searchDTO.dates" bsDaterangepicker [bsConfig]="{ isAnimated: true, adaptivePosition: true, dateInputFormat: 'yyyy-MM-dd' }">
           </div>
           <div class="col-3 px-1">
               <input type="number"  placeholder="Persons" [(ngModel)]="searchDTO.persons"  class="form-control ml-2">

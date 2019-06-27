@@ -17,6 +17,7 @@ import { RecenesionService } from 'src/app/service/RecensionService';
 })
 export class EditAccomodationComponent implements OnInit {
 
+  minDate = new Date();
   accUnit : AccomodationUnit;
   images : String[] = [];
   pricePlans : PricePlan[] = [];

@@ -32,6 +32,7 @@ public class AccomodationTypeController {
 	@Autowired
 	UserService userService;
 
+	@Autowired
 	AccomodationUnitService accUnitService;
 	
 	@PostMapping(value = "/admin/addNewAccType", consumes = "application/json")

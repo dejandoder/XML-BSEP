@@ -59,6 +59,7 @@ public class RecesnsionService {
 	
 	public Recension save(Recension recensions) {
 		recensions.setUser(userService.getCurrentUser());
+		accUnitRepository.save(recensions.getAccomodationUnit());
 		return recensionRespository.save(recensions);
 	}
 	

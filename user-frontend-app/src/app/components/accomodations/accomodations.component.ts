@@ -15,6 +15,7 @@ import { AccomodationUnit } from 'src/app/model/AccomodationUnit';
 })
 export class AccomodationsComponent implements OnInit {
 
+  minDate = new Date();np
   address : string;
   modalRef: BsModalRef;
   config = {

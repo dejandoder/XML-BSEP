@@ -1,6 +1,6 @@
 package xml_bsep.agent_app.soap_config;
 
-import java.io.File;
+
 
 import javax.net.ssl.SSLContext;
 
@@ -9,7 +9,6 @@ import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.ssl.SSLContextBuilder;
-import org.apache.tomcat.util.file.ConfigurationSource.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
