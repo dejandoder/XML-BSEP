@@ -34,6 +34,7 @@ public class SoapClientsConfig {
 		// this package must match the package in the <generatePackage> specified in
 		// pom.xml
 		marshaller.setContextPath("xml_bsep.agent_app.model");
+		marshaller.setSupportDtd(false);
 		return marshaller;
 	}
 

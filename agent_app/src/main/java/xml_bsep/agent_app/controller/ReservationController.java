@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,11 +36,13 @@ public class ReservationController {
 	@Autowired
 	UserService userService;
 	
+	
 	@PostMapping(value = "/syncReservations")
 	public ResponseEntity<SyncReservationsResponse> syncResvations(){
 		return new ResponseEntity<>(client.syncReservation(), HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasAuthority('APPROVE_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/approveReservation")
 	public ResponseEntity approveReservation(@RequestBody @Min(1) long resId){
@@ -54,6 +57,7 @@ public class ReservationController {
 		}
 	}
 
+	@PreAuthorize("hasAuthority('CONFIRM_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/confirmReservation")
 	public ResponseEntity confirmReservation(@RequestBody @Min(1) long resId){
@@ -67,6 +71,7 @@ public class ReservationController {
 		}
 	}
 	
+	@PreAuthorize("hasAuthority('DECLINE_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/declineReservation")
 	public ResponseEntity declineReservation(@RequestBody @Min(1) long resId){
@@ -80,6 +85,7 @@ public class ReservationController {
 		}
 	}
 	
+	@PreAuthorize("hasAuthority('DO_AGENT_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/agentReservation")
 	public ResponseEntity agentReservation(@RequestBody @Valid ReservationDTO resDTO){

@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -53,6 +54,7 @@ public class AccomodationUnitController {
 	@Autowired
 	ImageService imageService;
 	
+	@PreAuthorize("hasAuthority('ADD_ACC_UNIT')")
 	@PostMapping(value = "/addNewAccUnit")
 	public ResponseEntity<AccomodationUnitDTO> addAccomodationUnit(@Valid @RequestBody AccomodationUnit newAccUnit) {
 		User user = userService.getCurrentUser();

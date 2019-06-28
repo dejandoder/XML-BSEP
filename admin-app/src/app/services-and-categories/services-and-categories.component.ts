@@ -68,7 +68,7 @@ export class ServicesAndCategoriesComponent implements OnInit {
       },
       error =>{
         this.typesError = true;
-        setInterval(
+        setTimeout(
         () => {
           this.typesError = false;
         }
@@ -86,7 +86,7 @@ export class ServicesAndCategoriesComponent implements OnInit {
       },
       error =>{
           this.addServiceError = true;
-          setInterval(
+          setTimeout(
             () =>{
               this.addServiceError = false;
             },
@@ -96,7 +96,7 @@ export class ServicesAndCategoriesComponent implements OnInit {
     )
    }else{
       $("#newAccServiceInput").addClass("border boreder-warining");
-      setInterval(function(){$("#newAccServiceInput").removeClass("border boreder-warining");}, 2000)
+      setTimeout(function(){$("#newAccServiceInput").removeClass("border boreder-warining");}, 2000)
    }
   }
 
@@ -107,7 +107,7 @@ export class ServicesAndCategoriesComponent implements OnInit {
       },
       error => {
         this.servicesError = true;
-        setInterval(
+        setTimeout(
           () => {
             this.servicesError = false;
           },

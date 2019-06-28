@@ -73,3 +73,12 @@ org.springframework.security.authentication.BadCredentialsException: Bad credent
 2019-06-28 14:38:38,722 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
 2019-06-28 14:44:19,673 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-2] Request is to process authentication
 2019-06-28 14:45:50,542 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
+2019-06-28 20:24:31,480 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 20:26:16,783 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 119.144 seconds (JVM running for 122.099)
+2019-06-28 20:42:28,999 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 20:45:46,283 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 20:46:53,247 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 70.649 seconds (JVM running for 71.668)
+2019-06-28 21:04:08,440 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-1] Request is to process authentication
+2019-06-28 21:11:16,187 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-3] Request is to process authentication
+2019-06-28 21:11:59,774 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-1] Request is to process authentication
+2019-06-28 21:24:36,085 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Request is to process authentication

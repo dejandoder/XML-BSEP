@@ -98,7 +98,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="decline_reservation_response">
+  <xs:element name="decline_reservation_request">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="resId" type="xs:long"/>
