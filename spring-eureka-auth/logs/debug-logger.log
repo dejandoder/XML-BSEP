@@ -1,17 +1,9 @@
-2019-06-27 15:46:47,763 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-27 15:58:11,965 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-1] Request is to process authentication
-2019-06-27 16:17:58,305 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Request is to process authentication
-2019-06-27 16:26:38,440 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-2] Request is to process authentication
-2019-06-27 16:39:59,255 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-6] Request is to process authentication
-2019-06-27 16:47:28,176 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-6] Request is to process authentication
-2019-06-27 17:17:44,485 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-27 17:24:59,205 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-27 19:46:40,830 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-5] Request is to process authentication
-2019-06-27 19:48:57,198 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-27 20:34:24,523 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
-2019-06-27 20:37:12,088 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-27 20:37:34,573 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Request is to process authentication
-2019-06-27 20:37:34,684 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Authentication request failed: org.springframework.security.authentication.BadCredentialsException: Bad credentials
+2019-06-28 13:41:47,409 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Request is to process authentication
+2019-06-28 14:05:39,456 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
+2019-06-28 14:07:30,914 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-3] Request is to process authentication
+2019-06-28 14:33:03,854 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-4] Request is to process authentication
+2019-06-28 14:38:33,981 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
+2019-06-28 14:38:34,123 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Authentication request failed: org.springframework.security.authentication.BadCredentialsException: Bad credentials
 org.springframework.security.authentication.BadCredentialsException: Bad credentials
 	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:151)
 	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:174)
@@ -62,9 +54,12 @@ org.springframework.security.authentication.BadCredentialsException: Bad credent
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Unknown Source)
-2019-06-27 20:37:34,684 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Updated SecurityContextHolder to contain null Authentication
-2019-06-27 20:37:34,684 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Delegating to authentication failure handler org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler@40b8d5e1
+	at java.lang.Thread.run(Thread.java:748)
+2019-06-28 14:38:34,129 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Updated SecurityContextHolder to contain null Authentication
+2019-06-28 14:38:34,134 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Delegating to authentication failure handler org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler@42d9b897
+2019-06-28 14:38:38,722 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
+2019-06-28 14:44:19,673 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-2] Request is to process authentication
+2019-06-28 14:45:50,542 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication

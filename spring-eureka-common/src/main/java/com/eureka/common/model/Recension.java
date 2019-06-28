@@ -10,6 +10,8 @@ package com.eureka.common.model;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -67,6 +69,7 @@ public class Recension {
     protected int rating;
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected long id;
     

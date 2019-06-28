@@ -12,14 +12,14 @@ export class RecensionService{
     }
 
     getRecensions(){
-        return this.http.get<RecensionDTO[]>('api/acc/admin/getRecensions');
+        return this.http.get<RecensionDTO[]>('api/rat/admin/getRecensions');
     }
 
     apporveRecension(id : number){
-        return this.http.post('api/acc/admin/approveRecension', id);
+        return this.http.post('api/rat/admin/approveRecension', id);
     }
 
     declineRecension(id : number){
-        return this.http.post('api/acc/admin/declineRecension', id);
+        return this.http.post('api/rat/admin/declineRecension', id);
     }
 }

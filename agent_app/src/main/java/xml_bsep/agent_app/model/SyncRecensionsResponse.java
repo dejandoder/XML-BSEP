@@ -11,15 +11,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
    "recensions",
-   "status"
 })
-@XmlRootElement(name = "sync_recensions_request")
+@XmlRootElement(name = "sync_recensions_responset")
 public class SyncRecensionsResponse {
 
 	@XmlElement(required = true)
 	private List<Recension> recensions;
-	@XmlElement(required = true)
-	private SOAPResponseStatus status;
 	
 	public SyncRecensionsResponse() {
 		// TODO Auto-generated constructor stub
@@ -33,12 +30,4 @@ public class SyncRecensionsResponse {
 		this.recensions = recensions;
 	}
 
-	public SOAPResponseStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(SOAPResponseStatus status) {
-		this.status = status;
-	}
-	
 }

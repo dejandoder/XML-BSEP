@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import xml_bsep.agent_app.UrlUtils;
+import org.springframework.stereotype.Service;
+
 import xml_bsep.agent_app.dto.AccomodationUnitDTO;
 import xml_bsep.agent_app.model.AccomodationUnit;
 import xml_bsep.agent_app.model.User;
@@ -26,18 +22,10 @@ public class AccomodationUnitService {
 	@Autowired
 	AccomodationServiceSoapClient accSoap;
 	
-	@Autowired 
-	RestTemplate restTemplate;
-	
 	
 	public AccomodationUnit save(AccomodationUnit accUnit) {
 		repository.save(accUnit);
-		accSoap.addNewAccomodationUnit(accUnit);
-
-		HttpEntity<AccomodationUnit> request = new HttpEntity<AccomodationUnit>(accUnit);
-		restTemplate.exchange(UrlUtils.getRatingSystemUrl() + "/agent/addAccUnit", HttpMethod.POST, request, ResponseEntity.class);
-		
-		
+		accSoap.addNewAccomodationUnit(accUnit);		
 		return accUnit;
 	}
 

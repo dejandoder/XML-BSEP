@@ -1,0 +1,140 @@
+2019-06-27 15:13:43,043 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 15:14:52,020 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 77.292 seconds (JVM running for 80.547)
+2019-06-27 15:21:57,375 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-6] NP_EVENT PSJ 127.0.0.1
+2019-06-27 15:21:57,375 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-7] NP_EVENT PTS 127.0.0.1
+2019-06-27 15:36:27,640 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 15:37:24,850 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 64.825 seconds (JVM running for 67.472)
+2019-06-27 15:44:51,226 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSO anonymousUser
+2019-06-27 15:46:01,394 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-2] NP_EVENT PSO anonymousUser
+2019-06-27 15:46:34,864 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO anonymousUser
+2019-06-27 15:47:03,129 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-5] NP_EVENT PSJ user1
+2019-06-27 15:54:20,182 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 15:55:35,434 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 94.093 seconds (JVM running for 96.767)
+2019-06-27 15:58:40,235 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-5] NP_EVENT PSO user1
+2019-06-27 15:58:45,292 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ user1
+2019-06-27 15:59:52,535 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-8] NP_EVENT PSJ 127.0.0.1
+2019-06-27 15:59:52,582 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-1] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:00:12,690 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:00:12,720 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-10] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:02:39,963 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSO user1
+2019-06-27 16:02:56,138 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSJ user1
+2019-06-27 16:09:19,879 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 16:09:53,096 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 36.885 seconds (JVM running for 38.553)
+2019-06-27 16:16:27,270 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-2] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:16:27,303 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:16:51,736 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO anonymousUser
+2019-06-27 16:17:20,126 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO anonymousUser
+2019-06-27 16:17:28,253 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-4] NP_EVENT PSO anonymousUser
+2019-06-27 16:17:45,147 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-3] NP_EVENT PSO anonymousUser
+2019-06-27 16:18:03,108 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-2] NP_EVENT PSJ user1
+2019-06-27 16:19:00,395 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-4] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:19:00,481 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-3] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:23:21,509 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 16:24:01,894 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 45.432 seconds (JVM running for 46.543)
+2019-06-27 16:24:20,165 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-4] NP_EVENT PO user1 5 3
+2019-06-27 16:24:22,622 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-2] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:24:22,823 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-7] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:26:38,206 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO anonymousUser
+2019-06-27 16:26:40,947 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSJ user1
+2019-06-27 16:35:07,845 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 16:38:07,321 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 16:39:12,583 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 75.716 seconds (JVM running for 78.663)
+2019-06-27 16:40:15,086 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-5] NP_EVENT PSO user1
+2019-06-27 16:40:17,402 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSJ user1
+2019-06-27 16:40:46,935 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-4] NP_EVENT PO user1 5 1
+2019-06-27 16:41:10,967 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-5] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:41:10,998 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-1] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:41:30,951 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO user1
+2019-06-27 16:41:34,857 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-3] NP_EVENT POS user1 1
+2019-06-27 16:47:33,479 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-1] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:47:33,769 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-10] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:47:40,526 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-7] NP_EVENT DTS admin1 4
+2019-06-27 16:48:34,830 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-2] NP_EVENT OK admin1 1
+2019-06-27 16:48:39,362 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-6] NP_EVENT POS user1 1
+2019-06-27 16:48:44,194 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:48:44,229 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:53:14,280 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 16:54:43,090 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 93.865 seconds (JVM running for 96.095)
+2019-06-27 16:55:16,950 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-9] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:55:16,950 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:55:16,950 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-7] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:55:16,951 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:55:17,509 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-1] NP_EVENT PTS 127.0.0.1
+2019-06-27 16:55:17,536 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-5] NP_EVENT PSJ 127.0.0.1
+2019-06-27 16:56:25,379 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 16:57:44,957 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 84.214 seconds (JVM running for 85.433)
+2019-06-27 16:58:38,018 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-4] NP_EVENT BTS admin1 3
+2019-06-27 16:59:42,779 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 17:00:08,546 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 29.738 seconds (JVM running for 30.708)
+2019-06-27 17:07:43,231 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-6] NP_EVENT PSJ 127.0.0.1
+2019-06-27 17:07:43,231 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-27 17:08:19,585 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 17:09:10,309 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 17:09:32,618 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 25.302 seconds (JVM running for 26.252)
+2019-06-27 17:12:32,177 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 17:12:54,059 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 25.91 seconds (JVM running for 26.915)
+2019-06-27 17:15:35,379 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 17:16:39,664 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 79.19 seconds (JVM running for 82.994)
+2019-06-27 17:17:52,788 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-2] NP_EVENT PSJ 127.0.0.1
+2019-06-27 17:17:52,902 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-1] NP_EVENT PTS 127.0.0.1
+2019-06-27 17:18:38,736 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-27 17:18:38,985 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-4] NP_EVENT PTS 127.0.0.1
+2019-06-27 17:23:39,706 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 17:24:03,261 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 26.275 seconds (JVM running for 27.263)
+2019-06-27 17:25:03,726 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-27 17:25:03,734 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-27 17:25:07,265 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT BSJ admin1 12
+2019-06-27 17:25:09,832 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-2] NP_EVENT BTS admin1 3
+2019-06-27 19:40:03,240 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 19:40:40,615 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 44.431 seconds (JVM running for 45.641)
+2019-06-27 19:46:08,714 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-10] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:46:08,715 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-1] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:46:46,612 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-2] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:46:46,912 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-7] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:46:56,835 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-5] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:46:56,868 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-9] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:49:18,172 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO user1
+2019-06-27 19:49:33,832 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-2] NP_EVENT PSO user1
+2019-06-27 19:49:46,318 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO user1
+2019-06-27 19:50:02,656 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-5] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:50:02,930 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:50:26,814 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-4] NP_EVENT PSO user1
+2019-06-27 19:50:39,794 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-3] NP_EVENT PSO user1
+2019-06-27 19:51:13,112 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-10] NP_EVENT PSO user1
+2019-06-27 19:51:28,920 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSO user1
+2019-06-27 19:51:31,963 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO user1
+2019-06-27 19:52:10,917 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-6] NP_EVENT POS user1 3
+2019-06-27 19:52:14,770 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ user1
+2019-06-27 19:53:08,522 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-2] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:53:08,567 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-4] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:53:10,353 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:53:10,371 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-10] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:53:20,335 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO user1
+2019-06-27 19:53:24,265 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ user1
+2019-06-27 19:54:08,004 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-4] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:54:08,050 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:54:21,268 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSO user1
+2019-06-27 19:54:27,765 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO user1
+2019-06-27 19:54:30,557 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-4] NP_EVENT PSJ user1
+2019-06-27 19:54:41,526 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:54:41,573 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-1] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:55:37,321 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-9] NP_EVENT PO user1 4 1
+2019-06-27 19:56:14,512 INFO xml_bsep.acc_service.controller.RecensionController [https-jsse-nio-8600-exec-10] NP_EVENT OK admin1 1
+2019-06-27 19:56:33,679 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-6] NP_EVENT PTS 127.0.0.1
+2019-06-27 19:56:33,980 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-1] NP_EVENT PSJ 127.0.0.1
+2019-06-27 19:59:32,892 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:02:13,824 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:03:03,717 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 55.6 seconds (JVM running for 57.728)
+2019-06-27 20:05:52,111 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:06:21,706 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 32.232 seconds (JVM running for 33.192)
+2019-06-27 20:12:06,047 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:12:41,408 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:13:41,768 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 67.495 seconds (JVM running for 70.511)
+2019-06-27 20:16:25,069 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:17:17,976 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 61.344 seconds (JVM running for 63.711)
+2019-06-27 20:33:34,908 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-27 20:33:58,140 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 25.503 seconds (JVM running for 26.527)
+2019-06-27 20:34:36,243 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-27 20:34:36,496 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-6] NP_EVENT PSJ 127.0.0.1
+2019-06-27 20:37:07,521 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-9] NP_EVENT PTS 127.0.0.1
+2019-06-27 20:37:07,531 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-2] NP_EVENT PSJ 127.0.0.1

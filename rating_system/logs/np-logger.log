@@ -1,0 +1,21 @@
+
+2019-06-28 13:58:20,247 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT PO user1 4 1
+2019-06-28 14:06:40,261 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT PO user1 5 2
+2019-06-28 14:07:02,933 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 2
+2019-06-28 14:07:35,807 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 0
+2019-06-28 14:07:40,163 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 2
+2019-06-28 14:07:44,777 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS user1 2
+2019-06-28 14:08:30,744 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 2
+2019-06-28 14:09:11,567 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
+2019-06-28 14:09:26,470 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 2
+2019-06-28 14:35:53,195 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT PO user1 4 1
+2019-06-28 14:36:54,416 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 1
+2019-06-28 14:38:44,641 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT OK admin1 1
+2019-06-28 14:38:59,965 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 1
+2019-06-28 14:39:04,888 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 1
+2019-06-28 14:39:13,771 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS user1 1
+2019-06-28 14:45:18,711 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT PO user1 5 2
+2019-06-28 14:45:42,114 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS user1 2
+2019-06-28 14:45:54,469 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 1
+2019-06-28 14:45:59,596 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
+

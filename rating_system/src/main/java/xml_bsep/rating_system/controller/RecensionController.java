@@ -16,11 +16,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.eureka.common.model.Recension;
+import com.eureka.common.model.RecensionStatus;
+
 import xml_bsep.rating_system.dto.CheckReviewDTO;
 import xml_bsep.rating_system.dto.RecensionDTO;
-import xml_bsep.rating_system.model.AccomodationUnit;
-import xml_bsep.rating_system.model.Recension;
-import xml_bsep.rating_system.model.User;
+import xml_bsep.rating_system.service.AccUnitService;
 import xml_bsep.rating_system.service.RecesnsionService;
 import xml_bsep.rating_system.service.UserService;
 
@@ -36,38 +37,49 @@ public class RecensionController {
 	@Autowired
 	UserService userService;
 	
-	@SuppressWarnings("rawtypes")
-	@PostMapping(value = "/admin/addUser")
-	public ResponseEntity addUser(@RequestBody User user) {
-		service.addUser(user);
-		logger.info("NP_EVENT DA {} {}", userService.getCurrentUsername(), user.getId());
-		return new ResponseEntity(HttpStatus.OK);
-	}
+	@Autowired
+	AccUnitService accUnitService;
 	
-	@SuppressWarnings("rawtypes")
-	@PostMapping(value = "/agent/addAccUnit")
-	public ResponseEntity addAccUnit(@RequestBody AccomodationUnit accUnit) {
-		service.addAcomodationUnit(accUnit);
-		logger.info("NP_EVENT DSJ {} {}", userService.getCurrentUsername(), accUnit.getId()); 
-	    return new ResponseEntity(HttpStatus.OK);
-	}
-	
-	@GetMapping(value = "/admin/getRecensionsForApproval")
+	@GetMapping(value = "/admin/getRecensions")
 	public ResponseEntity<List<RecensionDTO>> getRecensionsForApproval(){
 		return new ResponseEntity<List<RecensionDTO>>(service.getRecensionsForApproval(), HttpStatus.OK);
 	}
 
+	
 	@PostMapping(value = "/all/getRecensionsByAccUnit")
-	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody @Min(1) long id){
-		logger.info("NP_EVENT POS {} {}", userService.getCurrentUsername(), id);
-		return new ResponseEntity<>(service.getRecensionsByAccUnit(id),HttpStatus.OK);
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnit(@RequestBody @Min(1) long accId){
+		List<RecensionDTO> recensions = service.getRecensionsByAccUnit(accId);
+		return new ResponseEntity<List<RecensionDTO>>(recensions,HttpStatus.OK);
 	}
 	
+	@PostMapping(value = "/all/getRecensionsByAccUnitForUser")
+	public ResponseEntity<List<RecensionDTO>> getRecensionsByAccUnitForUser(@RequestBody @Min(1) long accId){
+		List<RecensionDTO> recensions = service.getRecensionsByAccUnit(accId);
+		
+		for (RecensionDTO rDto : recensions) {
+			if(rDto.getStatus() == RecensionStatus.PENDING || rDto.getStatus() == RecensionStatus.DECLINED) {
+				rDto.setComment("");
+			}
+		}
+		logger.info("NP_EVENT POS {} {}", userService.getCurrentUsername(), accId);
+		return new ResponseEntity<List<RecensionDTO>>(recensions,HttpStatus.OK);
+	}
+	
+	
 	@SuppressWarnings("rawtypes")
-	@PostMapping( value = "/user/saveRecension")
-	public ResponseEntity saveRecension( @Valid @RequestBody Recension rec) {
-		service.save(rec);
-		logger.info("NP_EVENT OK {} {}", userService.getCurrentUsername(), rec.getId());
+	@PostMapping( value = "/user/addRecension")
+	public ResponseEntity saveRecension( @RequestBody RecensionDTO recensionDTO) {
+		Recension recension = new Recension();
+		
+		recension.setAccomodationUnit(accUnitService.finOneById(recensionDTO.getAccUnitId()));
+		recension.setComment(recensionDTO.getComment());
+		recension.setRating(recensionDTO.getRating());
+		recension.setStatus(RecensionStatus.PENDING);
+		recension.setUser(userService.getCurrentUser());
+		
+		service.save(recension);
+		
+		logger.info("NP_EVENT PO {} {} {}", userService.getCurrentUsername(), recensionDTO.getRating(), recensionDTO.getAccUnitId());
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
