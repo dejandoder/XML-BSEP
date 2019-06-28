@@ -207,5 +207,13 @@ public class ObjectFactory {
     public DeclineReservationRequest createDeclineReservationRequest() {
     	return new DeclineReservationRequest();
     }
+    
+    public SyncRecensionsRequest createSyncRecensionsRequest(){
+    	return new SyncRecensionsRequest();
+    }
+    
+    public SyncRecensionsResponse createSyncRecensionsResponse(){
+    	return new SyncRecensionsResponse();
+    }
 
 }

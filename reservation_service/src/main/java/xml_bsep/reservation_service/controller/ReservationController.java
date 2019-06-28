@@ -117,7 +117,7 @@ public class ReservationController {
 			CheckReviewDTO crDTO = new CheckReviewDTO(reservation.getUser().getId(),reservation.getAccUnit().getId());
 			
 			HttpEntity<CheckReviewDTO> request = new HttpEntity<CheckReviewDTO>(crDTO);
-			HttpEntity<Boolean> response = getRT().exchange(UrlUtils.getRatingSystemUrl() + "/all/checkRecension", HttpMethod.POST, request, Boolean.class);
+			HttpEntity<Boolean> response = restTemplate.exchange("https://rating-service/all/checkRecension", HttpMethod.POST, request, Boolean.class);
 			
 			ReservationDTO rDTO = new ReservationDTO(reservation);
 			
@@ -133,45 +133,5 @@ public class ReservationController {
 	public ResponseEntity deleteResrvation(@RequestBody @Min(1) long id){
 		resService.deleteReservation(id);
 		return new ResponseEntity<>(HttpStatus.OK);
-	}
-	
-	private RestTemplate getRT() {
-		RestTemplate restTemplate = new RestTemplate();
-		 KeyStore keyStore;
-			HttpComponentsClientHttpRequestFactory requestFactory = null;
-			
-			try {
-				keyStore = KeyStore.getInstance("jks");
-				ClassPathResource classPathResource = new ClassPathResource("res.jks");
-				InputStream inputStream = classPathResource.getInputStream();
-				keyStore.load(inputStream, "password".toCharArray());
-
-				SSLConnectionSocketFactory socketFactory = new SSLConnectionSocketFactory(new SSLContextBuilder()
-						.loadTrustMaterial(null, new TrustSelfSignedStrategy())
-						.loadKeyMaterial(keyStore, "password".toCharArray()).build(),
-						NoopHostnameVerifier.INSTANCE);
-
-				HttpClient httpClient = HttpClients.custom().setSSLSocketFactory(socketFactory)
-						.setMaxConnTotal(Integer.valueOf(5))
-						.setMaxConnPerRoute(Integer.valueOf(5))
-						.build();
-
-				requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
-				requestFactory.setReadTimeout(Integer.valueOf(10000));
-				requestFactory.setConnectTimeout(Integer.valueOf(10000));
-				
-				restTemplate.setRequestFactory(requestFactory);
-			} catch (Exception exception) {
-				System.out.println("Exception Occured while creating restTemplate "+exception);
-				exception.printStackTrace();
-			}
-	    restTemplate.getInterceptors().add(new ClientHttpRequestInterceptor(){
-	        @Override
-	        public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
-	            request.getHeaders().set("Authorization", "Bearer " + userService.getJwtToken());//Set the header for each request
-	            return execution.execute(request, body);
-	        }
-	    });
-	    return restTemplate;
 	}
 }

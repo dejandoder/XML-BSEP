@@ -168,9 +168,14 @@
 
   <xs:element name="sync_recensions_request">
     <xs:complexType>
+      <xs:all/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="sync_recensions_responset">
+    <xs:complexType>
       <xs:sequence>
         <xs:element name="recensions" type="tns:recension" maxOccurs="unbounded"/>
-        <xs:element name="status" type="tns:SOAPResponseStatus"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -315,10 +320,6 @@
       <xs:element name="agentReserved" type="xs:boolean"/>
       <xs:element name="accUnit" type="tns:accomodation_unit"/>
     </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="syncRecensionsRequest">
-    <xs:sequence/>
   </xs:complexType>
 
   <xs:simpleType name="UserRole">

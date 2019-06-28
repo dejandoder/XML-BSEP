@@ -1,25 +1,10 @@
-2019-06-27 15:13:28,029 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 15:14:21,715 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 61.161 seconds (JVM running for 63.699)
-2019-06-27 15:35:13,926 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 15:36:18,883 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 15:37:18,465 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 67.383 seconds (JVM running for 69.794)
-2019-06-27 15:53:56,695 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 15:54:55,863 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 65.465 seconds (JVM running for 66.58)
-2019-06-27 17:08:25,801 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 17:11:03,321 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 17:11:30,397 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 30.868 seconds (JVM running for 31.914)
-2019-06-27 17:15:45,474 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 17:16:52,841 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 87.277 seconds (JVM running for 93.415)
-2019-06-27 19:34:30,985 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 19:35:34,215 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 73.711 seconds (JVM running for 77.239)
-2019-06-27 19:59:25,713 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:02:07,126 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:02:59,298 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 55.671 seconds (JVM running for 56.957)
-2019-06-27 20:12:39,513 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:13:48,252 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 86.199 seconds (JVM running for 91.465)
-2019-06-27 20:16:09,049 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:20:21,653 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:23:05,563 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:23:27,209 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 28.174 seconds (JVM running for 29.36)
-2019-06-27 20:30:57,892 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-27 20:32:05,768 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 75.48 seconds (JVM running for 77.746)
+2019-06-28 13:02:29,195 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 13:03:19,299 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 58.61 seconds (JVM running for 61.81)
+2019-06-28 13:07:17,904 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 13:08:53,605 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 13:09:16,692 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 27.217 seconds (JVM running for 28.935)
+2019-06-28 14:13:23,217 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 14:17:09,371 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 14:21:33,998 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 14:28:38,889 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 14:29:32,938 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 71.105 seconds (JVM running for 75.893)

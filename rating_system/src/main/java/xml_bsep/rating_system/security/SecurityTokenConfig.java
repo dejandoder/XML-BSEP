@@ -33,6 +33,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 		// authorization requests config
 		.authorizeRequests()
 		   // allow all who are accessing "auth" service
+		.antMatchers("/soap/**").hasRole("AGENT")
 		.antMatchers("/user/**").hasRole("USER")
 		.antMatchers("/admin/**").hasRole("ADMIN")
 		.antMatchers("/agent/**").hasRole("AGENT")

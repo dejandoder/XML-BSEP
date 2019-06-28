@@ -1,118 +1,48 @@
-2019-06-27 15:16:44,189 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingSystemApplication on miljan-PC with PID 6940 (C:\Users\miljan\Desktop\XML-BSEP\rating_system\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\rating_system)
-2019-06-27 15:16:44,196 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-27 15:16:55,685 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 12.681 seconds (JVM running for 13.434)
-2019-06-27 15:33:50,873 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS agent007 1
-2019-06-27 15:39:32,744 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS agent007 1
-2019-06-27 15:46:34,566 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS anonymousUser 1
-2019-06-27 15:46:34,835 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS anonymousUser 2
-2019-06-27 15:55:19,716 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingSystemApplication on miljan-PC with PID 5952 (C:\Users\miljan\Desktop\XML-BSEP\rating_system\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\rating_system)
-2019-06-27 15:55:19,755 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-27 15:55:51,019 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 39.951 seconds (JVM running for 42.484)
-2019-06-27 15:58:04,253 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 15:58:39,877 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS user1 1
-2019-06-27 15:58:40,212 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 2
-2019-06-27 15:59:24,416 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 16:00:21,613 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 1
-2019-06-27 16:00:31,707 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS agent007 2
-2019-06-27 16:00:32,089 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS agent007 2
-2019-06-27 16:00:53,379 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 1
-2019-06-27 16:00:53,993 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 16:00:54,231 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS agent007 1
-2019-06-27 16:00:54,665 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 1
-2019-06-27 16:00:54,950 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS agent007 1
-2019-06-27 16:02:19,146 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS agent007 1
-2019-06-27 16:02:39,782 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 1
-2019-06-27 16:02:39,949 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS user1 2
-2019-06-27 16:03:33,313 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 1
-2019-06-27 16:03:38,403 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS agent007 2
-2019-06-27 16:03:39,137 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 2
-2019-06-27 16:11:22,413 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT DSJ agent007 3
-2019-06-27 16:11:47,327 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 3
-2019-06-27 16:11:47,708 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 3
-2019-06-27 16:11:48,605 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 3
-2019-06-27 16:13:15,087 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS agent007 2
-2019-06-27 16:13:15,495 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS agent007 2
-2019-06-27 16:13:15,673 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS agent007 2
-2019-06-27 16:13:18,346 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 3
-2019-06-27 16:13:19,101 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS agent007 3
-2019-06-27 16:13:19,507 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 3
-2019-06-27 16:16:51,084 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS anonymousUser 1
-2019-06-27 16:16:51,381 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS anonymousUser 2
-2019-06-27 16:16:51,719 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS anonymousUser 3
-2019-06-27 16:17:20,106 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS anonymousUser 2
-2019-06-27 16:17:44,710 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS anonymousUser 1
-2019-06-27 16:17:44,905 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS anonymousUser 2
-2019-06-27 16:17:45,129 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS anonymousUser 3
-2019-06-27 16:18:48,790 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 3
-2019-06-27 16:23:21,962 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingSystemApplication on miljan-PC with PID 7772 (C:\Users\miljan\Desktop\XML-BSEP\rating_system\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\rating_system)
-2019-06-27 16:23:21,971 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-27 16:23:43,333 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 23.105 seconds (JVM running for 24.381)
-2019-06-27 16:24:20,099 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT OK user1 1
-2019-06-27 16:26:37,794 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS anonymousUser 1
-2019-06-27 16:26:38,185 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS anonymousUser 2
-2019-06-27 16:27:00,895 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS agent007 1
-2019-06-27 16:27:01,165 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 16:27:01,420 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 1
-2019-06-27 16:27:01,777 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS agent007 1
-2019-06-27 16:27:02,065 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS agent007 1
-2019-06-27 16:27:10,091 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS agent007 2
-2019-06-27 16:27:10,534 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS agent007 2
-2019-06-27 16:27:10,849 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 2
-2019-06-27 16:27:11,099 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 2
-2019-06-27 16:27:11,406 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS agent007 2
-2019-06-27 16:27:18,148 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 16:27:18,608 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 1
-2019-06-27 16:27:18,743 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 16:27:19,140 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 1
-2019-06-27 16:27:19,411 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 16:37:49,982 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingSystemApplication on miljan-PC with PID 7992 (C:\Users\miljan\Desktop\XML-BSEP\rating_system\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\rating_system)
-2019-06-27 16:37:49,990 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-27 16:38:31,104 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 42.285 seconds (JVM running for 43.27)
-2019-06-27 16:40:14,538 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS user1 1
-2019-06-27 16:40:15,060 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 2
-2019-06-27 16:40:31,952 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 1
-2019-06-27 16:40:46,919 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT OK user1 1
-2019-06-27 16:41:01,674 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS agent007 2
-2019-06-27 16:41:02,118 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 2
-2019-06-27 16:41:03,124 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS agent007 1
-2019-06-27 16:41:03,547 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 1
-2019-06-27 16:41:03,810 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS agent007 1
-2019-06-27 16:41:04,392 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS agent007 1
-2019-06-27 16:41:04,799 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 1
-2019-06-27 16:41:05,120 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS agent007 1
-2019-06-27 16:41:30,823 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 1
-2019-06-27 16:41:30,936 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 2
-2019-06-27 16:41:34,830 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS user1 1
-2019-06-27 16:48:34,821 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT OK admin1 1
-2019-06-27 16:48:39,338 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 1
-2019-06-27 19:39:59,676 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingSystemApplication on miljan-PC with PID 4452 (C:\Users\miljan\Desktop\XML-BSEP\rating_system\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\rating_system)
-2019-06-27 19:39:59,719 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-27 19:40:19,906 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 22.233 seconds (JVM running for 23.278)
-2019-06-27 19:47:54,087 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT DSJ agent007 3
-2019-06-27 19:47:58,831 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS agent007 3
-2019-06-27 19:49:18,151 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 3
-2019-06-27 19:49:33,548 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 1
-2019-06-27 19:49:33,809 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 2
-2019-06-27 19:51:12,772 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 1
-2019-06-27 19:51:12,906 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
-2019-06-27 19:51:13,092 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 3
-2019-06-27 19:51:28,635 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 2
-2019-06-27 19:51:28,902 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS user1 3
-2019-06-27 19:51:31,770 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS user1 2
-2019-06-27 19:51:31,945 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-7] NP_EVENT POS user1 3
-2019-06-27 19:52:10,899 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 3
-2019-06-27 19:52:40,488 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS agent007 3
-2019-06-27 19:53:02,191 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 3
-2019-06-27 19:53:19,988 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 1
-2019-06-27 19:53:20,139 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS user1 2
-2019-06-27 19:53:20,316 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 3
-2019-06-27 19:54:26,854 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 1
-2019-06-27 19:54:27,086 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS user1 2
-2019-06-27 19:54:27,726 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS user1 3
-2019-06-27 19:54:55,318 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS agent007 3
-2019-06-27 19:54:57,369 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS agent007 1
-2019-06-27 19:54:57,762 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS agent007 1
-2019-06-27 19:54:58,048 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS agent007 1
-2019-06-27 19:54:58,367 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS agent007 1
-2019-06-27 19:55:37,304 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT OK user1 1
-2019-06-27 19:56:14,500 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT OK admin1 1
+2019-06-28 11:57:25,480 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:01:14,532 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:03:04,296 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:05:56,303 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:07:26,824 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:07:44,063 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 20.02 seconds (JVM running for 20.866)
+2019-06-28 13:10:38,317 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:11:41,417 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 71.824 seconds (JVM running for 77.22)
+2019-06-28 13:25:24,294 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:25:48,580 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 31.311 seconds (JVM running for 33.028)
+2019-06-28 13:32:49,305 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:33:05,925 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 19.569 seconds (JVM running for 20.261)
+2019-06-28 13:47:21,823 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:48:11,631 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 54.516 seconds (JVM running for 55.239)
+2019-06-28 13:49:39,828 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:50:13,849 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 38.988 seconds (JVM running for 40.316)
+2019-06-28 13:52:54,414 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:53:11,491 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 19.855 seconds (JVM running for 20.632)
+2019-06-28 13:58:20,247 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT PO user1 4 1
+2019-06-28 14:00:31,562 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:00:52,224 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 23.932 seconds (JVM running for 24.811)
+2019-06-28 14:06:40,261 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT PO user1 5 2
+2019-06-28 14:07:02,933 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 2
+2019-06-28 14:07:35,807 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 0
+2019-06-28 14:07:40,163 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 2
+2019-06-28 14:07:44,777 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS user1 2
+2019-06-28 14:08:30,744 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 2
+2019-06-28 14:09:11,567 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
+2019-06-28 14:09:26,470 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 2
+2019-06-28 14:14:29,210 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:14:55,002 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 28.879 seconds (JVM running for 29.966)
+2019-06-28 14:21:12,331 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:26:36,202 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:27:19,087 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 53.71 seconds (JVM running for 56.207)
+2019-06-28 14:35:53,195 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT PO user1 4 1
+2019-06-28 14:36:54,416 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 1
+2019-06-28 14:38:44,641 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT OK admin1 1
+2019-06-28 14:38:59,965 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 1
+2019-06-28 14:39:04,888 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 1
+2019-06-28 14:39:13,771 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS user1 1
+2019-06-28 14:40:11,747 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:40:35,968 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 31.652 seconds (JVM running for 32.988)
+2019-06-28 14:42:10,793 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:42:39,417 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 31.538 seconds (JVM running for 32.254)
+2019-06-28 14:45:18,711 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT PO user1 5 2
+2019-06-28 14:45:42,114 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS user1 2
+2019-06-28 14:45:54,469 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 1
+2019-06-28 14:45:59,596 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2

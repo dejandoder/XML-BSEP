@@ -6,12 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.eureka.common.model.AccomodationUnit;
+import com.eureka.common.model.Recension;
+import com.eureka.common.model.RecensionStatus;
+import com.eureka.common.model.User;
+
 import xml_bsep.rating_system.dto.CheckReviewDTO;
 import xml_bsep.rating_system.dto.RecensionDTO;
-import xml_bsep.rating_system.model.AccomodationUnit;
-import xml_bsep.rating_system.model.Recension;
-import xml_bsep.rating_system.model.RecensionStatus;
-import xml_bsep.rating_system.model.User;
 import xml_bsep.rating_system.repository.AccomodationUnitRepository;
 import xml_bsep.rating_system.repository.RecensionRespository;
 import xml_bsep.rating_system.repository.UserRepository;
@@ -79,5 +80,9 @@ public class RecesnsionService {
 		Recension rec = recensionRespository.checkIfRecensionExsists(crDTO.getUserId(), crDTO.getAccUintId());
 		if(rec == null) return false;
 		return true;
+	}
+	
+	public List<Recension> findAll(){
+		return recensionRespository.findAll();
 	}
 }

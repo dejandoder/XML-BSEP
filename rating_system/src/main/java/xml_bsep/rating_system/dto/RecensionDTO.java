@@ -1,7 +1,7 @@
 package xml_bsep.rating_system.dto;
 
-import xml_bsep.rating_system.model.Recension;
-import xml_bsep.rating_system.model.RecensionStatus;
+import com.eureka.common.model.Recension;
+import com.eureka.common.model.RecensionStatus;
 
 public class RecensionDTO {
 	

@@ -1,17 +1,21 @@
-spring:
-  application:
-    name: rating_system
----
-server:
-  port: 11600
+server:  
+  port: ${PORT:11600}
   ssl:
     enabled: true
-    client-auth: need
     key-store: classpath:rat.jks
     key-store-password: password
     key-alias: rat
-    key-store-type: JKS
-    key-store-provider: SUN
-    trust-store: classpath:rat.jks
-    trust-store-password: password
-    trust-store-type: JKS
+    
+security:
+  require-ssl: true
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: false
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    securePort: ${server.port}
+  client:
+    securePortEnabled: true
+    serviceUrl:
+      defaultZone: https://localhost:8761/eureka/ 

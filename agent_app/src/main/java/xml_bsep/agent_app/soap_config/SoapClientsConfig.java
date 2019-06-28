@@ -21,6 +21,7 @@ import org.springframework.ws.transport.http.HttpComponentsMessageSender.RemoveS
 import xml_bsep.agent_app.soap_clients.AccomodationServiceSoapClient;
 import xml_bsep.agent_app.soap_clients.AuthServiceSoapClient;
 import xml_bsep.agent_app.soap_clients.MessagesServiceSoapClient;
+import xml_bsep.agent_app.soap_clients.RatingServiceSoapClient;
 import xml_bsep.agent_app.soap_clients.ReservationServiceSoapClient;
 
 @Configuration
@@ -42,6 +43,19 @@ public class SoapClientsConfig {
 		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
 	    client.setInterceptors(interceptors);
 		client.setDefaultUri("https://localhost:8762/acc/soap");
+		client.setMarshaller(marshaller);
+		client.setUnmarshaller(marshaller);
+		client.setMessageSender(httpComponentsMessageSender());
+		client.getWebServiceTemplate().setCheckConnectionForFault(true);
+		return client;
+	}
+	
+	@Bean
+	public RatingServiceSoapClient ratingServiceSoapClient(Jaxb2Marshaller marshaller) throws Exception {
+		RatingServiceSoapClient client = new RatingServiceSoapClient();
+		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
+	    client.setInterceptors(interceptors);
+		client.setDefaultUri("https://localhost:8762/rat/soap");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
 		client.setMessageSender(httpComponentsMessageSender());
