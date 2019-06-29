@@ -102,3 +102,32 @@
 2019-06-28 19:35:49,834 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO anonymousUser
 2019-06-28 19:35:51,450 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-9] NP_EVENT PSO anonymousUser
 2019-06-28 19:35:52,421 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO anonymousUser
+2019-06-28 21:04:19,546 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:04:19,546 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-5] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:11:19,364 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-7] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:11:19,364 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-8] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:12:01,504 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-2] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:12:01,770 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-6] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:12:04,804 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-10] NP_EVENT DTS admin1 4
+2019-06-28 21:12:06,568 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-3] NP_EVENT BTS admin1 4
+2019-06-28 21:15:11,083 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:15:11,145 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:18:44,514 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:18:44,519 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-5] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:21:09,671 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:21:09,671 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:21:11,973 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT DSJ admin1 5
+2019-06-28 21:21:15,495 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-7] NP_EVENT BSJ admin1 5
+2019-06-28 21:22:30,110 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:22:30,390 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:24:28,654 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-8] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:24:28,958 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:24:47,477 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-9] NP_EVENT PSO user1
+2019-06-28 21:26:49,473 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO user1
+2019-06-28 21:26:57,978 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSJ user1
+2019-06-28 21:27:50,322 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-2] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:27:50,378 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-8] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:28:44,126 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:28:44,150 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-7] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:28:56,457 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSO user1
+2019-06-28 21:29:07,107 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ user1

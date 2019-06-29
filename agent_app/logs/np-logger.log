@@ -237,3 +237,48 @@
 2019-06-28 14:45:03,228 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-6] NP_EVENT PR agent007
 2019-06-28 14:45:04,365 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-5] NP_EVENT PRR agent007 1
 2019-06-28 14:45:04,740 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-10] NP_EVENT PR agent007
+2019-06-28 21:23:35,996 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:23:36,005 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-5] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:23:36,141 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-1] NP_EVENT PSJA agent007
+2019-06-28 21:24:03,443 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-10] NP_EVENT DSJ agent007 3
+2019-06-28 21:24:04,081 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-8] NP_EVENT DS agent007 3
+2019-06-28 21:24:04,344 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-3] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:24:04,451 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-9] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:24:04,509 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-5] NP_EVENT PSJA agent007
+2019-06-28 21:24:07,637 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-9] NP_EVENT PSS agent007 3
+2019-06-28 21:24:07,730 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-7] NP_EVENT PR agent007
+2019-06-28 21:24:07,741 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-4] NP_EVENT POSN 127.0.0.1 3
+2019-06-28 21:24:07,791 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-8] NP_EVENT PC 3
+2019-06-28 21:24:07,881 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-7] NP_EVENT PSS agent007 1
+2019-06-28 21:27:32,775 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-9] NP_EVENT PSJA agent007
+2019-06-28 21:27:32,895 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-10] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:27:32,939 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-4] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:27:34,583 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-8] NP_EVENT PSS agent007 1
+2019-06-28 21:27:34,977 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-10] NP_EVENT PC 1
+2019-06-28 21:27:34,995 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-9] NP_EVENT PR agent007
+2019-06-28 21:27:35,024 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-2] NP_EVENT POSN 127.0.0.1 1
+2019-06-28 21:27:35,713 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-4] NP_EVENT PR agent007
+2019-06-28 21:27:35,723 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-3] NP_EVENT PC 1
+2019-06-28 21:27:35,733 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-5] NP_EVENT PSS agent007 1
+2019-06-28 21:27:35,758 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-10] NP_EVENT POSN 127.0.0.1 1
+2019-06-28 21:27:39,467 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-4] NP_EVENT RS agent007 1
+2019-06-28 21:27:39,520 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-5] NP_EVENT PR agent007
+2019-06-28 21:27:46,551 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-4] NP_EVENT PRR agent007 1
+2019-06-28 21:27:46,664 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-7] NP_EVENT PR agent007
+2019-06-28 21:28:13,411 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-4] NP_EVENT RS agent007 0
+2019-06-28 21:28:13,479 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-7] NP_EVENT PR agent007
+2019-06-28 21:29:19,393 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-6] NP_EVENT PSJA agent007
+2019-06-28 21:29:19,498 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-4] NP_EVENT PTS 127.0.0.1
+2019-06-28 21:29:19,533 INFO xml_bsep.agent_app.controller.AccomodationUnitController [https-jsse-nio-11500-exec-5] NP_EVENT PSJ 127.0.0.1
+2019-06-28 21:29:22,197 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-1] NP_EVENT PSS agent007 2
+2019-06-28 21:29:22,541 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-2] NP_EVENT POSN 127.0.0.1 2
+2019-06-28 21:29:22,549 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-3] NP_EVENT PC 2
+2019-06-28 21:29:22,580 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-10] NP_EVENT PR agent007
+2019-06-28 21:29:22,707 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-7] NP_EVENT PR agent007
+2019-06-28 21:29:22,745 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-5] NP_EVENT PC 2
+2019-06-28 21:29:22,778 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-9] NP_EVENT PSS agent007 2
+2019-06-28 21:29:22,928 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-10] NP_EVENT POSN 127.0.0.1 2
+2019-06-28 21:29:22,990 INFO xml_bsep.agent_app.controller.ImageController [https-jsse-nio-11500-exec-2] NP_EVENT PSS agent007 2
+2019-06-28 21:29:23,016 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-3] NP_EVENT PC 2
+2019-06-28 21:29:23,119 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-1] NP_EVENT POSN 127.0.0.1 2
+2019-06-28 21:29:23,166 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-8] NP_EVENT PR agent007

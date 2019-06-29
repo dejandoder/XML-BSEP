@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +36,7 @@ public class AccomodationTypeController {
 	@Autowired
 	AccomodationUnitService accUnitService;
 	
+	@PreAuthorize("hasAuthority('ADD_ACC_TYPE')")
 	@PostMapping(value = "/admin/addNewAccType", consumes = "application/json")
 	public ResponseEntity<List<AccomodationType>> addNewAccType(@Valid @RequestBody AccomodationType accType){
 		if(service.checkIfTypeExsists(accType.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -45,6 +47,7 @@ public class AccomodationTypeController {
 		return new ResponseEntity<>(accTypes, HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasAuthority('REMOVE_ACC_TYPE')")
 	@PostMapping(value = "/admin/removeAccType")
 	public ResponseEntity<List<AccomodationType>> removeAccType(@Valid @RequestBody AccomodationType accType){
 		//treba uraditi provjeru da li ima smjestaja sa zadatim tipom		

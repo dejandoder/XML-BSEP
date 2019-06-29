@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +40,7 @@ public class UserController {
 	
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
+	@PreAuthorize("hasAuthority('ADD_AGENT')")
 	@PostMapping(value = "/admin/addNewAgent", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> addNewAgent(@Valid @RequestBody User user){
 		//provjera jedinstvenosti piba i username
@@ -57,6 +59,7 @@ public class UserController {
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasAuthority('ACTIVATE_USER')")
 	@PostMapping(value = "/admin/activateUser", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> activateUser( @Valid @RequestBody UserDTO userDTO){
 		User user = service.findUserById(userDTO.getId());
@@ -71,6 +74,7 @@ public class UserController {
 		}
 	}
 	
+	@PreAuthorize("hasAuthority('BLOCK_USER')")
 	@PostMapping(value = "/admin/blockUser", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> blockUser(@Valid @RequestBody UserDTO userDTO){
 		User user = service.findUserById(userDTO.getId());

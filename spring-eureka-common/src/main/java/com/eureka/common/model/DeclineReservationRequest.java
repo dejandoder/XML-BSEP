@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "",propOrder = {
 	    "resId"
 	})
-@XmlRootElement(name = "decline_reservation_response")
+@XmlRootElement(name = "decline_reservation_request")
 public class DeclineReservationRequest {
 
 	@XmlElement(required = true)

@@ -18,4 +18,10 @@
 2019-06-28 14:45:42,114 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS user1 2
 2019-06-28 14:45:54,469 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 1
 2019-06-28 14:45:59,596 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
+<<<<<<< HEAD
+2019-06-28 21:28:36,692 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT PO user1 4 1
+2019-06-28 21:28:41,438 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT OK admin1 1
+2019-06-28 21:28:58,322 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS user1 1
+=======
 
+>>>>>>> 46ca49febe43e4ee6b26b289ce2d6fd273205f3d

@@ -10,6 +10,7 @@ import javax.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,9 +38,10 @@ public class AccomodationServiceController {
 	
 	@Autowired
 	AccomodationUnitService accUnitService;
-		
+	
+	@PreAuthorize("hasAuthority('ADD_ACC_SERVICE')")
 	@PostMapping(value = "/admin/addAccService")
-	public ResponseEntity<List<AccomodationService>> addNewAccService(@Valid @RequestBody AccomodationService accService){
+	public ResponseEntity<List<AccomodationService>> addNewAccService( @RequestBody AccomodationService accService){
 		if(service.checkIfServicesExsist(accService.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		//sranje sa provjerama ako treba
 		service.save(accService);
@@ -47,6 +49,7 @@ public class AccomodationServiceController {
 		logger.info("NP_EVENT DSJ {} {}", userService.getCurrentUsername(), accService.getId());
 		return new ResponseEntity<>(accServices, HttpStatus.OK);
 	}
+	
 	
 	@GetMapping(value = "/all/getAllAccServices")
 	public ResponseEntity<List<AccomodationService>> getAllAccService(HttpServletRequest request){
@@ -57,6 +60,7 @@ public class AccomodationServiceController {
 		return new ResponseEntity<>(accServices, HttpStatus.OK);
 	}
 	
+	@PreAuthorize("hasAuthority('REMOVE_ACC_SERVICE')")
 	@PostMapping(value = "/admin/removeAccService")
 	public ResponseEntity<List<AccomodationService>> removeAccService(@RequestBody @Min(1) long id){
 		//prvojeriti da li se moze obrisati accService, jer da neki hotel ima mozda

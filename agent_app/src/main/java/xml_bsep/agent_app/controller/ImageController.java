@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,6 +35,7 @@ public class ImageController {
 	@Autowired
 	UserService userService;
 	
+	@PreAuthorize("hasAuthority('ADD_IMAGES')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/uploadImages", produces =  MediaType.IMAGE_PNG_VALUE)
 	public ResponseEntity uploadImages(@RequestParam("file") MultipartFile[] images, @RequestParam("accId") @Min(1) long accId){
