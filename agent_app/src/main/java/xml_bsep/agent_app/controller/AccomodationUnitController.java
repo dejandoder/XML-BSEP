@@ -54,7 +54,7 @@ public class AccomodationUnitController {
 	@Autowired
 	ImageService imageService;
 	
-	@PreAuthorize("hasAuthority('ADD_ACC_UNIT')")
+	//@PreAuthorize("hasAuthority('ADD_ACC_UNIT')")
 	@PostMapping(value = "/addNewAccUnit")
 	public ResponseEntity<AccomodationUnitDTO> addAccomodationUnit(@Valid @RequestBody AccomodationUnit newAccUnit) {
 		User user = userService.getCurrentUser();

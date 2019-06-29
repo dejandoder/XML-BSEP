@@ -16,7 +16,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.eureka.common.security.JwtConfig;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.jsonwebtoken.Jwts;
@@ -42,7 +41,7 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
 		
-		String header = request.getHeader(jwtConfig.getHeader());
+		
 		
 		try {
 			
@@ -66,8 +65,6 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication auth) throws IOException, ServletException {
-		
-		String header = request.getHeader(jwtConfig.getHeader());
 		
 		Long now = System.currentTimeMillis();
 		String token = Jwts.builder()
@@ -94,14 +91,9 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 			return username;
 		}
 	    
-	    public void setUsername(String username) {
-			this.username = username;
-		}
 	    public String getPassword() {
 			return password;
 		}
-	    public void setPassword(String password) {
-			this.password = password;
-		}
+	   
 	}
 }

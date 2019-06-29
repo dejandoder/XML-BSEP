@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.eureka.common.model.AccomodationService;
+import xml_bsep.acc_service.model.AccomodationService;
 import xml_bsep.acc_service.service.AccomodationServicesService;
 import xml_bsep.acc_service.service.UserService;
-import com.eureka.common.model.AccomodationUnit;
+import xml_bsep.acc_service.model.AccomodationUnit;
 import xml_bsep.acc_service.service.AccomodationUnitService;
 
 @RestController
@@ -39,7 +39,7 @@ public class AccomodationServiceController {
 	@Autowired
 	AccomodationUnitService accUnitService;
 	
-	@PreAuthorize("hasAuthority('ADD_ACC_SERVICE')")
+	//@PreAuthorize("hasAuthority('ADD_ACC_SERVICE')")
 	@PostMapping(value = "/admin/addAccService")
 	public ResponseEntity<List<AccomodationService>> addNewAccService( @RequestBody AccomodationService accService){
 		if(service.checkIfServicesExsist(accService.getName())) return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -60,7 +60,7 @@ public class AccomodationServiceController {
 		return new ResponseEntity<>(accServices, HttpStatus.OK);
 	}
 	
-	@PreAuthorize("hasAuthority('REMOVE_ACC_SERVICE')")
+	//@PreAuthorize("hasAuthority('REMOVE_ACC_SERVICE')")
 	@PostMapping(value = "/admin/removeAccService")
 	public ResponseEntity<List<AccomodationService>> removeAccService(@RequestBody @Min(1) long id){
 		//prvojeriti da li se moze obrisati accService, jer da neki hotel ima mozda

@@ -22,7 +22,7 @@ import xml_bsep.agent_app.model.SyncAccomodationTypesRequest;
 
 public class AccomodationServiceSoapClient extends WebServiceGatewaySupport {
 	
-	private static final String SERVICE_URI = "https://localhost:8762/acc/soap";
+	private static final String SERVICE_URI = "http://localhost:8762/acc/soap";
 
 	public AddNewAccomodationUnitResponse addNewAccomodationUnit(AccomodationUnit accUnit) {
 		

@@ -10,11 +10,11 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import xml_bsep.messages_service.service.MessageService;
 
-import com.eureka.common.model.Message;
-import com.eureka.common.model.SendMessageRequest;
-import com.eureka.common.model.SendMessageResponse;
-import com.eureka.common.model.SyncMessagesRequest;
-import com.eureka.common.model.SyncMessagesResponse;
+import xml_bsep.messages_service.model.Message;
+import xml_bsep.messages_service.model.SendMessageRequest;
+import xml_bsep.messages_service.model.SendMessageResponse;
+import xml_bsep.messages_service.model.SyncMessagesRequest;
+import xml_bsep.messages_service.model.SyncMessagesResponse;
 
 
 

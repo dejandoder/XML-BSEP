@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eureka.common.model.AccomodationUnit;
+import xml_bsep.acc_service.model.AccomodationUnit;
 
 import xml_bsep.acc_service.dto.AccomodationUnitDTO;
 import xml_bsep.acc_service.dto.SearchDTO;

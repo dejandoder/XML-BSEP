@@ -1,6 +1,6 @@
 package xml_bsep.reservation_service.dto;
 
-import com.eureka.common.model.UserRole;
+import xml_bsep.reservation_service.model.UserRole;
 
 public class UserDTO {
 

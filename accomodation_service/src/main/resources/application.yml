@@ -1,21 +1,21 @@
-server:  
-  port: ${PORT:8600}
-  ssl:
-    enabled: true
-    key-store: classpath:acc.jks
-    key-store-password: password
-    key-alias: acc
-    
-security:
-  require-ssl: true
-eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: false
-    nonSecurePortEnabled: false
-    securePortEnabled: true
-    securePort: ${server.port}
-  client:
-    securePortEnabled: true
-    serviceUrl:
-      defaultZone: https://localhost:8761/eureka/ 
+# server:  
+#   port: ${PORT:8600}
+#   ssl:
+#     enabled: true
+#     key-store: classpath:acc.jks
+#     key-store-password: password
+#     key-alias: acc
+#     
+# security:
+#   require-ssl: true
+# eureka:
+#   instance:
+#     hostname: localhost
+#     prefer-ip-address: false
+#     nonSecurePortEnabled: false
+#     securePortEnabled: true
+#     securePort: ${server.port}
+#   client:
+#     securePortEnabled: true
+#     serviceUrl:
+#       defaultZone: https://localhost:8761/eureka/ 

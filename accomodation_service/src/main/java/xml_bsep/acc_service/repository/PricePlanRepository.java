@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.eureka.common.model.PricePlan;
+import xml_bsep.acc_service.model.PricePlan;
 
 public interface PricePlanRepository extends JpaRepository<PricePlan, Long> {
 

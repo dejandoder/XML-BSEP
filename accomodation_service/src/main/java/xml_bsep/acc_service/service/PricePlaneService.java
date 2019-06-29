@@ -3,7 +3,7 @@ package xml_bsep.acc_service.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eureka.common.model.PricePlan;
+import xml_bsep.acc_service.model.PricePlan;
 
 import xml_bsep.acc_service.repository.PricePlanRepository;
 

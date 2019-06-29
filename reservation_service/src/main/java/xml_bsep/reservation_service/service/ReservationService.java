@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eureka.common.model.Reservation;
-import com.eureka.common.model.ReservationStatus;
+import xml_bsep.reservation_service.model.Reservation;
+import xml_bsep.reservation_service.model.ReservationStatus;
 
 import xml_bsep.reservation_service.dto.CheckReaservationDTO;
 import xml_bsep.reservation_service.repository.ReservationRepository;

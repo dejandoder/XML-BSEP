@@ -8,17 +8,17 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import xml_bsep.reservation_service.service.ReservationService;
 
-import com.eureka.common.model.AgentReservationRequest;
-import com.eureka.common.model.AgentReservationResponse;
-import com.eureka.common.model.ApproveReservationRequest;
-import com.eureka.common.model.ApproveReservationResponse;
-import com.eureka.common.model.ConfirmReservationRequest;
-import com.eureka.common.model.ConfirmReservationResponse;
-import com.eureka.common.model.DeclineReservationRequest;
-import com.eureka.common.model.Reservation;
-import com.eureka.common.model.SOAPResponseStatus;
-import com.eureka.common.model.SyncReservationsRequest;
-import com.eureka.common.model.SyncReservationsResponse;
+import xml_bsep.reservation_service.model.AgentReservationRequest;
+import xml_bsep.reservation_service.model.AgentReservationResponse;
+import xml_bsep.reservation_service.model.ApproveReservationRequest;
+import xml_bsep.reservation_service.model.ApproveReservationResponse;
+import xml_bsep.reservation_service.model.ConfirmReservationRequest;
+import xml_bsep.reservation_service.model.ConfirmReservationResponse;
+import xml_bsep.reservation_service.model.DeclineReservationRequest;
+import xml_bsep.reservation_service.model.Reservation;
+import xml_bsep.reservation_service.model.SOAPResponseStatus;
+import xml_bsep.reservation_service.model.SyncReservationsRequest;
+import xml_bsep.reservation_service.model.SyncReservationsResponse;
 
 @Endpoint
 public class ReservationEndpoint {

@@ -8,10 +8,10 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import com.eureka.auth.model.SyncUsersRequest;
+import com.eureka.auth.model.SyncUsersResponse;
+import com.eureka.auth.model.User;
 import com.eureka.auth.service.UserService;
-import com.eureka.common.model.SyncUsersRequest;
-import com.eureka.common.model.SyncUsersResponse;
-import com.eureka.common.model.User;
 
 @Endpoint
 public class UsersEndpoint {

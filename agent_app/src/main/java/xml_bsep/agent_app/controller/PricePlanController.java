@@ -45,7 +45,7 @@ public class PricePlanController {
 	};	
 	
 	@SuppressWarnings("rawtypes")
-	@PreAuthorize("hasAuthority('ADD_PRICE_PLAN')")
+	//@PreAuthorize("hasAuthority('ADD_PRICE_PLAN')")
 	@PostMapping("/savePricePlan")
 	public ResponseEntity savePricePlan(@RequestBody @Valid PricePlanDTO planDTO) {
 		

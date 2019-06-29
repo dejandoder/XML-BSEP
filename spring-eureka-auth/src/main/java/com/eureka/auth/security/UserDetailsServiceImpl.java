@@ -13,10 +13,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.eureka.auth.model.Permission;
+import com.eureka.auth.model.UserRole;
+import com.eureka.auth.model.UserStatus;
 import com.eureka.auth.repository.UserRepository;
-import com.eureka.common.model.Permission;
-import com.eureka.common.model.UserRole;
-import com.eureka.common.model.UserStatus;
 
 
 @Service   // It has to be annotated with @Service.
@@ -32,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
 			throw new UsernameNotFoundException("Username: " + username + " not found");
 		}
 		
-		com.eureka.common.model.User user = repository.findUserByUsername(username);
+		com.eureka.auth.model.User user = repository.findUserByUsername(username);
 		
 		if(user == null) throw new UsernameNotFoundException("Username: " + username + " not found");
 		

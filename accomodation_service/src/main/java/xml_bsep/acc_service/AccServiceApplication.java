@@ -35,14 +35,14 @@ import xml_bsep.acc_service.service.UserService;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EntityScan(value = "com.eureka.common.model")
+//@EntityScan(value = "com.eureka.common.model")
 public class AccServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AccServiceApplication.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws NoSuchAlgorithmException {
 	    DiscoveryClient.DiscoveryClientOptionalArgs args = new DiscoveryClient.DiscoveryClientOptionalArgs();
 	    System.setProperty("javax.net.ssl.keyStore", "src/main/resources/acc.jks");
@@ -56,7 +56,7 @@ public class AccServiceApplication {
 	    builder.withMaxConnectionsPerHost(10);
 	    args.setEurekaJerseyClient(builder.build());
 	    return args;
-	}
+	}*/
 }
 
 @Configuration
@@ -71,7 +71,7 @@ class RestTemplateConfig {
 	public RestTemplate restTemplate() {
 	    RestTemplate restTemplate = new RestTemplate();
 	    
-	    KeyStore keyStore;
+	   /* KeyStore keyStore;
 		HttpComponentsClientHttpRequestFactory requestFactory = null;
 		
 		try {
@@ -105,7 +105,7 @@ class RestTemplateConfig {
 	            request.getHeaders().set("Authorization", "Bearer " + userService.getJwtToken());//Set the header for each request
 	            return execution.execute(request, body);
 	        }
-	    });
+	    });*/
 	    return restTemplate;
 	}
 }

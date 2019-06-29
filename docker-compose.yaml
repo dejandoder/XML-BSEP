@@ -1,24 +1,26 @@
-version: '3.6'
+version: '3'
 services:
-    eureka:
-        image: eureka-image
-        container_name: eureka
-        build:
-            context: ./spring-eureka-server
-            dockerfile: Dockerfile
-        ports:
-          - "8761:8761"
 
-    zuul:
-        image: zuul-image
-        container_name: zuul
-        build:
-            context: ./spring-eureka-zuul
-            dockerfile: Dockerfile
-        ports:
-          - "8762:8762"
-        depends_on:
-          - eureka
-        links:
-          - eureka:eureka
+  eureka:
+    image: eureka-image
+    container_name: eureka
+    build:
+      context: ./spring-eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
 
+  zuul:
+    image: zuul-image
+    container_name: zuul
+    build:
+      context: ./spring-eureka-zuul
+      dockerfile: Dockerfile
+    ports:
+      - "8762:8762"
+    depends_on:
+      - eureka
+    links:
+      - eureka:eureka
+
+ 

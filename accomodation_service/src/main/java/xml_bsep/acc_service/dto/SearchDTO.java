@@ -8,9 +8,9 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
-import com.eureka.common.model.AccomodationService;
-import com.eureka.common.model.AccomodationType;
-import com.eureka.common.model.Location;
+import xml_bsep.acc_service.model.AccomodationService;
+import xml_bsep.acc_service.model.AccomodationType;
+import xml_bsep.acc_service.model.Location;
 
 public class SearchDTO {
 	

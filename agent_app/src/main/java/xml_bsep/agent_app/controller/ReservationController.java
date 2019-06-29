@@ -42,7 +42,7 @@ public class ReservationController {
 		return new ResponseEntity<>(client.syncReservation(), HttpStatus.OK);
 	}
 	
-	@PreAuthorize("hasAuthority('APPROVE_RESERVATION')")
+	//@PreAuthorize("hasAuthority('APPROVE_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/approveReservation")
 	public ResponseEntity approveReservation(@RequestBody @Min(1) long resId){
@@ -57,7 +57,7 @@ public class ReservationController {
 		}
 	}
 
-	@PreAuthorize("hasAuthority('CONFIRM_RESERVATION')")
+	//@PreAuthorize("hasAuthority('CONFIRM_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/confirmReservation")
 	public ResponseEntity confirmReservation(@RequestBody @Min(1) long resId){
@@ -71,7 +71,7 @@ public class ReservationController {
 		}
 	}
 	
-	@PreAuthorize("hasAuthority('DECLINE_RESERVATION')")
+	//@PreAuthorize("hasAuthority('DECLINE_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/declineReservation")
 	public ResponseEntity declineReservation(@RequestBody @Min(1) long resId){
@@ -85,7 +85,7 @@ public class ReservationController {
 		}
 	}
 	
-	@PreAuthorize("hasAuthority('DO_AGENT_RESERVATION')")
+	//@PreAuthorize("hasAuthority('DO_AGENT_RESERVATION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/agentReservation")
 	public ResponseEntity agentReservation(@RequestBody @Valid ReservationDTO resDTO){

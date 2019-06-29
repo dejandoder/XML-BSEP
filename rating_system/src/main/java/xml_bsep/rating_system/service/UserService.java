@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.eureka.common.model.User;
+import xml_bsep.rating_system.model.User;
 
 import xml_bsep.rating_system.repository.UserRepository;
 

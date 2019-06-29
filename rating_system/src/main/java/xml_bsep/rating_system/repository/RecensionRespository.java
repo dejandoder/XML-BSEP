@@ -5,12 +5,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.eureka.common.model.Recension;
+import xml_bsep.rating_system.model.Recension;
 
 
 public interface RecensionRespository extends JpaRepository<Recension,Long> {
 
-	@Query("select rec from Recension rec where rec.status = com.eureka.common.model.RecensionStatus.PENDING")
+	@Query("select rec from Recension rec where rec.status = xml_bsep.rating_system.model.RecensionStatus.PENDING")
 	public List<Recension> getRecensionsForApproval();
 	
 	@Query("select rec from Recension rec where rec.accomodationUnit.id = :id ")

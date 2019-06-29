@@ -11,8 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.eureka.common.model.Message;
-import com.eureka.common.model.User;
+import xml_bsep.messages_service.model.Message;
+import xml_bsep.messages_service.model.User;
 
 import xml_bsep.messages_service.dto.MessageDTO;
 import xml_bsep.messages_service.dto.UserDTO;

@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.eureka.common.model.AccomodationService;
+import xml_bsep.acc_service.model.AccomodationService;
 
 public interface AccomodationServiceRepository extends JpaRepository<AccomodationService, Long> {
 	

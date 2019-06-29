@@ -1,0 +1,7 @@
+2019-06-24 19:11:35,027 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on Dragan-PC with PID 5084 (C:\Users\Dragan\Documents\GitHub\XML-BSEP\kt1\target\classes started by Dragan in C:\Users\Dragan\Documents\GitHub\XML-BSEP\kt1)
+2019-06-24 19:11:35,074 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-24 19:13:13,551 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on Dragan-PC with PID 4228 (C:\Users\Dragan\Documents\GitHub\XML-BSEP\kt1\target\classes started by Dragan in C:\Users\Dragan\Documents\GitHub\XML-BSEP\kt1)
+2019-06-24 19:13:13,551 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-24 19:14:07,156 INFO org.springframework.boot.StartupInfoLogger [main] Starting Kt1Application on Dragan-PC with PID 4360 (C:\Users\Dragan\Documents\GitHub\XML-BSEP\kt1\target\classes started by Dragan in C:\Users\Dragan\Documents\GitHub\XML-BSEP\kt1)
+2019-06-24 19:14:07,172 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-24 19:14:21,512 INFO org.springframework.boot.StartupInfoLogger [main] Started Kt1Application in 16.01 seconds (JVM running for 17.337)

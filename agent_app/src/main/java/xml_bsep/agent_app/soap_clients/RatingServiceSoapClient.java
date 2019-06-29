@@ -8,7 +8,7 @@ import xml_bsep.agent_app.model.SyncRecensionsResponse;
 
 public class RatingServiceSoapClient extends WebServiceGatewaySupport{
 
-private static final String SERVICE_URI = "https://localhost:8762/rat/soap";
+private static final String SERVICE_URI = "http://localhost:8762/rat/soap";
 	
 	public SyncRecensionsResponse syncRecensions() {
 	

@@ -7,9 +7,9 @@ import javax.validation.constraints.Min;
 import org.apache.commons.lang.time.DateUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.eureka.common.model.RecensionStatus;
-import com.eureka.common.model.Reservation;
-import com.eureka.common.model.ReservationStatus;
+
+import xml_bsep.reservation_service.model.Reservation;
+import xml_bsep.reservation_service.model.ReservationStatus;
 
 public class ReservationDTO {
 	

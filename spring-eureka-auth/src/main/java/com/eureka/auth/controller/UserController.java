@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eureka.auth.dto.UserDTO;
+import com.eureka.auth.model.User;
+import com.eureka.auth.model.UserRole;
+import com.eureka.auth.model.UserStatus;
 import com.eureka.auth.repository.UserRepository;
 import com.eureka.auth.service.UserService;
-import com.eureka.common.model.User;
-import com.eureka.common.model.UserRole;
-import com.eureka.common.model.UserStatus;
 
 
 @RestController
@@ -40,7 +40,7 @@ public class UserController {
 	
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 	
-	@PreAuthorize("hasAuthority('ADD_AGENT')")
+	//@PreAuthorize("hasAuthority('ADD_AGENT')")
 	@PostMapping(value = "/admin/addNewAgent", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> addNewAgent(@Valid @RequestBody User user){
 		//provjera jedinstvenosti piba i username
@@ -59,7 +59,7 @@ public class UserController {
 		return new ResponseEntity<>(usersDTO, HttpStatus.OK);
 	}
 	
-	@PreAuthorize("hasAuthority('ACTIVATE_USER')")
+	//@PreAuthorize("hasAuthority('ACTIVATE_USER')")
 	@PostMapping(value = "/admin/activateUser", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> activateUser( @Valid @RequestBody UserDTO userDTO){
 		User user = service.findUserById(userDTO.getId());
@@ -74,7 +74,7 @@ public class UserController {
 		}
 	}
 	
-	@PreAuthorize("hasAuthority('BLOCK_USER')")
+	//@PreAuthorize("hasAuthority('BLOCK_USER')")
 	@PostMapping(value = "/admin/blockUser", consumes = "application/json")
 	public ResponseEntity<List<UserDTO>> blockUser(@Valid @RequestBody UserDTO userDTO){
 		User user = service.findUserById(userDTO.getId());

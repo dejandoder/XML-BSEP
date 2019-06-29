@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 
-import com.eureka.common.model.AccomodationType;
+import xml_bsep.acc_service.model.AccomodationType;
 
 
 

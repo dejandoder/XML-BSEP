@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.Size;
 
-import com.eureka.common.model.Message;
+import xml_bsep.messages_service.model.Message;
 
 public class MessageDTO {
 		

@@ -4,8 +4,8 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
-import com.eureka.common.model.Recension;
-import com.eureka.common.model.RecensionStatus;
+import xml_bsep.acc_service.model.Recension;
+import xml_bsep.acc_service.model.RecensionStatus;
 
 public class RecensionDTO {
 	

@@ -1,47 +1,34 @@
 package xml_bsep.messages_service;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.security.KeyStore;
-import java.security.NoSuchAlgorithmException;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.ssl.SSLContextBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
+
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
-
-import com.netflix.discovery.DiscoveryClient;
-import com.netflix.discovery.shared.transport.jersey.EurekaJerseyClientImpl.EurekaJerseyClientBuilder;
 
 import xml_bsep.messages_service.service.UserService;
 
+
 @EnableEurekaClient
 @SpringBootApplication
-@EntityScan("com.eureka.common.model")
+//@EntityScan("com.eureka.common.model")
 public class MessagesServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MessagesServiceApplication.class, args);
 	}
 	
-	@Bean
+	/*@Bean
 	public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws NoSuchAlgorithmException {
 	    DiscoveryClient.DiscoveryClientOptionalArgs args = new DiscoveryClient.DiscoveryClientOptionalArgs();
 	    System.setProperty("javax.net.ssl.keyStore", "src/main/resources/mess.jks");
@@ -55,7 +42,7 @@ public class MessagesServiceApplication {
 	    builder.withMaxConnectionsPerHost(10);
 	    args.setEurekaJerseyClient(builder.build());
 	    return args;
-	}
+	}*/
 	
 }
 
@@ -77,7 +64,7 @@ class RestTemplateConfig {
 	            return execution.execute(request, body);
 	        }
 	    });
-	    KeyStore keyStore;
+	   /* KeyStore keyStore;
 		HttpComponentsClientHttpRequestFactory requestFactory = null;
 		
 		try {
@@ -104,7 +91,7 @@ class RestTemplateConfig {
 		} catch (Exception exception) {
 			System.out.println("Exception Occured while creating restTemplate "+exception);
 			exception.printStackTrace();
-		}
+		}*/
 	    return restTemplate;
 	}
 }

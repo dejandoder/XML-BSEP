@@ -35,7 +35,7 @@ public class ImageController {
 	@Autowired
 	UserService userService;
 	
-	@PreAuthorize("hasAuthority('ADD_IMAGES')")
+	//@PreAuthorize("hasAuthority('ADD_IMAGES')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/uploadImages", produces =  MediaType.IMAGE_PNG_VALUE)
 	public ResponseEntity uploadImages(@RequestParam("file") MultipartFile[] images, @RequestParam("accId") @Min(1) long accId){

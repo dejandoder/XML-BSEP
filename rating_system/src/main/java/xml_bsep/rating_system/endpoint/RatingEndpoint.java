@@ -6,8 +6,8 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.eureka.common.model.SyncRecensionsRequest;
-import com.eureka.common.model.SyncRecensionsResponse;
+import xml_bsep.rating_system.model.SyncRecensionsRequest;
+import xml_bsep.rating_system.model.SyncRecensionsResponse;
 
 import xml_bsep.rating_system.service.RecesnsionService;
 

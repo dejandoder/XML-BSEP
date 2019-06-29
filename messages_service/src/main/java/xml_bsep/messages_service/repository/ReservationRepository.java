@@ -6,8 +6,8 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-import com.eureka.common.model.Reservation;
-import com.eureka.common.model.User;
+import xml_bsep.messages_service.model.Reservation;
+import xml_bsep.messages_service.model.User;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
 

@@ -3,7 +3,7 @@ package xml_bsep.rating_system.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-import com.eureka.common.model.AccomodationUnit;
+import  xml_bsep.rating_system.model.AccomodationUnit;
 
 
 public interface AccomodationUnitRepository extends JpaRepository<AccomodationUnit, Long> {

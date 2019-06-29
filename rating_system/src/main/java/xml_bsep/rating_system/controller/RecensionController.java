@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eureka.common.model.Recension;
-import com.eureka.common.model.RecensionStatus;
+import xml_bsep.rating_system.model.Recension;
+import xml_bsep.rating_system.model.RecensionStatus;
 
 import xml_bsep.rating_system.dto.CheckReviewDTO;
 import xml_bsep.rating_system.dto.RecensionDTO;
@@ -84,7 +84,7 @@ public class RecensionController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@PreAuthorize("hasAuthority('APPROVE_RECENSION')")
+	//@PreAuthorize("hasAuthority('APPROVE_RECENSION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/approveRecension")
 	public ResponseEntity approveRecension(@RequestBody @Min(1) long recId){
@@ -93,7 +93,7 @@ public class RecensionController {
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
-	@PreAuthorize("hasAuthority('DECLINE_RECENSION')")
+	//@PreAuthorize("hasAuthority('DECLINE_RECENSION')")
 	@SuppressWarnings("rawtypes")
 	@PostMapping(value = "/admin/declineRecension")
 	public ResponseEntity declineRecension(@RequestBody @Min(1) long recId){

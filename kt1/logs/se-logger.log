@@ -1,3 +1,5 @@
-2019-06-24 19:46:10,721 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-1] SE_EVENT PNP http://localhost:11000/ 0:0:0:0:0:0:0:1
-2019-06-24 19:46:11,571 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-2] SE_EVENT PNP http://localhost:11000/favicon.ico 0:0:0:0:0:0:0:1
-2019-06-24 19:46:30,203 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-10] SE_EVENT NPK admin 0:0:0:0:0:0:0:1
+2019-06-29 08:37:06,193 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-7] SE_EVENT PNP http://localhost:11000/ 0:0:0:0:0:0:0:1
+2019-06-29 08:37:09,816 WARN bsep.kt1.security.RestAuthenticationEntryPoint [http-nio-11000-exec-1] SE_EVENT PNP http://localhost:11000/favicon.ico 0:0:0:0:0:0:0:1
+2019-06-29 08:37:30,007 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-2] SE_EVENT NPK admin 0:0:0:0:0:0:0:1
+2019-06-29 08:37:37,408 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-7] SE_EVENT NPK admin 0:0:0:0:0:0:0:1
+2019-06-29 08:37:41,737 WARN bsep.kt1.controller.AuthenticationController [http-nio-11000-exec-10] SE_EVENT NPK admin 0:0:0:0:0:0:0:1

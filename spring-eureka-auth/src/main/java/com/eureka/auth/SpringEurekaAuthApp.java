@@ -1,26 +1,20 @@
 package com.eureka.auth;
 
-import java.security.NoSuchAlgorithmException;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.context.annotation.Bean;
 
-import com.netflix.discovery.DiscoveryClient;
-import com.netflix.discovery.shared.transport.jersey.EurekaJerseyClientImpl.EurekaJerseyClientBuilder;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EntityScan("com.eureka.common.model")
+//@EntityScan("com.eureka.common.model")
 public class SpringEurekaAuthApp {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringEurekaAuthApp.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public DiscoveryClient.DiscoveryClientOptionalArgs discoveryClientOptionalArgs() throws NoSuchAlgorithmException {
 	    DiscoveryClient.DiscoveryClientOptionalArgs args = new DiscoveryClient.DiscoveryClientOptionalArgs();
 	    System.setProperty("javax.net.ssl.keyStore", "src/main/resources/auth.jks");
@@ -34,5 +28,5 @@ public class SpringEurekaAuthApp {
 	    builder.withMaxConnectionsPerHost(10);
 	    args.setEurekaJerseyClient(builder.build());
 	    return args;
-	}
+	}*/
 }

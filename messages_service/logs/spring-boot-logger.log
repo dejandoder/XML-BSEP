@@ -1,13 +1,178 @@
-2019-06-28 13:10:37,537 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 13:11:34,292 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 64.651 seconds (JVM running for 66.688)
-2019-06-28 13:37:02,209 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 13:38:02,554 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 67.314 seconds (JVM running for 68.409)
-2019-06-28 14:26:39,811 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 14:27:19,443 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 48.686 seconds (JVM running for 51.138)
-2019-06-28 20:24:35,110 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 20:26:51,779 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 150.659 seconds (JVM running for 153.759)
-2019-06-28 20:38:12,014 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 20:39:57,557 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 20:41:10,556 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 77.531 seconds (JVM running for 78.301)
-2019-06-28 20:50:44,287 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-06-28 20:51:24,614 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 46.242 seconds (JVM running for 46.956)
+2019-06-29 08:07:13,896 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 08:07:56,484 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 45.145 seconds (JVM running for 47.564)
+2019-06-29 08:33:41,271 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PKK user1
+2019-06-29 08:33:43,154 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:33:43,331 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:33:46,478 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:33:46,765 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT SP 0 1
+2019-06-29 08:33:47,148 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:33:48,957 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:33:52,239 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:33:54,981 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:33:58,254 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:34:00,952 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:34:04,266 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:34:07,244 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:34:09,941 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:34:13,244 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:34:15,945 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:34:19,250 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:34:22,245 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:34:24,947 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:34:28,254 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:34:30,940 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:34:34,245 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:34:36,940 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:34:40,239 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:34:43,249 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:34:45,943 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:34:49,242 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:34:52,242 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:34:54,940 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:34:58,258 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:35:00,940 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:35:04,244 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:35:07,245 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:35:09,948 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:35:13,232 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:35:15,936 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:35:19,270 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:35:21,938 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:35:25,241 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:35:28,257 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:35:30,938 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:35:34,251 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:35:36,943 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:35:40,252 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:35:43,254 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:35:45,935 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:35:49,257 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:35:52,260 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:35:54,938 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:35:58,250 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:36:00,986 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:36:04,288 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:36:07,271 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:36:09,956 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:36:13,357 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:36:15,983 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:36:19,257 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:36:22,270 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:36:25,304 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:36:28,610 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:36:31,616 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:36:34,313 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:36:37,622 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:36:40,297 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:36:43,732 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:36:46,624 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:36:49,307 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:36:52,606 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:36:55,303 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:36:58,617 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:37:01,639 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:37:04,297 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:37:07,620 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:37:10,310 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:37:13,615 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:37:16,297 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:37:19,620 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:37:22,614 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:37:25,309 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:37:28,615 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:37:31,619 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:37:34,305 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:37:37,613 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:37:40,301 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:37:43,610 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:37:46,305 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:37:49,612 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:37:52,650 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 08:37:55,292 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 08:37:58,615 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 08:38:01,596 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 08:38:04,305 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 08:38:07,614 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 08:38:10,303 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 08:38:13,615 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 08:38:16,290 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 08:38:19,615 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 08:38:22,290 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 15:33:37,889 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 15:35:35,240 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 15:35:58,113 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplicationTests in 27.08 seconds (JVM running for 29.005)
+2019-06-29 19:17:23,180 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 19:17:43,840 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 23.725 seconds (JVM running for 24.503)
+2019-06-29 19:39:13,178 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 19:40:18,327 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 70.857 seconds (JVM running for 71.61)
+2019-06-29 20:06:22,615 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 20:07:19,192 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 66.127 seconds (JVM running for 67.87)
+2019-06-29 20:15:45,573 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 20:16:28,992 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 56.605 seconds (JVM running for 58.155)
+2019-06-29 20:56:13,447 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 20:57:01,641 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 53.046 seconds (JVM running for 53.782)
+2019-06-29 21:06:36,222 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PKK user1
+2019-06-29 21:06:37,732 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 21:06:38,813 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 21:06:42,000 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-4] NP_EVENT SP 0 1
+2019-06-29 21:06:42,148 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:06:42,380 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 21:06:46,006 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 21:06:48,131 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 21:06:52,008 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 21:06:54,715 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 21:06:58,021 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 21:07:00,705 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 21:07:04,016 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 21:07:07,033 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 21:07:09,723 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 21:07:13,041 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 21:07:15,719 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 21:07:19,026 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-7] NP_EVENT PP user1 agent007
+2019-06-29 21:07:21,706 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-2] NP_EVENT PP user1 agent007
+2019-06-29 21:07:25,014 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-4] NP_EVENT PP user1 agent007
+2019-06-29 21:07:28,011 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-6] NP_EVENT PP user1 agent007
+2019-06-29 21:07:30,730 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-8] NP_EVENT PP user1 agent007
+2019-06-29 21:07:34,014 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:07:36,740 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:07:40,009 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:07:43,038 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:07:45,712 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:07:49,024 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:07:51,712 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:07:55,015 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:07:58,027 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:08:00,706 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:08:04,014 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:08:06,704 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:08:10,009 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:08:13,004 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:08:15,706 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:08:19,022 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:08:21,709 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:08:25,015 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:08:28,023 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:08:30,749 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:08:34,031 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:08:36,706 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:08:40,017 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:08:43,027 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:08:45,710 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:08:49,025 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:08:51,703 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:08:55,013 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:08:58,026 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:09:00,710 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:09:04,014 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:09:06,740 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:09:10,016 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:09:13,013 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:09:15,715 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:09:19,006 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:09:21,708 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:09:25,014 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
+2019-06-29 21:09:28,023 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+2019-06-29 21:09:30,735 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-5] NP_EVENT PP user1 agent007
+2019-06-29 21:09:34,008 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-10] NP_EVENT PP user1 agent007
+2019-06-29 21:09:36,714 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
+2019-06-29 21:09:40,026 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007

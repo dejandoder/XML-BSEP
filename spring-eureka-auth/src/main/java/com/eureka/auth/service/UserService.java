@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.eureka.auth.dto.UserDTO;
+import com.eureka.auth.model.User;
+import com.eureka.auth.model.UserRole;
 import com.eureka.auth.repository.UserRepository;
-import com.eureka.common.model.User;
-import com.eureka.common.model.UserRole;
 
 @Service
 public class UserService {

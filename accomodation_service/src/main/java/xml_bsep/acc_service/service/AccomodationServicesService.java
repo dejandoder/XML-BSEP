@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eureka.common.model.AccomodationService;
+import xml_bsep.acc_service.model.AccomodationService;
 
 import xml_bsep.acc_service.repository.AccomodationServiceRepository;
 
@@ -16,15 +16,15 @@ public class AccomodationServicesService {
 	@Autowired
 	AccomodationServiceRepository repository;
 	
-	public com.eureka.common.model.AccomodationService save(com.eureka.common.model.AccomodationService accService) {
+	public xml_bsep.acc_service.model.AccomodationService save(xml_bsep.acc_service.model.AccomodationService accService) {
 		return repository.save(accService);
 	}
 	
-	public List<com.eureka.common.model.AccomodationService> findAll(){
+	public List<xml_bsep.acc_service.model.AccomodationService> findAll(){
 		return repository.findAll();
 	}
 	
-	public List<com.eureka.common.model.AccomodationService> delete(long id){
+	public List<xml_bsep.acc_service.model.AccomodationService> delete(long id){
 		repository.delete(id);
 		return repository.findAll();
 	}

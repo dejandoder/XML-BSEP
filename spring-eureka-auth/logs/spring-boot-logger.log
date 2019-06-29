@@ -1,84 +1,37 @@
-2019-06-28 13:02:29,195 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 13:03:19,299 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 58.61 seconds (JVM running for 61.81)
-2019-06-28 13:07:17,904 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 13:08:53,605 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 13:09:16,692 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 27.217 seconds (JVM running for 28.935)
-2019-06-28 13:41:47,409 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Request is to process authentication
-2019-06-28 14:05:39,456 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-28 14:07:30,914 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-3] Request is to process authentication
-2019-06-28 14:13:23,217 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 14:17:09,371 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 14:21:33,998 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 14:28:38,889 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 14:29:32,938 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 71.105 seconds (JVM running for 75.893)
-2019-06-28 14:33:03,854 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-4] Request is to process authentication
-2019-06-28 14:38:33,981 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Request is to process authentication
-2019-06-28 14:38:34,123 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Authentication request failed: org.springframework.security.authentication.BadCredentialsException: Bad credentials
-org.springframework.security.authentication.BadCredentialsException: Bad credentials
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:151)
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:174)
-	at com.eureka.auth.security.JwtUsernameAndPasswordAuthenticationFilter.attemptAuthentication(JwtUsernameAndPasswordAuthenticationFilter.java:57)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2019-06-28 14:38:34,129 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Updated SecurityContextHolder to contain null Authentication
-2019-06-28 14:38:34,134 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-9] Delegating to authentication failure handler org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler@42d9b897
-2019-06-28 14:38:38,722 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
-2019-06-28 14:44:19,673 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-2] Request is to process authentication
-2019-06-28 14:45:50,542 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
-2019-06-28 20:24:31,480 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 20:26:16,783 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 119.144 seconds (JVM running for 122.099)
-2019-06-28 20:42:28,999 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 20:45:46,283 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2019-06-28 20:46:53,247 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 70.649 seconds (JVM running for 71.668)
-2019-06-28 21:04:08,440 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-1] Request is to process authentication
-2019-06-28 21:11:16,187 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-3] Request is to process authentication
-2019-06-28 21:11:59,774 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-1] Request is to process authentication
-2019-06-28 21:24:36,085 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-7] Request is to process authentication
+2019-06-29 08:04:17,782 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 08:06:09,172 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 08:06:53,291 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 50.679 seconds (JVM running for 53.009)
+2019-06-29 08:11:51,996 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-5] Request is to process authentication
+2019-06-29 08:13:31,864 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-4] Request is to process authentication
+2019-06-29 08:25:02,232 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 08:29:54,059 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 08:30:16,634 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 25.692 seconds (JVM running for 26.747)
+2019-06-29 14:02:38,345 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 14:05:55,567 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 15:47:19,981 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 15:51:43,840 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 15:53:24,811 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-29 15:53:42,683 INFO org.springframework.boot.StartupInfoLogger [main] Started SpringEurekaServiceApplicationTests in 21.332 seconds (JVM running for 23.28)
+2019-06-29 19:04:04,534 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 19:14:32,621 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 19:16:06,826 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 106.084 seconds (JVM running for 107.184)
+2019-06-29 19:32:00,867 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-2] Request is to process authentication
+2019-06-29 19:35:03,510 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-1] Request is to process authentication
+2019-06-29 19:37:07,088 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 19:38:18,060 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 77.722 seconds (JVM running for 78.993)
+2019-06-29 19:42:27,479 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-2] Request is to process authentication
+2019-06-29 19:57:50,304 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-9] Request is to process authentication
+2019-06-29 20:08:24,840 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 20:09:14,568 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 60.787 seconds (JVM running for 61.893)
+2019-06-29 20:19:52,789 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 20:20:49,655 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 62.934 seconds (JVM running for 63.991)
+2019-06-29 20:21:27,823 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-1] Request is to process authentication
+2019-06-29 20:39:32,857 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 20:40:00,987 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 34.836 seconds (JVM running for 37.379)
+2019-06-29 20:40:39,545 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-1] Request is to process authentication
+2019-06-29 20:49:01,927 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 20:49:36,299 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 20:50:34,476 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 68.479 seconds (JVM running for 71.352)
+2019-06-29 20:52:13,008 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-29 20:53:07,890 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 64.523 seconds (JVM running for 66.213)
+2019-06-29 21:02:24,223 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-2] Request is to process authentication

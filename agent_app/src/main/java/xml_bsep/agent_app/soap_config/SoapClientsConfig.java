@@ -2,21 +2,10 @@ package xml_bsep.agent_app.soap_config;
 
 
 
-import javax.net.ssl.SSLContext;
-
-import org.apache.http.client.HttpClient;
-import org.apache.http.conn.ssl.NoopHostnameVerifier;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.ssl.SSLContextBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.ws.client.support.interceptor.ClientInterceptor;
-import org.springframework.ws.transport.http.HttpComponentsMessageSender;
-import org.springframework.ws.transport.http.HttpComponentsMessageSender.RemoveSoapHeadersInterceptor;
-
 
 import xml_bsep.agent_app.soap_clients.AccomodationServiceSoapClient;
 import xml_bsep.agent_app.soap_clients.AuthServiceSoapClient;
@@ -43,10 +32,10 @@ public class SoapClientsConfig {
 		AccomodationServiceSoapClient client = new AccomodationServiceSoapClient();
 		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
 	    client.setInterceptors(interceptors);
-		client.setDefaultUri("https://localhost:8762/acc/soap");
+		client.setDefaultUri("http://localhost:8762/acc/soap");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
-		client.setMessageSender(httpComponentsMessageSender());
+		//client.setMessageSender(httpComponentsMessageSender());
 		client.getWebServiceTemplate().setCheckConnectionForFault(true);
 		return client;
 	}
@@ -56,10 +45,10 @@ public class SoapClientsConfig {
 		RatingServiceSoapClient client = new RatingServiceSoapClient();
 		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
 	    client.setInterceptors(interceptors);
-		client.setDefaultUri("https://localhost:8762/rat/soap");
+		client.setDefaultUri("http://localhost:8762/rat/soap");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
-		client.setMessageSender(httpComponentsMessageSender());
+		//client.setMessageSender(httpComponentsMessageSender());
 		client.getWebServiceTemplate().setCheckConnectionForFault(true);
 		return client;
 	}
@@ -69,10 +58,10 @@ public class SoapClientsConfig {
 		ReservationServiceSoapClient client = new ReservationServiceSoapClient();
 		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
 		client.setInterceptors(interceptors);
-		client.setDefaultUri("https://localhost:8762/res/soap");
+		client.setDefaultUri("http://localhost:8762/res/soap");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
-		client.setMessageSender(httpComponentsMessageSender());
+		//client.setMessageSender(httpComponentsMessageSender());
 		client.getWebServiceTemplate().setCheckConnectionForFault(true);
 		return client;
 	}
@@ -82,10 +71,10 @@ public class SoapClientsConfig {
 		MessagesServiceSoapClient client = new MessagesServiceSoapClient();
 		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
 		client.setInterceptors(interceptors);
-		client.setDefaultUri("https://localhost:8762/mess/soap");
+		client.setDefaultUri("http://localhost:8762/mess/soap");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
-		client.setMessageSender(httpComponentsMessageSender());
+		//client.setMessageSender(httpComponentsMessageSender());
 		client.getWebServiceTemplate().setCheckConnectionForFault(true);
 		return client;
 	}
@@ -95,10 +84,10 @@ public class SoapClientsConfig {
 		AuthServiceSoapClient client = new AuthServiceSoapClient();
 		ClientInterceptor[] interceptors = new ClientInterceptor[]{securityRequestInterceptor()};
 		client.setInterceptors(interceptors);
-		client.setDefaultUri("https://localhost:8762/auth/soap");
+		client.setDefaultUri("http://localhost:8762/auth/soap");
 		client.setMarshaller(marshaller);
 		client.setUnmarshaller(marshaller);
-		client.setMessageSender(httpComponentsMessageSender());
+		//client.setMessageSender(httpComponentsMessageSender());
 		//client.getWebServiceTemplate().setCheckConnectionForFault(true);
 		return client;
 	}
@@ -107,7 +96,7 @@ public class SoapClientsConfig {
 	public SecurityRequestInterceptor securityRequestInterceptor() {
 		return new SecurityRequestInterceptor();
 	}
-	
+	/*
 	@Bean
 	  public HttpComponentsMessageSender httpComponentsMessageSender() throws Exception {
 	    HttpComponentsMessageSender httpComponentsMessageSender = new HttpComponentsMessageSender();
@@ -130,5 +119,5 @@ public class SoapClientsConfig {
 	  public SSLContext sslContext() throws Exception {
 	    return SSLContextBuilder.create()
 	        .loadTrustMaterial( new ClassPathResource("agent.jks").getFile(), "password".toCharArray()).build();
-	  }
+	  }*/
 }

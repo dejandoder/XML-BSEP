@@ -11,8 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.eureka.common.security.JwtConfig;
-
 @EnableWebSecurity 	// Enable security config. This annotation denotes config for spring security.
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {

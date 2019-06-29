@@ -3,6 +3,7 @@ package xml_bsep.agent_app.soap_config;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.client.WebServiceClientException;
@@ -12,7 +13,7 @@ import org.springframework.ws.context.MessageContext;
 import org.springframework.ws.transport.TransportOutputStream;
 import org.springframework.ws.transport.context.TransportContext;
 import org.springframework.ws.transport.context.TransportContextHolder;
-import org.springframework.ws.transport.http.HttpComponentsConnection;
+import org.springframework.ws.transport.http.HttpUrlConnection;
 
 import xml_bsep.agent_app.repository.UserRepository;
 import xml_bsep.agent_app.service.UserService;
@@ -29,7 +30,7 @@ public class SecurityRequestInterceptor implements ClientInterceptor {
 	public boolean handleRequest(MessageContext messageContext) throws WebServiceClientException {
 
 		 	TransportContext context = TransportContextHolder.getTransportContext();
-		 	HttpComponentsConnection connection =(HttpComponentsConnection)  context.getConnection();
+		 	HttpUrlConnection connection =  (HttpUrlConnection) context.getConnection();
 
 	        try {
 	        	userService.getCurrentUser();

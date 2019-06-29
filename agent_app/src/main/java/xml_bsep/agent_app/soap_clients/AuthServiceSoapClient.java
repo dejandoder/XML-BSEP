@@ -8,7 +8,7 @@ import xml_bsep.agent_app.model.SyncUsersResponse;
 
 public class AuthServiceSoapClient extends WebServiceGatewaySupport{
 
-	private static final String SERVICE_URI = "https://localhost:8762/auth/soap";
+	private static final String SERVICE_URI = "http://localhost:8762/auth/soap";
 	
 	public SyncUsersResponse syncUsersRequest() {
 		SyncUsersRequest request = new SyncUsersRequest();

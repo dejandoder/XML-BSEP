@@ -3,9 +3,9 @@ package xml_bsep.acc_service.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.eureka.common.model.AccomodationType;
-import com.eureka.common.model.AccomodationUnit;
-import com.eureka.common.model.Location;
+import xml_bsep.acc_service.model.AccomodationType;
+import xml_bsep.acc_service.model.AccomodationUnit;
+import xml_bsep.acc_service.model.Location;
 
 
 

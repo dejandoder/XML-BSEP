@@ -9,21 +9,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import com.eureka.common.model.AccomodationService;
-import com.eureka.common.model.AccomodationType;
-import com.eureka.common.model.AccomodationUnit;
-import com.eureka.common.model.AddImagesRequest;
-import com.eureka.common.model.AddImagesResponse;
-import com.eureka.common.model.AddNewAccomodationUnitRequest;
-import com.eureka.common.model.AddNewAccomodationUnitResponse;
-import com.eureka.common.model.AddPricePlanRequest;
-import com.eureka.common.model.AddPricePlanResponse;
-import com.eureka.common.model.Image;
-import com.eureka.common.model.SyncAccServicesRequest;
-import com.eureka.common.model.SyncAccServicesResponse;
-import com.eureka.common.model.SyncAccomodationTypeResponse;
-import com.eureka.common.model.SyncAccomodationTypesRequest;
-
+import xml_bsep.acc_service.model.*;
 import xml_bsep.acc_service.service.AccomodationServicesService;
 import xml_bsep.acc_service.service.AccomodationTypeService;
 import xml_bsep.acc_service.service.AccomodationUnitService;

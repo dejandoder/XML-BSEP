@@ -63,22 +63,22 @@ INSERT INTO `price_plan` VALUES (1,'2019-06-01 00:00:00',10,'2019-12-31 00:00:00
 
 INSERT INTO `permission` (`id`,`name`) VALUES (1,'ADD_ACC_UNIT');
 INSERT INTO `permission` (`id`,`name`) VALUES (2,'ADD_PRICE_PLAN');
-INSERT INTO `permission` (`id`,`name`) VALUES (3;'ADD_IMAGES');
-INSERT INTO `permission` (`id`,`name`) VALUES (4;'APPROVE_RESERVATION');
-INSERT INTO `permission` (`id`,`name`) VALUES (5;'CONFIRM_RESERVATION');
-INSERT INTO `permission` (`id`,`name`) VALUES (6;'DECLINE_RESERVATION');
-INSERT INTO `permission` (`id`,`name`) VALUES (7;'DO_AGENT_RESERVATION');
+INSERT INTO `permission` (`id`,`name`) VALUES (3,'ADD_IMAGES');
+INSERT INTO `permission` (`id`,`name`) VALUES (4,'APPROVE_RESERVATION');
+INSERT INTO `permission` (`id`,`name`) VALUES (5,'CONFIRM_RESERVATION');
+INSERT INTO `permission` (`id`,`name`) VALUES (6,'DECLINE_RESERVATION');
+INSERT INTO `permission` (`id`,`name`) VALUES (7,'DO_AGENT_RESERVATION');
 
-INSERT INTO `permission` (`id`,`name`) VALUES (8;'ADD_ACC_SERVICE');
-INSERT INTO `permission` (`id`,`name`) VALUES (9;'REMOVE_ACC_SERVICE');
-INSERT INTO `permission` (`id`,`name`) VALUES (10;'ADD_ACC_TYPE');
-INSERT INTO `permission` (`id`,`name`) VALUES (11;'REMOVE_ACC_TYPE');
+INSERT INTO `permission` (`id`,`name`) VALUES (8,'ADD_ACC_SERVICE');
+INSERT INTO `permission` (`id`,`name`) VALUES (9,'REMOVE_ACC_SERVICE');
+INSERT INTO `permission` (`id`,`name`) VALUES (10,'ADD_ACC_TYPE');
+INSERT INTO `permission` (`id`,`name`) VALUES (11,'REMOVE_ACC_TYPE');
 
-INSERT INTO `permission` (`id`,`name`) VALUES (12;'ADD_AGENT');
-INSERT INTO `permission` (`id`,`name`) VALUES (13;'ACTIVATE_USER');
-INSERT INTO `permission` (`id`,`name`) VALUES (14;'BLOCK_USER');
-INSERT INTO `permission` (`id`,`name`) VALUES (15;'APPROVE_RECENSION');
-INSERT INTO `permission` (`id`,`name`) VALUES (16;'DECLINE_RECENSION');
+INSERT INTO `permission` (`id`,`name`) VALUES (12,'ADD_AGENT');
+INSERT INTO `permission` (`id`,`name`) VALUES (13,'ACTIVATE_USER');
+INSERT INTO `permission` (`id`,`name`) VALUES (14,'BLOCK_USER');
+INSERT INTO `permission` (`id`,`name`) VALUES (15,'APPROVE_RECENSION');
+INSERT INTO `permission` (`id`,`name`) VALUES (16,'DECLINE_RECENSION');
 
 
 INSERT INTO `user_permissions` (`user_id`,`permissions_id`) VALUES (1,1);

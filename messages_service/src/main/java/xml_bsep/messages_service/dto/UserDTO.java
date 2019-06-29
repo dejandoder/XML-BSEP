@@ -2,7 +2,7 @@ package xml_bsep.messages_service.dto;
 
 import javax.validation.constraints.Min;
 
-import com.eureka.common.model.User;
+import xml_bsep.messages_service.model.User;
 
 public class UserDTO {
 

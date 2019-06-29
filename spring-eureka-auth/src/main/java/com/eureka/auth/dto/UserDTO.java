@@ -1,8 +1,8 @@
 package com.eureka.auth.dto;
 
-import com.eureka.common.model.User;
-import com.eureka.common.model.UserRole;
-import com.eureka.common.model.UserStatus;
+import com.eureka.auth.model.User;
+import com.eureka.auth.model.UserRole;
+import com.eureka.auth.model.UserStatus;
 
 public class UserDTO {
 

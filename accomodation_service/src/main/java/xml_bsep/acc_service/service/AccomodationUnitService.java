@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.client.RestTemplate;
 
-import com.eureka.common.model.AccomodationUnit;
-import com.eureka.common.model.Image;
+import xml_bsep.acc_service.model.AccomodationUnit;
+import xml_bsep.acc_service.model.Image;
 
 
 import xml_bsep.acc_service.dto.AccomodationUnitDTO;
@@ -99,7 +99,7 @@ public class AccomodationUnitService {
 			checkDTO.setDates(searchDTO.getDates());
 			
 			HttpEntity<CheckReaservationDTO> request = new HttpEntity<CheckReaservationDTO>(checkDTO);
-			ResponseEntity<Boolean> response = restTemplate.exchange("https://reservation-service/all/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
+			ResponseEntity<Boolean> response = restTemplate.exchange("http://reservation-service/all/checkIfAccUnitIsAvalible", HttpMethod.POST, request, Boolean.class);
 			
 			if(response.getBody() == true) searchResults4.add(accUnit);
 		}
@@ -175,7 +175,7 @@ public class AccomodationUnitService {
 
 		HttpEntity<Long> request = new HttpEntity<Long>(accId);
 		ResponseEntity<List<RecensionDTO>> response =restTemplate.
-				exchange("https://rating-service/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
+				exchange("http://rating-service/all/getRecensionsByAccUnit", HttpMethod.POST, request, new ParameterizedTypeReference<List<RecensionDTO>>(){});
 		
 		float sum = 0;
 		for (RecensionDTO recensionDTO : response.getBody()) {
