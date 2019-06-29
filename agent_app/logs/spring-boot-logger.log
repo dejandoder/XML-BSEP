@@ -218,3 +218,15 @@
 2019-06-29 21:11:11,071 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-5] NP_EVENT PP agent007 2
 2019-06-29 21:11:14,260 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-4] NP_EVENT PP agent007 2
 2019-06-29 21:11:17,088 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-6] NP_EVENT PP agent007 2
+2019-06-29 21:11:20,078 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-9] NP_EVENT PP agent007 2
+2019-06-29 21:11:23,250 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-10] NP_EVENT PP agent007 2
+2019-06-29 21:11:26,494 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-5] NP_EVENT PP agent007 2
+2019-06-29 21:11:29,381 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-4] NP_EVENT PP agent007 2
+2019-06-29 21:11:32,260 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-6] NP_EVENT PP agent007 2
+2019-06-29 21:11:35,089 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-9] NP_EVENT PP agent007 2
+2019-06-29 21:11:38,258 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-10] NP_EVENT PP agent007 2
+2019-06-29 21:11:41,081 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-5] NP_EVENT PP agent007 2
+2019-06-29 21:11:44,290 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-4] NP_EVENT PP agent007 2
+2019-06-29 21:11:47,141 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-6] NP_EVENT PP agent007 2
+2019-06-29 21:11:50,084 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-9] NP_EVENT PP agent007 2
+2019-06-29 21:11:53,254 INFO xml_bsep.agent_app.controller.MessageController [http-nio-11500-exec-10] NP_EVENT PP agent007 2
