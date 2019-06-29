@@ -4,3 +4,5 @@
 2019-06-28 13:38:02,554 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 67.314 seconds (JVM running for 68.409)
 2019-06-28 14:26:39,811 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
 2019-06-28 14:27:19,443 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 48.686 seconds (JVM running for 51.138)
+2019-06-28 18:19:28,855 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 18:20:28,053 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 72.474 seconds (JVM running for 88.749)

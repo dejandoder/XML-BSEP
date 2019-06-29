@@ -73,3 +73,5 @@ org.springframework.security.authentication.BadCredentialsException: Bad credent
 2019-06-28 14:38:38,722 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
 2019-06-28 14:44:19,673 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-2] Request is to process authentication
 2019-06-28 14:45:50,542 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-9100-exec-10] Request is to process authentication
+2019-06-28 18:16:57,119 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 18:17:37,314 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 47.463 seconds (JVM running for 50.939)

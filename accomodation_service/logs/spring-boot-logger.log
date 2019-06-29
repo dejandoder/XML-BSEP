@@ -87,3 +87,45 @@
 2019-06-28 14:45:40,114 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO user1
 2019-06-28 14:45:52,528 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-3] NP_EVENT PSJ 127.0.0.1
 2019-06-28 14:45:52,559 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-6] NP_EVENT PTS 127.0.0.1
+2019-06-28 18:17:55,983 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 18:19:27,972 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 98.413 seconds (JVM running for 102.019)
+2019-06-28 18:44:35,468 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-2] NP_EVENT PSJ 127.0.0.1
+2019-06-28 18:44:35,468 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-4] NP_EVENT PTS 127.0.0.1
+2019-06-28 18:45:01,698 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-28 18:45:01,716 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-9] NP_EVENT PTS 127.0.0.1
+2019-06-28 18:45:32,915 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO anonymousUser
+2019-06-28 18:45:41,049 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO anonymousUser
+2019-06-28 18:46:41,991 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-10] NP_EVENT PTS 127.0.0.1
+2019-06-28 18:46:42,845 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-9] NP_EVENT PSJ 127.0.0.1
+2019-06-28 18:47:22,281 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO anonymousUser
+2019-06-28 18:49:08,646 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-5] NP_EVENT PSO anonymousUser
+2019-06-28 18:49:20,453 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-2] NP_EVENT PSO anonymousUser
+2019-06-28 18:49:30,548 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-4] NP_EVENT PSO anonymousUser
+2019-06-28 18:56:19,820 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO anonymousUser
+2019-06-28 19:02:50,788 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2019-06-28 19:03:50,407 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started AccServiceApplication in 68.007 seconds (JVM running for 71.913)
+2019-06-28 19:09:44,962 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO anonymousUser
+2019-06-28 19:20:19,047 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO anonymousUser
+2019-06-28 19:20:26,875 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-2] NP_EVENT PSO anonymousUser
+2019-06-28 19:20:44,438 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-10] NP_EVENT PSO anonymousUser
+2019-06-28 19:22:21,375 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO anonymousUser
+2019-06-28 19:29:26,216 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-9] NP_EVENT PSO anonymousUser
+2019-06-28 19:30:36,761 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-5] NP_EVENT PSJ 127.0.0.1
+2019-06-28 19:30:36,772 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-6] NP_EVENT PTS 127.0.0.1
+2019-06-28 19:30:53,608 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO anonymousUser
+2019-06-28 19:32:09,179 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-1] NP_EVENT PTS 127.0.0.1
+2019-06-28 19:32:09,788 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-10] NP_EVENT PSJ 127.0.0.1
+2019-06-28 19:32:55,807 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-5] NP_EVENT PSO anonymousUser
+2019-06-28 19:34:06,251 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-2] NP_EVENT PSO anonymousUser
+2019-06-28 19:34:12,215 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-10] NP_EVENT PSO anonymousUser
+2019-06-28 19:34:21,021 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-4] NP_EVENT PSO anonymousUser
+2019-06-28 19:34:39,946 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-1] NP_EVENT PSO anonymousUser
+2019-06-28 19:34:54,098 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-3] NP_EVENT PTS 127.0.0.1
+2019-06-28 19:35:01,935 INFO xml_bsep.acc_service.controller.AccomodationTypeController [https-jsse-nio-8600-exec-5] NP_EVENT PTS 127.0.0.1
+2019-06-28 19:35:02,150 INFO xml_bsep.acc_service.controller.AccomodationServiceController [https-jsse-nio-8600-exec-6] NP_EVENT PSJ 127.0.0.1
+2019-06-28 19:35:17,819 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-7] NP_EVENT PSO anonymousUser
+2019-06-28 19:35:33,681 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-5] NP_EVENT PSO anonymousUser
+2019-06-28 19:35:49,450 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-3] NP_EVENT PSO anonymousUser
+2019-06-28 19:35:49,834 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-6] NP_EVENT PSO anonymousUser
+2019-06-28 19:35:51,450 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-9] NP_EVENT PSO anonymousUser
+2019-06-28 19:35:52,421 INFO xml_bsep.acc_service.controller.AccomodationUnitController [https-jsse-nio-8600-exec-8] NP_EVENT PSO anonymousUser
