@@ -88,3 +88,4 @@
 2019-06-29 21:05:29,433 INFO xml_bsep.acc_service.controller.AccomodationUnitController [http-nio-8600-exec-1] NP_EVENT PSO user1
 2019-06-29 21:05:45,871 INFO xml_bsep.acc_service.controller.AccomodationUnitController [http-nio-8600-exec-5] NP_EVENT PSO user1
 2019-06-29 21:06:47,609 INFO xml_bsep.acc_service.controller.AccomodationTypeController [http-nio-8600-exec-9] NP_EVENT PTS 192.168.56.1
+2019-06-29 21:06:47,897 INFO xml_bsep.acc_service.controller.AccomodationServiceController [http-nio-8600-exec-3] NP_EVENT PSJ 192.168.56.1

@@ -35,3 +35,4 @@
 2019-06-29 20:52:13,008 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
 2019-06-29 20:53:07,890 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started SpringEurekaAuthApp in 64.523 seconds (JVM running for 66.213)
 2019-06-29 21:02:24,223 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-2] Request is to process authentication
+2019-06-29 21:04:01,108 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-9100-exec-6] Request is to process authentication

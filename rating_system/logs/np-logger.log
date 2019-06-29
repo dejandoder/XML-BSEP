@@ -2,3 +2,4 @@
 2019-06-29 21:03:52,611 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-9] NP_EVENT POS user1 1
 2019-06-29 21:04:05,413 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-7] NP_EVENT OK admin1 1
 2019-06-29 21:04:09,878 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-8] NP_EVENT POS user1 1
+2019-06-29 21:05:10,276 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-10] NP_EVENT PO user1 3 2

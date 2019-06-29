@@ -15,3 +15,4 @@
 2019-06-29 20:41:04,044 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-11500-exec-8] Request is to process authentication
 2019-06-29 20:58:58,190 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
 2019-06-29 21:02:48,850 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-11500-exec-3] Request is to process authentication
+2019-06-29 21:04:51,726 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-11500-exec-8] Request is to process authentication
