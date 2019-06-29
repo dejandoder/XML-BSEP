@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2019-06-29 08:04:21,737 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
 2019-06-29 08:06:05,686 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
 2019-06-29 08:06:51,034 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 51.761 seconds (JVM running for 52.525)
@@ -22,3 +23,64 @@
 2019-06-29 21:04:05,413 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-7] NP_EVENT OK admin1 1
 2019-06-29 21:04:09,878 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-8] NP_EVENT POS user1 1
 2019-06-29 21:05:10,276 INFO xml_bsep.rating_system.controller.RecensionController [http-nio-11600-exec-10] NP_EVENT PO user1 3 2
+=======
+
+2019-06-28 11:57:25,480 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:01:14,532 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:03:04,296 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:05:56,303 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:07:26,824 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 12:07:44,063 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 20.02 seconds (JVM running for 20.866)
+2019-06-28 13:10:38,317 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:11:41,417 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 71.824 seconds (JVM running for 77.22)
+2019-06-28 13:25:24,294 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:25:48,580 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 31.311 seconds (JVM running for 33.028)
+2019-06-28 13:32:49,305 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:33:05,925 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 19.569 seconds (JVM running for 20.261)
+2019-06-28 13:47:21,823 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:48:11,631 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 54.516 seconds (JVM running for 55.239)
+2019-06-28 13:49:39,828 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:50:13,849 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 38.988 seconds (JVM running for 40.316)
+2019-06-28 13:52:54,414 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:53:11,491 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 19.855 seconds (JVM running for 20.632)
+2019-06-28 13:58:20,247 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT PO user1 4 1
+2019-06-28 14:00:31,562 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:00:52,224 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 23.932 seconds (JVM running for 24.811)
+2019-06-28 14:06:40,261 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT PO user1 5 2
+2019-06-28 14:07:02,933 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 2
+2019-06-28 14:07:35,807 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 0
+2019-06-28 14:07:40,163 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 2
+2019-06-28 14:07:44,777 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-10] NP_EVENT POS user1 2
+2019-06-28 14:08:30,744 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 2
+2019-06-28 14:09:11,567 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
+2019-06-28 14:09:26,470 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT POS user1 2
+2019-06-28 14:14:29,210 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:14:55,002 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 28.879 seconds (JVM running for 29.966)
+2019-06-28 14:21:12,331 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:26:36,202 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:27:19,087 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 53.71 seconds (JVM running for 56.207)
+2019-06-28 14:35:53,195 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT PO user1 4 1
+2019-06-28 14:36:54,416 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT POS user1 1
+2019-06-28 14:38:44,641 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT OK admin1 1
+2019-06-28 14:38:59,965 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT POS user1 1
+2019-06-28 14:39:04,888 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-9] NP_EVENT POS user1 1
+2019-06-28 14:39:13,771 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT POS user1 1
+2019-06-28 14:40:11,747 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:40:35,968 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 31.652 seconds (JVM running for 32.988)
+2019-06-28 14:42:10,793 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:42:39,417 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 31.538 seconds (JVM running for 32.254)
+2019-06-28 14:45:18,711 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-8] NP_EVENT PO user1 5 2
+2019-06-28 14:45:42,114 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-2] NP_EVENT POS user1 2
+2019-06-28 14:45:54,469 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-4] NP_EVENT OK admin1 1
+2019-06-28 14:45:59,596 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-6] NP_EVENT POS user1 2
+2019-06-28 20:42:14,766 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:50:52,716 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:57:19,558 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:59:14,275 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:59:50,549 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 39.319 seconds (JVM running for 40.095)
+2019-06-28 21:28:36,692 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-1] NP_EVENT PO user1 4 1
+2019-06-28 21:28:41,438 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-5] NP_EVENT OK admin1 1
+2019-06-28 21:28:58,322 INFO xml_bsep.rating_system.controller.RecensionController [https-jsse-nio-11600-exec-3] NP_EVENT POS user1 1
+2019-06-28 18:12:23,578 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 18:13:01,223 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingSystemApplication in 43.739 seconds (JVM running for 46.544)
+>>>>>>> 185f9541cecb8374ddf13e5906794a4a7850ddcf

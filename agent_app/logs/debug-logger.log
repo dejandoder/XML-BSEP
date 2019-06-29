@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2019-06-29 01:04:22,204 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
 2019-06-29 01:22:54,792 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
 2019-06-29 19:20:24,398 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
@@ -16,3 +17,35 @@
 2019-06-29 20:58:58,190 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
 2019-06-29 21:02:48,850 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-11500-exec-3] Request is to process authentication
 2019-06-29 21:04:51,726 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [http-nio-11500-exec-8] Request is to process authentication
+=======
+2019-06-29 00:26:01,904 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:12:04,837 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:14:27,681 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:15:39,588 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:18:05,791 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:19:34,092 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-3] Request is to process authentication
+2019-06-28 13:25:15,412 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:29:01,069 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-2] Request is to process authentication
+2019-06-28 13:33:30,011 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-5] Request is to process authentication
+2019-06-28 13:34:19,419 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-10] Request is to process authentication
+2019-06-28 13:35:35,040 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-10] Request is to process authentication
+2019-06-28 13:37:25,364 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 13:57:04,913 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-8] Request is to process authentication
+2019-06-28 14:02:31,971 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-3] Request is to process authentication
+2019-06-28 14:03:26,522 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 14:06:11,388 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-2] Request is to process authentication
+2019-06-28 14:07:18,584 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-5] Request is to process authentication
+2019-06-28 14:11:51,826 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-5] Request is to process authentication
+2019-06-28 14:21:01,384 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 14:30:02,857 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 14:35:12,861 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-8] Request is to process authentication
+2019-06-28 14:37:04,531 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-2] Request is to process authentication
+2019-06-28 14:43:06,733 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 14:44:53,898 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-3] Request is to process authentication
+2019-06-28 20:50:47,705 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 21:20:11,851 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 21:20:58,516 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 21:23:34,907 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-2] Request is to process authentication
+2019-06-28 21:27:32,209 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-9] Request is to process authentication
+2019-06-28 21:29:18,727 DEBUG org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter [https-jsse-nio-11500-exec-7] Request is to process authentication
+>>>>>>> 185f9541cecb8374ddf13e5906794a4a7850ddcf

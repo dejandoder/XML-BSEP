@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2019-06-29 08:07:13,896 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
 2019-06-29 08:07:56,484 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 45.145 seconds (JVM running for 47.564)
 2019-06-29 08:33:41,271 INFO xml_bsep.messages_service.controller.MessagesController [https-jsse-nio-8900-exec-2] NP_EVENT PKK user1
@@ -222,3 +223,20 @@
 2019-06-29 21:11:51,720 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-3] NP_EVENT PP user1 agent007
 2019-06-29 21:11:55,011 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-1] NP_EVENT PP user1 agent007
 2019-06-29 21:11:57,708 INFO xml_bsep.messages_service.controller.MessagesController [http-nio-8900-exec-9] NP_EVENT PP user1 agent007
+=======
+2019-06-28 13:10:37,537 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:11:34,292 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 64.651 seconds (JVM running for 66.688)
+2019-06-28 13:37:02,209 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:38:02,554 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 67.314 seconds (JVM running for 68.409)
+2019-06-28 14:26:39,811 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 14:27:19,443 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 48.686 seconds (JVM running for 51.138)
+2019-06-28 18:19:28,855 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 18:20:28,053 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 72.474 seconds (JVM running for 88.749)
+2019-06-28 20:24:35,110 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:26:51,779 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 150.659 seconds (JVM running for 153.759)
+2019-06-28 20:38:12,014 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:39:57,557 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:41:10,556 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 77.531 seconds (JVM running for 78.301)
+2019-06-28 20:50:44,287 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 20:51:24,614 INFO org.springframework.boot.StartupInfoLogger [main] Started MessagesServiceApplication in 46.242 seconds (JVM running for 46.956)
+>>>>>>> 185f9541cecb8374ddf13e5906794a4a7850ddcf

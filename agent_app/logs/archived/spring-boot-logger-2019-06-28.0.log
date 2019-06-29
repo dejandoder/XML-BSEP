@@ -287,6 +287,7 @@
 2019-06-28 14:45:03,228 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-6] NP_EVENT PR agent007
 2019-06-28 14:45:04,365 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-5] NP_EVENT PRR agent007 1
 2019-06-28 14:45:04,740 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-10] NP_EVENT PR agent007
+<<<<<<< HEAD
 2019-06-28 20:50:47,668 INFO org.springframework.boot.StartupInfoLogger [main] Starting AgentAppApplication on miljan-PC with PID 4996 (C:\Users\miljan\Desktop\XML-BSEP\agent_app\target\classes started by miljan in C:\Users\miljan\Desktop\XML-BSEP\agent_app)
 2019-06-28 20:50:47,705 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
 2019-06-28 20:50:47,709 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
@@ -346,3 +347,21 @@
 2019-06-28 21:29:23,016 INFO xml_bsep.agent_app.controller.PricePlanController [https-jsse-nio-11500-exec-3] NP_EVENT PC 2
 2019-06-28 21:29:23,119 INFO xml_bsep.agent_app.controller.RecensionController [https-jsse-nio-11500-exec-1] NP_EVENT POSN 127.0.0.1 2
 2019-06-28 21:29:23,166 INFO xml_bsep.agent_app.controller.ReservationController [https-jsse-nio-11500-exec-8] NP_EVENT PR agent007
+=======
+2019-06-28 18:18:20,729 INFO org.springframework.boot.StartupInfoLogger [main] Starting AgentAppApplication on DESKTOP-M1GUPBU with PID 3512 (started by Dejan Doder in C:\Users\Dejan Doder\Documents\GitHub\XML-BSEP\agent_app)
+2019-06-28 18:18:20,892 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 18:18:20,896 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 18:20:16,364 INFO org.springframework.boot.StartupInfoLogger [main] Started AgentAppApplication in 119.778 seconds (JVM running for 126.574)
+2019-06-28 18:58:16,413 INFO org.springframework.boot.StartupInfoLogger [main] Starting AgentAppApplication on DESKTOP-M1GUPBU with PID 10688 (started by Dejan Doder in C:\Users\Dejan Doder\Documents\GitHub\XML-BSEP\agent_app)
+2019-06-28 18:58:16,433 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 18:58:16,438 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 18:59:42,020 INFO org.springframework.boot.StartupInfoLogger [main] Started AgentAppApplication in 88.643 seconds (JVM running for 92.16)
+2019-06-28 23:51:26,766 INFO org.springframework.boot.StartupInfoLogger [main] Starting AgentAppApplicationTests on DESKTOP-M1GUPBU with PID 2156 (started by Dejan Doder in C:\Users\Dejan Doder\Documents\GitHub\XML-BSEP\agent_app)
+2019-06-28 23:51:26,771 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 23:51:26,776 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 23:52:08,428 INFO org.springframework.boot.StartupInfoLogger [main] Started AgentAppApplicationTests in 44.332 seconds (JVM running for 48.184)
+2019-06-28 23:55:59,455 INFO org.springframework.boot.StartupInfoLogger [main] Starting AgentAppApplicationTests on DESKTOP-M1GUPBU with PID 11312 (started by Dejan Doder in C:\Users\Dejan Doder\Documents\GitHub\XML-BSEP\agent_app)
+2019-06-28 23:55:59,459 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-06-28 23:55:59,462 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 23:56:31,332 INFO org.springframework.boot.StartupInfoLogger [main] Started AgentAppApplicationTests in 34.476 seconds (JVM running for 38.082)
+>>>>>>> 185f9541cecb8374ddf13e5906794a4a7850ddcf
